@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage_Accidents"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{405EADB8-453E-453C-8136-D3E3229E94EC}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{CFD52956-6DFE-4801-9DD9-9F046235B607}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -612,7 +612,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -663,38 +663,6 @@
                       externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity]"
                       lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Accident_Severity]" />
                     <inputColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Number_of_Vehicles]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Number_of_Vehicles"
-                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Vehicles]"
-                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Number_of_Vehicles]" />
-                    <inputColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Number_of_Casualties]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Number_of_Casualties"
-                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualties]"
-                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Number_of_Casualties]" />
-                    <inputColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Time]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Time"
-                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
-                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Time]" />
-                    <inputColumn
                       refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Local_Authority_(District)]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -735,6 +703,38 @@
                       externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Urban_or_Rural_Area]"
                       lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Urban_or_Rural_Area]" />
                     <inputColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Time"
+                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
+                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Time]" />
+                    <inputColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Number_of_Casualties]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Number_of_Casualties"
+                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualties]"
+                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Number_of_Casualties]" />
+                    <inputColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[Number_of_Vehicles]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Number_of_Vehicles"
+                      externalMetadataColumnId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Vehicles]"
+                      lineageId="Package\Accident to Stage\Accident1114csv.Outputs[Flat File Source Output].Columns[Number_of_Vehicles]" />
+                    <inputColumn
                       refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].Columns[derive]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -756,30 +756,6 @@
                       dataType="str"
                       length="50"
                       name="Accident_Severity" />
-                    <externalMetadataColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Vehicles]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Number_of_Vehicles" />
-                    <externalMetadataColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualties]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Number_of_Casualties" />
-                    <externalMetadataColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Time" />
                     <externalMetadataColumn
                       refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(District)]"
                       codePage="1252"
@@ -815,6 +791,30 @@
                       dataType="wstr"
                       length="50"
                       name="LSOA_of_Accident_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Vehicles]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Number_of_Vehicles" />
+                    <externalMetadataColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualties]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Number_of_Casualties" />
+                    <externalMetadataColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Accident to Stage\Accident1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Time" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -983,11 +983,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\Accident to Stage"
           TopLeft="94.2857148695961,167.823530923949" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\Truncate Accident1114_Stage"
           TopLeft="60,60" />
         <EdgeLayout
@@ -1021,15 +1021,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Accident to Stage\Accident1114_Stage"
-          TopLeft="393,278" />
-        <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\Accident to Stage\Derived Column"
           TopLeft="380,177" />
         <NodeLayout
-          Size="156,41.6"
+          Size="174,42"
+          Id="Package\Accident to Stage\Accident1114_Stage"
+          TopLeft="393,278" />
+        <NodeLayout
+          Size="156,42"
           Id="Package\Accident to Stage\Accident1114csv"
           TopLeft="290.714290665121,55.058824301591" />
         <EdgeLayout

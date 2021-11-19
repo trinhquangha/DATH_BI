@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage_Vehicles"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{F7FDC861-7202-4768-AF78-48EEFBCE9653}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{DCB81F20-043E-4AEA-9E1B-7503250C4539}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -489,11 +489,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="244,41.6"
+          Size="244,42"
           Id="Package\Truncate table Vehicles1114_Stage"
           TopLeft="60,60" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Vehicle to Stage"
           TopLeft="103,196.000000000004" />
         <EdgeLayout
@@ -527,13 +527,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Vehicle to Stage\Vehicle Stage"
-          TopLeft="263,249" />
-        <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Vehicle to Stage\Vehicles Source"
           TopLeft="244,65.2000000000001" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Vehicle to Stage\Vehicle Stage"
+          TopLeft="263,249" />
         <EdgeLayout
           Id="Package\Vehicle to Stage.Paths[Flat File Source Output]"
           TopLeft="320,106.8">

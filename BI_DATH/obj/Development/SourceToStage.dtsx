@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{3C0D190D-5943-4789-979A-AFF59A4B4C36}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{D849679F-00F7-4D72-8D0E-9FAD4DCC16EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2698,12 +2698,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty"
+              refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Age_Band_of_Casualty"
+              name="Age_Band_of_Casuality"
               usesDispositions="true"
               version="1">
               <properties>
@@ -2718,25 +2718,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Connections[FlatFileConnection]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Age_Band_of_Casualtycsv]"
                   connectionManagerRefId="Package.ConnectionManagers[Age_Band_of_Casualtycsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2751,14 +2751,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2776,13 +2776,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -2790,27 +2790,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2819,11 +2819,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Age_Band_of_Casualty to Stage\StageTH"
+              refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="StageTH"
+              name="Age_Band_of_Casuality_Stage"
               usesDispositions="true"
               version="4">
               <properties>
@@ -2876,7 +2876,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Age_Band_of_Casualty to Stage\StageTH.Connections[OleDbConnection]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -2884,39 +2884,39 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[code]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[code]" />
+                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="label"
-                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[label]" />
+                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -2926,22 +2926,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Age_Band_of_Casualty to Stage\StageTH.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2953,21 +2953,21 @@
           <paths>
             <path
               refId="Package\Age_Band_of_Casualty to Stage.Paths[Flat File Source Output]"
-              endId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input]"
+              endId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output]" />
+              startId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Casualty_Severity to Stage"
+      DTS:refId="Package\Casuality_Severity to Stage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{7391d00a-5803-4e77-8677-0a32a9013583}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Casualty_Severity to Stage"
+      DTS:ObjectName="Casuality_Severity to Stage"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -2975,12 +2975,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv"
+              refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Casualty_Severitycsv"
+              name="Casuality_Severitycsv"
               usesDispositions="true"
               version="1">
               <properties>
@@ -2995,25 +2995,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Connections[FlatFileConnection]"
+                  refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Casualty_Severitycsv]"
                   connectionManagerRefId="Package.ConnectionManagers[Casualty_Severitycsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output]"
+                  refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3028,14 +3028,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3053,13 +3053,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -3067,27 +3067,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output]"
+                  refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3096,11 +3096,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Casualty_Severity to Stage\StageTH"
+              refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="StageTH"
+              name="Casuality_Severity_Stage"
               usesDispositions="true"
               version="4">
               <properties>
@@ -3153,7 +3153,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Casualty_Severity to Stage\StageTH.Connections[OleDbConnection]"
+                  refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -3161,39 +3161,39 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input]"
+                  refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[code]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[code]" />
+                      externalMetadataColumnId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
-                      refId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="label"
-                      externalMetadataColumnId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[label]" />
+                      externalMetadataColumnId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -3203,22 +3203,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Casualty_Severity to Stage\StageTH.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Severity to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Severity to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3229,10 +3229,10 @@
           </components>
           <paths>
             <path
-              refId="Package\Casualty_Severity to Stage.Paths[Flat File Source Output]"
-              endId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input]"
+              refId="Package\Casuality_Severity to Stage.Paths[Flat File Source Output]"
+              endId="Package\Casuality_Severity to Stage\Casuality_Severity_Stage.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output]" />
+              startId="Package\Casuality_Severity to Stage\Casuality_Severitycsv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3252,12 +3252,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Casualty_Type to Stage\Casualty_Typecsv"
+              refId="Package\Casualty_Type to Stage\Casuality_Typecsv"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Casualty_Typecsv"
+              name="Casuality_Typecsv"
               usesDispositions="true"
               version="1">
               <properties>
@@ -3272,25 +3272,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Connections[FlatFileConnection]"
+                  refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Casualty_Typecsv]"
                   connectionManagerRefId="Package.ConnectionManagers[Casualty_Typecsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output]"
+                  refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="IgnoreFailure"
-                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="IgnoreFailure">
                       <properties>
@@ -3305,14 +3305,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="IgnoreFailure"
-                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="IgnoreFailure">
                       <properties>
@@ -3330,13 +3330,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -3344,27 +3344,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output]"
+                  refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3373,11 +3373,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Casualty_Type to Stage\StageTH"
+              refId="Package\Casualty_Type to Stage\Casuality_Type_Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="StageTH"
+              name="Casuality_Type_Stage"
               usesDispositions="true"
               version="4">
               <properties>
@@ -3430,7 +3430,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Casualty_Type to Stage\StageTH.Connections[OleDbConnection]"
+                  refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -3438,39 +3438,39 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input]"
+                  refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[code]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[code]" />
+                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
-                      refId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="label"
-                      externalMetadataColumnId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[label]" />
+                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -3480,22 +3480,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Casualty_Type to Stage\StageTH.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Type to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Type to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3507,9 +3507,9 @@
           <paths>
             <path
               refId="Package\Casualty_Type to Stage.Paths[Flat File Source Output]"
-              endId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input]"
+              endId="Package\Casualty_Type to Stage\Casuality_Type_Stage.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output]" />
+              startId="Package\Casualty_Type to Stage\Casuality_Typecsv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5082,12 +5082,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv"
+              refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Sex_of_Casualtycsv"
+              name="Sex_of_Casualitycsv"
               usesDispositions="true"
               version="1">
               <properties>
@@ -5102,25 +5102,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Connections[FlatFileConnection]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Sex_of_Casualtycsv]"
                   connectionManagerRefId="Package.ConnectionManagers[Sex_of_Casualtycsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -5135,14 +5135,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -5160,13 +5160,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -5174,27 +5174,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -5203,11 +5203,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Sex_of_Casualty_NDS to Stage\StageTH"
+              refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="StageTH"
+              name="Sex_of_Casuality_Stage"
               usesDispositions="true"
               version="4">
               <properties>
@@ -5260,7 +5260,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Connections[OleDbConnection]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -5268,39 +5268,39 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[code]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[code]" />
+                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="label"
-                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[label]" />
+                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -5310,22 +5310,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -5337,9 +5337,9 @@
           <paths>
             <path
               refId="Package\Sex_of_Casualty_NDS to Stage.Paths[Flat File Source Output]"
-              endId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input]"
+              endId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output]" />
+              startId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5353,7 +5353,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Accident_Severity_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5370,7 +5370,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Age_Band_of_Casuality_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="7">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5387,7 +5387,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Casuality_Severity_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="8">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5404,7 +5404,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Casuality_Type_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="9">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5421,7 +5421,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Light_Conditions_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="6">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5438,7 +5438,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Local_Authority_District_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="7">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5455,7 +5455,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate postcode"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="8">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5472,7 +5472,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Road_Type_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5489,7 +5489,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Sex_of_Casuality_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="9">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5506,7 +5506,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Journey_Purpose_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="10">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5523,7 +5523,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Vehicle_Type_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="10">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6127,7 +6127,7 @@
       DTS:From="Package\Truncate Casuality_Severity_Stage"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1 1 1 1 1"
-      DTS:To="Package\Casualty_Severity to Stage" />
+      DTS:To="Package\Casuality_Severity to Stage" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 1 2]"
       DTS:CreationName=""
@@ -6214,99 +6214,99 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="204,41.6"
+          Size="204,42"
           Id="Package\Accident_Severity to Stage"
           TopLeft="526.428582011437,121.111768834896" />
         <NodeLayout
-          Size="228.8,41.6"
+          Size="229,42"
           Id="Package\Age_Band_of_Casualty to Stage"
           TopLeft="353.035721340958,1311.98530887485" />
         <NodeLayout
-          Size="204,41.6"
-          Id="Package\Casualty_Severity to Stage"
+          Size="207,42"
+          Id="Package\Casuality_Severity to Stage"
           TopLeft="663.035726620227,1330.773544051" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190,42"
           Id="Package\Casualty_Type to Stage"
           TopLeft="577.321439446236,1062.25589180142" />
         <NodeLayout
-          Size="201.6,41.6"
+          Size="202,42"
           Id="Package\Journey_Purpose to Stage"
           TopLeft="945.214291686915,538.87647819206" />
         <NodeLayout
-          Size="199.2,41.6"
+          Size="199,42"
           Id="Package\Light_Conditions to Stage"
           TopLeft="557.142869270578,326.594122784196" />
         <NodeLayout
-          Size="232,41.6"
+          Size="232,42"
           Id="Package\Local_Authority_District to Stage"
           TopLeft="757.142871654764,124.864711545001" />
         <NodeLayout
-          Size="199.2,41.6"
+          Size="199,42"
           Id="Package\Postcode Source to Stage"
           TopLeft="611.714291686915,810.37647819206" />
         <NodeLayout
-          Size="174.4,41.6"
+          Size="174,42"
           Id="Package\Road_Type to Stage"
           TopLeft="290.000006556511,328.876478192056" />
         <NodeLayout
-          Size="224.8,41.6"
+          Size="225,42"
           Id="Package\Sex_of_Casualty_NDS to Stage"
           TopLeft="868.750015837806,1077.98530559309" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\Truncate Accident_Severity_Stage"
           TopLeft="513.571438935339,14.0529438040249" />
         <NodeLayout
-          Size="259.2,41.6"
+          Size="259,42"
           Id="Package\Truncate Age_Band_of_Casuality_Stage"
           TopLeft="340.178578264859,1180.4558952655" />
         <NodeLayout
-          Size="259.2,41.6"
+          Size="259,42"
           Id="Package\Truncate Casuality_Severity_Stage"
           TopLeft="650.178583544128,1199.24413044164" />
         <NodeLayout
-          Size="224,41.6"
+          Size="224,42"
           Id="Package\Truncate Casuality_Type_Stage"
           TopLeft="564.464296370137,930.72647819206" />
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Truncate Light_Conditions_Stage"
           TopLeft="522.857154400982,218.770591860247" />
         <NodeLayout
-          Size="240.8,57.6"
+          Size="241,58"
           Id="Package\Truncate Local_Authority_District_Stage"
           TopLeft="750.000014390265,17.041180621052" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166,42"
           Id="Package\Truncate postcode"
           TopLeft="627.714291686915,713.37647819206" />
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Truncate Road_Type_Stage"
           TopLeft="255.714291686915,221.052947268107" />
         <NodeLayout
-          Size="232.8,41.6"
+          Size="233,42"
           Id="Package\Truncate Sex_of_Casuality_Stage"
           TopLeft="855.892872761707,946.45589198374" />
         <NodeLayout
-          Size="263.2,41.6"
+          Size="263,42"
           Id="Package\Truncate table Journey_Purpose_Stage"
           TopLeft="908.214291686915,451.87647819206" />
         <NodeLayout
-          Size="244.8,41.6"
+          Size="245,42"
           Id="Package\Truncate table Vehicle_Type_Stage"
           TopLeft="596.214291686915,448.87647819206" />
         <NodeLayout
-          Size="214.4,41.6"
+          Size="214,42"
           Id="Package\Truncate Urban_Rural_Stage"
           TopLeft="775.000014816013,208.711769199536" />
         <NodeLayout
-          Size="179.2,41.6"
+          Size="179,42"
           Id="Package\Urban_Rural to Stage"
           TopLeft="809.285729685609,316.535300123485" />
         <NodeLayout
-          Size="184,41.6"
+          Size="184,42"
           Id="Package\Vehicle_Type to Stage"
           TopLeft="618.214291686915,541.87647819206" />
         <EdgeLayout
@@ -6367,30 +6367,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1 1 1 1 1]"
-          TopLeft="779.778583544128,1240.84413044164">
+          TopLeft="779.678583544128,1241.24413044164">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.7428569239009,89.9294136093602"
+              EndConnector="-13.1428569239009,89.5294136093601"
               Start="0,0"
-              End="-14.7428569239009,82.4294136093602">
+              End="-13.1428569239009,82.0294136093601">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.9647068046801" />
+                    End="0,40.76470680468" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.9647068046801"
-                    Point2="0,44.9647068046801"
-                    Point3="-4,44.9647068046801" />
+                    Point1="0,40.76470680468"
+                    Point2="0,44.76470680468"
+                    Point3="-4,44.76470680468" />
                   <mssgle:LineSegment
-                    End="-10.7428569239009,44.9647068046801" />
+                    End="-9.14285692390092,44.76470680468" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.7428569239009,44.9647068046801"
-                    Point2="-14.7428569239009,44.9647068046801"
-                    Point3="-14.7428569239009,48.9647068046801" />
+                    Point1="-9.14285692390092,44.76470680468"
+                    Point2="-13.1428569239009,44.76470680468"
+                    Point3="-13.1428569239009,48.76470680468" />
                   <mssgle:LineSegment
-                    End="-14.7428569239009,82.4294136093602" />
+                    End="-13.1428569239009,82.0294136093601" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6652,13 +6652,13 @@
     design-time-name="Package\Accident_Severity to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="193.6,41.6"
+          Size="194,42"
           Id="Package\Accident_Severity to Stage\Accident_Severity_Stage"
           TopLeft="356.428577498514,181.235296659404" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Accident_Severity to Stage\Accident_Severitycsv"
           TopLeft="290.714290665121,55.058824301591" />
         <EdgeLayout
@@ -6692,9 +6692,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6717,44 +6715,54 @@
     design-time-name="Package\Age_Band_of_Casualty to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.4,41.6"
-          Id="Package\Age_Band_of_Casualty to Stage\StageTH"
+          Size="222,42"
+          Id="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage"
           TopLeft="310.285719212221,247.117650061743" />
         <NodeLayout
-          Size="186.4,41.6"
-          Id="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty"
+          Size="189,42"
+          Id="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality"
           TopLeft="272.857147759321,127.176472540133" />
         <EdgeLayout
           Id="Package\Age_Band_of_Casualty to Stage.Paths[Flat File Source Output]"
-          TopLeft="367.771433485771,168.776472540133">
+          TopLeft="367.357147759321,169.176472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,78.34117752161"
+              EndConnector="53.9285714529,77.94117752161"
               Start="0,0"
-              End="0,70.84117752161">
+              End="53.9285714529,70.44117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.84117752161" />
+                    End="0,34.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.970588760805"
+                    Point2="0,38.970588760805"
+                    Point3="4,38.970588760805" />
+                  <mssgle:LineSegment
+                    End="49.9285714529,38.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.9285714529,38.970588760805"
+                    Point2="53.9285714529,38.970588760805"
+                    Point3="53.9285714529,42.970588760805" />
+                  <mssgle:LineSegment
+                    End="53.9285714529,70.44117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Age_Band_of_Casualty to Stage\StageTH">
+    design-time-name="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casuality_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6767,47 +6775,57 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Casualty_Severity to Stage">
+    design-time-name="Package\Casuality_Severity to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.4,41.6"
-          Id="Package\Casualty_Severity to Stage\StageTH"
+          Size="197,42"
+          Id="Package\Casuality_Severity to Stage\Casuality_Severity_Stage"
           TopLeft="310.285719212221,247.117650061743" />
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Casualty_Severity to Stage\Casualty_Severitycsv"
+          Size="180,42"
+          Id="Package\Casuality_Severity to Stage\Casuality_Severitycsv"
           TopLeft="287.857147759321,139.176472540133" />
         <EdgeLayout
-          Id="Package\Casualty_Severity to Stage.Paths[Flat File Source Output]"
-          TopLeft="372.871433485771,180.776472540133">
+          Id="Package\Casuality_Severity to Stage.Paths[Flat File Source Output]"
+          TopLeft="377.857147759321,181.176472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.34117752161"
+              EndConnector="30.9285714529,65.94117752161"
               Start="0,0"
-              End="0,58.84117752161">
+              End="30.9285714529,58.44117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.84117752161" />
+                    End="0,28.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.970588760805"
+                    Point2="0,32.970588760805"
+                    Point3="4,32.970588760805" />
+                  <mssgle:LineSegment
+                    End="26.9285714529,32.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.9285714529,32.970588760805"
+                    Point2="30.9285714529,32.970588760805"
+                    Point3="30.9285714529,36.970588760805" />
+                  <mssgle:LineSegment
+                    End="30.9285714529,58.44117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Casualty_Severity to Stage\StageTH">
+    design-time-name="Package\Casuality_Severity to Stage\Casuality_Severity_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6823,44 +6841,54 @@
     design-time-name="Package\Casualty_Type to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.4,41.6"
-          Id="Package\Casualty_Type to Stage\StageTH"
+          Size="182,42"
+          Id="Package\Casualty_Type to Stage\Casuality_Type_Stage"
           TopLeft="310.285719212221,247.117650061743" />
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Casualty_Type to Stage\Casualty_Typecsv"
+          Size="165,42"
+          Id="Package\Casualty_Type to Stage\Casuality_Typecsv"
           TopLeft="287.857147759321,139.176472540133" />
         <EdgeLayout
           Id="Package\Casualty_Type to Stage.Paths[Flat File Source Output]"
-          TopLeft="369.071433485771,180.776472540133">
+          TopLeft="370.357147759321,181.176472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.34117752161"
+              EndConnector="30.9285714529,65.94117752161"
               Start="0,0"
-              End="0,58.84117752161">
+              End="30.9285714529,58.44117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.84117752161" />
+                    End="0,28.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.970588760805"
+                    Point2="0,32.970588760805"
+                    Point3="4,32.970588760805" />
+                  <mssgle:LineSegment
+                    End="26.9285714529,32.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.9285714529,32.970588760805"
+                    Point2="30.9285714529,32.970588760805"
+                    Point3="30.9285714529,36.970588760805" />
+                  <mssgle:LineSegment
+                    End="30.9285714529,58.44117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Casualty_Type to Stage\StageTH">
+    design-time-name="Package\Casualty_Type to Stage\Casuality_Type_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6876,13 +6904,13 @@
     design-time-name="Package\Journey_Purpose to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,41.6"
+          Size="192,42"
           Id="Package\Journey_Purpose to Stage\Journey_Purpose_Stage"
           TopLeft="227,252" />
         <NodeLayout
-          Size="195.2,41.6"
+          Size="195,42"
           Id="Package\Journey_Purpose to Stage\Journey_Purpose Source"
           TopLeft="218,111" />
         <EdgeLayout
@@ -6904,9 +6932,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6929,13 +6955,13 @@
     design-time-name="Package\Light_Conditions to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Light_Conditions to Stage\Light_Conditions_Stage"
           TopLeft="356.428577498514,181.235296659404" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Light_Conditions to Stage\Light_Conditionscsv"
           TopLeft="290.714290665121,55.058824301591" />
         <EdgeLayout
@@ -6969,9 +6995,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6994,13 +7018,13 @@
     design-time-name="Package\Local_Authority_District to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\Local_Authority_District to Stage\Local_Authority_District_Stage"
           TopLeft="356.428577498514,181.235296659404" />
         <NodeLayout
-          Size="204.8,41.6"
+          Size="205,42"
           Id="Package\Local_Authority_District to Stage\Local_Authority_Districtcsv"
           TopLeft="290.714290665121,55.058824301591" />
         <EdgeLayout
@@ -7034,9 +7058,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7059,13 +7081,13 @@
     design-time-name="Package\Postcode Source to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Postcode Source to Stage\Postcode_Stage"
           TopLeft="391.111111111111,149.555555555556" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\Postcode Source to Stage\Postcode Source"
           TopLeft="389,45.5555555555556" />
         <EdgeLayout
@@ -7087,9 +7109,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7112,13 +7132,13 @@
     design-time-name="Package\Road_Type to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Road_Type to Stage\Road_Type_Stage"
           TopLeft="356.428577498514,181.235296659404" />
         <NodeLayout
-          Size="145.6,41.6"
+          Size="146,42"
           Id="Package\Road_Type to Stage\Road_Typecsv"
           TopLeft="290.714290665121,55.058824301591" />
         <EdgeLayout
@@ -7152,9 +7172,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7177,44 +7195,54 @@
     design-time-name="Package\Sex_of_Casualty_NDS to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.4,41.6"
-          Id="Package\Sex_of_Casualty_NDS to Stage\StageTH"
+          Size="191,42"
+          Id="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage"
           TopLeft="310.285719212221,247.117650061743" />
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv"
+          Size="174,42"
+          Id="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualitycsv"
           TopLeft="287.857147759321,139.176472540133" />
         <EdgeLayout
           Id="Package\Sex_of_Casualty_NDS to Stage.Paths[Flat File Source Output]"
-          TopLeft="371.271433485771,180.776472540133">
+          TopLeft="374.857147759321,181.176472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.34117752161"
+              EndConnector="30.9285714529,65.94117752161"
               Start="0,0"
-              End="0,58.84117752161">
+              End="30.9285714529,58.44117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.84117752161" />
+                    End="0,28.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.970588760805"
+                    Point2="0,32.970588760805"
+                    Point3="4,32.970588760805" />
+                  <mssgle:LineSegment
+                    End="26.9285714529,32.970588760805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.9285714529,32.970588760805"
+                    Point2="30.9285714529,32.970588760805"
+                    Point3="30.9285714529,36.970588760805" />
+                  <mssgle:LineSegment
+                    End="30.9285714529,58.44117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sex_of_Casualty_NDS to Stage\StageTH">
+    design-time-name="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casuality_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7230,13 +7258,13 @@
     design-time-name="Package\Urban_Rural to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Urban_Rural to Stage\Urban_Rural_Stage"
           TopLeft="356.428577498514,181.235296659404" />
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Urban_Rural to Stage\Urban_Ruralcsv"
           TopLeft="290.714290665121,55.058824301591" />
         <EdgeLayout
@@ -7270,9 +7298,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7297,11 +7323,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174.4,41.6"
+          Size="174,42"
           Id="Package\Vehicle_Type to Stage\Vehicle_Type_Stage"
           TopLeft="252,251" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Vehicle_Type to Stage\Vehicle_Type Source"
           TopLeft="250,87" />
         <EdgeLayout

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_PCDContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{2BF15C66-C20F-4A1E-89A3-508676D75F83}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{E52C2751-8FB3-45B1-ABF4-7DFDC8F4A870}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -786,7 +786,7 @@ where [refTable].[Postcode] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="256.8,41.6"
+          Size="257,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS"
           TopLeft="60,60" />
       </GraphLayout>
@@ -798,23 +798,23 @@ where [refTable].[Postcode] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert"
           TopLeft="597,291" />
         <NodeLayout
-          Size="216.8,41.6"
+          Size="217,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD"
           TopLeft="333,110" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS"
           TopLeft="186,292" />
         <NodeLayout
-          Size="243.2,41.6"
+          Size="243,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS"
           TopLeft="316,212" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage"
           TopLeft="353,11" />
         <EdgeLayout
@@ -959,7 +959,7 @@ where [refTable].[Postcode] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -995,7 +995,7 @@ where [refTable].[Postcode] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1005,7 +1005,7 @@ where [refTable].[Postcode] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

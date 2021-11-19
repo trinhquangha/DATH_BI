@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SoureToStage_PCD_LSOA"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{9F75283E-03AF-4384-BCBA-0316B48A1FCF}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{3AE14986-8B8B-4115-BF07-FEB0B8DFEE00}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -51,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pcd7"
-              DTS:DTSID="{6A698FDE-7E43-4EA9-BA99-04840DD17648}"
+              DTS:DTSID="{B7CED521-EE16-4E2E-A42B-8E5545809C80}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -60,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pcd8"
-              DTS:DTSID="{C1EEE395-70FD-47E7-AA58-58ADDCBB0FFF}"
+              DTS:DTSID="{9CCE467C-FD4A-4373-9F38-B2970F505746}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -69,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pcds"
-              DTS:DTSID="{9D56F883-75E9-4E44-98A1-5D181FC49A2C}"
+              DTS:DTSID="{759ECD9E-EFC7-477F-8D4D-9C79F6C5BFAF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -78,7 +78,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="dointr"
-              DTS:DTSID="{E6D404DD-E92D-4544-B2E3-8E7368AEA426}"
+              DTS:DTSID="{061D51E7-EBBF-4406-92E8-84D9DC2745E7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -87,7 +87,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="doterm"
-              DTS:DTSID="{40B0C4BE-2DA1-49F4-B6D4-6073A127FBDF}"
+              DTS:DTSID="{DCE39277-930A-4958-8170-5E66878471F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -96,7 +96,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="usertype"
-              DTS:DTSID="{5A71C9C7-09AA-402C-AC55-4453E08E40C9}"
+              DTS:DTSID="{7D8164AD-F8A1-4D0A-BD58-C32787DD645F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +105,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="oa11cd"
-              DTS:DTSID="{C20ADE10-8CFA-4236-BE33-68349EAA7D38}"
+              DTS:DTSID="{BCBBF716-6A54-466E-A2B2-4430DB914C7B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -114,7 +114,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="lsoa11cd"
-              DTS:DTSID="{49A9B7FD-1163-4C6E-9DD7-C10064CB79A5}"
+              DTS:DTSID="{E3F20D95-50EB-40E2-B6FB-0C1FD5915BFB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -123,7 +123,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="msoa11cd"
-              DTS:DTSID="{9BA596E3-BB8B-460E-9533-3ADB344F71C9}"
+              DTS:DTSID="{103F261A-1AF6-4DB3-9686-EA47E82D36A7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -132,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ladcd"
-              DTS:DTSID="{5E788980-BF20-466E-8559-8A5381387446}"
+              DTS:DTSID="{04B0DBF5-5A73-481F-AA20-D2ADF2DFBBAE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -141,7 +141,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="lsoa11nm"
-              DTS:DTSID="{EE8649D4-3B14-4B05-B80E-8F2A8ECB5757}"
+              DTS:DTSID="{DE26289B-F70D-45E6-A375-60EF286040BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -150,7 +150,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="msoa11nm"
-              DTS:DTSID="{425E64B5-02AC-4A6A-A366-0BCA53B2BAAE}"
+              DTS:DTSID="{BD4CCB9F-E7A2-4D22-BB4D-65073B81EA8A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +159,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ladnm"
-              DTS:DTSID="{9508939F-6498-48B6-9FA5-EF61CB39AB54}"
+              DTS:DTSID="{8A4ADD56-3E7E-4A06-9B6F-96F4DE60F447}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -168,7 +168,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ladnmw"
-              DTS:DTSID="{B43E4F70-34D6-4465-BE21-51A374C080F7}"
+              DTS:DTSID="{F9849702-4687-4BD7-A67F-1F6C271E9519}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -539,7 +539,7 @@
                     <externalMetadataColumn
                       refId="Package\PCD_LSOA Source to Stage\PCD_LSOA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
                       dataType="wstr"
-                      length="50"
+                      length="11"
                       name="lsoa11cd" />
                   </externalMetadataColumns>
                 </input>
@@ -1020,11 +1020,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\PCD_LSOA Source to Stage"
           TopLeft="60,167" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Truncate PCD_LSOA"
           TopLeft="76,60" />
         <EdgeLayout
@@ -1058,31 +1058,31 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\PCD_LSOA Source to Stage\PCD_LSOA Source"
           TopLeft="195,7" />
         <NodeLayout
-          Size="174.4,41.6"
+          Size="174,42"
           Id="Package\PCD_LSOA Source to Stage\Remove blank value"
           TopLeft="432,309" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\PCD_LSOA Source to Stage\No Blank Value"
           TopLeft="363,389" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\PCD_LSOA Source to Stage\PCD_LSOA_Stage"
           TopLeft="172.75,443.75" />
         <NodeLayout
-          Size="256.8,41.6"
+          Size="257,42"
           Id="Package\PCD_LSOA Source to Stage\Remove value after space in lsoa11cd"
           TopLeft="149,93.75" />
         <NodeLayout
-          Size="132.8,41.6"
+          Size="133,42"
           Id="Package\PCD_LSOA Source to Stage\Blank value"
           TopLeft="665,211" />
         <NodeLayout
-          Size="231.2,41.6"
+          Size="231,42"
           Id="Package\PCD_LSOA Source to Stage\Sort and remove duplicate value"
           TopLeft="166,187" />
         <EdgeLayout

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_AccidentContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{34537C54-2D7C-478F-8391-23FC1F572470}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{A36C1075-ABF0-4C7B-9FCB-CD2C6E365FC4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2892,23 +2892,23 @@ where Urban_Rural_ID = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="319.2,41.6"
+          Size="320,42"
           Id="Package\Accident_Severity_Stage to Accident_Severity_NDS"
           TopLeft="91.4285729855911,35.9411769746495" />
         <NodeLayout
-          Size="308.8,41.6"
+          Size="309,42"
           Id="Package\Light_Conditions_Stage to Light_Conditions_NDS"
           TopLeft="96.4285730707406,106.847057472216" />
         <NodeLayout
-          Size="375.2,41.6"
+          Size="375,42"
           Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS"
           TopLeft="113.571430505539,178.51764386286" />
         <NodeLayout
-          Size="258.4,41.6"
+          Size="258,42"
           Id="Package\Road_Type_Stage to Road_Type_NDS"
           TopLeft="448.571436210555,32.0117637299336" />
         <NodeLayout
-          Size="270.4,41.6"
+          Size="270,42"
           Id="Package\Urban_Rural_Stage to Urban_Rural_NDS"
           TopLeft="451.428579116355,99.858820655189" />
       </GraphLayout>
@@ -2920,19 +2920,19 @@ where Urban_Rural_ID = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup"
           TopLeft="215.714289387878,154.470590401686" />
         <NodeLayout
-          Size="194.4,41.6"
+          Size="194,42"
           Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage"
           TopLeft="168.571431442183,57.3529419808239" />
         <NodeLayout
-          Size="223.2,41.6"
+          Size="223,42"
           Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update"
           TopLeft="36.4285720489463,282.48235559018" />
         <NodeLayout
-          Size="216.8,41.6"
+          Size="217,42"
           Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert"
           TopLeft="292.85714784447,285.329414520957" />
         <EdgeLayout
@@ -3025,7 +3025,7 @@ where Urban_Rural_ID = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0.0317091762128356,41.4525547452128,111.6127734375,11.609375"
+              BoundingBox="0.0317091762129991,41.4525547452128,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3087,19 +3087,19 @@ where Urban_Rural_ID = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup"
           TopLeft="215.714289387878,154.470590401686" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage"
           TopLeft="168.571431442183,57.3529419808239" />
         <NodeLayout
-          Size="223.2,41.6"
+          Size="223,42"
           Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update"
           TopLeft="36.4285720489463,282.48235559018" />
         <NodeLayout
-          Size="212,41.6"
+          Size="212,42"
           Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert"
           TopLeft="292.85714784447,285.329414520957" />
         <EdgeLayout
@@ -3204,7 +3204,7 @@ where Urban_Rural_ID = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-1.16829082378732,41.4525547452128,111.6127734375,11.609375"
+              BoundingBox="-1.1682908237875,41.4525547452128,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3266,19 +3266,19 @@ where Urban_Rural_ID = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup"
           TopLeft="215.714289387878,154.470590401686" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage"
           TopLeft="168.571431442183,57.3529419808239" />
         <NodeLayout
-          Size="252,41.6"
+          Size="252,42"
           Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update"
           TopLeft="36.4285720489463,282.48235559018" />
         <NodeLayout
-          Size="245.6,41.6"
+          Size="246,42"
           Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert"
           TopLeft="292.85714784447,285.329414520957" />
         <EdgeLayout
@@ -3371,7 +3371,7 @@ where Urban_Rural_ID = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="7.23170917621268,41.4525547452128,111.6127734375,11.609375"
+              BoundingBox="7.2317091762125,41.4525547452128,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3433,19 +3433,19 @@ where Urban_Rural_ID = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage"
           TopLeft="190.000003235681,55.8235301946686" />
         <NodeLayout
-          Size="187.2,41.6"
+          Size="187,42"
           Id="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert"
           TopLeft="292.85714784447,285.329414520957" />
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Road_Type_Stage to Road_Type_NDS\Lookup"
           TopLeft="215.714289387878,154.470590401686" />
         <NodeLayout
-          Size="192.8,41.6"
+          Size="193,42"
           Id="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update"
           TopLeft="36.4285720489463,282.48235559018" />
         <EdgeLayout
@@ -3538,7 +3538,7 @@ where Urban_Rural_ID = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.36829082378731,41.4525547452128,111.6127734375,11.609375"
+              BoundingBox="-7.3682908237873,41.4525547452128,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3600,21 +3600,21 @@ where Urban_Rural_ID = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup"
-          TopLeft="215.714289387878,154.470590401686" />
-        <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage"
           TopLeft="168.571431442183,57.3529419808239" />
         <NodeLayout
-          Size="223.2,41.6"
-          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update"
-          TopLeft="36.4285720489463,282.48235559018" />
-        <NodeLayout
-          Size="192.8,41.6"
+          Size="193,42"
           Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert"
           TopLeft="292.85714784447,285.329414520957" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup"
+          TopLeft="215.714289387878,154.470590401686" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update"
+          TopLeft="36.4285720489463,282.48235559018" />
         <EdgeLayout
           Id="Package\Urban_Rural_Stage to Urban_Rural_NDS.Paths[Lookup Match Output]"
           TopLeft="254.647622721211,196.070590401686">
@@ -3717,7 +3717,7 @@ where Urban_Rural_ID = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-5.96829082378733,41.4525547452128,111.6127734375,11.609375"
+              BoundingBox="-5.96829082378735,41.4525547452128,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
