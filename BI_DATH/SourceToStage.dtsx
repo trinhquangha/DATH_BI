@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{BAFB016E-AA19-4F91-ACBE-F3084E5CE75F}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{5EE63D67-4C1C-4579-A2FD-99981631B2FF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -177,6 +177,275 @@
               DTS:TextQualified="True"
               DTS:ObjectName="label"
               DTS:DTSID="{7390F142-2A7D-4B4D-B055-C21E3FDA7671}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Age_Band_of_Casualtycsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2D35CEE4-78B3-4C88-A55F-E4C60F174131}"
+      DTS:ObjectName="Age_Band_of_Casualtycsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\datacsvtt\Age_Band.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code"
+              DTS:DTSID="{736BBBEA-E1B1-434F-A6C4-13074F1E39DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="label"
+              DTS:DTSID="{45609A7B-5FF6-41D6-B922-2E2580047E56}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Casualties1114csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{479F6AF2-0A70-40BF-BE21-058A80B6A62F}"
+      DTS:ObjectName="Casualties1114csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\datacsvtt\Casualties1114.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accident_Index"
+              DTS:DTSID="{39C5913E-354E-4B46-93AE-4D1EDD9DBAC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle_Reference"
+              DTS:DTSID="{980C1A3F-FF3A-4E7D-A913-E97358553546}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Casualty_Reference"
+              DTS:DTSID="{DBC905F2-0824-40B0-B11C-4B10D2FC89B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Casualty_Class"
+              DTS:DTSID="{F7C171EA-BC0C-46AB-B02D-85146D1FB796}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sex_of_Casualty"
+              DTS:DTSID="{9377683B-1EE6-4693-B2FF-B1D14A915E33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age_of_Casualty"
+              DTS:DTSID="{C150D880-50F6-4ACA-85D4-560657BC3880}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age_Band_of_Casualty"
+              DTS:DTSID="{B24CD013-9F88-451F-B94A-E5F6D0BBBDA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Casualty_Severity"
+              DTS:DTSID="{C2A35D3E-BD2C-417C-810A-2E7DBB864962}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pedestrian_Location"
+              DTS:DTSID="{E53037BA-BB9B-4AA6-A3AB-080032B2C536}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pedestrian_Movement"
+              DTS:DTSID="{B279F65C-359C-407D-A99F-26A27E9E9971}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Car_Passenger"
+              DTS:DTSID="{789C5A33-0C6B-4F13-A3E8-EC09B61416F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bus_or_Coach_Passenger"
+              DTS:DTSID="{D4481463-3D2A-4E0D-9DE9-C00B59F9E23E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pedestrian_Road_Maintenance_Worker"
+              DTS:DTSID="{41AF0430-3AB7-4E41-8469-45B68026EAB3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Casualty_Type"
+              DTS:DTSID="{B04E7A9E-8C55-42F6-A28A-B6F919B499A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Casualty_Home_Area_Type"
+              DTS:DTSID="{6E8992C0-09E4-45BA-95B8-44B7A66354A3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Casualty_Severitycsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5A2C1517-B301-429C-8FBE-94450B17CF23}"
+      DTS:ObjectName="Casualty_Severitycsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\datacsvtt\Casualty_Severity.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code"
+              DTS:DTSID="{8FCE90C2-7AA9-45A5-9560-3EA22D28C99F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="label"
+              DTS:DTSID="{5292A0C3-06F0-4763-99E4-C78B93A23007}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Casualty_Typecsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9B75C606-06BF-4386-B0F4-57A3E8920F4C}"
+      DTS:ObjectName="Casualty_Typecsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\datacsvtt\Casualty_Type.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code"
+              DTS:DTSID="{5A3B323C-BB85-4C27-83BD-D0DF5562A166}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="label"
+              DTS:DTSID="{7E0DB0D5-5C2C-44B1-82B4-2B31947BDC45}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -967,6 +1236,44 @@
               DTS:TextQualified="True"
               DTS:ObjectName="label"
               DTS:DTSID="{C7FB574E-5110-4A48-9537-70F1AD555823}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Sex_of_Casualtycsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{495CFD30-E44A-4CAB-9785-AE8AEBEDA841}"
+      DTS:ObjectName="Sex_of_Casualtycsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\datacsvtt\Sex_of_Driver.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code"
+              DTS:DTSID="{433CB0B2-5398-4DB9-86B9-C372D5384DCE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="label"
+              DTS:DTSID="{8E812301-B1CE-4AED-B79C-7168A369FCA6}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2258,12 +2565,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Age_Band_of_Casualty to Stage\Flat File Source"
+              refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Flat File Source"
+              name="Age_Band_of_Casualty"
               usesDispositions="true"
               version="1">
               <properties>
@@ -2278,25 +2585,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="{B72AC3DC-D423-41D0-ACC3-0D1C189D1A06}:invalid"
-                  connectionManagerRefId="{B72AC3DC-D423-41D0-ACC3-0D1C189D1A06}:invalid"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Age_Band_of_Casualtycsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Age_Band_of_Casualtycsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2311,14 +2618,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2336,13 +2643,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -2350,27 +2657,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2457,7 +2764,7 @@
                       cachedLength="50"
                       cachedName="code"
                       externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]" />
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
                       refId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
@@ -2465,7 +2772,7 @@
                       cachedLength="50"
                       cachedName="label"
                       externalMetadataColumnId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]" />
+                      lineageId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2515,7 +2822,7 @@
               refId="Package\Age_Band_of_Casualty to Stage.Paths[Flat File Source Output]"
               endId="Package\Age_Band_of_Casualty to Stage\StageTH.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Age_Band_of_Casualty to Stage\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2535,12 +2842,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Casualities1114 to Stage\Flat File Source"
+              refId="Package\Casualities1114 to Stage\Casualties1114csv"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Flat File Source"
+              name="Casualties1114csv"
               usesDispositions="true"
               version="1">
               <properties>
@@ -2555,25 +2862,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Casualities1114 to Stage\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="{1B207765-09FC-445B-ABE2-FDF5CE543FCB}:invalid"
-                  connectionManagerRefId="{1B207765-09FC-445B-ABE2-FDF5CE543FCB}:invalid"
+                  refId="Package\Casualities1114 to Stage\Casualties1114csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Casualties1114csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Casualties1114csv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accident_Index]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Accident_Index]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accident_Index]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Accident_Index]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accident_Index]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Accident_Index]"
                       name="Accident_Index"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2588,14 +2895,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Reference]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Vehicle_Reference]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Reference]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Reference]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Reference]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Vehicle_Reference]"
                       name="Vehicle_Reference"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2610,14 +2917,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Reference]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Reference]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Reference]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Reference]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Reference]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Reference]"
                       name="Casualty_Reference"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2632,14 +2939,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Class]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Class]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Class]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Class]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Class]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Class]"
                       name="Casualty_Class"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2654,14 +2961,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Sex_of_Casualty]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Sex_of_Casualty]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sex_of_Casualty]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Sex_of_Casualty]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Sex_of_Casualty]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Sex_of_Casualty]"
                       name="Sex_of_Casualty"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2676,14 +2983,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Casualty]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Age_of_Casualty]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_of_Casualty]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Age_of_Casualty]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Casualty]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Age_of_Casualty]"
                       name="Age_of_Casualty"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2698,14 +3005,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Age_Band_of_Casualty]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Age_Band_of_Casualty]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_Band_of_Casualty]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Age_Band_of_Casualty]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Age_Band_of_Casualty]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Age_Band_of_Casualty]"
                       name="Age_Band_of_Casualty"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2720,14 +3027,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Severity]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Severity]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Severity]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Severity]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Severity]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Severity]"
                       name="Casualty_Severity"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2742,14 +3049,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Location]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Location]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Location]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Location]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Location]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Location]"
                       name="Pedestrian_Location"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2764,14 +3071,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Movement]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Movement]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Movement]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Movement]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Movement]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Movement]"
                       name="Pedestrian_Movement"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2786,14 +3093,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Car_Passenger]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Car_Passenger]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Car_Passenger]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Car_Passenger]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Car_Passenger]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Car_Passenger]"
                       name="Car_Passenger"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2808,14 +3115,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Bus_or_Coach_Passenger]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Bus_or_Coach_Passenger]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Bus_or_Coach_Passenger]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Bus_or_Coach_Passenger]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Bus_or_Coach_Passenger]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Bus_or_Coach_Passenger]"
                       name="Bus_or_Coach_Passenger"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2830,14 +3137,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Road_Maintenance_Worker]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Road_Maintenance_Worker]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Road_Maintenance_Worker]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Road_Maintenance_Worker]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Road_Maintenance_Worker]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Road_Maintenance_Worker]"
                       name="Pedestrian_Road_Maintenance_Worker"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2852,14 +3159,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Type]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Type]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Type]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Type]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Type]"
                       name="Casualty_Type"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2874,14 +3181,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Home_Area_Type]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Home_Area_Type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Home_Area_Type]"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Home_Area_Type]"
                       length="50"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Home_Area_Type]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Home_Area_Type]"
                       name="Casualty_Home_Area_Type"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2899,91 +3206,91 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accident_Index]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Accident_Index]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Accident_Index" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Reference]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Reference]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Vehicle_Reference" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Reference]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Reference]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Casualty_Reference" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Class]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Class]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Casualty_Class" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sex_of_Casualty]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Sex_of_Casualty]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Sex_of_Casualty" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_of_Casualty]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Age_of_Casualty]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Age_of_Casualty" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_Band_of_Casualty]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Age_Band_of_Casualty]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Age_Band_of_Casualty" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Severity]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Severity]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Casualty_Severity" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Location]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Location]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Pedestrian_Location" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Movement]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Movement]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Pedestrian_Movement" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Car_Passenger]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Car_Passenger]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Car_Passenger" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Bus_or_Coach_Passenger]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Bus_or_Coach_Passenger]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Bus_or_Coach_Passenger" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Road_Maintenance_Worker]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Pedestrian_Road_Maintenance_Worker]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Pedestrian_Road_Maintenance_Worker" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Type]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Casualty_Type" />
                     <externalMetadataColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Casualty_Home_Area_Type]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].ExternalColumns[Casualty_Home_Area_Type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -2991,27 +3298,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3098,7 +3405,7 @@
                       cachedLength="50"
                       cachedName="Accident_Index"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accident_Index]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Accident_Index]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Vehicle_Reference]"
                       cachedCodepage="1252"
@@ -3106,7 +3413,7 @@
                       cachedLength="50"
                       cachedName="Vehicle_Reference"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Reference]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Vehicle_Reference]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Casualty_Reference]"
                       cachedCodepage="1252"
@@ -3114,7 +3421,7 @@
                       cachedLength="50"
                       cachedName="Casualty_Reference"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Reference]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Reference]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Reference]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Casualty_Class]"
                       cachedCodepage="1252"
@@ -3122,7 +3429,7 @@
                       cachedLength="50"
                       cachedName="Casualty_Class"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Class]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Class]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Class]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Sex_of_Casualty]"
                       cachedCodepage="1252"
@@ -3130,7 +3437,7 @@
                       cachedLength="50"
                       cachedName="Sex_of_Casualty"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Casualty]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Sex_of_Casualty]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Sex_of_Casualty]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Age_of_Casualty]"
                       cachedCodepage="1252"
@@ -3138,7 +3445,7 @@
                       cachedLength="50"
                       cachedName="Age_of_Casualty"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Casualty]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Casualty]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Age_of_Casualty]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Age_Band_of_Casualty]"
                       cachedCodepage="1252"
@@ -3146,7 +3453,7 @@
                       cachedLength="50"
                       cachedName="Age_Band_of_Casualty"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Casualty]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Age_Band_of_Casualty]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Age_Band_of_Casualty]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Casualty_Severity]"
                       cachedCodepage="1252"
@@ -3154,7 +3461,7 @@
                       cachedLength="50"
                       cachedName="Casualty_Severity"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Severity]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Severity]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Severity]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Pedestrian_Location]"
                       cachedCodepage="1252"
@@ -3162,7 +3469,7 @@
                       cachedLength="50"
                       cachedName="Pedestrian_Location"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Location]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Location]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Location]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Pedestrian_Movement]"
                       cachedCodepage="1252"
@@ -3170,7 +3477,7 @@
                       cachedLength="50"
                       cachedName="Pedestrian_Movement"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Movement]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Movement]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Movement]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Car_Passenger]"
                       cachedCodepage="1252"
@@ -3178,7 +3485,7 @@
                       cachedLength="50"
                       cachedName="Car_Passenger"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Car_Passenger]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Car_Passenger]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Car_Passenger]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Bus_or_Coach_Passenger]"
                       cachedCodepage="1252"
@@ -3186,7 +3493,7 @@
                       cachedLength="50"
                       cachedName="Bus_or_Coach_Passenger"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Bus_or_Coach_Passenger]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Bus_or_Coach_Passenger]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Bus_or_Coach_Passenger]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Pedestrian_Road_Maintenance_Worker]"
                       cachedCodepage="1252"
@@ -3194,7 +3501,7 @@
                       cachedLength="50"
                       cachedName="Pedestrian_Road_Maintenance_Worker"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Road_Maintenance_Worker]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Pedestrian_Road_Maintenance_Worker]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Pedestrian_Road_Maintenance_Worker]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Casualty_Type]"
                       cachedCodepage="1252"
@@ -3202,7 +3509,7 @@
                       cachedLength="50"
                       cachedName="Casualty_Type"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Type]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Type]" />
                     <inputColumn
                       refId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[Casualty_Home_Area_Type]"
                       cachedCodepage="1252"
@@ -3210,7 +3517,7 @@
                       cachedLength="50"
                       cachedName="Casualty_Home_Area_Type"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type]"
-                      lineageId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Casualty_Home_Area_Type]" />
+                      lineageId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output].Columns[Casualty_Home_Area_Type]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3338,7 +3645,7 @@
               refId="Package\Casualities1114 to Stage.Paths[Flat File Source Output]"
               endId="Package\Casualities1114 to Stage\StageTH.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Casualities1114 to Stage\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Casualities1114 to Stage\Casualties1114csv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3358,12 +3665,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Casualty_Severity to Stage\Flat File Source"
+              refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Flat File Source"
+              name="Casualty_Severitycsv"
               usesDispositions="true"
               version="1">
               <properties>
@@ -3378,25 +3685,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Casualty_Severity to Stage\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="{3D4E3F86-E2F1-4F0E-BB4F-AF256223D252}:invalid"
-                  connectionManagerRefId="{3D4E3F86-E2F1-4F0E-BB4F-AF256223D252}:invalid"
+                  refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Casualty_Severitycsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Casualty_Severitycsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3411,14 +3718,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3436,13 +3743,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -3450,27 +3757,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3557,7 +3864,7 @@
                       cachedLength="50"
                       cachedName="code"
                       externalMetadataColumnId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]" />
+                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
                       refId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
@@ -3565,7 +3872,7 @@
                       cachedLength="50"
                       cachedName="label"
                       externalMetadataColumnId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]" />
+                      lineageId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3615,7 +3922,7 @@
               refId="Package\Casualty_Severity to Stage.Paths[Flat File Source Output]"
               endId="Package\Casualty_Severity to Stage\StageTH.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Casualty_Severity to Stage\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Casualty_Severity to Stage\Casualty_Severitycsv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3635,12 +3942,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Casualty_Type to Stage\Flat File Source"
+              refId="Package\Casualty_Type to Stage\Casualty_Typecsv"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Flat File Source"
+              name="Casualty_Typecsv"
               usesDispositions="true"
               version="1">
               <properties>
@@ -3655,25 +3962,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Casualty_Type to Stage\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="{129CECEF-39B0-49C7-B937-C46435647CB5}:invalid"
-                  connectionManagerRefId="{129CECEF-39B0-49C7-B937-C46435647CB5}:invalid"
+                  refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Casualty_Typecsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Casualty_Typecsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="IgnoreFailure"
-                      externalMetadataColumnId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="IgnoreFailure">
                       <properties>
@@ -3688,14 +3995,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="IgnoreFailure"
-                      externalMetadataColumnId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="IgnoreFailure">
                       <properties>
@@ -3713,13 +4020,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -3727,27 +4034,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3834,7 +4141,7 @@
                       cachedLength="50"
                       cachedName="code"
                       externalMetadataColumnId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]" />
+                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
                       refId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
@@ -3842,7 +4149,7 @@
                       cachedLength="50"
                       cachedName="label"
                       externalMetadataColumnId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]" />
+                      lineageId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3892,7 +4199,7 @@
               refId="Package\Casualty_Type to Stage.Paths[Flat File Source Output]"
               endId="Package\Casualty_Type to Stage\StageTH.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Casualty_Type to Stage\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Casualty_Type to Stage\Casualty_Typecsv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -6267,12 +6574,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source"
+              refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Flat File Source"
+              name="Sex_of_Casualtycsv"
               usesDispositions="true"
               version="1">
               <properties>
@@ -6287,25 +6594,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="{F95F43AE-BE1C-4C5C-A47B-5624AE028981}:invalid"
-                  connectionManagerRefId="{F95F43AE-BE1C-4C5C-A47B-5624AE028981}:invalid"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Sex_of_Casualtycsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Sex_of_Casualtycsv]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[code]"
                       name="code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -6320,14 +6627,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[label]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       length="50"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[label]"
                       name="label"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -6345,13 +6652,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[code]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[label]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].ExternalColumns[label]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -6359,27 +6666,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -6466,7 +6773,7 @@
                       cachedLength="50"
                       cachedName="code"
                       externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[code]"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[code]" />
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[code]" />
                     <inputColumn
                       refId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].Columns[label]"
                       cachedCodepage="1252"
@@ -6474,7 +6781,7 @@
                       cachedLength="50"
                       cachedName="label"
                       externalMetadataColumnId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input].ExternalColumns[label]"
-                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[label]" />
+                      lineageId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output].Columns[label]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6524,7 +6831,7 @@
               refId="Package\Sex_of_Casualty_NDS to Stage.Paths[Flat File Source Output]"
               endId="Package\Sex_of_Casualty_NDS to Stage\StageTH.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Sex_of_Casualty_NDS to Stage\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -6538,7 +6845,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Accident1114_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6555,7 +6862,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Accident_Severity_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6572,7 +6879,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Age_Band_of_Casualty_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="6">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6589,7 +6896,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Casualities1114_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="7">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6606,7 +6913,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Casualty_Severity_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="8">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6623,7 +6930,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Casualty_Type_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="9">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6640,7 +6947,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Light_Conditions_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="11">
+      DTS:ThreadHint="7">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6657,7 +6964,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Local_Authority_District_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="12">
+      DTS:ThreadHint="8">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6674,7 +6981,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PCD_LSOA"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="9">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6691,7 +6998,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate postcode"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="10">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6708,7 +7015,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Road_Type_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="11">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6725,7 +7032,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Sex_of_Casualty_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="13">
+      DTS:ThreadHint="12">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6742,7 +7049,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Journey_Purpose_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="10">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6759,7 +7066,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Vehicles1114_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="13">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6776,7 +7083,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Vehicle_Type_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="15">
+      DTS:ThreadHint="14">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6793,7 +7100,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Urban_Rural_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="14">
+      DTS:ThreadHint="15">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8364,131 +8671,127 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Accident to Stage"
           TopLeft="297.14286382101,124.170591677927" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Accident_Severity to Stage"
           TopLeft="526.428582011437,121.111768834896" />
         <NodeLayout
-          Size="229,42"
+          Size="228.8,41.6"
           Id="Package\Age_Band_of_Casualty to Stage"
           TopLeft="353.035721340958,1311.98530887485" />
         <NodeLayout
-          Size="194,42"
+          Size="193.6,41.6"
           Id="Package\Casualities1114 to Stage"
           TopLeft="302.321434763013,1066.4088334176" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Casualty_Severity to Stage"
           TopLeft="663.035726620227,1330.773544051" />
         <NodeLayout
-          Size="190,42"
+          Size="190.4,41.6"
           Id="Package\Casualty_Type to Stage"
           TopLeft="577.321439446236,1062.25589180142" />
         <NodeLayout
-          Size="202,42"
+          Size="201.6,41.6"
           Id="Package\Journey_Purpose to Stage"
           TopLeft="945.214291686915,538.87647819206" />
         <NodeLayout
-          Size="199,42"
+          Size="199.2,41.6"
           Id="Package\Light_Conditions to Stage"
           TopLeft="557.142869270578,326.594122784196" />
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\Local_Authority_District to Stage"
           TopLeft="757.142871654764,124.864711545001" />
         <NodeLayout
-          Size="208,42"
+          Size="208,41.6"
           Id="Package\PCD_LSOA Source to Stage"
           TopLeft="290.714291686915,808.37647819206" />
         <NodeLayout
-          Size="199,42"
+          Size="199.2,41.6"
           Id="Package\Postcode Source to Stage"
           TopLeft="611.714291686915,810.37647819206" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Road_Type to Stage"
           TopLeft="290.000006556511,328.876478192056" />
         <NodeLayout
-          Size="225,42"
+          Size="224.8,41.6"
           Id="Package\Sex_of_Casualty_NDS to Stage"
           TopLeft="868.750015837806,1077.98530559309" />
         <NodeLayout
-          Size="219,42"
+          Size="219.2,41.6"
           Id="Package\Truncate Accident_Severity_Stage"
           TopLeft="513.571438935339,14.0529438040249" />
         <NodeLayout
-          Size="219,42"
+          Size="219.2,41.6"
           Id="Package\Truncate Accident1114_Stage"
           TopLeft="262.857148951414,16.347060753978" />
         <NodeLayout
-          Size="259,42"
+          Size="259.2,41.6"
           Id="Package\Truncate Age_Band_of_Casualty_Stage"
           TopLeft="340.178578264859,1180.4558952655" />
         <NodeLayout
-          Size="219,42"
+          Size="219.2,41.6"
           Id="Package\Truncate Casualities1114_Stage"
           TopLeft="289.464291686915,934.87941980824" />
         <NodeLayout
-          Size="259,42"
+          Size="259.2,41.6"
           Id="Package\Truncate Casualty_Severity_Stage"
           TopLeft="650.178583544128,1199.24413044164" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Truncate Casualty_Type_Stage"
           TopLeft="564.464296370137,930.72647819206" />
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Truncate Light_Conditions_Stage"
           TopLeft="522.857154400982,218.770591860247" />
         <NodeLayout
-          Size="241,58"
+          Size="240.8,57.6"
           Id="Package\Truncate Local_Authority_District_Stage"
           TopLeft="750.000014390265,17.041180621052" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Truncate PCD_LSOA"
           TopLeft="306.714291686915,701.37647819206" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Truncate postcode"
           TopLeft="627.714291686915,713.37647819206" />
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Truncate Road_Type_Stage"
           TopLeft="255.714291686915,221.052947268107" />
         <NodeLayout
-          Size="233,42"
-          Id="Package\Truncate Sex_of_Casualty_Stage"
-          TopLeft="855.892872761707,946.45589198374" />
-        <NodeLayout
-          Size="263,42"
+          Size="263.2,41.6"
           Id="Package\Truncate table Journey_Purpose_Stage"
           TopLeft="908.214291686915,451.87647819206" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\Truncate table Vehicle_Type_Stage"
           TopLeft="596.214291686915,448.87647819206" />
         <NodeLayout
-          Size="244,42"
+          Size="244,41.6"
           Id="Package\Truncate table Vehicles1114_Stage"
           TopLeft="255.714291686915,433.876478192056" />
         <NodeLayout
-          Size="214,42"
+          Size="214.4,41.6"
           Id="Package\Truncate Urban_Rural_Stage"
           TopLeft="775.000014816013,208.711769199536" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Urban_Rural to Stage"
           TopLeft="809.285729685609,316.535300123485" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Vehicle to Stage"
           TopLeft="298.714291686915,569.87647819206" />
         <NodeLayout
-          Size="184,42"
+          Size="184,41.6"
           Id="Package\Vehicle_Type to Stage"
           TopLeft="618.214291686915,541.87647819206" />
         <EdgeLayout
@@ -8536,41 +8839,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1 1]"
-          TopLeft="983.32144429976,988.05589198374">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,89.9294136093561"
-              Start="0,0"
-              End="0,82.4294136093561">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,82.4294136093561" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1 1 1 1]"
           TopLeft="468.607149802909,1222.0558952655">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89.9294136093561"
+              EndConnector="0,89.9294136093501"
               Start="0,0"
-              End="0,82.4294136093561">
+              End="0,82.4294136093501">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,82.4294136093561" />
+                    End="0,82.4294136093501" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8585,26 +8866,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.7428569239019,89.9294136093563"
+              EndConnector="-14.7428569239009,89.9294136093602"
               Start="0,0"
-              End="-14.7428569239019,82.4294136093563">
+              End="-14.7428569239009,82.4294136093602">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.9647068046781" />
+                    End="0,40.9647068046801" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.9647068046781"
-                    Point2="0,44.9647068046781"
-                    Point3="-4,44.9647068046781" />
+                    Point1="0,40.9647068046801"
+                    Point2="0,44.9647068046801"
+                    Point3="-4,44.9647068046801" />
                   <mssgle:LineSegment
-                    End="-10.7428569239019,44.9647068046781" />
+                    End="-10.7428569239009,44.9647068046801" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.7428569239019,44.9647068046781"
-                    Point2="-14.7428569239019,44.9647068046781"
-                    Point3="-14.7428569239019,48.9647068046781" />
+                    Point1="-10.7428569239009,44.9647068046801"
+                    Point2="-14.7428569239009,44.9647068046801"
+                    Point3="-14.7428569239009,48.9647068046801" />
                   <mssgle:LineSegment
-                    End="-14.7428569239019,82.4294136093563" />
+                    End="-14.7428569239009,82.4294136093602" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8903,6 +9184,44 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\Truncate Sex_of_Casualty_Stage"
+          TopLeft="855.892872761707,946.45589198374" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1 1]"
+          TopLeft="972.292872761707,988.05589198374">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.85714307609896,89.92941360935"
+              Start="0,0"
+              End="8.85714307609896,82.42941360935">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.964706804675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.964706804675"
+                    Point2="0,44.964706804675"
+                    Point3="4,44.964706804675" />
+                  <mssgle:LineSegment
+                    End="4.85714307609896,44.964706804675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.85714307609896,44.964706804675"
+                    Point2="8.85714307609896,44.964706804675"
+                    Point3="8.85714307609896,48.964706804675" />
+                  <mssgle:LineSegment
+                    End="8.85714307609896,82.42941360935" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -9026,27 +9345,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118,42"
+          Size="118.4,41.6"
           Id="Package\Age_Band_of_Casualty to Stage\StageTH"
           TopLeft="310.285719212221,247.117650061743" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Age_Band_of_Casualty to Stage\Flat File Source"
-          TopLeft="287.857147759321,139.176472540133" />
+          Size="186.4,41.6"
+          Id="Package\Age_Band_of_Casualty to Stage\Age_Band_of_Casualty"
+          TopLeft="272.857147759321,127.176472540133" />
         <EdgeLayout
           Id="Package\Age_Band_of_Casualty to Stage.Paths[Flat File Source Output]"
-          TopLeft="366.271433485771,180.776472540133">
+          TopLeft="367.771433485771,168.776472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.3411775216102"
+              EndConnector="0,78.34117752161"
               Start="0,0"
-              End="0,58.8411775216102">
+              End="0,70.84117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.8411775216102" />
+                    End="0,70.84117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9064,27 +9383,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Casualities1114 to Stage\Flat File Source"
+          Size="164,41.6"
+          Id="Package\Casualities1114 to Stage\Casualties1114csv"
           TopLeft="287.857147759321,139.176472540133" />
         <NodeLayout
-          Size="141,42"
+          Size="140.8,41.6"
           Id="Package\Casualities1114 to Stage\StageTH"
           TopLeft="296.285719212221,254.117650061743" />
         <EdgeLayout
           Id="Package\Casualities1114 to Stage.Paths[Flat File Source Output]"
-          TopLeft="364.821433485771,181.176472540133">
+          TopLeft="368.271433485771,180.776472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72.94117752161"
+              EndConnector="0,73.34117752161"
               Start="0,0"
-              End="0,65.44117752161">
+              End="0,65.84117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.44117752161" />
+                    End="0,65.84117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9102,27 +9421,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118,42"
+          Size="118.4,41.6"
           Id="Package\Casualty_Severity to Stage\StageTH"
           TopLeft="310.285719212221,247.117650061743" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Casualty_Severity to Stage\Flat File Source"
+          Size="176.8,41.6"
+          Id="Package\Casualty_Severity to Stage\Casualty_Severitycsv"
           TopLeft="287.857147759321,139.176472540133" />
         <EdgeLayout
           Id="Package\Casualty_Severity to Stage.Paths[Flat File Source Output]"
-          TopLeft="366.271433485771,180.776472540133">
+          TopLeft="372.871433485771,180.776472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.3411775216102"
+              EndConnector="0,66.34117752161"
               Start="0,0"
-              End="0,58.8411775216102">
+              End="0,58.84117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.8411775216102" />
+                    End="0,58.84117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9140,27 +9459,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118,42"
+          Size="118.4,41.6"
           Id="Package\Casualty_Type to Stage\StageTH"
           TopLeft="310.285719212221,247.117650061743" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Casualty_Type to Stage\Flat File Source"
+          Size="161.6,41.6"
+          Id="Package\Casualty_Type to Stage\Casualty_Typecsv"
           TopLeft="287.857147759321,139.176472540133" />
         <EdgeLayout
           Id="Package\Casualty_Type to Stage.Paths[Flat File Source Output]"
-          TopLeft="366.271433485771,180.776472540133">
+          TopLeft="369.071433485771,180.776472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.3411775216102"
+              EndConnector="0,66.34117752161"
               Start="0,0"
-              End="0,58.8411775216102">
+              End="0,58.84117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.8411775216102" />
+                    End="0,58.84117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9674,37 +9993,35 @@
     design-time-name="Package\Sex_of_Casualty_NDS to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Sex_of_Casualty_NDS to Stage\Flat File Source"
-          TopLeft="287.857147759321,139.176472540133" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Sex_of_Casualty_NDS to Stage\StageTH"
           TopLeft="310.285719212221,247.117650061743" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Sex_of_Casualty_NDS to Stage\Sex_of_Casualtycsv"
+          TopLeft="287.857147759321,139.176472540133" />
         <EdgeLayout
           Id="Package\Sex_of_Casualty_NDS to Stage.Paths[Flat File Source Output]"
-          TopLeft="366.271433485771,180.776472540133">
+          TopLeft="371.271433485771,180.776472540133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.3411775216102"
+              EndConnector="0,66.34117752161"
               Start="0,0"
-              End="0,58.8411775216102">
+              End="0,58.84117752161">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.8411775216102" />
+                    End="0,58.84117752161" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
