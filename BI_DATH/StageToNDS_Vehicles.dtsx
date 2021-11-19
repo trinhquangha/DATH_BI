@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_Vehicles"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{E4D1DE22-2F26-4957-B998-3E285DC4AEB3}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{8570A7CC-5E49-4322-AF6A-263FEC214128}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -95,7 +95,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -452,7 +452,7 @@ where [refTable].[Accident_Index] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Accident_Index" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LSOA_of_Accident_Location" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Local_Authority_District" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Accident_Severity" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Speed_limit" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Road_Type" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Urban_or_Rural_Area" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Time_Acc" dataType="DT_DBTIME2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="Date_Acc" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Number_of_Vehicles" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Number_of_Casualities" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Light_Conditions" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Accident_Index" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LSOA_of_Accident_Location" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Local_Authority_District" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Accident_Severity" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Speed_limit" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Road_Type" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Urban_or_Rural_Area" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Time_Acc" dataType="DT_DBTIME2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="Date_Acc" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Number_of_Vehicles" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Number_of_Casualities" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Light_Conditions" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1204,7 +1204,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="248,42"
+          Size="248,41.6"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS"
           TopLeft="153,123" />
       </GraphLayout>
@@ -1216,17 +1216,33 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="199,42"
+          Size="136.8,41.6"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Update data"
+          TopLeft="135,540" />
+        <NodeLayout
+          Size="199.2,41.6"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS\Load Vehicles1114_Stage"
           TopLeft="277,69" />
         <NodeLayout
-          Size="245,42"
+          Size="360.8,41.6"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index, Vehicle_Reference in Vehicles_NDS"
+          TopLeft="206,440" />
+        <NodeLayout
+          Size="276,41.6"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Vehicle_Type in VehicleType_NDS"
+          TopLeft="240,158" />
+        <NodeLayout
+          Size="273.6,41.6"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index in Accidents_NDS"
+          TopLeft="244,345" />
+        <NodeLayout
+          Size="244.8,41.6"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS"
           TopLeft="439,546" />
         <NodeLayout
-          Size="276,42"
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Vehicle_Type in VehicleType_NDS"
-          TopLeft="240,158" />
+          Size="312.8,41.6"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Journey_Purpose in JourneyPurpose_NDS"
+          TopLeft="218,255" />
         <EdgeLayout
           Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[OLE DB Source Output]"
           TopLeft="377.25,111">
@@ -1247,90 +1263,6 @@ where Accident_Index=? and Vehicle_Reference=?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="313,42"
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Journey_Purpose in JourneyPurpose_NDS"
-          TopLeft="218,255" />
-        <EdgeLayout
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output]"
-          TopLeft="376.25,200">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="274,42"
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index in Accidents_NDS"
-          TopLeft="244,345" />
-        <EdgeLayout
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output1]"
-          TopLeft="377.75,297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="361,42"
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index, Vehicle_Reference in Vehicles_NDS"
-          TopLeft="206,440" />
-        <EdgeLayout
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output2]"
-          TopLeft="383.75,387">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1369,10 +1301,6 @@ where Accident_Index=? and Vehicle_Reference=?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="137,42"
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Update data"
-          TopLeft="135,540" />
         <EdgeLayout
           Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output3]"
           TopLeft="327.666666666667,482">
@@ -1409,6 +1337,78 @@ where Accident_Index=? and Vehicle_Reference=?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output2]"
+          TopLeft="383.75,387">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output1]"
+          TopLeft="377.75,297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output]"
+          TopLeft="376.25,200">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1426,15 +1426,25 @@ where Accident_Index=? and Vehicle_Reference=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS">
+    design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index, Vehicle_Reference in Vehicles_NDS">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Vehicles_NDS]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1450,29 +1460,6 @@ where Accident_Index=? and Vehicle_Reference=?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[VehicleType_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Journey_Purpose in JourneyPurpose_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[JourneyPurpose_NDS]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -1508,7 +1495,20 @@ where Accident_Index=? and Vehicle_Reference=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index, Vehicle_Reference in Vehicles_NDS">
+    design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Journey_Purpose in JourneyPurpose_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -1518,7 +1518,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Vehicles_NDS]</Value>
+          type="q3:string">[dbo].[JourneyPurpose_NDS]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
