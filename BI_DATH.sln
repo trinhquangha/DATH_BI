@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1684
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "BI_DATH", "BI_DATH\BI_DATH.dtproj", "{B180F7D6-D6C8-49E1-8BEA-72F32E616611}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B180F7D6-D6C8-49E1-8BEA-72F32E616611}.Development|Default.ActiveCfg = Development
+		{B180F7D6-D6C8-49E1-8BEA-72F32E616611}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26D34170-1F23-4ED2-B40B-27BAA89ED805}
+	EndGlobalSection
+EndGlobal

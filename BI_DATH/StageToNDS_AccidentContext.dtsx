@@ -1,0 +1,801 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2021 3:55:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-02THFBQC"
+  DTS:CreatorName="LAPTOP-02THFBQC\thanh quach"
+  DTS:DTSID="{B2D7F826-1982-4268-8D7B-7607833065A3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageToNDS_AccidentContext"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{FAF09826-54D6-446E-91DA-AE135A406D6C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D2B31815-D5AD-41D1-AA3A-B054DC685E19}"
+      DTS:ObjectName="LocalHost.NDS_DATH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=NDS_DATH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.StageTH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0C9B96F3-54C7-4303-9AEE-22ECF21475A9}"
+      DTS:ObjectName="LocalHost.StageTH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=StageTH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Accident_Severity_Stage to Accident_Severity_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{90418739-67DE-4109-ABD0-485D0873E23D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Accident_Severity_Stage to Accident_Severity_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Accident_Severity_NDS insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Accident_Severity_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Severity_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Severity_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Accident_Severity_NDS update"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Accident_Severity_NDS
+set Accident_Severity_Name = ?
+where Accident_Severity_ID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Accident_Severity_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Accident_Severity_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Accident_Severity_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Accident_Severity_NDS]) [refTable]
+where [refTable].[Accident_Severity_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Accident_Severity_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Accident_Severity_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Accident_Severity_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Accident_Severity_Stage to Accident_Severity_NDS.Paths[Lookup Match Output]"
+              endId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Accident_Severity_Stage to Accident_Severity_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Accident_Severity_Stage to Accident_Severity_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="319.2,41.6"
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS"
+          TopLeft="96.4285730707406,118.529413427036" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Accident_Severity_Stage to Accident_Severity_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup"
+          TopLeft="215.714289387878,154.470590401686" />
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage"
+          TopLeft="168.571431442183,57.3529419808239" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS update"
+          TopLeft="36.4285720489463,282.48235559018" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert"
+          TopLeft="292.85714784447,285.329414520957" />
+        <EdgeLayout
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS.Paths[Lookup Match Output]"
+          TopLeft="254.647622721211,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.619050672265,86.4117651884943"
+              Start="0,0"
+              End="-106.619050672265,78.9117651884943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2898397692872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2898397692872"
+                    Point2="0,35.2898397692872"
+                    Point3="-4,35.2898397692872" />
+                  <mssgle:LineSegment
+                    End="-102.619050672265,35.2898397692872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.619050672265,35.2898397692872"
+                    Point2="-106.619050672265,35.2898397692872"
+                    Point3="-106.619050672265,39.2898397692872" />
+                  <mssgle:LineSegment
+                    End="-106.619050672265,78.9117651884943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-101.500912054883,40.2898397692872,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS.Paths[OLE DB Source Output]"
+          TopLeft="268.942860415031,98.9529419808239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5176484208619"
+              Start="0,0"
+              End="0,48.0176484208619">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.0176484208619" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accident_Severity_Stage to Accident_Severity_NDS.Paths[Lookup No Match Output]"
+          TopLeft="289.580956054545,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111.676191789926,89.258824119271"
+              Start="0,0"
+              End="111.676191789926,81.758824119271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4525547452128"
+                    Point2="0,36.4525547452128"
+                    Point3="4,36.4525547452128" />
+                  <mssgle:LineSegment
+                    End="107.676191789926,36.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.676191789926,36.4525547452128"
+                    Point2="111.676191789926,36.4525547452128"
+                    Point3="111.676191789926,40.4525547452128" />
+                  <mssgle:LineSegment
+                    End="111.676191789926,81.758824119271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.0317091762128356,41.4525547452128,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accident_Severity_Stage to Accident_Severity_NDS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Accident_Severity_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accident_Severity_Stage to Accident_Severity_NDS\Accident_Severity_NDS insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

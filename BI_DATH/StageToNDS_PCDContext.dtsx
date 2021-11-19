@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/19/2021 12:23:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JLCM007"
+  DTS:CreatorName="DESKTOP-JLCM007\Admin"
+  DTS:DTSID="{6C996FDF-0829-4330-B0D4-D2F19FBCEB7D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageToNDS_PCDContext"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{5679F21C-6B0D-4AA8-B036-8C0963263E21}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{24099E0B-9AA5-4709-AF01-B14E3E9551C8}"
+      DTS:ObjectName="DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-JLCM007\SQLEXPRESS;Initial Catalog=NDS_DATH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.StageTH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{03853C5A-14AE-4118-8A2E-DD5E1FD9746A}"
+      DTS:ObjectName="DESKTOP-JLCM007\SQLEXPRESS.StageTH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-JLCM007\SQLEXPRESS;Initial Catalog=StageTH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{fcbce3c3-9911-491a-9c51-bff247ff1cdb}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PCD_LSOA_Stage To PCD_LSOA_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Check lsoa11cd in PCD_LSOA_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[PCD_LSOA_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[PCD_LSOA_NDS]) [refTable]
+where [refTable].[Lsoa11cd] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Pcd8" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Lsoa11cd" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input].Columns[lsoa11cd]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="lsoa11cd"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Lsoa11cd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Check pcd8 in Postcode_NCD"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Postcode_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Postcode_NDS]) [refTable]
+where [refTable].[Postcode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Postcode" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="City" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Country_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Regione_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="County" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Inputs[Lookup Input].Columns[pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pcd8"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Postcode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="PCD_LSOA_NDS Insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PCD_LSOA_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].Columns[pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pcd8"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Pcd8]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]" />
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="lsoa11cd"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Lsoa11cd]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pcd8" />
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Lsoa11cd]"
+                      dataType="wstr"
+                      length="50"
+                      name="Lsoa11cd" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="PCD_LSOA_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PCD_LSOA_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].ExternalColumns[pcd8]"
+                      length="50"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]"
+                      name="pcd8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].ExternalColumns[lsoa11cd]"
+                      length="50"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]"
+                      name="lsoa11cd"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].ExternalColumns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pcd8" />
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].ExternalColumns[lsoa11cd]"
+                      dataType="wstr"
+                      length="50"
+                      name="lsoa11cd" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[pcd8]"
+                      name="pcd8" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[lsoa11cd]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[lsoa11cd]"
+                      name="lsoa11cd" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update PCD_LSOA"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update PCD_LSOA_NDS set Lsoa11cd=? where Pcd8=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input].Columns[lsoa11cd]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="lsoa11cd"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]" />
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input].Columns[pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pcd8"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Update PCD_LSOA_NDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PCD_LSOA_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JLCM007\SQLEXPRESS.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input].Columns[pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pcd8"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Pcd8]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]" />
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="lsoa11cd"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Lsoa11cd]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pcd8" />
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Lsoa11cd]"
+                      dataType="wstr"
+                      length="50"
+                      name="Lsoa11cd" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output1]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup No Match Output]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[OLE DB Command Output]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Command Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[OLE DB Source Output]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="257,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\PCD_LSOA_Stage To PCD_LSOA_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS"
+          TopLeft="179,368" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert"
+          TopLeft="597,291" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS"
+          TopLeft="316,212" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD"
+          TopLeft="333,110" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage"
+          TopLeft="353,11" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA"
+          TopLeft="186,292" />
+        <EdgeLayout
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[OLE DB Source Output]"
+          TopLeft="437.75,53">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output1]"
+          TopLeft="439.5,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output]"
+          TopLeft="398.333333333333,254">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-129.333333333333,38"
+              Start="0,0"
+              End="-129.333333333333,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.3491414554374" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.3491414554374"
+                    Point2="0,15.3491414554374"
+                    Point3="-4,15.3491414554374" />
+                  <mssgle:LineSegment
+                    End="-125.333333333333,15.3491414554374" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-125.333333333333,15.3491414554374"
+                    Point2="-129.333333333333,15.3491414554374"
+                    Point3="-129.333333333333,19.3491414554374" />
+                  <mssgle:LineSegment
+                    End="-129.333333333333,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-112.858053385417,20.3491414554374,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[OLE DB Command Output]"
+          TopLeft="272.25,334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup No Match Output]"
+          TopLeft="476.666666666667,254">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="213.833333333333,37"
+              Start="0,0"
+              End="213.833333333333,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9452166802944" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9452166802944"
+                    Point2="0,14.9452166802944"
+                    Point3="4,14.9452166802944" />
+                  <mssgle:LineSegment
+                    End="209.833333333333,14.9452166802944" />
+                  <mssgle:CubicBezierSegment
+                    Point1="209.833333333333,14.9452166802944"
+                    Point2="213.833333333333,14.9452166802944"
+                    Point3="213.833333333333,18.9452166802944" />
+                  <mssgle:LineSegment
+                    End="213.833333333333,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="51.1102799479167,19.9452166802944,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
