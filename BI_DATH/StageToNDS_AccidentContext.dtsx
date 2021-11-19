@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_AccidentContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{FAF09826-54D6-446E-91DA-AE135A406D6C}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{34537C54-2D7C-478F-8391-23FC1F572470}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -610,6 +610,2274 @@ where [refTable].[Accident_Severity_ID] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Light_Conditions_Stage to Light_Conditions_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3e7bdfb0-16d0-4302-905e-aeb3119f8e99}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Light_Conditions_Stage to Light_Conditions_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Light_Conditions_NDS insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Light_Conditions_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions_ID]"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions_Name]"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Light_Conditions_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Light_Conditions_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Light_Conditions_NDS update"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Light_Conditions_NDS
+set Light_Conditions_Name = ?
+where Light_Conditions_ID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Light_Conditions_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Light_Conditions_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Light_Conditions_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Light_Conditions_NDS]) [refTable]
+where [refTable].[Light_Conditions_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Light_Conditions_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Light_Conditions_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Light_Conditions_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Light_Conditions_Stage to Light_Conditions_NDS.Paths[Lookup Match Output]"
+              endId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Light_Conditions_Stage to Light_Conditions_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Light_Conditions_Stage to Light_Conditions_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{46c413b9-8774-4230-94ed-13768dce7aae}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Local_Authority_District_Stage to Local_Authority_District_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Local_Authority_District_NDS insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Local_Authority_District_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[LAD_ID]"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Name]"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[LAD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAD_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Local_Authority_District_NDS update"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Local_Authority_District_NDS
+set LAD_Name = ?
+where LAD_ID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Local_Authority_District_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Local_Authority_District_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Local_Authority_District_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Local_Authority_District_NDS]) [refTable]
+where [refTable].[LAD_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="LAD_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LAD_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">LAD_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS.Paths[Lookup Match Output]"
+              endId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Road_Type_Stage to Road_Type_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6fe21116-334b-45f4-8bc8-19a1d00f3ced}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Road_Type_Stage to Road_Type_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Road_Type_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Road_Type_NDS]) [refTable]
+where [refTable].[Road_Type_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Road_Type_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Road_Type_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Road_Type_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Road_Type_NDS insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Road_Type_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type_ID]"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type_Name]"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Road_Type_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Road_Type_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Road_Type_NDS update"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Road_Type_NDS 
+set Road_Type_Name = ?
+where Road_Type_ID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Road_Type_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Road_Type_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Road_Type_Stage to Road_Type_NDS.Paths[Lookup Match Output]"
+              endId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Road_Type_Stage to Road_Type_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Road_Type_Stage to Road_Type_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Road_Type_Stage to Road_Type_NDS\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Urban_Rural_Stage to Urban_Rural_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{e366b4e6-03dd-4703-9b95-f54cdb436b17}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Urban_Rural_Stage to Urban_Rural_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Urban_Rural_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Urban_Rural_NDS]) [refTable]
+where [refTable].[Urban_Rural_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Urban_Rural_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Urban_Rural_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Urban_Rural_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Urban_Rural_NDS insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Urban_Rural_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Urban_Rural_ID]"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Urban_Rural_Name]"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Urban_Rural_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Urban_Rural_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Urban_Rural_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Urban_Rural_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Urban_Rural_NDS update"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Urban_Rural_NDS
+set Urban_Rural_Name = ?
+where Urban_Rural_ID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Urban_Rural_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Urban_Rural_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Urban_Rural_Stage to Urban_Rural_NDS.Paths[Lookup Match Output]"
+              endId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Urban_Rural_Stage to Urban_Rural_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Urban_Rural_Stage to Urban_Rural_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -622,11 +2890,27 @@ where [refTable].[Accident_Severity_ID] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="319.2,41.6"
           Id="Package\Accident_Severity_Stage to Accident_Severity_NDS"
-          TopLeft="96.4285730707406,118.529413427036" />
+          TopLeft="91.4285729855911,35.9411769746495" />
+        <NodeLayout
+          Size="308.8,41.6"
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS"
+          TopLeft="96.4285730707406,106.847057472216" />
+        <NodeLayout
+          Size="375.2,41.6"
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS"
+          TopLeft="113.571430505539,178.51764386286" />
+        <NodeLayout
+          Size="258.4,41.6"
+          Id="Package\Road_Type_Stage to Road_Type_NDS"
+          TopLeft="448.571436210555,32.0117637299336" />
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS"
+          TopLeft="451.428579116355,99.858820655189" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -754,7 +3038,7 @@ where [refTable].[Accident_Severity_ID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -764,7 +3048,7 @@ where [refTable].[Accident_Severity_ID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -794,6 +3078,698 @@ where [refTable].[Accident_Severity_ID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Light_Conditions_Stage to Light_Conditions_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup"
+          TopLeft="215.714289387878,154.470590401686" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage"
+          TopLeft="168.571431442183,57.3529419808239" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS update"
+          TopLeft="36.4285720489463,282.48235559018" />
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert"
+          TopLeft="292.85714784447,285.329414520957" />
+        <EdgeLayout
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS.Paths[Lookup Match Output]"
+          TopLeft="254.647622721211,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.619050672265,86.4117651884943"
+              Start="0,0"
+              End="-106.619050672265,78.9117651884943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2898397692872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2898397692872"
+                    Point2="0,35.2898397692872"
+                    Point3="-4,35.2898397692872" />
+                  <mssgle:LineSegment
+                    End="-102.619050672265,35.2898397692872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.619050672265,35.2898397692872"
+                    Point2="-106.619050672265,35.2898397692872"
+                    Point3="-106.619050672265,39.2898397692872" />
+                  <mssgle:LineSegment
+                    End="-106.619050672265,78.9117651884943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-101.500912054883,40.2898397692872,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS.Paths[OLE DB Source Output]"
+          TopLeft="262.971431442183,98.9529419808239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.14285794569491,55.5176484208621"
+              Start="0,0"
+              End="9.14285794569491,48.0176484208621">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.758824210431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.758824210431"
+                    Point2="0,27.758824210431"
+                    Point3="4,27.758824210431" />
+                  <mssgle:LineSegment
+                    End="5.14285794569491,27.758824210431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.14285794569491,27.758824210431"
+                    Point2="9.14285794569491,27.758824210431"
+                    Point3="9.14285794569491,31.758824210431" />
+                  <mssgle:LineSegment
+                    End="9.14285794569491,48.0176484208621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Light_Conditions_Stage to Light_Conditions_NDS.Paths[Lookup No Match Output]"
+          TopLeft="289.580956054545,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.276191789925,89.258824119271"
+              Start="0,0"
+              End="109.276191789925,81.758824119271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4525547452128"
+                    Point2="0,36.4525547452128"
+                    Point3="4,36.4525547452128" />
+                  <mssgle:LineSegment
+                    End="105.276191789925,36.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105.276191789925,36.4525547452128"
+                    Point2="109.276191789925,36.4525547452128"
+                    Point3="109.276191789925,40.4525547452128" />
+                  <mssgle:LineSegment
+                    End="109.276191789925,81.758824119271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.16829082378732,41.4525547452128,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Light_Conditions_Stage to Light_Conditions_NDS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Light_Conditions_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Light_Conditions_Stage to Light_Conditions_NDS\Light_Conditions_NDS insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Local_Authority_District_Stage to Local_Authority_District_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup"
+          TopLeft="215.714289387878,154.470590401686" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage"
+          TopLeft="168.571431442183,57.3529419808239" />
+        <NodeLayout
+          Size="252,41.6"
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS update"
+          TopLeft="36.4285720489463,282.48235559018" />
+        <NodeLayout
+          Size="245.6,41.6"
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert"
+          TopLeft="292.85714784447,285.329414520957" />
+        <EdgeLayout
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS.Paths[Lookup Match Output]"
+          TopLeft="254.647622721211,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92.219050672265,86.411765188494"
+              Start="0,0"
+              End="-92.219050672265,78.911765188494">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2898397692871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2898397692871"
+                    Point2="0,35.2898397692871"
+                    Point3="-4,35.2898397692871" />
+                  <mssgle:LineSegment
+                    End="-88.219050672265,35.2898397692871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88.219050672265,35.2898397692871"
+                    Point2="-92.219050672265,35.2898397692871"
+                    Point3="-92.219050672265,39.2898397692871" />
+                  <mssgle:LineSegment
+                    End="-92.219050672265,78.911765188494" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.3009120548825,40.2898397692871,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS.Paths[OLE DB Source Output]"
+          TopLeft="275.942860415031,98.9529419808239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5176484208621"
+              Start="0,0"
+              End="0,48.0176484208621">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.0176484208621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Local_Authority_District_Stage to Local_Authority_District_NDS.Paths[Lookup No Match Output]"
+          TopLeft="289.580956054545,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.076191789925,89.258824119271"
+              Start="0,0"
+              End="126.076191789925,81.758824119271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4525547452128"
+                    Point2="0,36.4525547452128"
+                    Point3="4,36.4525547452128" />
+                  <mssgle:LineSegment
+                    End="122.076191789925,36.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.076191789925,36.4525547452128"
+                    Point2="126.076191789925,36.4525547452128"
+                    Point3="126.076191789925,40.4525547452128" />
+                  <mssgle:LineSegment
+                    End="126.076191789925,81.758824119271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="7.23170917621268,41.4525547452128,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Local_Authority_District_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Local_Authority_District_Stage to Local_Authority_District_NDS\Local_Authority_District_NDS insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Road_Type_Stage to Road_Type_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage"
+          TopLeft="190.000003235681,55.8235301946686" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert"
+          TopLeft="292.85714784447,285.329414520957" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Road_Type_Stage to Road_Type_NDS\Lookup"
+          TopLeft="215.714289387878,154.470590401686" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS update"
+          TopLeft="36.4285720489463,282.48235559018" />
+        <EdgeLayout
+          Id="Package\Road_Type_Stage to Road_Type_NDS.Paths[Lookup Match Output]"
+          TopLeft="254.647622721211,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.819050672265,86.411765188494"
+              Start="0,0"
+              End="-121.819050672265,78.911765188494">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2898397692871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2898397692871"
+                    Point2="0,35.2898397692871"
+                    Point3="-4,35.2898397692871" />
+                  <mssgle:LineSegment
+                    End="-117.819050672265,35.2898397692871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-117.819050672265,35.2898397692871"
+                    Point2="-121.819050672265,35.2898397692871"
+                    Point3="-121.819050672265,39.2898397692871" />
+                  <mssgle:LineSegment
+                    End="-121.819050672265,78.911765188494" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-109.100912054883,40.2898397692871,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Road_Type_Stage to Road_Type_NDS.Paths[OLE DB Source Output]"
+          TopLeft="272.057146311779,97.4235301946686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.0470602070174"
+              Start="0,0"
+              End="0,49.5470602070174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5470602070174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Road_Type_Stage to Road_Type_NDS.Paths[Lookup No Match Output]"
+          TopLeft="289.580956054545,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.8761917899254,89.258824119271"
+              Start="0,0"
+              End="96.8761917899254,81.758824119271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4525547452128"
+                    Point2="0,36.4525547452128"
+                    Point3="4,36.4525547452128" />
+                  <mssgle:LineSegment
+                    End="92.8761917899254,36.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.8761917899254,36.4525547452128"
+                    Point2="96.8761917899254,36.4525547452128"
+                    Point3="96.8761917899254,40.4525547452128" />
+                  <mssgle:LineSegment
+                    End="96.8761917899254,81.758824119271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.36829082378731,41.4525547452128,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Road_Type_Stage to Road_Type_NDS\Road_Type_NDS insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Road_Type_Stage to Road_Type_NDS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Road_Type_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Urban_Rural_Stage to Urban_Rural_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup"
+          TopLeft="215.714289387878,154.470590401686" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage"
+          TopLeft="168.571431442183,57.3529419808239" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS update"
+          TopLeft="36.4285720489463,282.48235559018" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert"
+          TopLeft="292.85714784447,285.329414520957" />
+        <EdgeLayout
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS.Paths[Lookup Match Output]"
+          TopLeft="254.647622721211,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.619050672265,86.4117651884943"
+              Start="0,0"
+              End="-106.619050672265,78.9117651884943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2898397692872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2898397692872"
+                    Point2="0,35.2898397692872"
+                    Point3="-4,35.2898397692872" />
+                  <mssgle:LineSegment
+                    End="-102.619050672265,35.2898397692872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.619050672265,35.2898397692872"
+                    Point2="-106.619050672265,35.2898397692872"
+                    Point3="-106.619050672265,39.2898397692872" />
+                  <mssgle:LineSegment
+                    End="-106.619050672265,78.9117651884943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-101.500912054883,40.2898397692872,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS.Paths[OLE DB Source Output]"
+          TopLeft="253.371431442183,98.9529419808239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.7428579456949,55.5176484208621"
+              Start="0,0"
+              End="18.7428579456949,48.0176484208621">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.758824210431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.758824210431"
+                    Point2="0,27.758824210431"
+                    Point3="4,27.758824210431" />
+                  <mssgle:LineSegment
+                    End="14.7428579456949,27.758824210431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.7428579456949,27.758824210431"
+                    Point2="18.7428579456949,27.758824210431"
+                    Point3="18.7428579456949,31.758824210431" />
+                  <mssgle:LineSegment
+                    End="18.7428579456949,48.0176484208621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Urban_Rural_Stage to Urban_Rural_NDS.Paths[Lookup No Match Output]"
+          TopLeft="289.580956054545,196.070590401686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.6761917899253,89.258824119271"
+              Start="0,0"
+              End="99.6761917899253,81.758824119271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4525547452128"
+                    Point2="0,36.4525547452128"
+                    Point3="4,36.4525547452128" />
+                  <mssgle:LineSegment
+                    End="95.6761917899253,36.4525547452128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.6761917899253,36.4525547452128"
+                    Point2="99.6761917899253,36.4525547452128"
+                    Point3="99.6761917899253,40.4525547452128" />
+                  <mssgle:LineSegment
+                    End="99.6761917899253,81.758824119271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.96829082378733,41.4525547452128,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Urban_Rural_Stage to Urban_Rural_NDS\Urban_Rural_NDS insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Urban_Rural_Stage to Urban_Rural_NDS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Urban_Rural_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
