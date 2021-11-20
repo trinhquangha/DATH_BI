@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_Accidents"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{3C40EF31-5424-4A01-BE9C-6BA863C6E744}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{1883C4A3-CD50-44E6-A57D-CDF3CC4DF4B5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2059,7 +2059,7 @@ where [refTable].[Urban_Rural_ID] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="288.8,41.6"
+          Size="289,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS"
           TopLeft="60,60" />
       </GraphLayout>
@@ -2071,43 +2071,43 @@ where [refTable].[Urban_Rural_ID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Local_Authority_District"
           TopLeft="215.714289387878,548.600004193362" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert"
           TopLeft="370.857148695965,795.647061665578" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Road_Type"
           TopLeft="236.428575454926,257.458825030871" />
         <NodeLayout
-          Size="201.6,41.6"
+          Size="202,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Light_Conditions"
           TopLeft="234.285718275576,355.470592042567" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update"
           TopLeft="116.428573411338,796.270592042566" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Urban_Rural"
           TopLeft="238.571432634276,437.976474363334" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare PCD_LSOA"
           TopLeft="246,630" />
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity"
           TopLeft="225.714289558177,156.658825030871" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage"
           TopLeft="183.571431697632,57.3529419808239" />
         <NodeLayout
-          Size="140.8,41.6"
+          Size="141,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare self"
           TopLeft="270.000004598073,713.247062577178" />
         <EdgeLayout
@@ -2325,30 +2325,6 @@ where [refTable].[Urban_Rural_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output6]"
-          TopLeft="337.000002299037,672">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.247062577178"
-              Start="0,0"
-              End="0,33.747062577178">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.747062577178" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,11.068843788589,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output5]"
           TopLeft="333.357144693939,590.600004193362">
           <EdgeLayout.Curve>
@@ -2369,6 +2345,30 @@ where [refTable].[Urban_Rural_ID] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,10.145310403319,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output6]"
+          TopLeft="337.000002299037,672">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.247062577178"
+              Start="0,0"
+              End="0,33.747062577178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.747062577178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.068843788589,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2486,7 +2486,7 @@ where [refTable].[Urban_Rural_ID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>

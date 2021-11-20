@@ -1,0 +1,3045 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/20/2021 8:30:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ADMIN"
+  DTS:CreatorName="ADMIN\Whisper"
+  DTS:DTSID="{3A55D046-0A5C-4D30-9A19-C6F4E03DE565}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageToNDS_CasualityContext"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{B925DC79-0B49-42FB-B24D-3E4EA539E172}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-L8TT9HI\MSSQL.NDS_DATH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A3DF6FA7-0235-4E5E-BB0C-B0832B22F8BB}"
+      DTS:ObjectName="DESKTOP-L8TT9HI\MSSQL.NDS_DATH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-L8TT9HI\MSSQL;Initial Catalog=NDS_DATH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-L8TT9HI\MSSQL.StageTH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D0CAE5E5-C4D2-41E7-BB53-16CA290B666D}"
+      DTS:ObjectName="DESKTOP-L8TT9HI\MSSQL.StageTH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-L8TT9HI\MSSQL;Initial Catalog=StageTH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3AA97F7F-6775-4185-B05F-54A63A8DA506}"
+      DTS:ObjectName="LocalHost.NDS_DATH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=NDS_DATH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.StageTH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AA0273D6-DD0A-4C53-A90A-1F0295F5A4CE}"
+      DTS:ObjectName="LocalHost.StageTH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=StageTH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{daf788cd-44a8-4667-aba9-1b35aeabe847}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Age_Band_of_Casuality_NDS Insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Age_Band_of_Casualty_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_CasualtyID]"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_CasualtyName]"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_CasualtyID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_Band_of_CasualtyID" />
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_CasualtyName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_Band_of_CasualtyName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Age_Band_of_Casuality_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Age_Band_of_Casuality_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select pcd8, lsoa11cd from PCD_LSOA_Stage</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Age_Band_of_Casualty_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Age_Band_of_Casualty_NDS]) [refTable]
+where [refTable].[Age_Band_of_CasualtyID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Age_Band_of_CasualtyID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Age_Band_of_CasualtyName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Age_Band_of_CasualtyID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Age_Band_of_Casuality_NDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Age_Band_of_Casualty_NDS set Age_Band_of_CasualtyName=?
+where Age_Band_of_CasualtyID=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup Match Output]"
+              endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0b90d4fb-f7c4-4a1c-a104-5bb965e2959b}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Casuality_Severity_Stage To Casuality_Severity_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Casuality_Severity_NDS Insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Casualty_Severity_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_SeverityID]"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_SeverityName]"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_SeverityID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Casualty_SeverityID" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_SeverityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Casualty_SeverityName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Casuality_Severity_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Casuality_Severity_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select pcd8, lsoa11cd from PCD_LSOA_Stage</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Check Casuality_Severity_Stage in Casuality_Severity_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Casualty_Severity_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Casualty_Severity_NDS]) [refTable]
+where [refTable].[Casualty_SeverityID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Casualty_SeverityID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Casualty_SeverityName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Casualty_SeverityID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Casuality_Severity_NDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Casualty_Severity_NDS set Casualty_SeverityName=? where Casualty_SeverityID=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup Match Output]"
+              endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Casuality_Type_Stage To Casuality_Type_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{a88c94b1-d605-4814-9def-2262f6cdfb38}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Casuality_Type_Stage To Casuality_Type_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Casuality_Type_NDS Insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Casualty_Type_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type_ID]"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type_Name]"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Casualty_Type_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Casualty_Type_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Casuality_Type_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Casuality_Type_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select pcd8, lsoa11cd from PCD_LSOA_Stage</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Check Casuality_Type in Casuality_Type_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Casualty_Type_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Casualty_Type_NDS]) [refTable]
+where [refTable].[Casualty_Type_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Casualty_Type_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Casualty_Type_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Casualty_Type_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Casuality_Type_NDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Casualty_Type_NDS set Casualty_Type_Name=?
+ where Casualty_Type_ID=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup Match Output]"
+              endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{264130f2-4e7a-43f3-8dd2-a8f3d4ec8f9a}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sex_of_Casuality_Stage To Sex_of_Casuality_NDS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Sex_of_Casualty_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Sex_of_Casualty_NDS]) [refTable]
+where [refTable].[Sex_of_CasualtyID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Sex_of_CasualtyID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Sex_of_CasualtyName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Inputs[Lookup Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Sex_of_CasualtyID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Sex_of_Casuality_NDS Insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Sex_of_Casualty_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_CasualtyID]"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_CasualtyName]"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_CasualtyID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex_of_CasualtyID" />
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_CasualtyName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex_of_CasualtyName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Sex_of_Casuality_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Sex_of_Casuality_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select pcd8, lsoa11cd from PCD_LSOA_Stage</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      length="50"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]"
+                      name="code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      length="50"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]"
+                      name="label"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].ExternalColumns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="label" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[code]"
+                      name="code" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[label]"
+                      name="label" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Sex_of_Casuality_NDS"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Sex_of_Casualty_NDS set Sex_of_CasualtyName=? where Sex_of_CasualtyID=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[label]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="label"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup Match Output]"
+              endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup No Match Output]"
+              endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[OLE DB Source Output]"
+              endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="376,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS"
+          TopLeft="60,264" />
+        <NodeLayout
+          Size="326,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS"
+          TopLeft="70,359" />
+        <NodeLayout
+          Size="298,42"
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS"
+          TopLeft="61,60" />
+        <NodeLayout
+          Size="315,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS"
+          TopLeft="61,162" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS"
+          TopLeft="183.857143331547,277.647058930777" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert"
+          TopLeft="553.57143016494,281.764706257718" />
+        <NodeLayout
+          Size="404,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS"
+          TopLeft="321,138" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage"
+          TopLeft="406.428572304394,31.1764705346117" />
+        <EdgeLayout
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[OLE DB Source Output]"
+          TopLeft="520.114286152197,72.7764705346117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.2235294653883"
+              Start="0,0"
+              End="0,57.7235294653883">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.7235294653883" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup No Match Output]"
+          TopLeft="589,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.37143016494,102.164706257718"
+              Start="0,0"
+              End="87.37143016494,94.664706257718">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1076924587268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.1076924587268"
+                    Point2="0,41.1076924587268"
+                    Point3="4,41.1076924587268" />
+                  <mssgle:LineSegment
+                    End="83.37143016494,41.1076924587268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.37143016494,41.1076924587268"
+                    Point2="87.37143016494,41.1076924587268"
+                    Point3="87.37143016494,45.1076924587268" />
+                  <mssgle:LineSegment
+                    End="87.37143016494,94.664706257718" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.12067163628,46.1076924587268,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup Match Output]"
+          TopLeft="457,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-147.142856668453,98.047058930777"
+              Start="0,0"
+              End="-147.142856668453,90.547058930777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4508876171174" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.4508876171174"
+                    Point2="0,39.4508876171174"
+                    Point3="-4,39.4508876171174" />
+                  <mssgle:LineSegment
+                    End="-143.142856668453,39.4508876171174" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143.142856668453,39.4508876171174"
+                    Point2="-147.142856668453,39.4508876171174"
+                    Point3="-147.142856668453,43.4508876171174" />
+                  <mssgle:LineSegment
+                    End="-147.142856668453,90.547058930777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-121.762815052976,44.4508876171174,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Age_Band_of_Casualty_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS"
+          TopLeft="183.857143331547,277.647058930777" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert"
+          TopLeft="553.57143016494,281.764706257718" />
+        <NodeLayout
+          Size="354,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS"
+          TopLeft="321,138" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage"
+          TopLeft="406.428572304394,31.1764705346117" />
+        <EdgeLayout
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[OLE DB Source Output]"
+          TopLeft="501.314286152197,72.7764705346117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.2235294653883"
+              Start="0,0"
+              End="0,57.7235294653883">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.7235294653883" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup No Match Output]"
+          TopLeft="555.933333333333,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.038096831607,102.164706257718"
+              Start="0,0"
+              End="108.038096831607,94.664706257718">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1413828345687" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.1413828345687"
+                    Point2="0,41.1413828345687"
+                    Point3="4,41.1413828345687" />
+                  <mssgle:LineSegment
+                    End="104.038096831607,41.1413828345687" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.038096831607,41.1413828345687"
+                    Point2="108.038096831607,41.1413828345687"
+                    Point3="108.038096831607,45.1413828345687" />
+                  <mssgle:LineSegment
+                    End="108.038096831607,94.664706257718" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.78733830294664,46.1413828345687,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup Match Output]"
+          TopLeft="440.466666666667,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-143.00952333512,98.047058930777"
+              Start="0,0"
+              End="-143.00952333512,90.547058930777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4832201357196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.4832201357196"
+                    Point2="0,39.4832201357196"
+                    Point3="-4,39.4832201357196" />
+                  <mssgle:LineSegment
+                    End="-139.00952333512,39.4832201357196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-139.00952333512,39.4832201357196"
+                    Point2="-143.00952333512,39.4832201357196"
+                    Point3="-143.00952333512,43.4832201357196" />
+                  <mssgle:LineSegment
+                    End="-143.00952333512,90.547058930777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.69614838631,44.4832201357196,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Casualty_Severity_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Casuality_Type_Stage To Casuality_Type_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="293,42"
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS"
+          TopLeft="321,138" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS"
+          TopLeft="183.857143331547,277.647058930777" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage"
+          TopLeft="382.857143331547,32.705882320767" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert"
+          TopLeft="553.57143016494,281.764706257718" />
+        <EdgeLayout
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[OLE DB Source Output]"
+          TopLeft="470.678571665773,74.705882320767">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.294117679233"
+              Start="0,0"
+              End="0,55.794117679233">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.794117679233" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup No Match Output]"
+          TopLeft="514.866666666667,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.904763498274,102.164706257718"
+              Start="0,0"
+              End="141.904763498274,94.6647062577179">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1990282843623" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.1990282843623"
+                    Point2="0,41.1990282843623"
+                    Point3="4,41.1990282843623" />
+                  <mssgle:LineSegment
+                    End="137.904763498274,41.1990282843623" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.904763498274,41.1990282843623"
+                    Point2="141.904763498274,41.1990282843623"
+                    Point3="141.904763498274,45.1990282843623" />
+                  <mssgle:LineSegment
+                    End="141.904763498274,94.6647062577179" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="15.1459950303869,46.1990282843623,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup Match Output]"
+          TopLeft="419.933333333333,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130.076190001786,98.0470589307765"
+              Start="0,0"
+              End="-130.076190001786,90.5470589307765">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5385422427371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5385422427371"
+                    Point2="0,39.5385422427371"
+                    Point3="-4,39.5385422427371" />
+                  <mssgle:LineSegment
+                    End="-126.076190001786,39.5385422427371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126.076190001786,39.5385422427371"
+                    Point2="-130.076190001786,39.5385422427371"
+                    Point3="-130.076190001786,43.5385422427371" />
+                  <mssgle:LineSegment
+                    End="-130.076190001786,90.5470589307765" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-113.229481719643,44.5385422427371,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Casualty_Type_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage"
+          TopLeft="382.857143331547,32.705882320767" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS"
+          TopLeft="183.857143331547,277.647058930777" />
+        <NodeLayout
+          Size="343,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS"
+          TopLeft="321,138" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert"
+          TopLeft="553.57143016494,281.764706257718" />
+        <EdgeLayout
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[OLE DB Source Output]"
+          TopLeft="478.057143331547,74.305882320767">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.5428566684531,63.694117679233"
+              Start="0,0"
+              End="14.5428566684531,56.194117679233">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.8470588396165" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.8470588396165"
+                    Point2="0,31.8470588396165"
+                    Point3="4,31.8470588396165" />
+                  <mssgle:LineSegment
+                    End="10.5428566684531,31.8470588396165" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.5428566684531,31.8470588396165"
+                    Point2="14.5428566684531,31.8470588396165"
+                    Point3="14.5428566684531,35.8470588396165" />
+                  <mssgle:LineSegment
+                    End="14.5428566684531,56.194117679233" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup No Match Output]"
+          TopLeft="548.466666666667,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.704763498273,102.164706257718"
+              Start="0,0"
+              End="112.704763498273,94.664706257718">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1503318012525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.1503318012525"
+                    Point2="0,41.1503318012525"
+                    Point3="4,41.1503318012525" />
+                  <mssgle:LineSegment
+                    End="108.704763498273,41.1503318012525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.704763498273,41.1503318012525"
+                    Point2="112.704763498273,41.1503318012525"
+                    Point3="112.704763498273,45.1503318012525" />
+                  <mssgle:LineSegment
+                    End="112.704763498273,94.664706257718" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.545995030386671,46.1503318012525,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup Match Output]"
+          TopLeft="436.733333333333,179.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-142.476190001786,98.047058930777"
+              Start="0,0"
+              End="-142.476190001786,90.547058930777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4918084231622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.4918084231622"
+                    Point2="0,39.4918084231622"
+                    Point3="-4,39.4918084231622" />
+                  <mssgle:LineSegment
+                    End="-138.476190001786,39.4918084231622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-138.476190001786,39.4918084231622"
+                    Point2="-142.476190001786,39.4918084231622"
+                    Point3="-142.476190001786,43.4918084231622" />
+                  <mssgle:LineSegment
+                    End="-142.476190001786,90.547058930777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.429481719643,44.4918084231622,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Sex_of_Casualty_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
