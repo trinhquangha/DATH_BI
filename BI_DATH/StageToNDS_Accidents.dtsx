@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_Accidents"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{1883C4A3-CD50-44E6-A57D-CDF3CC4DF4B5}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{635E9C1F-A83A-43A3-BA02-FEB8A0581FDE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -579,6 +579,18 @@
                       cachedName="Number_of_Casualties"
                       externalMetadataColumnId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualities]"
                       lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]" />
+                    <inputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -644,6 +656,14 @@
                       dataType="str"
                       length="50"
                       name="Light_Conditions" />
+                    <externalMetadataColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -701,7 +721,8 @@ set LSOA_of_Accident_Location = ?,
 	Date_Acc = ?,
 	Number_of_Vehicles = ?,
 	Number_of_Casualities = ?,
-	Light_Conditions = ?
+	Light_Conditions = ?,
+                     UpdatedDate = ?
 where Accident_Index = ?</property>
                 <property
                   dataType="System.Int32"
@@ -724,14 +745,6 @@ where Accident_Index = ?</property>
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].Columns[Accident_Index]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Accident_Index"
-                      externalMetadataColumnId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]" />
                     <inputColumn
                       refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].Columns[LSOA_of_Accident_Location]"
                       cachedDataType="wstr"
@@ -810,6 +823,20 @@ where Accident_Index = ?</property>
                       cachedName="Light_Conditions"
                       externalMetadataColumnId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                       lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Light_Conditions]" />
+                    <inputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Index"
+                      externalMetadataColumnId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -948,10 +975,21 @@ where Accident_Index = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="dbTimeStamp"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                       codePage="1252"
                       dataType="str"
                       length="20"
-                      name="Param_11">
+                      name="Param_12">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -987,6 +1025,101 @@ where Accident_Index = ?</property>
                       refId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Updateddate and CreatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1994,8 +2127,91 @@ where [refTable].[Urban_Rural_ID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Update UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
+            <path
+              refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Derived Column Output]"
+              endId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Derived Column Output1]"
+              endId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Outputs[Derived Column Output]" />
             <path
               refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output]"
               endId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Urban_Rural.Inputs[Lookup Input]"
@@ -2008,19 +2224,19 @@ where [refTable].[Urban_Rural_ID] = ?</property>
               startId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Urban_Rural.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output2]"
-              endId="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare self.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output3]"
               endId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Road_Type.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output4]"
+              refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output3]"
               endId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Light_Conditions.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Road_Type.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output4]"
+              endId="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare self.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output5]"
               endId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare PCD_LSOA.Inputs[Lookup Input]"
@@ -2033,7 +2249,7 @@ where [refTable].[Urban_Rural_ID] = ?</property>
               startId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare PCD_LSOA.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert.Inputs[OLE DB Destination Input]"
+              endId="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Accidents1114_Stage to Accidents1114_NDS\Compare self.Outputs[Lookup No Match Output]" />
             <path
@@ -2045,7 +2261,1711 @@ where [refTable].[Urban_Rural_ID] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\County Lookup and Insert"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6E52EAE7-8A0D-488B-A393-673B2D53B954}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="County Lookup and Insert"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\County Lookup and Insert\Accidents1114_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Accidents1114_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Accident1114_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\County Lookup and Insert\Accidents1114_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageTH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageTH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      name="Accident_Index"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Severity]"
+                      name="Accident_Severity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Local_Authority_(District)]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Local_Authority_(District)]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Local_Authority_(District)]"
+                      name="Local_Authority_(District)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Road_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Road_Type]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Road_Type]"
+                      name="Road_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Speed_limit]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Speed_limit]"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Speed_limit]"
+                      name="Speed_limit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Light_Conditions]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Light_Conditions]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Light_Conditions]"
+                      name="Light_Conditions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Urban_or_Rural_Area]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]"
+                      name="Urban_or_Rural_Area"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[LSOA_of_Accident_Location]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]"
+                      name="LSOA_of_Accident_Location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Vehicles]"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]"
+                      name="Number_of_Vehicles"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Casualties]"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]"
+                      name="Number_of_Casualties"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Time]"
+                      dataType="dbTime2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Time]"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Time]"
+                      name="Time"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Severity" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Local_Authority_(District)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Local_Authority_(District)" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Road_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Road_Type" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Speed_limit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Speed_limit" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Light_Conditions]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Light_Conditions" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Urban_or_Rural_Area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Urban_or_Rural_Area" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[LSOA_of_Accident_Location]"
+                      dataType="wstr"
+                      length="50"
+                      name="LSOA_of_Accident_Location" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Vehicles]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Number_of_Vehicles" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Casualties]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Number_of_Casualties" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].ExternalColumns[Time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Time" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      name="Accident_Index" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Accident_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Accident_Severity]"
+                      name="Accident_Severity" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Number_of_Vehicles]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Number_of_Vehicles]"
+                      name="Number_of_Vehicles" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Number_of_Casualties]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Number_of_Casualties]"
+                      name="Number_of_Casualties" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Time]"
+                      name="Time" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Local_Authority_(District)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Local_Authority_(District)]"
+                      name="Local_Authority_(District)" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Road_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Road_Type]"
+                      name="Road_Type" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Speed_limit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Speed_limit]"
+                      name="Speed_limit" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Light_Conditions]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Light_Conditions]"
+                      name="Light_Conditions" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Urban_or_Rural_Area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[Urban_or_Rural_Area]"
+                      name="Urban_or_Rural_Area" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[LSOA_of_Accident_Location]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[LSOA_of_Accident_Location]"
+                      name="LSOA_of_Accident_Location" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\County Lookup and Insert\Compare County"
+              componentClassID="Microsoft.FuzzyLookup"
+              contactInfo="Fuzzy Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Performs data cleaning tasks such as standardizing data, correcting data, and providing missing values.  Uses fuzzy matching to return one or more close matches from a reference table. For example, lookup customer data by address, even if your input address data does not exactly match your reference address data."
+              name="Compare County"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to reuse an existing fuzzy-match index table or build a new one. The new index table can be temporary, persisted, or persisted and maintained."
+                  name="MatchIndexOptions"
+                  typeConverter="tcMatchIndexOptions">1</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the maximum amount of memory (MB) that this instance of the Fuzzy Lookup transformation can use.  If 0 is given, then the transform will dynamically adjust it's memory usage based upon it's requirements and available system memory."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Null"
+                  description="Specifies the name of the fuzzy-match index table to be reused or the table name in which a newly generated fuzzy-match index table will be written."
+                  name="MatchIndexName"
+                  state="escaped" />
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the reference table or view against which to match incoming records."
+                  name="ReferenceTableName"
+                  state="escaped">_x005B_dbo_x005D_._x005B_Postcode_NDS_x005D_</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to drop an existing fuzzy-match index table if transformation is configured to generate a new table and a table with the same name already exists."
+                  name="DropExistingMatchIndex">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Whether a copy of the reference table should be made for fuzzy match index construction and subsequent matching.  It is strongly recommended that a copy always be made, otherwise unpredictable output may result if the contents of the reference table change during package execution (or between executions if reusing a fuzzy match index).  If this property is set to false, the reference table must additionally have a clustered index built upon an integer identity column."
+                  name="CopyReferenceTable">1</property>
+                <property
+                  dataType="System.UInt32"
+                  description="Specifies the maximum number of fuzzy matches to return for an input record."
+                  name="MaxOutputMatchesPerInput">1</property>
+                <property
+                  dataType="System.Single"
+                  description="Specifies the minimum similarity score required for the match results that the transformation returns."
+                  name="MinSimilarity">0.7</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the set of white-space and punctuation characters used to separate fuzzy match fields into the words used for matching and scoring a fuzzy lookup."
+                  name="Delimiters"
+                  state="escaped">_x0020__x0009__x000D__x000A__x002C_._x003B_:-_x0022__x0027__x0026__x002F__x005C__x0040__x0021__x003F__x0028__x0029__x003C__x003E__x005B__x005D__x007B__x007D__x007C__x0023__x002A__x005E__x0025_</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the metadata of the reference table in XML format."
+                  name="ReferenceMetadataXml"
+                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Postcode_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_50_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_City_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_50_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Country_name_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_50_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Regione_name_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_50_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_County_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_50_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_CreatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_UpdatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, each input record will be directly compared against EVERY record in the reference table.  This may produce slightly better results, but will be extremely slow unless the number of records in the reference table is very small.  Note that the entire reference table will be loaded into main memory if this option is enabled.  This option is primarily intended for debugging purposes and should be used with care."
+                  name="Exhaustive">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, Fuzzy Lookup will partially load the error-tolerant index and the reference table into main memory before execution begins.  This can greatly enhance performance if many input rows are to be processed."
+                  name="WarmCaches">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\County Lookup and Insert\Compare County.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Microsoft SQL Server connection and database in which the fuzzy lookup reference table is located and where the fuzzy match index table will be stored and accessed."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\County Lookup and Insert\Compare County.Inputs[Fuzzy Lookup Input]"
+                  name="Fuzzy Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Inputs[Fuzzy Lookup Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Index"
+                      lineageId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[Accident_Index]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Inputs[Fuzzy Lookup Input].Columns[LSOA_of_Accident_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LSOA_of_Accident_Location"
+                      lineageId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LSOA_of_Accident_Location]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Inputs[Fuzzy Lookup Input].Columns[LAD_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAD_Name"
+                      lineageId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped">County</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output]"
+                  name="Fuzzy Lookup Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[Accident_Index]"
+                      name="Accident_Index">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[Accident_Index]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[LSOA_of_Accident_Location]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[LSOA_of_Accident_Location]"
+                      name="LSOA_of_Accident_Location">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LSOA_of_Accident_Location]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[LAD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[LAD_Name]"
+                      name="LAD_Name">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[Postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[Postcode]"
+                      name="Postcode">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped">Postcode</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Null"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      dataType="r4"
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      name="_Similarity">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      dataType="r4"
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      name="_Confidence">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[_Similarity_LAD_Name]"
+                      dataType="r4"
+                      description="Column-level similarity score for fuzzy join on column &quot;LAD_Name&quot;."
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[_Similarity_LAD_Name]"
+                      name="_Similarity_LAD_Name">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\County Lookup and Insert\Compare PCD_LSOA"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Compare PCD_LSOA"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[PCD_LSOA_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[PCD_LSOA_NDS]) [refTable]
+where [refTable].[Lsoa11cd] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Pcd8" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Lsoa11cd" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\County Lookup and Insert\53:invalid};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\County Lookup and Insert\Compare PCD_LSOA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\County Lookup and Insert\Compare PCD_LSOA.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Compare PCD_LSOA.Inputs[Lookup Input].Columns[LSOA_of_Accident_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LSOA_of_Accident_Location"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Lsoa11cd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\County Lookup and Insert\Compare PCD_LSOA.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\County Lookup and Insert\Compare PCD_LSOA.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\County Lookup and Insert\Compare PCD_LSOA.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\County Lookup and Insert\Local_Authority_(District))"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Local_Authority_(District))"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Local_Authority_District_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\County Lookup and Insert\Local_Authority_(District)).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].ExternalColumns[LAD_ID]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_ID]"
+                      name="LAD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].ExternalColumns[LAD_Name]"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_Name]"
+                      name="LAD_Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].ExternalColumns[LAD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].ExternalColumns[LAD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAD_Name" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[LAD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[LAD_ID]"
+                      name="LAD_ID" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[LAD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[LAD_Name]"
+                      name="LAD_Name" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\County Lookup and Insert\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Left Input].Columns[Local_Authority_(District)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Local_Authority_(District)"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Local_Authority_(District)]" />
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Left Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Index"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Accident_Index]" />
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Left Input].Columns[LSOA_of_Accident_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LSOA_of_Accident_Location"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[LSOA_of_Accident_Location]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Right Input].Columns[LAD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAD_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output].Columns[LAD_ID]" />
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Right Input].Columns[LAD_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAD_Name"
+                      lineageId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output].Columns[LAD_Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[Accident_Index]"
+                      name="Accident_Index">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Left Input].Columns[Accident_Index]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LSOA_of_Accident_Location]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LSOA_of_Accident_Location]"
+                      name="LSOA_of_Accident_Location">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Left Input].Columns[LSOA_of_Accident_Location]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]"
+                      name="LAD_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Right Input].Columns[LAD_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\County Lookup and Insert\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Index"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Accident_Severity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Severity"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Severity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Local_Authority_(District)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Local_Authority_(District)"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Local_Authority_(District)]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Road_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Road_Type"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Road_Type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Speed_limit]"
+                      cachedDataType="i4"
+                      cachedName="Speed_limit"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Speed_limit]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Light_Conditions]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Light_Conditions"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Light_Conditions]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Urban_or_Rural_Area]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Urban_or_Rural_Area"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[LSOA_of_Accident_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LSOA_of_Accident_Location"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Number_of_Vehicles]"
+                      cachedDataType="i4"
+                      cachedName="Number_of_Vehicles"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Number_of_Casualties]"
+                      cachedDataType="i4"
+                      cachedName="Number_of_Casualties"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort.Inputs[Sort Input].Columns[Time]"
+                      cachedDataType="dbTime2"
+                      cachedName="Time"
+                      cachedScale="7"
+                      lineageId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Time]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Accident_Index]"
+                      name="Accident_Index">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Accident_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Accident_Severity]"
+                      name="Accident_Severity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Severity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Local_Authority_(District)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Local_Authority_(District)]"
+                      name="Local_Authority_(District)"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Local_Authority_(District)]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Road_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Road_Type]"
+                      name="Road_Type">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Road_Type]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Speed_limit]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Speed_limit]"
+                      name="Speed_limit">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Speed_limit]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Light_Conditions]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Light_Conditions]"
+                      name="Light_Conditions">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Light_Conditions]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Urban_or_Rural_Area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Urban_or_Rural_Area]"
+                      name="Urban_or_Rural_Area">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[LSOA_of_Accident_Location]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[LSOA_of_Accident_Location]"
+                      name="LSOA_of_Accident_Location">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Number_of_Vehicles]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Number_of_Vehicles]"
+                      name="Number_of_Vehicles">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Number_of_Casualties]"
+                      dataType="i4"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Number_of_Casualties]"
+                      name="Number_of_Casualties">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Time]"
+                      dataType="dbTime2"
+                      lineageId="Package\County Lookup and Insert\Sort.Outputs[Sort Output].Columns[Time]"
+                      name="Time"
+                      scale="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Time]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\County Lookup and Insert\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\County Lookup and Insert\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort 2.Inputs[Sort Input].Columns[LAD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAD_ID"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Sort 2.Inputs[Sort Input].Columns[LAD_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAD_Name"
+                      lineageId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output].Columns[LAD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output].Columns[LAD_ID]"
+                      name="LAD_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output].Columns[LAD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output].Columns[LAD_Name]"
+                      name="LAD_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output].Columns[LAD_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\County Lookup and Insert.Paths[Lookup No Match Output]"
+              endId="Package\County Lookup and Insert\Sort.Inputs[Sort Input]"
+              name="Lookup No Match Output"
+              startId="Package\County Lookup and Insert\Compare PCD_LSOA.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\County Lookup and Insert.Paths[Merge Join Output]"
+              endId="Package\County Lookup and Insert\Compare County.Inputs[Fuzzy Lookup Input]"
+              name="Merge Join Output"
+              startId="Package\County Lookup and Insert\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\County Lookup and Insert.Paths[OLE DB Source Output]"
+              endId="Package\County Lookup and Insert\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\County Lookup and Insert\Local_Authority_(District)).Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\County Lookup and Insert.Paths[OLE DB Source Output1]"
+              endId="Package\County Lookup and Insert\Compare PCD_LSOA.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\County Lookup and Insert\Accidents1114_Stage.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\County Lookup and Insert.Paths[Sort Output]"
+              endId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\County Lookup and Insert\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\County Lookup and Insert.Paths[Sort Output1]"
+              endId="Package\County Lookup and Insert\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\County Lookup and Insert\Sort 2.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EB50CA79-CFFD-4962-8885-7D3FD775E70C}"
+      DTS:From="Package\Accidents1114_Stage to Accidents1114_NDS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\County Lookup and Insert" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2057,11 +3977,49 @@ where [refTable].[Urban_Rural_ID] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="289,42"
+          Size="288.8,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS"
           TopLeft="60,60" />
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\County Lookup and Insert"
+          TopLeft="122.142859222938,149.117649150142" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="204.4,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.1428592229377,47.5176491501422"
+              Start="0,0"
+              End="18.1428592229377,40.0176491501422">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7588245750711" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.7588245750711"
+                    Point2="0,23.7588245750711"
+                    Point3="4,23.7588245750711" />
+                  <mssgle:LineSegment
+                    End="14.1428592229377,23.7588245750711" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.1428592229377,23.7588245750711"
+                    Point2="18.1428592229377,23.7588245750711"
+                    Point3="18.1428592229377,27.7588245750711" />
+                  <mssgle:LineSegment
+                    End="18.1428592229377,40.0176491501422" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2071,48 +4029,44 @@ where [refTable].[Urban_Rural_ID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="235,42"
+          Size="235.2,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Local_Authority_District"
-          TopLeft="215.714289387878,548.600004193362" />
+          TopLeft="448.571436210555,548.600004193362" />
         <NodeLayout
-          Size="178,42"
+          Size="177.6,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert"
-          TopLeft="370.857148695965,795.647061665578" />
+          TopLeft="593.714295348343,900.921572945935" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Road_Type"
-          TopLeft="236.428575454926,257.458825030871" />
+          TopLeft="469.285722277603,257.458825030871" />
         <NodeLayout
-          Size="202,42"
+          Size="201.6,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Light_Conditions"
-          TopLeft="234.285718275576,355.470592042567" />
+          TopLeft="467.142865098253,355.470592042567" />
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update"
-          TopLeft="116.428573411338,796.270592042566" />
+          TopLeft="333.571434252116,898.486279750612" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Urban_Rural"
-          TopLeft="238.571432634276,437.976474363334" />
+          TopLeft="471.428579456953,437.976474363334" />
         <NodeLayout
-          Size="175,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare PCD_LSOA"
-          TopLeft="246,630" />
-        <NodeLayout
-          Size="208,42"
+          Size="208,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity"
-          TopLeft="225.714289558177,156.658825030871" />
+          TopLeft="458.571436380854,156.658825030871" />
         <NodeLayout
-          Size="178,42"
+          Size="177.6,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage"
-          TopLeft="183.571431697632,57.3529419808239" />
+          TopLeft="472.857150909853,57.3529419808239" />
         <NodeLayout
-          Size="141,42"
+          Size="140.8,41.6"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare self"
-          TopLeft="270.000004598073,713.247062577178" />
+          TopLeft="491.190484555401,731.090200082323" />
         <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output4]"
-          TopLeft="324.828575454926,299.058825030871">
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output3]"
+          TopLeft="557.685722277603,299.058825030871">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2147,8 +4101,8 @@ where [refTable].[Urban_Rural_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output3]"
-          TopLeft="327.321432506552,198.658825030871">
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output2]"
+          TopLeft="560.178579329229,198.658825030871">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2171,44 +4125,8 @@ where [refTable].[Urban_Rural_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output2]"
-          TopLeft="318.333337931406,755.247062577178">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-119.404764520068,41.023529465388"
-              Start="0,0"
-              End="-119.404764520068,33.523529465388">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.6855870195828" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.6855870195828"
-                    Point2="0,16.6855870195828"
-                    Point3="-4,16.6855870195828" />
-                  <mssgle:LineSegment
-                    End="-115.404764520068,16.6855870195828" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-115.404764520068,16.6855870195828"
-                    Point2="-119.404764520068,16.6855870195828"
-                    Point3="-119.404764520068,20.6855870195828" />
-                  <mssgle:LineSegment
-                    End="-119.404764520068,33.523529465388" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-107.893768978784,21.6855870195828,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output1]"
-          TopLeft="331.392861011077,479.976474363334">
+          TopLeft="564.250007833754,479.976474363334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2232,7 +4150,7 @@ where [refTable].[Urban_Rural_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output]"
-          TopLeft="332.428575454926,397.070592042567">
+          TopLeft="565.285722277603,397.070592042567">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2256,30 +4174,84 @@ where [refTable].[Urban_Rural_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[OLE DB Source Output]"
-          TopLeft="272.571431697632,99.3529419808239">
+          TopLeft="562.114293645353,98.9529419808239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.1428578605451,57.3058830500471"
+              EndConnector="0,57.7058830500471"
               Start="0,0"
-              End="57.1428578605451,49.8058830500471">
+              End="0,50.2058830500471">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.6529415250235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.6529415250235"
-                    Point2="0,28.6529415250235"
-                    Point3="4,28.6529415250235" />
+                    End="0,50.2058830500471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate"
+          TopLeft="333.571434252116,818.850983091209" />
+        <NodeLayout
+          Size="242.4,41.6"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate"
+          TopLeft="587.45715295344,814.62745216726" />
+        <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output4]"
+          TopLeft="539.457151222067,772.690200082323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-117.485716969951,46.1607830088853"
+              Start="0,0"
+              End="-117.485716969951,38.6607830088853">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="53.1428578605451,28.6529415250235" />
+                    End="0,14.7755094935017" />
                   <mssgle:CubicBezierSegment
-                    Point1="53.1428578605451,28.6529415250235"
-                    Point2="57.1428578605451,28.6529415250235"
-                    Point3="57.1428578605451,32.6529415250235" />
+                    Point1="0,14.7755094935017"
+                    Point2="0,18.7755094935017"
+                    Point3="-4,18.7755094935017" />
                   <mssgle:LineSegment
-                    End="57.1428578605451,49.8058830500471" />
+                    End="-113.485716969951,18.7755094935017" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-113.485716969951,18.7755094935017"
+                    Point2="-117.485716969951,18.7755094935017"
+                    Point3="-117.485716969951,22.7755094935017" />
+                  <mssgle:LineSegment
+                    End="-117.485716969951,38.6607830088853" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.934245203726,23.7755094935017,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Derived Column Output]"
+          TopLeft="418.971434252116,860.450983091209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.0352966594035"
+              Start="0,0"
+              End="0,30.5352966594035">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5352966594035" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2290,43 +4262,81 @@ where [refTable].[Urban_Rural_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup No Match Output]"
-          TopLeft="362.66667126474,755.247062577178">
+          TopLeft="583.723817888734,772.690200082323">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="97.1904774312254,40.3999990884"
+              EndConnector="124.933335064706,41.9372520849363"
               Start="0,0"
-              End="97.1904774312254,32.8999990884">
+              End="124.933335064706,34.4372520849363">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.4319771888303" />
+                    End="0,13.0576238817381" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.4319771888303"
-                    Point2="0,16.4319771888303"
-                    Point3="4,16.4319771888303" />
+                    Point1="0,13.0576238817381"
+                    Point2="0,17.0576238817381"
+                    Point3="4,17.0576238817381" />
                   <mssgle:LineSegment
-                    End="93.1904774312254,16.4319771888303" />
+                    End="120.933335064706,17.0576238817381" />
                   <mssgle:CubicBezierSegment
-                    Point1="93.1904774312254,16.4319771888303"
-                    Point2="97.1904774312254,16.4319771888303"
-                    Point3="97.1904774312254,20.4319771888303" />
+                    Point1="120.933335064706,17.0576238817381"
+                    Point2="124.933335064706,17.0576238817381"
+                    Point3="124.933335064706,21.0576238817381" />
                   <mssgle:LineSegment
-                    End="97.1904774312254,32.8999990884" />
+                    End="124.933335064706,34.4372520849363" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.2111480031373,21.4319771888303,111.6127734375,11.609375"
+              BoundingBox="6.66028081360309,22.0576238817381,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Derived Column Output1]"
+          TopLeft="708.65715295344,856.22745216726">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.1428576050976,44.6941207786751"
+              Start="0,0"
+              End="-26.1428576050976,37.1941207786751">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.3470603893376" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.3470603893376"
+                    Point2="0,22.3470603893376"
+                    Point3="-4,22.3470603893376" />
+                  <mssgle:LineSegment
+                    End="-22.1428576050976,22.3470603893376" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.1428576050976,22.3470603893376"
+                    Point2="-26.1428576050976,22.3470603893376"
+                    Point3="-26.1428576050976,26.3470603893376" />
+                  <mssgle:LineSegment
+                    End="-26.1428576050976,37.1941207786751" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare PCD_LSOA"
+          TopLeft="478.857146822677,630" />
+        <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output5]"
-          TopLeft="333.357144693939,590.600004193362">
+          TopLeft="566.214291516616,590.600004193362">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2350,25 +4360,25 @@ where [refTable].[Urban_Rural_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output6]"
-          TopLeft="337.000002299037,672">
+          TopLeft="564.023815689039,671.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.247062577178"
+              EndConnector="0,59.4902000823233"
               Start="0,0"
-              End="0,33.747062577178">
+              End="0,51.9902000823233">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.747062577178" />
+                    End="0,51.9902000823233" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,11.068843788589,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,20.1904125411617,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2481,29 +4491,6 @@ where [refTable].[Urban_Rural_ID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare PCD_LSOA">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[PCD_LSOA_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity">
     <Properties>
       <Property>
@@ -2562,5 +4549,211 @@ where [refTable].[Urban_Rural_ID] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\County Lookup and Insert">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\County Lookup and Insert\Accidents1114_Stage"
+          TopLeft="289,53" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\County Lookup and Insert\Compare PCD_LSOA"
+          TopLeft="289,154.6" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\County Lookup and Insert\Local_Authority_(District))"
+          TopLeft="526.642863735861,158.335295200843" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\County Lookup and Insert\Sort"
+          TopLeft="410.142863395262,235.670589490085" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\County Lookup and Insert\Sort 2"
+          TopLeft="578.228578350008,229.54117788625" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\County Lookup and Insert\Merge Join"
+          TopLeft="478.000007408006,316.800003099442" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\County Lookup and Insert\Compare County"
+          TopLeft="466.65714784447,387.788237546307" />
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Lookup No Match Output]"
+          TopLeft="404.466666666667,196.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.4761967285956,39.4705894900853"
+              Start="0,0"
+              End="54.4761967285956,31.9705894900853">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.0025557389667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.0025557389667"
+                    Point2="0,16.0025557389667"
+                    Point3="4,16.0025557389667" />
+                  <mssgle:LineSegment
+                    End="50.4761967285956,16.0025557389667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.4761967285956,16.0025557389667"
+                    Point2="54.4761967285956,16.0025557389667"
+                    Point3="54.4761967285956,20.0025557389667" />
+                  <mssgle:LineSegment
+                    End="54.4761967285956,31.9705894900853" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-28.5682883544522,21.0025557389667,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[OLE DB Source Output]"
+          TopLeft="629.435721042935,199.935295200843">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6058826854071"
+              Start="0,0"
+              End="0,22.1058826854071">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1058826854071" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Sort Output]"
+          TopLeft="458.942863395262,277.270589490085">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.5904773460768,39.5294136093562"
+              Start="0,0"
+              End="63.5904773460768,32.0294136093562">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4284085538379" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4284085538379"
+                    Point2="0,23.4284085538379"
+                    Point3="4,23.4284085538379" />
+                  <mssgle:LineSegment
+                    End="59.5904773460768,23.4284085538379" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.5904773460768,23.4284085538379"
+                    Point2="63.5904773460768,23.4284085538379"
+                    Point3="63.5904773460768,27.4284085538379" />
+                  <mssgle:LineSegment
+                    End="63.5904773460768,32.0294136093562" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Sort Output1]"
+          TopLeft="631.428578350008,271.14117788625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.361904275336,45.6588252131914"
+              Start="0,0"
+              End="-68.361904275336,38.1588252131914">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0612061629403" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.0612061629403"
+                    Point2="0,27.0612061629403"
+                    Point3="-4,27.0612061629403" />
+                  <mssgle:LineSegment
+                    End="-64.361904275336,27.0612061629403" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.361904275336,27.0612061629403"
+                    Point2="-68.361904275336,27.0612061629403"
+                    Point3="-68.361904275336,31.0612061629403" />
+                  <mssgle:LineSegment
+                    End="-68.361904275336,38.1588252131914" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Merge Join Output]"
+          TopLeft="543.928577626238,358.400003099442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.3882344468649"
+              Start="0,0"
+              End="0,21.8882344468649">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8882344468649" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[OLE DB Source Output1]"
+          TopLeft="377.2,94.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
