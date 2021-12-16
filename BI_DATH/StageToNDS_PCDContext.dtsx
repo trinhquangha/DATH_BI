@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_PCDContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{E52C2751-8FB3-45B1-ABF4-7DFDC8F4A870}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{0DB554CA-F1B9-4075-AA5D-EDC4011A0BF7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -164,7 +164,7 @@ where [refTable].[Lsoa11cd] = ?</property>
                     <inputColumn
                       refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input].Columns[lsoa11cd]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="11"
                       cachedName="lsoa11cd"
                       lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]">
                       <properties>
@@ -449,10 +449,22 @@ where [refTable].[Postcode] = ?</property>
                     <inputColumn
                       refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="11"
                       cachedName="lsoa11cd"
                       externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Lsoa11cd]"
                       lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]" />
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -467,6 +479,14 @@ where [refTable].[Postcode] = ?</property>
                       dataType="wstr"
                       length="50"
                       name="Lsoa11cd" />
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -573,7 +593,7 @@ where [refTable].[Postcode] = ?</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].ExternalColumns[lsoa11cd]"
-                      length="50"
+                      length="11"
                       lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]"
                       name="lsoa11cd"
                       truncationRowDisposition="FailComponent" />
@@ -589,7 +609,7 @@ where [refTable].[Postcode] = ?</property>
                     <externalMetadataColumn
                       refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].ExternalColumns[lsoa11cd]"
                       dataType="wstr"
-                      length="50"
+                      length="11"
                       name="lsoa11cd" />
                   </externalMetadataColumns>
                 </output>
@@ -608,7 +628,7 @@ where [refTable].[Postcode] = ?</property>
                     <outputColumn
                       refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[lsoa11cd]"
                       dataType="wstr"
-                      length="50"
+                      length="11"
                       lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Error Output].Columns[lsoa11cd]"
                       name="lsoa11cd" />
                     <outputColumn
@@ -646,7 +666,7 @@ where [refTable].[Postcode] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update PCD_LSOA_NDS set Pcd8=? where  Lsoa11cd=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update PCD_LSOA_NDS set Pcd8=?, UpdatedDate = ? where  Lsoa11cd=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -669,13 +689,6 @@ where [refTable].[Postcode] = ?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].Columns[lsoa11cd]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="lsoa11cd"
-                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]" />
-                    <inputColumn
                       refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].Columns[pcd8]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -683,6 +696,19 @@ where [refTable].[Postcode] = ?</property>
                       cachedName="pcd8"
                       externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[pcd8]" />
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].Columns[lsoa11cd]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="lsoa11cd"
+                      externalMetadataColumnId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage.Outputs[OLE DB Source Output].Columns[lsoa11cd]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -701,9 +727,20 @@ where [refTable].[Postcode] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="wstr"
                       length="50"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -746,21 +783,199 @@ where [refTable].[Postcode] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate &amp; CreatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output]"
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Derived Column Output]"
               endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Match Output]" />
+              name="Derived Column Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Outputs[Derived Column Output]" />
             <path
-              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output1]"
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Derived Column Output1]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output]"
               endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output1]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup No Match Output]"
-              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert.Inputs[OLE DB Destination Input]"
+              endId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -800,26 +1015,78 @@ where [refTable].[Postcode] = ?</property>
         <NodeLayout
           Size="187,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert"
-          TopLeft="597,291" />
+          TopLeft="439,429" />
         <NodeLayout
-          Size="217,42"
-          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD"
-          TopLeft="333,110" />
+          Size="140,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate"
+          TopLeft="74,347" />
         <NodeLayout
           Size="166,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Update PCD_LSOA_NDS"
-          TopLeft="186,292" />
+          TopLeft="60,422" />
         <NodeLayout
-          Size="243,42"
-          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS"
-          TopLeft="316,212" />
+          Size="217,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD"
+          TopLeft="214,159" />
         <NodeLayout
           Size="162,42"
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage"
-          TopLeft="353,11" />
+          TopLeft="234,60" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\UpdatedDate &amp; CreatedDate"
+          TopLeft="432,350" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS"
+          TopLeft="197,261" />
+        <EdgeLayout
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Derived Column Output]"
+          TopLeft="143.5,389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Derived Column Output1]"
+          TopLeft="535.5,392">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[OLE DB Source Output]"
-          TopLeft="437.6,52.6">
+          TopLeft="318.6,101.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -836,50 +1103,48 @@ where [refTable].[Postcode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,16.95,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup No Match Output]"
-          TopLeft="476.666666666667,254">
+          TopLeft="357.666666666667,303">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="213.833333333333,37"
+              EndConnector="180.833333333333,47"
               Start="0,0"
-              End="213.833333333333,29.5">
+              End="180.833333333333,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.9452166802944" />
+                    End="0,14.9844644317253" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.9452166802944"
-                    Point2="0,14.9452166802944"
-                    Point3="4,14.9452166802944" />
+                    Point1="0,14.9844644317253"
+                    Point2="0,18.9844644317253"
+                    Point3="4,18.9844644317253" />
                   <mssgle:LineSegment
-                    End="209.833333333333,14.9452166802944" />
+                    End="176.833333333333,18.9844644317253" />
                   <mssgle:CubicBezierSegment
-                    Point1="209.833333333333,14.9452166802944"
-                    Point2="213.833333333333,14.9452166802944"
-                    Point3="213.833333333333,18.9452166802944" />
+                    Point1="176.833333333333,18.9844644317253"
+                    Point2="180.833333333333,18.9844644317253"
+                    Point3="180.833333333333,22.9844644317253" />
                   <mssgle:LineSegment
-                    End="213.833333333333,29.5" />
+                    End="180.833333333333,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="51.1102799479165,19.9452166802944,111.6127734375,11.609375"
+              BoundingBox="34.6102799479167,23.9844644317253,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output1]"
-          TopLeft="439.5,152">
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output]"
+          TopLeft="320.5,201">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -902,115 +1167,43 @@ where [refTable].[Postcode] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output]"
-          TopLeft="398.333333333333,254">
+          Id="Package\PCD_LSOA_Stage To PCD_LSOA_NDS.Paths[Lookup Match Output1]"
+          TopLeft="279.333333333333,303">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-129.333333333333,38"
+              EndConnector="-135.333333333333,44"
               Start="0,0"
-              End="-129.333333333333,30.5">
+              End="-135.333333333333,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.3491414554374" />
+                    End="0,13.772690106296" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.3491414554374"
-                    Point2="0,15.3491414554374"
-                    Point3="-4,15.3491414554374" />
+                    Point1="0,13.772690106296"
+                    Point2="0,17.772690106296"
+                    Point3="-4,17.772690106296" />
                   <mssgle:LineSegment
-                    End="-125.333333333333,15.3491414554374" />
+                    End="-131.333333333333,17.772690106296" />
                   <mssgle:CubicBezierSegment
-                    Point1="-125.333333333333,15.3491414554374"
-                    Point2="-129.333333333333,15.3491414554374"
-                    Point3="-129.333333333333,19.3491414554374" />
+                    Point1="-131.333333333333,17.772690106296"
+                    Point2="-135.333333333333,17.772690106296"
+                    Point3="-135.333333333333,21.772690106296" />
                   <mssgle:LineSegment
-                    End="-129.333333333333,30.5" />
+                    End="-135.333333333333,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-112.858053385416,20.3491414554374,96.3827734375,11.609375"
+              BoundingBox="-115.858053385417,22.772690106296,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_NDS Insert">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check pcd8 in Postcode_NCD">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Postcode_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\PCD_LSOA_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PCD_LSOA_Stage To PCD_LSOA_NDS\Check lsoa11cd in PCD_LSOA_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[PCD_LSOA_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

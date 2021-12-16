@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_PostcodeContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{EBD54332-CBAD-46DC-A1B1-FC23698D33ED}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{2E2E3BEC-1A5A-4E53-B5B0-F6BF71809A70}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -336,6 +336,18 @@ where [refTable].[Postcode] = ?</property>
                       cachedName="region_name"
                       externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Regione_name]"
                       lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[region_name]" />
+                    <inputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -369,6 +381,14 @@ where [refTable].[Postcode] = ?</property>
                       dataType="str"
                       length="50"
                       name="County" />
+                    <externalMetadataColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -623,7 +643,7 @@ where [refTable].[Postcode] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Postcode_NDS set City=?, Country_name=?, Regione_name=?, County=? where Postcode=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Postcode_NDS set City=?, Country_name=?, Regione_name=?, County=?, UpdatedDate = ? where Postcode=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -678,12 +698,18 @@ where [refTable].[Postcode] = ?</property>
                       externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[region_name]" />
                     <inputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[postcode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="postcode"
-                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[postcode]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -742,10 +768,21 @@ where [refTable].[Postcode] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="dbTimeStamp"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_4">
+                      name="Param_5">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -788,16 +825,194 @@ where [refTable].[Postcode] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate &amp; CreatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Postcode_Stage To Postcode_NDS.Paths[Lookup Match Output]"
+              refId="Package\Postcode_Stage To Postcode_NDS.Paths[Derived Column Output]"
               endId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Postcode_Stage To Postcode_NDS.Paths[Derived Column Output1]"
+              endId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Postcode_Stage To Postcode_NDS.Paths[Lookup Match Output]"
+              endId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Postcode_Stage To Postcode_NDS\Check postcode in Postcode_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Postcode_Stage To Postcode_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert.Inputs[OLE DB Destination Input]"
+              endId="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Postcode_Stage To Postcode_NDS\Check postcode in Postcode_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -823,7 +1038,7 @@ where [refTable].[Postcode] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="240.8,41.6"
+          Size="241,42"
           Id="Package\Postcode_Stage To Postcode_NDS"
           TopLeft="60,60" />
       </GraphLayout>
@@ -833,37 +1048,67 @@ where [refTable].[Postcode] = ?</property>
     design-time-name="Package\Postcode_Stage To Postcode_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184,41.6"
-          Id="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS"
-          TopLeft="156,270" />
+          Size="140,42"
+          Id="Package\Postcode_Stage To Postcode_NDS\UpdatedDate"
+          TopLeft="82,282" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert"
-          TopLeft="460,255" />
+          TopLeft="384,371" />
         <NodeLayout
-          Size="236,41.6"
-          Id="Package\Postcode_Stage To Postcode_NDS\Check postcode in Postcode_NDS"
-          TopLeft="321,138" />
-        <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage"
-          TopLeft="355,35" />
+          TopLeft="253,60" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Postcode_Stage To Postcode_NDS\UpdatedDate &amp; CreatedDate"
+          TopLeft="368,285" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Postcode_Stage To Postcode_NDS\Check postcode in Postcode_NDS"
+          TopLeft="217,192" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS"
+          TopLeft="60,353" />
         <EdgeLayout
-          Id="Package\Postcode_Stage To Postcode_NDS.Paths[OLE DB Source Output]"
-          TopLeft="435.5,77">
+          Id="Package\Postcode_Stage To Postcode_NDS.Paths[Derived Column Output]"
+          TopLeft="152,324">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,29"
               Start="0,0"
-              End="0,53.5">
+              End="0,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode_Stage To Postcode_NDS.Paths[OLE DB Source Output]"
+          TopLeft="332.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90"
+              Start="0,0"
+              End="0,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -874,127 +1119,100 @@ where [refTable].[Postcode] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Postcode_Stage To Postcode_NDS.Paths[Lookup No Match Output]"
-          TopLeft="477,180">
+          TopLeft="373,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="72,75"
+              EndConnector="101.5,51"
               Start="0,0"
-              End="72,67.5">
+              End="101.5,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.3030303030303" />
+                    End="0,16.6060606060606" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.3030303030303"
-                    Point2="0,30.3030303030303"
-                    Point3="4,30.3030303030303" />
+                    Point1="0,16.6060606060606"
+                    Point2="0,20.6060606060606"
+                    Point3="4,20.6060606060606" />
                   <mssgle:LineSegment
-                    End="68,30.3030303030303" />
+                    End="97.5,20.6060606060606" />
                   <mssgle:CubicBezierSegment
-                    Point1="68,30.3030303030303"
-                    Point2="72,30.3030303030303"
-                    Point3="72,34.3030303030303" />
+                    Point1="97.5,20.6060606060606"
+                    Point2="101.5,20.6060606060606"
+                    Point3="101.5,24.6060606060606" />
                   <mssgle:LineSegment
-                    End="72,67.5" />
+                    End="101.5,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.80638671875,35.3030303030303,111.6127734375,11.609375"
+              BoundingBox="-5.05638671875,25.6060606060606,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Postcode_Stage To Postcode_NDS.Paths[Lookup Match Output]"
-          TopLeft="401,179.6">
+          TopLeft="297,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-153,90.4"
+              EndConnector="-145,48"
               Start="0,0"
-              End="-153,82.9">
+              End="-145,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5252525252525" />
+                    End="0,15.3939393939394" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.5252525252525"
-                    Point2="0,36.5252525252525"
-                    Point3="-4,36.5252525252525" />
+                    Point1="0,15.3939393939394"
+                    Point2="0,19.3939393939394"
+                    Point3="-4,19.3939393939394" />
                   <mssgle:LineSegment
-                    End="-149,36.5252525252525" />
+                    End="-141,19.3939393939394" />
                   <mssgle:CubicBezierSegment
-                    Point1="-149,36.5252525252525"
-                    Point2="-153,36.5252525252525"
-                    Point3="-153,40.5252525252525" />
+                    Point1="-141,19.3939393939394"
+                    Point2="-145,19.3939393939394"
+                    Point3="-145,23.3939393939394" />
                   <mssgle:LineSegment
-                    End="-153,82.9" />
+                    End="-145,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-124.69138671875,41.5252525252525,96.3827734375,11.609375"
+              BoundingBox="-120.69138671875,24.3939393939394,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode_Stage To Postcode_NDS.Paths[Derived Column Output1]"
+          TopLeft="473.75,327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Postcode_Stage To Postcode_NDS\Check postcode in Postcode_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Postcode_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
