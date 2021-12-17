@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_CasualityContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{B925DC79-0B49-42FB-B24D-3E4EA539E172}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{88BBA64C-85B8-44F5-BB9B-260E5EC53541}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -169,6 +169,18 @@
                       cachedName="label"
                       externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_CasualtyName]"
                       lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -184,6 +196,14 @@
                       dataType="str"
                       length="50"
                       name="Age_Band_of_CasualtyName" />
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -492,6 +512,101 @@ where [refTable].[Age_Band_of_CasualtyID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDate&amp; UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -509,7 +624,7 @@ where [refTable].[Age_Band_of_CasualtyID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Age_Band_of_Casualty_NDS set Age_Band_of_CasualtyName=?
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Age_Band_of_Casualty_NDS set Age_Band_of_CasualtyName=?, UpdatedDate = ?
 where Age_Band_of_CasualtyID=?</property>
                 <property
                   dataType="System.Int32"
@@ -541,12 +656,18 @@ where Age_Band_of_CasualtyID=?</property>
                       externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
                     <inputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -566,10 +687,21 @@ where Age_Band_of_CasualtyID=?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -612,16 +744,99 @@ where Age_Band_of_CasualtyID=?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup Match Output]"
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Derived Column Output]"
               endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Derived Column Output1]"
+              endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup Match Output]"
+              endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+              endId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -735,6 +950,18 @@ where Age_Band_of_CasualtyID=?</property>
                       cachedName="label"
                       externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_SeverityName]"
                       lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -750,6 +977,14 @@ where Age_Band_of_CasualtyID=?</property>
                       dataType="str"
                       length="50"
                       name="Casualty_SeverityName" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1058,6 +1293,101 @@ where [refTable].[Casualty_SeverityID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDate&amp; UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -1075,7 +1405,7 @@ where [refTable].[Casualty_SeverityID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Casualty_Severity_NDS set Casualty_SeverityName=? where Casualty_SeverityID=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Casualty_Severity_NDS set Casualty_SeverityName=?, UpdatedDate= ?  where Casualty_SeverityID=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1106,12 +1436,18 @@ where [refTable].[Casualty_SeverityID] = ?</property>
                       externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[label]" />
                     <inputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage.Outputs[OLE DB Source Output].Columns[code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1131,10 +1467,21 @@ where [refTable].[Casualty_SeverityID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1177,16 +1524,99 @@ where [refTable].[Casualty_SeverityID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup Match Output]"
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Derived Column Output]"
               endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Derived Column Output1]"
+              endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup Match Output]"
+              endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert.Inputs[OLE DB Destination Input]"
+              endId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -1300,6 +1730,18 @@ where [refTable].[Casualty_SeverityID] = ?</property>
                       cachedName="label"
                       externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type_Name]"
                       lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1315,6 +1757,14 @@ where [refTable].[Casualty_SeverityID] = ?</property>
                       dataType="str"
                       length="50"
                       name="Casualty_Type_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1623,6 +2073,101 @@ where [refTable].[Casualty_Type_ID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDate &amp; UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -1640,8 +2185,7 @@ where [refTable].[Casualty_Type_ID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Casualty_Type_NDS set Casualty_Type_Name=?
- where Casualty_Type_ID=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Casualty_Type_NDS set Casualty_Type_Name=?, UpdatedDate = ? where Casualty_Type_ID=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1672,12 +2216,18 @@ where [refTable].[Casualty_Type_ID] = ?</property>
                       externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
                     <inputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage.Outputs[OLE DB Source Output].Columns[code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1697,10 +2247,21 @@ where [refTable].[Casualty_Type_ID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1743,16 +2304,99 @@ where [refTable].[Casualty_Type_ID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup Match Output]"
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Derived Column Output]"
               endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Derived Column Output1]"
+              endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup Match Output]"
+              endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert.Inputs[OLE DB Destination Input]"
+              endId="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -1922,6 +2566,101 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDate &amp; UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -2009,6 +2748,18 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
                       cachedName="label"
                       externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_CasualtyName]"
                       lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2024,6 +2775,14 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
                       dataType="str"
                       length="50"
                       name="Sex_of_CasualtyName" />
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2206,7 +2965,7 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Sex_of_Casualty_NDS set Sex_of_CasualtyName=? where Sex_of_CasualtyID=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Sex_of_Casualty_NDS set Sex_of_CasualtyName=?, UpdatedDate = ? where Sex_of_CasualtyID=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2237,12 +2996,18 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
                       externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[label]" />
                     <inputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage.Outputs[OLE DB Source Output].Columns[code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -2262,10 +3027,21 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2308,16 +3084,99 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup Match Output]"
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Derived Column Output]"
               endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Derived Column Output1]"
+              endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup Match Output]"
+              endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert.Inputs[OLE DB Destination Input]"
+              endId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -2365,23 +3224,23 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
     design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="252,42"
-          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS"
-          TopLeft="183.857143331547,277.647058930777" />
-        <NodeLayout
-          Size="246,42"
-          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert"
-          TopLeft="553.57143016494,281.764706257718" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="404,42"
           Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS"
           TopLeft="321,138" />
         <NodeLayout
+          Size="252,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Update Age_Band_of_Casuality_NDS"
+          TopLeft="185.857143331547,307.647058930777" />
+        <NodeLayout
           Size="222,42"
           Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_Stage"
           TopLeft="406.428572304394,31.1764705346117" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert"
+          TopLeft="552.57143016494,313.764706257718" />
         <EdgeLayout
           Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[OLE DB Source Output]"
           TopLeft="520.114286152197,72.7764705346117">
@@ -2404,101 +3263,152 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\UpdatedDate"
+          TopLeft="244,223" />
         <EdgeLayout
-          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup No Match Output]"
-          TopLeft="589,179.6">
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup Match Output]"
+          TopLeft="457,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.37143016494,102.164706257718"
+              EndConnector="-143,43"
               Start="0,0"
-              End="87.37143016494,94.664706257718">
+              End="-143,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.1076924587268" />
+                    End="0,13.301775147929" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.1076924587268"
-                    Point2="0,41.1076924587268"
-                    Point3="4,41.1076924587268" />
+                    Point1="0,13.301775147929"
+                    Point2="0,17.301775147929"
+                    Point3="-4,17.301775147929" />
                   <mssgle:LineSegment
-                    End="83.37143016494,41.1076924587268" />
+                    End="-139,17.301775147929" />
                   <mssgle:CubicBezierSegment
-                    Point1="83.37143016494,41.1076924587268"
-                    Point2="87.37143016494,41.1076924587268"
-                    Point3="87.37143016494,45.1076924587268" />
+                    Point1="-139,17.301775147929"
+                    Point2="-143,17.301775147929"
+                    Point3="-143,21.301775147929" />
                   <mssgle:LineSegment
-                    End="87.37143016494,94.664706257718" />
+                    End="-143,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-12.12067163628,46.1076924587268,111.6127734375,11.609375"
+              BoundingBox="-119.69138671875,22.301775147929,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup Match Output]"
-          TopLeft="457,179.6">
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Derived Column Output]"
+          TopLeft="312.928571665774,265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-147.142856668453,98.047058930777"
+              EndConnector="0,42.647058930777"
               Start="0,0"
-              End="-147.142856668453,90.547058930777">
+              End="0,35.147058930777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4508876171174" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.4508876171174"
-                    Point2="0,39.4508876171174"
-                    Point3="-4,39.4508876171174" />
+                    End="0,35.147058930777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\CreatedDate&amp; UpdatedDate"
+          TopLeft="595,232" />
+        <EdgeLayout
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Lookup No Match Output]"
+          TopLeft="589,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111,52"
+              Start="0,0"
+              End="111,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-143.142856668453,39.4508876171174" />
+                    End="0,16.9230769230769" />
                   <mssgle:CubicBezierSegment
-                    Point1="-143.142856668453,39.4508876171174"
-                    Point2="-147.142856668453,39.4508876171174"
-                    Point3="-147.142856668453,43.4508876171174" />
+                    Point1="0,16.9230769230769"
+                    Point2="0,20.9230769230769"
+                    Point3="4,20.9230769230769" />
                   <mssgle:LineSegment
-                    End="-147.142856668453,90.547058930777" />
+                    End="107,20.9230769230769" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107,20.9230769230769"
+                    Point2="111,20.9230769230769"
+                    Point3="111,24.9230769230769" />
+                  <mssgle:LineSegment
+                    End="111,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-121.762815052976,44.4508876171174,96.3827734375,11.609375"
+              BoundingBox="-0.306386718749998,25.9230769230769,111.6127734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS.Paths[Derived Column Output1]"
+          TopLeft="700,274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.42856983506,39.764706257718"
+              Start="0,0"
+              End="-24.42856983506,32.264706257718">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.882353128859" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.882353128859"
+                    Point2="0,19.882353128859"
+                    Point3="-4,19.882353128859" />
+                  <mssgle:LineSegment
+                    End="-20.42856983506,19.882353128859" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.42856983506,19.882353128859"
+                    Point2="-24.42856983506,19.882353128859"
+                    Point3="-24.42856983506,23.882353128859" />
+                  <mssgle:LineSegment
+                    End="-24.42856983506,32.264706257718" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Check Age_Band_of_Casuality_Stage in Age_Band_of_Casuality_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2508,7 +3418,7 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2528,27 +3438,40 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age_Band_of_Casuality_Stage To Age_Band_of_Casuality_NDS\Age_Band_of_Casuality_NDS Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="227,42"
-          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS"
-          TopLeft="183.857143331547,277.647058930777" />
-        <NodeLayout
-          Size="221,42"
-          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert"
-          TopLeft="553.57143016494,281.764706257718" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="354,42"
           Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS"
           TopLeft="321,138" />
         <NodeLayout
+          Size="227,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Update Casuality_Severity_NDS"
+          TopLeft="188.857143331547,321.647058930777" />
+        <NodeLayout
           Size="196,42"
           Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_Stage"
           TopLeft="406.428572304394,31.1764705346117" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert"
+          TopLeft="556.57143016494,324.764706257718" />
         <EdgeLayout
           Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[OLE DB Source Output]"
           TopLeft="501.314286152197,72.7764705346117">
@@ -2571,101 +3494,164 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\UpdatedDate"
+          TopLeft="222.857143331547,230.764706257718" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\CreatedDate&amp; UpdatedDate"
+          TopLeft="542.857143331547,232.764706257718" />
         <EdgeLayout
-          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup No Match Output]"
-          TopLeft="555.933333333333,179.6">
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup Match Output]"
+          TopLeft="498,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108.038096831607,102.164706257718"
+              EndConnector="-205.142856668453,50.764706257718"
               Start="0,0"
-              End="108.038096831607,94.664706257718">
+              End="-205.142856668453,43.264706257718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.1413828345687" />
+                    End="0,21.382353128859" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.1413828345687"
-                    Point2="0,41.1413828345687"
-                    Point3="4,41.1413828345687" />
+                    Point1="0,21.382353128859"
+                    Point2="0,25.382353128859"
+                    Point3="-4,25.382353128859" />
                   <mssgle:LineSegment
-                    End="104.038096831607,41.1413828345687" />
+                    End="-201.142856668453,25.382353128859" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.038096831607,41.1413828345687"
-                    Point2="108.038096831607,41.1413828345687"
-                    Point3="108.038096831607,45.1413828345687" />
+                    Point1="-201.142856668453,25.382353128859"
+                    Point2="-205.142856668453,25.382353128859"
+                    Point3="-205.142856668453,29.382353128859" />
                   <mssgle:LineSegment
-                    End="108.038096831607,94.664706257718" />
+                    End="-205.142856668453,43.264706257718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-1.78733830294664,46.1413828345687,111.6127734375,11.609375"
+              BoundingBox="-150.762815052976,30.382353128859,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup Match Output]"
-          TopLeft="440.466666666667,179.6">
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Lookup No Match Output]"
+          TopLeft="555.666666666667,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143.00952333512,98.047058930777"
+              EndConnector="92.1904766648804,52.764706257718"
               Start="0,0"
-              End="-143.00952333512,90.547058930777">
+              End="92.1904766648804,45.264706257718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4832201357196" />
+                    End="0,17.2483294041204" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.4832201357196"
-                    Point2="0,39.4832201357196"
-                    Point3="-4,39.4832201357196" />
+                    Point1="0,17.2483294041204"
+                    Point2="0,21.2483294041204"
+                    Point3="4,21.2483294041204" />
                   <mssgle:LineSegment
-                    End="-139.00952333512,39.4832201357196" />
+                    End="88.1904766648804,21.2483294041204" />
                   <mssgle:CubicBezierSegment
-                    Point1="-139.00952333512,39.4832201357196"
-                    Point2="-143.00952333512,39.4832201357196"
-                    Point3="-143.00952333512,43.4832201357196" />
+                    Point1="88.1904766648804,21.2483294041204"
+                    Point2="92.1904766648804,21.2483294041204"
+                    Point3="92.1904766648804,25.2483294041204" />
                   <mssgle:LineSegment
-                    End="-143.00952333512,90.547058930777" />
+                    End="92.1904766648804,45.264706257718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-119.69614838631,44.4832201357196,96.3827734375,11.609375"
+              BoundingBox="-9.71114838630979,26.2483294041204,111.6127734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Derived Column Output]"
+          TopLeft="292.857143331547,272.764706257718">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,48.882352673059"
+              Start="0,0"
+              End="9.5,41.382352673059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4411763365295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4411763365295"
+                    Point2="0,24.4411763365295"
+                    Point3="4,24.4411763365295" />
+                  <mssgle:LineSegment
+                    End="5.5,24.4411763365295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,24.4411763365295"
+                    Point2="9.5,24.4411763365295"
+                    Point3="9.5,28.4411763365295" />
+                  <mssgle:LineSegment
+                    End="9.5,41.382352673059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casuality_Severity_Stage To Casuality_Severity_NDS.Paths[Derived Column Output1]"
+          TopLeft="647.857143331547,274.764706257718">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.214286833393,50"
+              Start="0,0"
+              End="19.214286833393,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="15.214286833393,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.214286833393,25"
+                    Point2="19.214286833393,25"
+                    Point3="19.214286833393,29" />
+                  <mssgle:LineSegment
+                    End="19.214286833393,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Check Casuality_Severity_Stage in Casuality_Severity_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2675,7 +3661,7 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2695,19 +3681,32 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Casuality_Severity_Stage To Casuality_Severity_NDS\Casuality_Severity_NDS Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Casuality_Type_Stage To Casuality_Type_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="293,42"
           Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Check Casuality_Type in Casuality_Type_NDS"
-          TopLeft="321,138" />
+          TopLeft="324,138" />
         <NodeLayout
           Size="212,42"
           Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Update Casuality_Type_NDS"
-          TopLeft="183.857143331547,277.647058930777" />
+          TopLeft="167.857143331547,334.647058930777" />
         <NodeLayout
           Size="182,42"
           Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_Stage"
@@ -2715,10 +3714,10 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
         <NodeLayout
           Size="206,42"
           Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\Casuality_Type_NDS Insert"
-          TopLeft="553.57143016494,281.764706257718" />
+          TopLeft="558.57143016494,354.764706257718" />
         <EdgeLayout
           Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[OLE DB Source Output]"
-          TopLeft="470.678571665773,74.705882320767">
+          TopLeft="472.178571665773,74.705882320767">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2738,76 +3737,128 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\UpdatedDate"
+          TopLeft="204,246" />
         <EdgeLayout
-          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup No Match Output]"
-          TopLeft="514.866666666667,179.6">
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup Match Output]"
+          TopLeft="423,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="141.904763498274,102.164706257718"
+              EndConnector="-149,66"
               Start="0,0"
-              End="141.904763498274,94.6647062577179">
+              End="-149,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.1990282843623" />
+                    End="0,22.6150712830957" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.1990282843623"
-                    Point2="0,41.1990282843623"
-                    Point3="4,41.1990282843623" />
+                    Point1="0,22.6150712830957"
+                    Point2="0,26.6150712830957"
+                    Point3="-4,26.6150712830957" />
                   <mssgle:LineSegment
-                    End="137.904763498274,41.1990282843623" />
+                    End="-145,26.6150712830957" />
                   <mssgle:CubicBezierSegment
-                    Point1="137.904763498274,41.1990282843623"
-                    Point2="141.904763498274,41.1990282843623"
-                    Point3="141.904763498274,45.1990282843623" />
+                    Point1="-145,26.6150712830957"
+                    Point2="-149,26.6150712830957"
+                    Point3="-149,30.6150712830957" />
                   <mssgle:LineSegment
-                    End="141.904763498274,94.6647062577179" />
+                    End="-149,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="15.1459950303869,46.1990282843623,111.6127734375,11.609375"
+              BoundingBox="-122.69138671875,31.6150712830957,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup Match Output]"
-          TopLeft="419.933333333333,179.6">
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Derived Column Output]"
+          TopLeft="273.928571665774,288">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-130.076190001786,98.0470589307765"
+              EndConnector="0,46.647058930777"
               Start="0,0"
-              End="-130.076190001786,90.5470589307765">
+              End="0,39.147058930777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5385422427371" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5385422427371"
-                    Point2="0,39.5385422427371"
-                    Point3="-4,39.5385422427371" />
+                    End="0,39.147058930777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS\CreatedDate &amp; UpdatedDate"
+          TopLeft="561,266" />
+        <EdgeLayout
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Lookup No Match Output]"
+          TopLeft="518,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="149.5,86"
+              Start="0,0"
+              End="149.5,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-126.076190001786,39.5385422427371" />
+                    End="0,30.6802443991853" />
                   <mssgle:CubicBezierSegment
-                    Point1="-126.076190001786,39.5385422427371"
-                    Point2="-130.076190001786,39.5385422427371"
-                    Point3="-130.076190001786,43.5385422427371" />
+                    Point1="0,30.6802443991853"
+                    Point2="0,34.6802443991853"
+                    Point3="4,34.6802443991853" />
                   <mssgle:LineSegment
-                    End="-130.076190001786,90.5470589307765" />
+                    End="145.5,34.6802443991853" />
+                  <mssgle:CubicBezierSegment
+                    Point1="145.5,34.6802443991853"
+                    Point2="149.5,34.6802443991853"
+                    Point3="149.5,38.6802443991853" />
+                  <mssgle:LineSegment
+                    End="149.5,78.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-113.229481719643,44.5385422427371,96.3827734375,11.609375"
+              BoundingBox="18.94361328125,39.6802443991853,111.6127734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Casuality_Type_Stage To Casuality_Type_NDS.Paths[Derived Column Output1]"
+          TopLeft="664.53571508247,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.764706257718"
+              Start="0,0"
+              End="0,39.264706257718">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.264706257718" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2866,23 +3917,23 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
     design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="190,42"
-          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage"
-          TopLeft="382.857143331547,32.705882320767" />
+          Size="215,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert"
+          TopLeft="553.57143016494,337.764706257718" />
         <NodeLayout
           Size="221,42"
           Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Update Sex_of_Casuality_NDS"
-          TopLeft="183.857143331547,277.647058930777" />
+          TopLeft="163.857143331547,327.647058930777" />
         <NodeLayout
           Size="343,42"
           Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Check Sex_of_Casuality_Stage in Sex_of_Casuality_NDS"
           TopLeft="321,138" />
         <NodeLayout
-          Size="215,42"
-          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert"
-          TopLeft="553.57143016494,281.764706257718" />
+          Size="190,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage"
+          TopLeft="382.857143331547,32.705882320767" />
         <EdgeLayout
           Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[OLE DB Source Output]"
           TopLeft="478.057143331547,74.305882320767">
@@ -2917,83 +3968,147 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\UpdatedDate"
+          TopLeft="226.857143331547,228.764706257718" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\CreatedDate &amp; UpdatedDate"
+          TopLeft="556.857143331547,234.764706257718" />
         <EdgeLayout
-          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup No Match Output]"
-          TopLeft="548.466666666667,179.6">
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup Match Output]"
+          TopLeft="492.5,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="112.704763498273,102.164706257718"
+              EndConnector="-195.642856668453,48.764706257718"
               Start="0,0"
-              End="112.704763498273,94.664706257718">
+              End="-195.642856668453,41.264706257718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.1503318012525" />
+                    End="0,20.382353128859" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.1503318012525"
-                    Point2="0,41.1503318012525"
-                    Point3="4,41.1503318012525" />
+                    Point1="0,20.382353128859"
+                    Point2="0,24.382353128859"
+                    Point3="-4,24.382353128859" />
                   <mssgle:LineSegment
-                    End="108.704763498273,41.1503318012525" />
+                    End="-191.642856668453,24.382353128859" />
                   <mssgle:CubicBezierSegment
-                    Point1="108.704763498273,41.1503318012525"
-                    Point2="112.704763498273,41.1503318012525"
-                    Point3="112.704763498273,45.1503318012525" />
+                    Point1="-191.642856668453,24.382353128859"
+                    Point2="-195.642856668453,24.382353128859"
+                    Point3="-195.642856668453,28.382353128859" />
                   <mssgle:LineSegment
-                    End="112.704763498273,94.664706257718" />
+                    End="-195.642856668453,41.264706257718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0.545995030386671,46.1503318012525,111.6127734375,11.609375"
+              BoundingBox="-146.012815052976,29.382353128859,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup Match Output]"
-          TopLeft="436.733333333333,179.6">
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Lookup No Match Output]"
+          TopLeft="548.333333333333,180">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-142.476190001786,98.047058930777"
+              EndConnector="115.023809998214,54.764706257718"
               Start="0,0"
-              End="-142.476190001786,90.547058930777">
+              End="115.023809998214,47.264706257718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4918084231622" />
+                    End="0,18.0584481386281" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.4918084231622"
-                    Point2="0,39.4918084231622"
-                    Point3="-4,39.4918084231622" />
+                    Point1="0,18.0584481386281"
+                    Point2="0,22.0584481386281"
+                    Point3="4,22.0584481386281" />
                   <mssgle:LineSegment
-                    End="-138.476190001786,39.4918084231622" />
+                    End="111.023809998214,22.0584481386281" />
                   <mssgle:CubicBezierSegment
-                    Point1="-138.476190001786,39.4918084231622"
-                    Point2="-142.476190001786,39.4918084231622"
-                    Point3="-142.476190001786,43.4918084231622" />
+                    Point1="111.023809998214,22.0584481386281"
+                    Point2="115.023809998214,22.0584481386281"
+                    Point3="115.023809998214,26.0584481386281" />
                   <mssgle:LineSegment
-                    End="-142.476190001786,90.547058930777" />
+                    End="115.023809998214,47.264706257718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-119.429481719643,44.4918084231622,96.3827734375,11.609375"
+              BoundingBox="1.70551828035689,27.0584481386281,111.6127734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Derived Column Output]"
+          TopLeft="296.857143331547,270.764706257718">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.5,56.882352673059"
+              Start="0,0"
+              End="-22.5,49.382352673059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4411763365295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4411763365295"
+                    Point2="0,28.4411763365295"
+                    Point3="-4,28.4411763365295" />
+                  <mssgle:LineSegment
+                    End="-18.5,28.4411763365295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,28.4411763365295"
+                    Point2="-22.5,28.4411763365295"
+                    Point3="-22.5,32.4411763365295" />
+                  <mssgle:LineSegment
+                    End="-22.5,49.382352673059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS.Paths[Derived Column Output1]"
+          TopLeft="662.214286748243,276.764706257718">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage">
+    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3011,7 +4126,7 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3021,7 +4136,7 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3029,7 +4144,7 @@ where [refTable].[Sex_of_CasualtyID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_NDS Insert">
+    design-time-name="Package\Sex_of_Casuality_Stage To Sex_of_Casuality_NDS\Sex_of_Casuality_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
