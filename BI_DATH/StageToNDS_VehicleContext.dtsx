@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_VehicleContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{81D784AB-0882-4F0B-A57B-7447F2DC98CF}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B3CFA43C-B8F0-4E1B-B46B-5F3148D1A946}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -57,6 +57,101 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDate, UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS"
               componentClassID="Microsoft.OLEDBDestination"
@@ -145,6 +240,18 @@
                       cachedName="label"
                       externalMetadataColumnId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_Name]"
                       lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Load Journey_Purpose_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -160,6 +267,14 @@
                       dataType="str"
                       length="50"
                       name="Journey_Purpose_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -485,7 +600,7 @@ where [refTable].[Journey_Purpose_ID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update JourneyPurpose_NDS set Journey_Purpose_Name=? where Journey_Purpose_ID=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update JourneyPurpose_NDS set Journey_Purpose_Name=?, UpdatedDate=? where Journey_Purpose_ID=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -516,12 +631,18 @@ where [refTable].[Journey_Purpose_ID] = ?</property>
                       externalMetadataColumnId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Load Journey_Purpose_Stage.Outputs[OLE DB Source Output].Columns[label]" />
                     <inputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Load Journey_Purpose_Stage.Outputs[OLE DB Source Output].Columns[code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -541,10 +662,21 @@ where [refTable].[Journey_Purpose_ID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -587,16 +719,99 @@ where [refTable].[Journey_Purpose_ID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Lookup Match Output]"
+              refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Derived Column Output]"
+              endId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Derived Column Output1]"
               endId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Lookup Match Output]"
+              endId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Lookup Journey_Purpose_ID in JourneyPurpose_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS.Inputs[OLE DB Destination Input]"
+              endId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Lookup Journey_Purpose_ID in JourneyPurpose_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -622,6 +837,101 @@ where [refTable].[Journey_Purpose_ID] = ?</property>
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDate, UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS"
               componentClassID="Microsoft.OLEDBDestination"
@@ -710,6 +1020,18 @@ where [refTable].[Journey_Purpose_ID] = ?</property>
                       cachedName="label"
                       externalMetadataColumnId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type_Name]"
                       lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\Load Vehicle_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
+                    <inputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -725,6 +1047,14 @@ where [refTable].[Journey_Purpose_ID] = ?</property>
                       dataType="str"
                       length="50"
                       name="Vehicle_Type_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1050,7 +1380,7 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update VehicleType_NDS set Vehicle_Type_Name=? where Vehicle_Type_ID=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update VehicleType_NDS set Vehicle_Type_Name=?, UpdatedDate=? where Vehicle_Type_ID=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1081,12 +1411,18 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
                       externalMetadataColumnId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\Load Vehicle_Type_Stage.Outputs[OLE DB Source Output].Columns[label]" />
                     <inputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].Columns[code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="code"
-                      externalMetadataColumnId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\Load Vehicle_Type_Stage.Outputs[OLE DB Source Output].Columns[code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1106,10 +1442,21 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1152,16 +1499,99 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Lookup Match Output]"
+              refId="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Derived Column Output]"
+              endId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Derived Column Output1]"
               endId="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Lookup Match Output]"
+              endId="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Vehicle_Type_Stage to VehicleType_NDS\Lookup Vehicle_Type_ID in VehicleType_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS.Inputs[OLE DB Destination Input]"
+              endId="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Vehicle_Type_Stage to VehicleType_NDS\Lookup Vehicle_Type_ID in VehicleType_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -1201,59 +1631,15 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
     design-time-name="Package\Journey_Purpose_Stage to JourneyPurpose_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="330,42"
           Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Lookup Journey_Purpose_ID in JourneyPurpose_NDS"
           TopLeft="231,181" />
         <NodeLayout
-          Size="137,42"
-          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data"
-          TopLeft="202,306" />
-        <NodeLayout
           Size="218,42"
           Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Load Journey_Purpose_Stage"
           TopLeft="283,70" />
-        <NodeLayout
-          Size="324,42"
-          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS"
-          TopLeft="425,304" />
-        <EdgeLayout
-          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Lookup Match Output]"
-          TopLeft="342.333333333333,223">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-71.8333333333333,83"
-              Start="0,0"
-              End="-71.8333333333333,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.4402895054282" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.4402895054282"
-                    Point2="0,33.4402895054282"
-                    Point3="-4,33.4402895054282" />
-                  <mssgle:LineSegment
-                    End="-67.8333333333333,33.4402895054282" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-67.8333333333333,33.4402895054282"
-                    Point2="-71.8333333333333,33.4402895054282"
-                    Point3="-71.8333333333333,37.4402895054282" />
-                  <mssgle:LineSegment
-                    End="-71.8333333333333,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-84.1080533854167,38.4402895054282,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[OLE DB Source Output]"
           TopLeft="394,112">
@@ -1276,39 +1662,147 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Update data"
+          TopLeft="167,382" />
+        <NodeLayout
+          Size="324,42"
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\Insert new journet purpose to JourneyPurpose_NDS"
+          TopLeft="403,381" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\CreatedDate, UpdatedDate"
+          TopLeft="464,288" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS\UpdatedDate"
+          TopLeft="178,284" />
         <EdgeLayout
-          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Lookup No Match Output]"
-          TopLeft="449.666666666667,223">
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Derived Column Output]"
+          TopLeft="566,330">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="137.333333333333,81"
+              EndConnector="0,51"
               Start="0,0"
-              End="137.333333333333,73.5">
+              End="0,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.6344993968637" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.6344993968637"
-                    Point2="0,32.6344993968637"
-                    Point3="4,32.6344993968637" />
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Derived Column Output1]"
+          TopLeft="248,326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.5,56"
+              Start="0,0"
+              End="-12.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="133.333333333333,32.6344993968637" />
+                    End="0,24" />
                   <mssgle:CubicBezierSegment
-                    Point1="133.333333333333,32.6344993968637"
-                    Point2="137.333333333333,32.6344993968637"
-                    Point3="137.333333333333,36.6344993968637" />
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="-4,28" />
                   <mssgle:LineSegment
-                    End="137.333333333333,73.5" />
+                    End="-8.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.5,28"
+                    Point2="-12.5,28"
+                    Point3="-12.5,32" />
+                  <mssgle:LineSegment
+                    End="-12.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Lookup Match Output]"
+          TopLeft="396,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-148,61"
+              Start="0,0"
+              End="-148,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
+                  <mssgle:LineSegment
+                    End="-144,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-144,30.5"
+                    Point2="-148,30.5"
+                    Point3="-148,34.5" />
+                  <mssgle:LineSegment
+                    End="-148,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="12.8602799479165,37.6344993968637,111.6127734375,11.609375"
+              BoundingBox="-122.19138671875,35.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Journey_Purpose_Stage to JourneyPurpose_NDS.Paths[Lookup No Match Output]"
+          TopLeft="449.666666666667,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.333333333333,65"
+              Start="0,0"
+              End="117.333333333333,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1881785283474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1881785283474"
+                    Point2="0,26.1881785283474"
+                    Point3="4,26.1881785283474" />
+                  <mssgle:LineSegment
+                    End="113.333333333333,26.1881785283474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.333333333333,26.1881785283474"
+                    Point2="117.333333333333,26.1881785283474"
+                    Point3="117.333333333333,30.1881785283474" />
+                  <mssgle:LineSegment
+                    End="117.333333333333,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.86027994791669,31.1881785283474,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1319,59 +1813,15 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
     design-time-name="Package\Vehicle_Type_Stage to VehicleType_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="293,42"
           Id="Package\Vehicle_Type_Stage to VehicleType_NDS\Lookup Vehicle_Type_ID in VehicleType_NDS"
           TopLeft="231,181" />
         <NodeLayout
-          Size="137,42"
-          Id="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data"
-          TopLeft="202,306" />
-        <NodeLayout
           Size="200,42"
           Id="Package\Vehicle_Type_Stage to VehicleType_NDS\Load Vehicle_Type_Stage"
           TopLeft="283,70" />
-        <NodeLayout
-          Size="287,42"
-          Id="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS"
-          TopLeft="408,308" />
-        <EdgeLayout
-          Id="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Lookup Match Output]"
-          TopLeft="377.5,223">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-107,83"
-              Start="0,0"
-              End="-107,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.5"
-                    Point2="0,41.5"
-                    Point3="-4,41.5" />
-                  <mssgle:LineSegment
-                    End="-103,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-103,41.5"
-                    Point2="-107,41.5"
-                    Point3="-107,45.5" />
-                  <mssgle:LineSegment
-                    End="-107,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-101.69138671875,46.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[OLE DB Source Output]"
           TopLeft="380.25,112">
@@ -1394,39 +1844,135 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS\Update data"
+          TopLeft="122,375" />
+        <NodeLayout
+          Size="287,42"
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS\Insert new vehicle type to VehicleType_NDS"
+          TopLeft="390,373" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS\CreatedDate, UpdatedDate"
+          TopLeft="435,288" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS\UpdatedDate"
+          TopLeft="118,287" />
         <EdgeLayout
-          Id="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Lookup No Match Output]"
-          TopLeft="425,223">
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Derived Column Output]"
+          TopLeft="535.75,330">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="126.5,85"
+              EndConnector="0,43"
               Start="0,0"
-              End="126.5,77.5">
+              End="0,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.2769857433809" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.2769857433809"
-                    Point2="0,34.2769857433809"
-                    Point3="4,34.2769857433809" />
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Derived Column Output1]"
+          TopLeft="189.25,329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="122.5,34.2769857433809" />
-                  <mssgle:CubicBezierSegment
-                    Point1="122.5,34.2769857433809"
-                    Point2="126.5,34.2769857433809"
-                    Point3="126.5,38.2769857433809" />
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Lookup Match Output]"
+          TopLeft="377.5,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-189.5,64"
+              Start="0,0"
+              End="-189.5,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="126.5,77.5" />
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="-4,32" />
+                  <mssgle:LineSegment
+                    End="-185.5,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-185.5,32"
+                    Point2="-189.5,32"
+                    Point3="-189.5,36" />
+                  <mssgle:LineSegment
+                    End="-189.5,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="7.44361328125,39.2769857433809,111.6127734375,11.609375"
+              BoundingBox="-142.94138671875,37,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicle_Type_Stage to VehicleType_NDS.Paths[Lookup No Match Output]"
+          TopLeft="425,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113,65"
+              Start="0,0"
+              End="113,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2118126272912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2118126272912"
+                    Point2="0,26.2118126272912"
+                    Point3="4,26.2118126272912" />
+                  <mssgle:LineSegment
+                    End="109,26.2118126272912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="109,26.2118126272912"
+                    Point2="113,26.2118126272912"
+                    Point3="113,30.2118126272912" />
+                  <mssgle:LineSegment
+                    End="113,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.693613281250002,31.2118126272912,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

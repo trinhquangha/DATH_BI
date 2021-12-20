@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_Vehicles"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{8570A7CC-5E49-4322-AF6A-263FEC214128}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{80F8F687-919D-4957-B437-A4A628D70F81}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -57,6 +57,101 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDate, UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS"
               componentClassID="Microsoft.OLEDBDestination"
@@ -161,6 +256,18 @@
                       cachedName="Journey_Purpose_of_Driver"
                       externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose]"
                       lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\Load Vehicles1114_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -188,6 +295,14 @@
                       dataType="str"
                       length="50"
                       name="Journey_Purpose" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1009,7 +1124,7 @@ where [refTable].[Vehicle_Type_ID] = ?</property>
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update Vehicles_NDS
-set Vehicle_Type=?, Journey_Purpose=?
+set Vehicle_Type=?, Journey_Purpose=?, UpdatedDate=?
 where Accident_Index=? and Vehicle_Reference=?</property>
                 <property
                   dataType="System.Int32"
@@ -1049,12 +1164,18 @@ where Accident_Index=? and Vehicle_Reference=?</property>
                       externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\Load Vehicles1114_Stage.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]" />
                     <inputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
                       refId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].Columns[Accident_Index]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Accident_Index"
-                      externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\Load Vehicles1114_Stage.Outputs[OLE DB Source Output].Columns[Accident_Index]" />
                     <inputColumn
                       refId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].Columns[Vehicle_Reference]"
@@ -1062,7 +1183,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Vehicle_Reference"
-                      externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\Load Vehicles1114_Stage.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1095,9 +1216,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
+                      dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
                         <property
@@ -1110,8 +1229,21 @@ where Accident_Index=? and Vehicle_Reference=?</property>
                       refId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1154,8 +1286,91 @@ where Accident_Index=? and Vehicle_Reference=?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
+            <path
+              refId="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Derived Column Output]"
+              endId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Derived Column Output1]"
+              endId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Outputs[Derived Column Output]" />
             <path
               refId="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output]"
               endId="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Journey_Purpose in JourneyPurpose_NDS.Inputs[Lookup Input]"
@@ -1173,12 +1388,12 @@ where Accident_Index=? and Vehicle_Reference=?</property>
               startId="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index in Accidents_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output3]"
-              endId="Package\Vehicles1114_Stage to Vehicle_NDS\Update data.Inputs[OLE DB Command Input]"
+              endId="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index, Vehicle_Reference in Vehicles_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup No Match Output]"
-              endId="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS.Inputs[OLE DB Destination Input]"
+              endId="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index, Vehicle_Reference in Vehicles_NDS.Outputs[Lookup No Match Output]" />
             <path
@@ -1204,7 +1419,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="248,41.6"
+          Size="248,42"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS"
           TopLeft="153,123" />
       </GraphLayout>
@@ -1214,33 +1429,25 @@ where Accident_Index=? and Vehicle_Reference=?</property>
     design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="136.8,41.6"
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Update data"
-          TopLeft="135,540" />
-        <NodeLayout
-          Size="199.2,41.6"
+          Size="199,42"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS\Load Vehicles1114_Stage"
           TopLeft="277,69" />
         <NodeLayout
-          Size="360.8,41.6"
+          Size="361,42"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index, Vehicle_Reference in Vehicles_NDS"
           TopLeft="206,440" />
         <NodeLayout
-          Size="276,41.6"
+          Size="276,42"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Vehicle_Type in VehicleType_NDS"
           TopLeft="240,158" />
         <NodeLayout
-          Size="273.6,41.6"
+          Size="274,42"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Accident_Index in Accidents_NDS"
           TopLeft="244,345" />
         <NodeLayout
-          Size="244.8,41.6"
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS"
-          TopLeft="439,546" />
-        <NodeLayout
-          Size="312.8,41.6"
+          Size="313,42"
           Id="Package\Vehicles1114_Stage to Vehicle_NDS\Lookup Journey_Purpose in JourneyPurpose_NDS"
           TopLeft="218,255" />
         <EdgeLayout
@@ -1263,78 +1470,6 @@ where Accident_Index=? and Vehicle_Reference=?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup No Match Output]"
-          TopLeft="445.333333333333,482">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.166666666667,64"
-              Start="0,0"
-              End="116.166666666667,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.7694429123001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.7694429123001"
-                    Point2="0,25.7694429123001"
-                    Point3="4,25.7694429123001" />
-                  <mssgle:LineSegment
-                    End="112.166666666667,25.7694429123001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.166666666667,25.7694429123001"
-                    Point2="116.166666666667,25.7694429123001"
-                    Point3="116.166666666667,29.7694429123001" />
-                  <mssgle:LineSegment
-                    End="116.166666666667,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="2.27694661458334,30.7694429123001,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output3]"
-          TopLeft="327.666666666667,482">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-124.166666666667,58"
-              Start="0,0"
-              End="-124.166666666667,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.3535576392719" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.3535576392719"
-                    Point2="0,23.3535576392719"
-                    Point3="-4,23.3535576392719" />
-                  <mssgle:LineSegment
-                    End="-120.166666666667,23.3535576392719" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-120.166666666667,23.3535576392719"
-                    Point2="-124.166666666667,23.3535576392719"
-                    Point3="-124.166666666667,27.3535576392719" />
-                  <mssgle:LineSegment
-                    End="-124.166666666667,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-110.274720052083,28.3535576392719,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1409,6 +1544,138 @@ where Accident_Index=? and Vehicle_Reference=?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS"
+          TopLeft="445,618" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\Update data"
+          TopLeft="142,618" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\UpdatedDate"
+          TopLeft="144,542" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS\CreatedDate, UpdatedDate"
+          TopLeft="459,543" />
+        <EdgeLayout
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Derived Column Output]"
+          TopLeft="564.75,585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Derived Column Output1]"
+          TopLeft="212.25,584">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup Match Output3]"
+          TopLeft="386.5,482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-172.5,60"
+              Start="0,0"
+              End="-172.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-168.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-168.5,30"
+                    Point2="-172.5,30"
+                    Point3="-172.5,34" />
+                  <mssgle:LineSegment
+                    End="-172.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-134.44138671875,35,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vehicles1114_Stage to Vehicle_NDS.Paths[Lookup No Match Output]"
+          TopLeft="445.333333333333,482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.666666666667,61"
+              Start="0,0"
+              End="116.666666666667,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.561500275786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.561500275786"
+                    Point2="0,24.561500275786"
+                    Point3="4,24.561500275786" />
+                  <mssgle:LineSegment
+                    End="112.666666666667,24.561500275786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.666666666667,24.561500275786"
+                    Point2="116.666666666667,24.561500275786"
+                    Point3="116.666666666667,28.561500275786" />
+                  <mssgle:LineSegment
+                    End="116.666666666667,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.52694661458334,29.561500275786,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1431,7 +1698,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1441,7 +1708,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1454,7 +1721,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1464,7 +1731,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1477,7 +1744,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1487,23 +1754,10 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Vehicles1114_Stage to Vehicle_NDS\Insert new vehicle to Vehicles_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1513,7 +1767,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1523,7 +1777,7 @@ where Accident_Index=? and Vehicle_Reference=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
