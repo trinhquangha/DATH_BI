@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>BI_DATH</Name>
-    <LastWriteTime>2021-12-27T17:28:09.0884095Z</LastWriteTime>
+    <LastWriteTime>2021-12-28T01:05:03.6691247Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -88,7 +88,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Age_Band_of_Casuality.dtsx</Name>
-      <LastWriteTime>2021-12-27T16:14:50.6135787Z</LastWriteTime>
+      <LastWriteTime>2021-12-27T23:56:55.2224265Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -113,7 +113,37 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim_Postcode.dtsx</Name>
-      <LastWriteTime>2021-12-27T17:28:03.3325159Z</LastWriteTime>
+      <LastWriteTime>2021-12-27T17:28:30.496364Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_Sex_of_Casuality.dtsx</Name>
+      <LastWriteTime>2021-12-28T00:02:13.1941159Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_Journey_Purpose.dtsx</Name>
+      <LastWriteTime>2021-12-28T00:10:01.0771201Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_Road_Type.dtsx</Name>
+      <LastWriteTime>2021-12-28T00:28:40.9623057Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_Accident_Severity.dtsx</Name>
+      <LastWriteTime>2021-12-28T00:28:38.4902659Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_Build_Up_Road.dtsx</Name>
+      <LastWriteTime>2021-12-28T01:05:03.50403Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim_Urban_Rural.dtsx</Name>
+      <LastWriteTime>2021-12-28T00:28:43.2529791Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

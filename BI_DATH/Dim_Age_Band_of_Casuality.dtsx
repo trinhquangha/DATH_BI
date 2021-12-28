@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Age_Band_of_Casuality"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{EEAB84A8-7606-4AE7-8EC2-629483A5CAAD}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{C6143CC4-EC8A-4815-A973-8FBEA6AF1CDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -878,7 +878,7 @@
           Id="Package\GET LSET, CET from Metadata"
           TopLeft="60,147.529412880075" />
         <NodeLayout
-          Size="162,42"
+          Size="179,42"
           Id="Package\SET CET to Metadata"
           TopLeft="86.857143331547,60" />
         <NodeLayout
@@ -887,7 +887,7 @@
           TopLeft="94,330" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="169.428571665774,102">
+          TopLeft="173.678571665773,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1086,6 +1086,19 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Age Band Of Casuality\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Age Band Of Casuality\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -1137,19 +1150,6 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Age Band Of Casuality\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

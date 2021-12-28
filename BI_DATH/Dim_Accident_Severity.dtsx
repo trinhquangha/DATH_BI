@@ -1,25 +1,25 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="12/27/2021 11:00:27 PM"
+  DTS:CreationDate="12/28/2021 7:13:50 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-JLCM007"
   DTS:CreatorName="DESKTOP-JLCM007\Admin"
-  DTS:DTSID="{79993F6B-34D8-40C7-82A3-B30C744A0C27}"
+  DTS:DTSID="{6E6E143A-8F26-4435-BAFB-6BA18D8EF77F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Dim_Age_Band_of_Casuality"
+  DTS:ObjectName="Dim_Accident_Severity"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{C6143CC4-EC8A-4815-A973-8FBEA6AF1CDC}">
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{E1931227-7AA9-4F87-8797-66BC41EC3F8C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0B5C1BF4-C64F-4FE0-831E-4BC41C5C8585}"
+      DTS:DTSID="{118D3E2F-0AAD-4255-B7DF-8FF30933B121}"
       DTS:ObjectName="LocalHost.DDS_DATH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -31,7 +31,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{00CDFBA9-317D-4E47-A1A8-10883E72C601}"
+      DTS:DTSID="{0F856F9E-5DC3-47C4-8A64-62194A78374E}"
       DTS:ObjectName="LocalHost.NDS_DATH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -44,7 +44,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{93E4BA12-FBE8-495F-8861-77F6544C019A}"
+      DTS:DTSID="{1FD79042-E4E6-4625-9BA1-CB7395A8E508}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C0C7226F-1E73-474F-832B-583440EA3756}"
+      DTS:DTSID="{7F8A2C68-3CAB-46F1-88AD-1196E91B2BD9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET">
@@ -63,13 +63,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Age Band Of Casuality"
+      DTS:refId="Package\Accident_Severity"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{40ec7948-0249-4ab0-be49-c3ff7b0ad38b}"
+      DTS:DTSID="{482e787a-0bf7-4993-ba34-7d1c0f52d40e}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Age Band Of Casuality"
+      DTS:ObjectName="Accident_Severity"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -77,11 +77,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS"
+              refId="Package\Accident_Severity\Accident_SeverityNDS"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Age_Band_of_Casuality NDS"
+              name="Accident_SeverityNDS"
               usesDispositions="true"
               version="7">
               <properties>
@@ -92,7 +92,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Age_Band_of_Casualty_NDS]</property>
+                  name="OpenRowset">[dbo].[Accident_Severity_NDS]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -126,7 +126,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Connections[OleDbConnection]"
+                  refId="Package\Accident_Severity\Accident_SeverityNDS.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -134,113 +134,113 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output]"
+                  refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyID]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_CasualtyID]"
-                      length="50"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyID]"
-                      name="Age_Band_of_CasualtyID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_CasualtyName]"
-                      length="50"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyName]"
-                      name="Age_Band_of_CasualtyName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      externalMetadataColumnId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       name="CreatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      externalMetadataColumnId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity_ID]"
+                      length="50"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_ID]"
+                      name="Accident_Severity_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity_Name]"
+                      length="50"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_Name]"
+                      name="Accident_Severity_Name"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_CasualtyID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Age_Band_of_CasualtyID" />
-                    <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_CasualtyName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Age_Band_of_CasualtyName" />
-                    <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Severity_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Severity_Name" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_CasualtyID]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[Accident_Severity_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_CasualtyID]"
-                      name="Age_Band_of_CasualtyID" />
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[Accident_Severity_ID]"
+                      name="Accident_Severity_ID" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_CasualtyName]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[Accident_Severity_Name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_CasualtyName]"
-                      name="Age_Band_of_CasualtyName" />
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[Accident_Severity_Name]"
+                      name="Accident_Severity_Name" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       name="CreatedDate" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -249,11 +249,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Age Band Of Casuality\Insert Destination"
+              refId="Package\Accident_Severity\Insert Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Insert Destination"
+              name="Insert Destination 1"
               usesDispositions="true"
               version="4">
               <properties>
@@ -264,7 +264,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Dim_Age_Band_of_Casuality]</property>
+                  name="OpenRowset">[dbo].[Dim_Accident_Severity]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -306,7 +306,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Age Band Of Casuality\Insert Destination.Connections[OleDbConnection]"
+                  refId="Package\Accident_Severity\Insert Destination 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -314,65 +314,65 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[Age_Band_of_CasualtyID]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Accident_Severity_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_Band_of_CasualtyID"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_ID]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyID]" />
+                      cachedName="Accident_Severity_ID"
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_ID]" />
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[Age_Band_of_CasualtyName]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Accident_Severity_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_Band_of_CasualtyName"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_Name]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyName]" />
+                      cachedName="Accident_Severity_Name"
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_Name]" />
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_Key]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Key]"
                       dataType="i4"
-                      name="Age_Band_Key" />
+                      name="Accident_Severity_Key" />
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Age_Band_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_Name]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Age_Band_Name" />
+                      name="Accident_Severity_ID" />
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Severity_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
                   </externalMetadataColumns>
@@ -380,22 +380,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Age Band Of Casuality\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Age Band Of Casuality\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Age Band Of Casuality\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -404,11 +404,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Age Band Of Casuality\OLE DB Command 1"
+              refId="Package\Accident_Severity\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command 1"
+              name="OLE DB Command"
               usesDispositions="true"
               version="2">
               <properties>
@@ -421,7 +421,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Age_Band_of_Casuality] SET [Age_Band_Name] = ?,[CreatedDate] = ?,[UpdatedDate] = ? WHERE [Age_Band_ID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Accident_Severity] SET [Accident_Severity_Name] = ?,[CreatedDate] = ?,[UpdatedDate] = ? WHERE [Accident_Severity_ID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -429,7 +429,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Age Band Of Casuality\OLE DB Command 1.Connections[OleDbConnection]"
+                  refId="Package\Accident_Severity\OLE DB Command.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -437,45 +437,45 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Age_Band_of_CasualtyID]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].Columns[Accident_Severity_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_Band_of_CasualtyID"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyID]" />
+                      cachedName="Accident_Severity_ID"
+                      externalMetadataColumnId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_ID]" />
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Age_Band_of_CasualtyName]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].Columns[Accident_Severity_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_Band_of_CasualtyName"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyName]" />
+                      cachedName="Accident_Severity_Name"
+                      externalMetadataColumnId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_Name]" />
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CreatedDate]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      externalMetadataColumnId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      externalMetadataColumnId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -488,7 +488,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="dbTimeStamp"
                       name="Param_1">
                       <properties>
@@ -499,7 +499,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
@@ -510,10 +510,10 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
-                      length="20"
+                      length="50"
                       name="Param_3">
                       <properties>
                         <property
@@ -527,29 +527,29 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Age Band Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  refId="Package\Accident_Severity\OLE DB Command.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Age Band Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Accident_Severity\OLE DB Command.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Accident_Severity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Age Band Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Accident_Severity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Age Band Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Accident_Severity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Age Band Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Accident_Severity\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -558,7 +558,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Age Band Of Casuality\Slowly Changing Dimension"
+              refId="Package\Accident_Severity\Slowly Changing Dimension"
               componentClassID="Microsoft.SCD"
               contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
               description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
@@ -569,7 +569,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Age_Band_ID], [Age_Band_Name], [CreatedDate], [UpdatedDate] FROM [dbo].[Dim_Age_Band_of_Casuality]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Accident_Severity_ID], [Accident_Severity_Name], [CreatedDate], [UpdatedDate] FROM [dbo].[Dim_Accident_Severity]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -606,7 +606,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Connections[LookupConnection]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Connections[LookupConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="Defines the connection to use for lookups in the dimension table"
@@ -614,17 +614,17 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
                   name="Slowly Changing Dimension Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Age_Band_of_CasualtyID]"
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Accident_Severity_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_Band_of_CasualtyID"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Age_Band_ID]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyID]">
+                      cachedName="Accident_Severity_ID"
+                      externalMetadataColumnId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Accident_Severity_ID]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_ID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -633,13 +633,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Age_Band_of_CasualtyName]"
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Accident_Severity_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_Band_of_CasualtyName"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Age_Band_Name]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyName]">
+                      cachedName="Accident_Severity_Name"
+                      externalMetadataColumnId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Accident_Severity_Name]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_Name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -648,11 +648,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CreatedDate]"
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      externalMetadataColumnId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -661,11 +661,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      externalMetadataColumnId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -677,23 +677,23 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Age_Band_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Age_Band_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Age_Band_Name]"
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Accident_Severity_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Age_Band_Name" />
+                      name="Accident_Severity_ID" />
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Accident_Severity_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Severity_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
                   </externalMetadataColumns>
@@ -701,51 +701,51 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[Unchanged Output]"
                   description="Unchanged rows"
                   exclusionGroup="1"
                   name="Unchanged Output"
-                  synchronousInputId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[New Output]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[New Output]"
                   description="New rows"
                   exclusionGroup="1"
                   name="New Output"
-                  synchronousInputId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
                   description="Rows with changes in columns tagged FixedAttribute"
                   exclusionGroup="1"
                   name="Fixed Attribute Output"
-                  synchronousInputId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
                   description="These rows contain new information for ChangingAttribute (Type 1) column changes"
                   exclusionGroup="1"
                   name="Changing Attribute Updates Output"
-                  synchronousInputId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
                   description="HistoricalAttribute (Type 2) changes result in these new rows"
                   exclusionGroup="2"
                   name="Historical Attribute Inserts Output"
-                  synchronousInputId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  refId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
                   description="Information to update unpopulated initial dimension row"
                   exclusionGroup="1"
                   name="Inferred Member Updates Output"
-                  synchronousInputId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  synchronousInputId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -753,20 +753,20 @@
           </components>
           <paths>
             <path
-              refId="Package\Age Band Of Casuality.Paths[Changing Attribute Updates Output]"
-              endId="Package\Age Band Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              refId="Package\Accident_Severity.Paths[Changing Attribute Updates Output]"
+              endId="Package\Accident_Severity\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Changing Attribute Updates Output"
-              startId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+              startId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
-              refId="Package\Age Band Of Casuality.Paths[New Output]"
-              endId="Package\Age Band Of Casuality\Insert Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Accident_Severity.Paths[New Output]"
+              endId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input]"
               name="New Output"
-              startId="Package\Age Band Of Casuality\Slowly Changing Dimension.Outputs[New Output]" />
+              startId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[New Output]" />
             <path
-              refId="Package\Age Band Of Casuality.Paths[OLE DB Source Output]"
-              endId="Package\Age Band Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              refId="Package\Accident_Severity.Paths[OLE DB Source Output]"
+              endId="Package\Accident_Severity\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="OLE DB Source Output"
-              startId="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS.Outputs[OLE DB Source Output]" />
+              startId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -775,7 +775,7 @@
       DTS:refId="Package\GET LSET, CET from Metadata"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{cc2fb633-989c-4205-aaeb-644b403e67f3}"
+      DTS:DTSID="{d1c9f2bf-af10-4f28-8e1a-f771f1a36f34}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="GET LSET, CET from Metadata"
@@ -784,8 +784,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B5C1BF4-C64F-4FE0-831E-4BC41C5C8585}"
-          SQLTask:SqlStatementSource="select LSET, CET from Metadata_DDS where TableName = 'Dim_Age_Band_of_Casuality'"
+          SQLTask:Connection="{118D3E2F-0AAD-4255-B7DF-8FF30933B121}"
+          SQLTask:SqlStatementSource="select LSET, CET from Metadata_DDS where TableName = 'Dim_Accident_Severity'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LSET"
@@ -800,7 +800,7 @@
       DTS:refId="Package\SET CET to Metadata"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5c261f7d-90b2-4e60-8c6d-024d337e5b23}"
+      DTS:DTSID="{998e0a29-8d17-433c-ae90-fd90cd74038a}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SET CET to Metadata"
@@ -809,15 +809,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B5C1BF4-C64F-4FE0-831E-4BC41C5C8585}"
-          SQLTask:SqlStatementSource="update Metadata_DDS set CET = getdate() where TableName = 'Dim_Age_Band_of_Casuality'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{118D3E2F-0AAD-4255-B7DF-8FF30933B121}"
+          SQLTask:SqlStatementSource="update Metadata_DDS set CET = getdate() where TableName = 'Dim_Accident_Severity'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\SET LSET to Metadata"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{2ac629de-9f3a-49ab-9144-e209d5c4cbc6}"
+      DTS:DTSID="{0d0dc5f0-cd6f-4de8-b215-d3141d42130a}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SET LSET to Metadata"
@@ -826,8 +826,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B5C1BF4-C64F-4FE0-831E-4BC41C5C8585}"
-          SQLTask:SqlStatementSource="update Metadata_DDS set LSET = CET where TableName = 'Dim_Age_Band_of_Casuality'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{118D3E2F-0AAD-4255-B7DF-8FF30933B121}"
+          SQLTask:SqlStatementSource="update Metadata_DDS set LSET = CET where TableName = 'Dim_Accident_Severity'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -835,7 +835,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{7c0af01c-10c1-4356-95fb-d52c34cfc75d}"
+      DTS:DTSID="{54e76cb8-d099-4f0d-bde7-6effc9326e7f}"
       DTS:From="Package\SET CET to Metadata"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -843,16 +843,16 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{935548cc-202c-42f6-8c9f-b3293f915a22}"
+      DTS:DTSID="{ea9cd3ad-ebeb-4b9d-ba22-21f751a880e4}"
       DTS:From="Package\GET LSET, CET from Metadata"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Age Band Of Casuality" />
+      DTS:To="Package\Accident_Severity" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{6a7f4a84-cb0c-435f-851f-ee6d992e3d6f}"
-      DTS:From="Package\Age Band Of Casuality"
+      DTS:DTSID="{d58e0b36-a091-45c8-a6e9-e7ffa4d13e41}"
+      DTS:From="Package\Accident_Severity"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\SET LSET to Metadata" />
@@ -870,13 +870,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="184,42"
-          Id="Package\Age Band Of Casuality"
-          TopLeft="77,229" />
+          Size="162,42"
+          Id="Package\Accident_Severity"
+          TopLeft="86,231" />
         <NodeLayout
-          Size="222,42"
+          Size="223,42"
           Id="Package\GET LSET, CET from Metadata"
-          TopLeft="60,147.529412880075" />
+          TopLeft="60,148.529412880075" />
         <NodeLayout
           Size="179,42"
           Id="Package\SET CET to Metadata"
@@ -884,21 +884,21 @@
         <NodeLayout
           Size="162,42"
           Id="Package\SET LSET to Metadata"
-          TopLeft="94,330" />
+          TopLeft="94,331" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="173.678571665773,102">
+          TopLeft="173.928571665774,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.529412880075"
+              EndConnector="0,46.529412880075"
               Start="0,0"
-              End="0,38.029412880075">
+              End="0,39.029412880075">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.029412880075" />
+                    End="0,39.029412880075" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -909,18 +909,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="170,189.529412880075">
+          TopLeft="169.25,190.529412880075">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.470587119925"
+              EndConnector="0,40.470587119925"
               Start="0,0"
-              End="0,31.970587119925">
+              End="0,32.970587119925">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.970587119925" />
+                    End="0,32.970587119925" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -931,18 +931,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="172,271">
+          TopLeft="167,273">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59"
+              EndConnector="8,58"
               Start="0,0"
-              End="0,51.5">
+              End="8,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.5" />
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="4,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,29"
+                    Point2="8,29"
+                    Point3="8,33" />
+                  <mssgle:LineSegment
+                    End="8,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -955,21 +967,21 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Age Band Of Casuality">
+    design-time-name="Package\Accident_Severity">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="213,42"
-          Id="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS"
-          TopLeft="431,5.49999999999989" />
+          Size="182,42"
+          Id="Package\Accident_Severity\Accident_SeverityNDS"
+          TopLeft="690,5.49999999999989" />
         <NodeLayout
           Size="209,42"
-          Id="Package\Age Band Of Casuality\Slowly Changing Dimension"
-          TopLeft="439,107.5" />
+          Id="Package\Accident_Severity\Slowly Changing Dimension"
+          TopLeft="676.5,107.5" />
         <EdgeLayout
-          Id="Package\Age Band Of Casuality.Paths[OLE DB Source Output]"
-          TopLeft="540.5,47.4999999999999">
+          Id="Package\Accident_Severity.Paths[OLE DB Source Output]"
+          TopLeft="781,47.4999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -990,18 +1002,18 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="163,42"
-          Id="Package\Age Band Of Casuality\Insert Destination"
-          TopLeft="232,209.5" />
+          Size="172,42"
+          Id="Package\Accident_Severity\Insert Destination 1"
+          TopLeft="465,209.5" />
         <EdgeLayout
-          Id="Package\Age Band Of Casuality.Paths[New Output]"
-          TopLeft="510,149.5">
+          Id="Package\Accident_Severity.Paths[New Output]"
+          TopLeft="747.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-196.5,60.0000000000001"
+              EndConnector="-196.5,60"
               Start="0,0"
-              End="-196.5,52.5000000000001">
+              End="-196.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1018,7 +1030,7 @@
                     Point2="-196.5,24.2735042735043"
                     Point3="-196.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="-196.5,52.5000000000001" />
+                    End="-196.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1030,42 +1042,42 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="175,42"
-          Id="Package\Age Band Of Casuality\OLE DB Command 1"
-          TopLeft="577,212.5" />
+          Size="166,42"
+          Id="Package\Accident_Severity\OLE DB Command"
+          TopLeft="698,209.5" />
         <EdgeLayout
-          Id="Package\Age Band Of Casuality.Paths[Changing Attribute Updates Output]"
-          TopLeft="577,149.5">
+          Id="Package\Accident_Severity.Paths[Changing Attribute Updates Output]"
+          TopLeft="814.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.5,63"
+              EndConnector="-33.5,60"
               Start="0,0"
-              End="87.5,55.5">
+              End="-33.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.4871794871795" />
+                    End="0,20.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.4871794871795"
-                    Point2="0,25.4871794871795"
-                    Point3="4,25.4871794871795" />
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="83.5,25.4871794871795" />
+                    End="-29.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="83.5,25.4871794871795"
-                    Point2="87.5,25.4871794871795"
-                    Point3="87.5,29.4871794871795" />
+                    Point1="-29.5,24.2735042735043"
+                    Point2="-33.5,24.2735042735043"
+                    Point3="-33.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="87.5,55.5" />
+                    End="-33.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.78390625,30.4871794871795,157.0678125,11.6630859375"
+              BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1073,7 +1085,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Age Band Of Casuality\Age_Band_of_Casuality NDS">
+    design-time-name="Package\Accident_Severity\Accident_SeverityNDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1086,57 +1098,44 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Age Band Of Casuality\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Age Band Of Casuality\Slowly Changing Dimension">
+    design-time-name="Package\Accident_Severity\Slowly Changing Dimension">
     <Properties>
       <Property>
         <Name>SCDMetadata</Name>
         <Value
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{0B5C1BF4-C64F-4FE0-831E-4BC41C5C8585}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[Dim_Age_Band_of_Casuality]&lt;/TableName&gt;
+  &lt;ConnectionID&gt;{118D3E2F-0AAD-4255-B7DF-8FF30933B121}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Accident_Severity]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Age_Band_of_Casuality Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyID]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Age_Band_ID&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Accident_Severity_ID&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Age_Band_of_Casuality Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_CasualtyName]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Age_Band_Name&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Accident_Severity_Name&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Age_Band_of_Casuality Source.Outputs[OLE DB Source Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;CreatedDate&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Age_Band_of_Casuality Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;UpdatedDate&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
