@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Postcode"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{79F8CF2E-2363-4A8C-B389-3D4597DC1117}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{D5502A19-189A-4C5C-90A1-AB87F71B4CC3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -177,11 +177,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Postcode\Insert Destination"
+              refId="Package\Postcode\Insert Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Insert Destination"
+              name="Insert Destination 1"
               usesDispositions="true"
               version="4">
               <properties>
@@ -234,7 +234,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Postcode\Insert Destination.Connections[OleDbConnection]"
+                  refId="Package\Postcode\Insert Destination 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -242,121 +242,121 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[Postcode]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Pcd8]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Postcode"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Postcode]" />
+                      cachedName="Pcd8"
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Pcd8]" />
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[Country_name]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Country_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Country_name"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_name]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Country_name]" />
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country_name]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Country_name]" />
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[Regione_name]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Regione_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Regione_name"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region_name]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Regione_name]" />
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Region_name]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Regione_name]" />
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[County]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[County]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="County"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[County]" />
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[County]" />
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[City]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="City"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[City]" />
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[City]" />
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Status]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Status"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Status]" />
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Status]" />
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[CreatedDate]" />
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[UpdatedDate]" />
+                      externalMetadataColumnId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postcode_Key]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Postcode_Key]"
                       dataType="i4"
                       name="Postcode_Key" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Postcode" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_name]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Country_name" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region_name]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Region_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Region_name" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Country" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Status" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      refId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
                   </externalMetadataColumns>
@@ -364,22 +364,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Postcode\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Postcode\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Postcode\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Postcode\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Postcode\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Postcode\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Postcode\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Postcode\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Postcode\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Postcode\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -388,11 +388,222 @@
               </outputs>
             </component>
             <component
-              refId="Package\Postcode\Local Authority District NDS"
+              refId="Package\Postcode\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[Postcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Postcode"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Postcode]" />
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[Country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country_name"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Country_name]" />
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[Regione_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Regione_name"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Regione_name]" />
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[County]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="County"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[County]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Postcode\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Postcode\Merge Join.Inputs[Merge Join Right Input].Columns[Pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pcd8"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[Pcd8]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Postcode\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Country_name]"
+                      name="Country_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[Country_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Regione_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Regione_name]"
+                      name="Regione_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[Regione_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[County]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[County]"
+                      name="County">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Postcode\Merge Join.Inputs[Merge Join Left Input].Columns[County]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Pcd8]"
+                      name="Pcd8"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Postcode\Merge Join.Inputs[Merge Join Right Input].Columns[Pcd8]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Postcode\OLE DB Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Local Authority District NDS"
+              name="OLE DB Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -403,7 +614,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Postcode_NDS]</property>
+                  name="OpenRowset">[dbo].[PCD_LSOA_NDS]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -437,7 +648,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Postcode\Local Authority District NDS.Connections[OleDbConnection]"
+                  refId="Package\Postcode\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -445,119 +656,288 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output]"
+                  refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       name="CreatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Postcode]"
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[Postcode]"
+                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Pcd8]"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Postcode]"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]"
+                      name="Pcd8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lsoa11cd]"
+                      length="50"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]"
+                      name="Lsoa11cd"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pcd8" />
+                    <externalMetadataColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lsoa11cd]"
+                      dataType="wstr"
+                      length="50"
+                      name="Lsoa11cd" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Pcd8]"
+                      name="Pcd8" />
+                    <outputColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lsoa11cd]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lsoa11cd]"
+                      name="Lsoa11cd" />
+                    <outputColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Postcode\Postcode NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Postcode NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Postcode_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Postcode_NDS where(UpdatedDate &gt; ? and UpdatedDate &lt; ?) or (CreatedDate &gt; ? and CreatedDate &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{20EFA5B4-CBAF-4B61-B541-F1CC999AEC5B};"Parameter1:Input",{24421D7B-3697-467C-B37E-12548ABCD742};"Parameter2:Input",{20EFA5B4-CBAF-4B61-B541-F1CC999AEC5B};"Parameter3:Input",{24421D7B-3697-467C-B37E-12548ABCD742};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Postcode\Postcode NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[Postcode]"
+                      length="50"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Postcode]"
                       name="Postcode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[City]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      externalMetadataColumnId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[City]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[City]"
                       name="City"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Country_name]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[Country_name]"
+                      externalMetadataColumnId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[Country_name]"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Country_name]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]"
                       name="Country_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Regione_name]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Regione_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[Regione_name]"
+                      externalMetadataColumnId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[Regione_name]"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Regione_name]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Regione_name]"
                       name="Regione_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[County]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[County]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[County]"
+                      externalMetadataColumnId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[County]"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[County]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[County]"
                       name="County"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[Postcode]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[Postcode]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Postcode" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[Country_name]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[Country_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Country_name" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[Regione_name]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[Regione_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Regione_name" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].ExternalColumns[County]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].ExternalColumns[County]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -565,65 +945,141 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[Postcode]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[Postcode]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[Postcode]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[Postcode]"
                       name="Postcode" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[City]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[City]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[City]"
                       name="City" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[Country_name]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[Country_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[Country_name]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[Country_name]"
                       name="Country_name" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[Regione_name]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[Regione_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[Regione_name]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[Regione_name]"
                       name="Regione_name" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[County]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[County]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[County]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[County]"
                       name="County" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       name="CreatedDate" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Postcode\Repalce Status To &quot;Fine&quot;"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Repalce Status To &quot;Fine&quot;"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Inputs[Derived Column Input].Columns[Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Status"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Status]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)("Fine")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)("Fine")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -669,26 +1125,15 @@
                           name="FriendlyExpression">(DT_STR,50,1252)("Warm")</property>
                       </properties>
                     </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Postcode\Replace Status.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Postcode\Replace Status.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Postcode\Replace Status.Outputs[Derived Column Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
+                    <inputColumn
+                      refId="Package\Postcode\Replace Status.Inputs[Derived Column Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Postcode\Replace Status.Outputs[Derived Column Output].Columns[CreatedDate]"
-                      name="CreatedDate"
-                      truncationRowDisposition="FailComponent">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
                       <properties>
                         <property
                           containsID="true"
@@ -702,8 +1147,18 @@
                           expressionType="Notify"
                           name="FriendlyExpression">GETDATE()</property>
                       </properties>
-                    </outputColumn>
-                  </outputColumns>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Postcode\Replace Status.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Postcode\Replace Status.Inputs[Derived Column Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -724,82 +1179,6 @@
                       refId="Package\Postcode\Replace Status.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Postcode\Replace Status.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Postcode\Replace Status To &quot;Fine&quot;"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Replace Status To &quot;Fine&quot;"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Postcode\Replace Status To &quot;Fine&quot;.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Postcode\Replace Status To &quot;Fine&quot;.Inputs[Derived Column Input].Columns[Status]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Status"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Status]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_STR,50,1252)("Fine")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,50,1252)("Fine")</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Postcode\Replace Status To &quot;Fine&quot;.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Postcode\Replace Status To &quot;Fine&quot;.Inputs[Derived Column Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Postcode\Replace Status To &quot;Fine&quot;.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Postcode\Replace Status To &quot;Fine&quot;.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Postcode\Replace Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Postcode\Replace Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Postcode\Replace Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Postcode\Replace Status To &quot;Fine&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -874,7 +1253,7 @@
                       cachedLength="50"
                       cachedName="City"
                       externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[City]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[City]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -889,7 +1268,7 @@
                       cachedLength="50"
                       cachedName="County"
                       externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[County]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[County]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -904,7 +1283,7 @@
                       cachedLength="50"
                       cachedName="Country_name"
                       externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country_name]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Country_name]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Country_name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -917,7 +1296,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -926,13 +1305,14 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Postcode]"
+                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Pcd8]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Postcode"
+                      cachedName="Pcd8"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Postcode]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Postcode]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Pcd8]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -947,7 +1327,7 @@
                       cachedLength="50"
                       cachedName="Regione_name"
                       externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Region_name]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Regione_name]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Regione_name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -960,7 +1340,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1070,120 +1450,544 @@
               </outputs>
             </component>
             <component
-              refId="Package\Postcode\Union All"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-              name="Union All"
+              refId="Package\Postcode\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
               version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
               <inputs>
                 <input
-                  refId="Package\Postcode\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
+                  refId="Package\Postcode\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[CreatedDate]"
+                      refId="Package\Postcode\Sort.Inputs[Sort Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
                       <properties>
                         <property
-                          containsID="true"
                           dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[CreatedDate]}</property>
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[UpdatedDate]"
+                      refId="Package\Postcode\Sort.Inputs[Sort Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
                       <properties>
                         <property
-                          containsID="true"
                           dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[UpdatedDate]}</property>
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[Postcode]"
+                      refId="Package\Postcode\Sort.Inputs[Sort Input].Columns[Postcode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Postcode"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Postcode]">
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Postcode]">
                       <properties>
                         <property
-                          containsID="true"
                           dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Postcode]}</property>
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[City]"
+                      refId="Package\Postcode\Sort.Inputs[Sort Input].Columns[City]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="City"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[City]">
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[City]">
                       <properties>
                         <property
-                          containsID="true"
                           dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[City]}</property>
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[Country_name]"
+                      refId="Package\Postcode\Sort.Inputs[Sort Input].Columns[Country_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Country_name"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Country_name]">
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]">
                       <properties>
                         <property
-                          containsID="true"
                           dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Country_name]}</property>
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[Regione_name]"
+                      refId="Package\Postcode\Sort.Inputs[Sort Input].Columns[Regione_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Regione_name"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Regione_name]">
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Regione_name]">
                       <properties>
                         <property
-                          containsID="true"
                           dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Regione_name]}</property>
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[County]"
+                      refId="Package\Postcode\Sort.Inputs[Sort Input].Columns[County]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="County"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[County]">
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[County]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Postcode\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Postcode]"
+                      name="Postcode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Postcode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort.Outputs[Sort Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Country_name]"
+                      name="Country_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Regione_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[Regione_name]"
+                      name="Regione_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Regione_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort.Outputs[Sort Output].Columns[County]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Sort.Outputs[Sort Output].Columns[County]"
+                      name="County">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[County]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Postcode\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Postcode\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Postcode\Sort 1.Inputs[Sort Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Sort 1.Inputs[Sort Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Sort 1.Inputs[Sort Input].Columns[Pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pcd8"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Sort 1.Inputs[Sort Input].Columns[Lsoa11cd]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Lsoa11cd"
+                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Postcode\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[Pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[Pcd8]"
+                      name="Pcd8"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[Lsoa11cd]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Postcode\Sort 1.Outputs[Sort Output].Columns[Lsoa11cd]"
+                      name="Lsoa11cd">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Postcode\Union All 1"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All 1"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Postcode\Union All 1.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[County]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[CreatedDate]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 1].Columns[Status]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[Country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country_name"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Country_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Country_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[Regione_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Regione_name"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Regione_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Regione_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[County]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="County"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[County]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[County]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[Pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pcd8"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Pcd8]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Pcd8]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 1].Columns[Status]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1194,120 +1998,121 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Status]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Status]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Postcode\Union All.Inputs[Union All Input 2]"
+                  refId="Package\Postcode\Union All 1.Inputs[Union All Input 2]"
                   hasSideEffects="true"
                   name="Union All Input 2">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[CreatedDate]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[CreatedDate]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[CreatedDate]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[UpdatedDate]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[UpdatedDate]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[UpdatedDate]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Postcode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Postcode"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Postcode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Postcode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[City]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[City]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="City"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[City]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[City]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[City]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[City]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Country_name]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[Country_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Country_name"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Country_name]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Country_name]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Country_name]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Country_name]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Regione_name]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[Regione_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Regione_name"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Regione_name]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Regione_name]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Regione_name]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Regione_name]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[County]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[County]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="County"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[County]">
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[County]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[County]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[County]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Status]"
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[Pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pcd8"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Pcd8]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Pcd8]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Postcode\Union All 1.Inputs[Union All Input 2].Columns[Status]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1318,14 +2123,14 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Status]}</property>
+                          name="OutputColumnLineageID">#{Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Status]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Postcode\Union All.Inputs[Union All Input 3]"
+                  refId="Package\Postcode\Union All 1.Inputs[Union All Input 3]"
                   dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 3">
@@ -1334,60 +2139,60 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Postcode\Union All.Outputs[Union All Output 1]"
+                  refId="Package\Postcode\Union All 1.Outputs[Union All Output 1]"
                   name="Union All Output 1">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[CreatedDate]"
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[CreatedDate]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[CreatedDate]"
                       name="CreatedDate" />
                     <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[UpdatedDate]"
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[UpdatedDate]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[UpdatedDate]"
                       name="UpdatedDate" />
                     <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Postcode]"
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Postcode]"
-                      name="Postcode" />
-                    <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[City]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[City]"
                       name="City" />
                     <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Country_name]"
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Country_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Country_name]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Country_name]"
                       name="Country_name" />
                     <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Regione_name]"
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Regione_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Regione_name]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Regione_name]"
                       name="Regione_name" />
                     <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[County]"
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[County]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[County]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[County]"
                       name="County" />
                     <outputColumn
-                      refId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Status]"
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Pcd8]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[Status]"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Pcd8]"
+                      name="Pcd8" />
+                    <outputColumn
+                      refId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Postcode\Union All 1.Outputs[Union All Output 1].Columns[Status]"
                       name="Status" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1435,13 +2240,14 @@
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Postcode\Update Status.Inputs[OLE DB Command Input].Columns[Postcode]"
+                      refId="Package\Postcode\Update Status.Inputs[OLE DB Command Input].Columns[Pcd8]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Postcode"
+                      cachedName="Pcd8"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Postcode\Update Status.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Postcode]" />
+                      lineageId="Package\Postcode\Merge Join.Outputs[Merge Join Output].Columns[Pcd8]" />
                     <inputColumn
                       refId="Package\Postcode\Update Status.Inputs[OLE DB Command Input].Columns[Status]"
                       cachedCodepage="1252"
@@ -1518,9 +2324,9 @@
           <paths>
             <path
               refId="Package\Postcode.Paths[Derived Column Output]"
-              endId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              endId="Package\Postcode\Insert Destination 1.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Postcode\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Outputs[Derived Column Output]" />
             <path
               refId="Package\Postcode.Paths[Derived Column Output1]"
               endId="Package\Postcode\Update Status.Inputs[OLE DB Command Input]"
@@ -1528,34 +2334,54 @@
               startId="Package\Postcode\Replace Status.Outputs[Derived Column Output]" />
             <path
               refId="Package\Postcode.Paths[Derived Column Output2]"
-              endId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Derived Column Output"
-              startId="Package\Postcode\Replace Status To &quot;Fine&quot;.Outputs[Derived Column Output]" />
+              startId="Package\Postcode\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Postcode.Paths[Historical Attribute Inserts Output]"
               endId="Package\Postcode\Replace Status.Inputs[Derived Column Input]"
               name="Historical Attribute Inserts Output"
               startId="Package\Postcode\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
+              refId="Package\Postcode.Paths[Merge Join Output]"
+              endId="Package\Postcode\Derived Column.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Postcode\Merge Join.Outputs[Merge Join Output]" />
+            <path
               refId="Package\Postcode.Paths[New Output]"
-              endId="Package\Postcode\Union All.Inputs[Union All Input 1]"
+              endId="Package\Postcode\Union All 1.Inputs[Union All Input 1]"
               name="New Output"
               startId="Package\Postcode\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Postcode.Paths[OLE DB Command Output]"
-              endId="Package\Postcode\Union All.Inputs[Union All Input 2]"
+              endId="Package\Postcode\Union All 1.Inputs[Union All Input 2]"
               name="OLE DB Command Output"
               startId="Package\Postcode\Update Status.Outputs[OLE DB Command Output]" />
             <path
               refId="Package\Postcode.Paths[OLE DB Source Output]"
-              endId="Package\Postcode\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Postcode\Sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\Postcode\Local Authority District NDS.Outputs[OLE DB Source Output]" />
+              startId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Postcode.Paths[OLE DB Source Output1]"
+              endId="Package\Postcode\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Postcode.Paths[Sort Output]"
+              endId="Package\Postcode\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Postcode\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Postcode.Paths[Sort Output1]"
+              endId="Package\Postcode\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Postcode\Sort.Outputs[Sort Output]" />
             <path
               refId="Package\Postcode.Paths[Union All Output 1]"
-              endId="Package\Postcode\Replace Status To &quot;Fine&quot;.Inputs[Derived Column Input]"
+              endId="Package\Postcode\Repalce Status To &quot;Fine&quot;.Inputs[Derived Column Input]"
               name="Union All Output 1"
-              startId="Package\Postcode\Union All.Outputs[Union All Output 1]" />
+              startId="Package\Postcode\Union All 1.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1722,70 +2548,184 @@
     design-time-name="Package\Postcode">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Postcode\Slowly Changing Dimension"
-          TopLeft="128,209.5" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Postcode\Local Authority District NDS"
-          TopLeft="128,5.5" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Postcode\Derived Column"
-          TopLeft="155.5,107.5" />
-        <EdgeLayout
-          Id="Package\Postcode.Paths[Derived Column Output]"
-          TopLeft="232.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Postcode.Paths[OLE DB Source Output]"
-          TopLeft="232.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="148,42"
           Id="Package\Postcode\Replace Status"
-          TopLeft="8.00000000000003,311.5" />
+          TopLeft="116,570" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Postcode\Postcode NDS"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Postcode\Repalce Status To &quot;Fine&quot;"
+          TopLeft="242,876" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Postcode\Sort 1"
+          TopLeft="287,162" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Postcode\Sort"
+          TopLeft="128.5,162" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Postcode\Update Status"
+          TopLeft="119,673" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Postcode\Slowly Changing Dimension"
+          TopLeft="236,468" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Postcode\Merge Join"
+          TopLeft="275.5,264" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Postcode\Insert Destination 1"
+          TopLeft="254.5,978" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Postcode\Union All 1"
+          TopLeft="275.5,774" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Postcode\Derived Column"
+          TopLeft="263.5,366" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Postcode\OLE DB Source"
+          TopLeft="265.5,60" />
+        <EdgeLayout
+          Id="Package\Postcode.Paths[OLE DB Source Output]"
+          TopLeft="132.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45,60"
+              Start="0,0"
+              End="45,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="41,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41,30"
+                    Point2="45,30"
+                    Point3="45,34" />
+                  <mssgle:LineSegment
+                    End="45,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[OLE DB Command Output]"
+          TopLeft="191.5,715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.666666666667,59"
+              Start="0,0"
+              End="128.666666666667,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9696048632219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.9696048632219"
+                    Point2="0,34.9696048632219"
+                    Point3="4,34.9696048632219" />
+                  <mssgle:LineSegment
+                    End="124.666666666667,34.9696048632219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.666666666667,34.9696048632219"
+                    Point2="128.666666666667,34.9696048632219"
+                    Point3="128.666666666667,38.9696048632219" />
+                  <mssgle:LineSegment
+                    End="128.666666666667,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[New Output]"
+          TopLeft="374,510">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.1666666666666,264"
+              Start="0,0"
+              End="-13.1666666666666,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.251077276645" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,127.251077276645"
+                    Point2="0,131.251077276645"
+                    Point3="-4,131.251077276645" />
+                  <mssgle:LineSegment
+                    End="-9.16666666666663,131.251077276645" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.16666666666663,131.251077276645"
+                    Point2="-13.1666666666666,131.251077276645"
+                    Point3="-13.1666666666666,135.251077276645" />
+                  <mssgle:LineSegment
+                    End="-13.1666666666666,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.6747200520833,136.251077276645,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[Merge Join Output]"
+          TopLeft="340.5,306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Postcode.Paths[Historical Attribute Inserts Output]"
-          TopLeft="199,251.5">
+          TopLeft="307,510">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1819,24 +2759,42 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Postcode\Update Status"
-          TopLeft="5.50000000000003,413.5" />
+        <EdgeLayout
+          Id="Package\Postcode.Paths[Derived Column Output]"
+          TopLeft="340,918">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Postcode.Paths[Derived Column Output1]"
-          TopLeft="80,353.5">
+          TopLeft="190.75,612">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,61"
               Start="0,0"
-              End="0,52.5">
+              End="0,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1845,113 +2803,121 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Postcode\Union All"
-          TopLeft="172,515.5" />
-        <EdgeLayout
-          Id="Package\Postcode.Paths[New Output]"
-          TopLeft="266,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-14.6666666666666,264"
-              Start="0,0"
-              End="-14.6666666666666,256.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,127.104705383637" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,127.104705383637"
-                    Point2="0,131.104705383637"
-                    Point3="-4,131.104705383637" />
-                  <mssgle:LineSegment
-                    End="-10.6666666666666,131.104705383637" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.6666666666666,131.104705383637"
-                    Point2="-14.6666666666666,131.104705383637"
-                    Point3="-14.6666666666666,135.104705383637" />
-                  <mssgle:LineSegment
-                    End="-14.6666666666666,256.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-34.4247200520833,136.104705383637,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Postcode.Paths[OLE DB Command Output]"
-          TopLeft="78,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="135.666666666667,60"
-              Start="0,0"
-              End="135.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="131.666666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="131.666666666667,35.5301794453507"
-                    Point2="135.666666666667,35.5301794453507"
-                    Point3="135.666666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="135.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="195,42"
-          Id="Package\Postcode\Replace Status To &quot;Fine&quot;"
-          TopLeft="129,617.5" />
-        <EdgeLayout
-          Id="Package\Postcode.Paths[Union All Output 1]"
-          TopLeft="229.5,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Postcode\Insert Destination"
-          TopLeft="151,719.5" />
         <EdgeLayout
           Id="Package\Postcode.Paths[Derived Column Output2]"
-          TopLeft="229.5,659.5">
+          TopLeft="340.5,408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[Union All Output 1]"
+          TopLeft="340,816">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[Sort Output]"
+          TopLeft="340.5,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.3333333333335,60"
+              Start="0,0"
+              End="20.3333333333335,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5623100303952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5623100303952"
+                    Point2="0,35.5623100303952"
+                    Point3="4,35.5623100303952" />
+                  <mssgle:LineSegment
+                    End="16.3333333333335,35.5623100303952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.3333333333335,35.5623100303952"
+                    Point2="20.3333333333335,35.5623100303952"
+                    Point3="20.3333333333335,39.5623100303952" />
+                  <mssgle:LineSegment
+                    End="20.3333333333335,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[Sort Output1]"
+          TopLeft="177.5,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.666666666667,60"
+              Start="0,0"
+              End="142.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5623100303952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5623100303952"
+                    Point2="0,35.5623100303952"
+                    Point3="4,35.5623100303952" />
+                  <mssgle:LineSegment
+                    End="138.666666666667,35.5623100303952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="138.666666666667,35.5623100303952"
+                    Point2="142.666666666667,35.5623100303952"
+                    Point3="142.666666666667,39.5623100303952" />
+                  <mssgle:LineSegment
+                    End="142.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[OLE DB Source Output1]"
+          TopLeft="340.5,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1974,100 +2940,5 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Postcode\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{E1386554-4CD2-446E-8D2D-2D2D5523BFE0}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[Dim_Postcode]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[City]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;City&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[County]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Country&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Country_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Country_name&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CreatedDate&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Postcode]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Postcode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[Regione_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Region_name&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[Status]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Status&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UpdatedDate&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn&gt;Status&lt;/CurrentIndicatorColumn&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent&gt;Fine&lt;/ValueCurrent&gt;
-  &lt;ValueExpired&gt;Warm&lt;/ValueExpired&gt;
-  &lt;StartDateColumn /&gt;
-  &lt;EndDateColumn /&gt;
-  &lt;DateVariable /&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Postcode\Local Authority District NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
