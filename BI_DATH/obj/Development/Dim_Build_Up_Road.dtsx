@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Build_Up_Road"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{F24C0486-CF0B-4ADC-98C2-1DABB79A42EF}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{930BB5F0-861B-4EE4-9B76-80F00C60D1C4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -460,8 +460,9 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="BRUD_ID"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Build_Up_Road\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[BUR_ID]"
-                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_ID]" />
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_ID]" />
                     <inputColumn
                       refId="Package\Build_Up_Road\Insert Destination.Inputs[OLE DB Destination Input].Columns[BRUD_Name]"
                       cachedCodepage="1252"
@@ -469,19 +470,19 @@
                       cachedLength="50"
                       cachedName="BRUD_Name"
                       externalMetadataColumnId="Package\Build_Up_Road\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[BUR_Name]"
-                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_Name]" />
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_Name]" />
                     <inputColumn
                       refId="Package\Build_Up_Road\Insert Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Build_Up_Road\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[CreatedDate]" />
                     <inputColumn
                       refId="Package\Build_Up_Road\Insert Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Build_Up_Road\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -538,11 +539,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Build_Up_Road\OLE DB Command 1"
+              refId="Package\Build_Up_Road\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command 1"
+              name="OLE DB Command"
               usesDispositions="true"
               version="2">
               <properties>
@@ -563,7 +564,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Build_Up_Road\OLE DB Command 1.Connections[OleDbConnection]"
+                  refId="Package\Build_Up_Road\OLE DB Command.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -571,45 +572,46 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[BRUD_ID]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].Columns[BRUD_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="BRUD_ID"
-                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_ID]" />
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_ID]" />
                     <inputColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[BRUD_Name]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].Columns[BRUD_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="BRUD_Name"
-                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_Name]" />
+                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_Name]" />
                     <inputColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CreatedDate]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      externalMetadataColumnId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -622,7 +624,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="dbTimeStamp"
                       name="Param_1">
                       <properties>
@@ -633,7 +635,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
@@ -644,7 +646,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -661,29 +663,29 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Build_Up_Road\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  refId="Package\Build_Up_Road\OLE DB Command.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Build_Up_Road\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Build_Up_Road\OLE DB Command.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Build_Up_Road\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Build_Up_Road\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Build_Up_Road\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Build_Up_Road\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Build_Up_Road\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Build_Up_Road\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -757,8 +759,9 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="BRUD_ID"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Build_Up_Road\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[BUR_ID]"
-                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_ID]">
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_ID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -773,7 +776,7 @@
                       cachedLength="50"
                       cachedName="BRUD_Name"
                       externalMetadataColumnId="Package\Build_Up_Road\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[BUR_Name]"
-                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_Name]">
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_Name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -786,7 +789,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Build_Up_Road\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -799,7 +802,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Build_Up_Road\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -884,16 +887,208 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Build_Up_Road\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Build_Up_Road\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Build_Up_Road\Sort.Inputs[Sort Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Build_Up_Road\Sort.Inputs[Sort Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Build_Up_Road\Sort.Inputs[Sort Input].Columns[Speed_limit]"
+                      cachedDataType="i4"
+                      cachedName="Speed_limit"
+                      lineageId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[Speed_limit]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Build_Up_Road\Sort.Inputs[Sort Input].Columns[BRUD_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BRUD_Name"
+                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Build_Up_Road\Sort.Inputs[Sort Input].Columns[BRUD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BRUD_ID"
+                      lineageId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Build_Up_Road\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[Speed_limit]"
+                      dataType="i4"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[Speed_limit]"
+                      name="Speed_limit">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[Speed_limit]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_Name]"
+                      name="BRUD_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Build_Up_Road\Sort.Outputs[Sort Output].Columns[BRUD_ID]"
+                      name="BRUD_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Build_Up_Road.Paths[Changing Attribute Updates Output]"
-              endId="Package\Build_Up_Road\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              endId="Package\Build_Up_Road\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Changing Attribute Updates Output"
               startId="Package\Build_Up_Road\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
               refId="Package\Build_Up_Road.Paths[Derived Column Output]"
-              endId="Package\Build_Up_Road\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              endId="Package\Build_Up_Road\Sort.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output]" />
             <path
@@ -906,6 +1101,11 @@
               endId="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Build_Up_Road\Build_Up_Road NDS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Build_Up_Road.Paths[Sort Output]"
+              endId="Package\Build_Up_Road\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Sort Output"
+              startId="Package\Build_Up_Road\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1125,18 +1325,44 @@
         <NodeLayout
           Size="174,42"
           Id="Package\Build_Up_Road\Build_Up_Road NDS"
-          TopLeft="456.5,5.49999999999989" />
+          TopLeft="225,5.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Build_Up_Road\Slowly Changing Dimension"
-          TopLeft="439,209.5" />
+          TopLeft="207.5,311.5" />
         <NodeLayout
           Size="229,42"
           Id="Package\Build_Up_Road\Add BRUD_ID and BRUD_Name"
-          TopLeft="429,107.5" />
+          TopLeft="197.5,107.5" />
         <EdgeLayout
           Id="Package\Build_Up_Road.Paths[OLE DB Source Output]"
-          TopLeft="543.5,47.4999999999999">
+          TopLeft="312,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Build_Up_Road\Sort"
+          TopLeft="263,209.5" />
+        <EdgeLayout
+          Id="Package\Build_Up_Road.Paths[Derived Column Output]"
+          TopLeft="312,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1157,8 +1383,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Build_Up_Road.Paths[Derived Column Output]"
-          TopLeft="543.5,149.5">
+          Id="Package\Build_Up_Road.Paths[Sort Output]"
+          TopLeft="312,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1181,16 +1407,16 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Build_Up_Road\Insert Destination"
-          TopLeft="232,311.5" />
+          TopLeft="5.50000000000006,413.5" />
         <EdgeLayout
           Id="Package\Build_Up_Road.Paths[New Output]"
-          TopLeft="510,251.5">
+          TopLeft="278.5,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-196.5,60"
+              EndConnector="-191.5,60"
               Start="0,0"
-              End="-196.5,52.5">
+              End="-191.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1201,60 +1427,60 @@
                     Point2="0,24.2735042735043"
                     Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="-192.5,24.2735042735043" />
+                    End="-187.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="-192.5,24.2735042735043"
-                    Point2="-196.5,24.2735042735043"
-                    Point3="-196.5,28.2735042735043" />
+                    Point1="-187.5,24.2735042735043"
+                    Point2="-191.5,24.2735042735043"
+                    Point3="-191.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="-196.5,52.5" />
+                    End="-191.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-125.34138671875,29.2735042735043,54.1827734375,11.43359375"
+              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="175,42"
-          Id="Package\Build_Up_Road\OLE DB Command 1"
-          TopLeft="456,311.5" />
+          Size="166,42"
+          Id="Package\Build_Up_Road\OLE DB Command"
+          TopLeft="326,402.5" />
         <EdgeLayout
           Id="Package\Build_Up_Road.Paths[Changing Attribute Updates Output]"
-          TopLeft="577,251.5">
+          TopLeft="345.5,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-33.5,60"
+              EndConnector="63.5,49"
               Start="0,0"
-              End="-33.5,52.5">
+              End="63.5,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.2735042735043" />
+                    End="0,15.8233618233618" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
+                    Point1="0,15.8233618233618"
+                    Point2="0,19.8233618233618"
+                    Point3="4,19.8233618233618" />
                   <mssgle:LineSegment
-                    End="-29.5,24.2735042735043" />
+                    End="59.5,19.8233618233618" />
                   <mssgle:CubicBezierSegment
-                    Point1="-29.5,24.2735042735043"
-                    Point2="-33.5,24.2735042735043"
-                    Point3="-33.5,28.2735042735043" />
+                    Point1="59.5,19.8233618233618"
+                    Point2="63.5,19.8233618233618"
+                    Point3="63.5,23.8233618233618" />
                   <mssgle:LineSegment
-                    End="-33.5,52.5" />
+                    End="63.5,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
+              BoundingBox="-46.78390625,24.8233618233618,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1286,25 +1512,25 @@
   &lt;TableName&gt;[dbo].[Dim_Build_Up_Road]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_ID]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Sort.Outputs[Sort Output].Columns[BRUD_ID]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;BUR_ID&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Add BRUD_ID and BRUD_Name.Outputs[Derived Column Output].Columns[BRUD_Name]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Sort.Outputs[Sort Output].Columns[BRUD_Name]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;BUR_Name&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Sort.Outputs[Sort Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;CreatedDate&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Build_Up_Road NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Sort.Outputs[Sort Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;UpdatedDate&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
@@ -1312,7 +1538,7 @@
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;

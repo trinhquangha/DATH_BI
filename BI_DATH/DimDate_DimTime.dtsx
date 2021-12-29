@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimDate_DimTime"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{1B4E18E1-647F-4B0A-83F4-C50A9E146B0B}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{9115CD7E-28F0-4EF7-BB85-A670A02DB731}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,18 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{13912745-B5D7-424D-844C-9A60C59D6889}"
       DTS:ObjectName="LocalHost.DDS_DATH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DDS_DATH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DDS_DATH 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D7BFEB00-9E8C-459D-89A1-AE0C6F3D5985}"
+      DTS:ObjectName="LocalHost.DDS_DATH 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -335,6 +347,17 @@
                       lineageId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Output].Columns[Build_Up_Road]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Output].ExternalColumns[Build_Up_Road]"
+                      length="50"
+                      lineageId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Output].Columns[Build_Up_Road]"
+                      name="Build_Up_Road"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -408,6 +431,12 @@
                       refId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Output].ExternalColumns[Build_Up_Road]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Build_Up_Road" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -491,6 +520,13 @@
                       lineageId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Error Output].Columns[Time_Acc]"
                       name="Time_Acc"
                       scale="7" />
+                    <outputColumn
+                      refId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Error Output].Columns[Build_Up_Road]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Error Output].Columns[Build_Up_Road]"
+                      name="Build_Up_Road" />
                     <outputColumn
                       refId="Package\DimDate\Accidents_NDS.Outputs[OLE DB Source Error Output].Columns[Date_Acc]"
                       dataType="dbDate"
@@ -2761,11 +2797,11 @@ where [refTable].[Date_Value] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\DimTime\Add column Time_ID, Hour, Minute"
+              refId="Package\DimTime\Add Column Time_ID, Hour, Minute"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;12"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
-              name="Add column Time_ID, Hour, Minute"
+              name="Add Column Time_ID, Hour, Minute"
               version="12">
               <properties>
                 <property
@@ -2777,73 +2813,134 @@ where [refTable].[Date_Value] = ?</property>
                   <arrayElements
                     arrayElementCount="30">
                     <arrayElement
-                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services component wrapper
-*  This module defines the base class for your component
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
 
+#region Namespaces
 using System;
 using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
 
-public class UserComponent: ScriptComponent
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
 {
-    public Connections Connections;
-    public Variables Variables;
-    public UserComponent()
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
     {
-        Connections = new Connections(this);
-        Variables = new Variables(this);
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
     }
 
-    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
     {
-
-        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
-        {
-            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
-        }
-
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
     }
 
-    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
     {
-        while (Buffer.NextRow())
-        {
-            Input0_ProcessInputRow(Buffer);
-        }
-    }
+        /*
+         * Add your code here
+         */
+        string[] a = Row.TimeAccString.Split(new char[] { ':' });
+        Row.TimeID = a[0] + a[1] + a[2].Substring(0, 2);
+        Row.Hour = Convert.ToInt32(a[0]);
+        Row.Minute = Convert.ToInt32(a[1]);
 
-    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
-    {
-    }
-
-}
-
-public class Connections
-{
-    ScriptComponent ParentComponent;
-
-    public Connections(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-}
-
-public class Variables
-{
-    ScriptComponent ParentComponent;
-
-    public Variables(ScriptComponent Component)
-    {
-        ParentComponent = Component;
     }
 
 }
@@ -2971,302 +3068,7 @@ public class Variables
   </resheader>
 </root>]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
-/* The Script Component allows you to perform virtually any operation that can be accomplished in
- * a .Net application within the context of an Integration Services data flow.
- *
- * Expand the other regions which have "Help" prefixes for examples of specific ways to use
- * Integration Services features within this script component. */
-#endregion
-
-#region Namespaces
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
-#endregion
-
-/// <summary>
-/// This is the class to which to add your code.  Do not change the name, attributes, or parent
-/// of this class.
-/// </summary>
-[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
-public class ScriptMain : UserComponent
-{
-    #region Help:  Using Integration Services variables and parameters
-    /* To use a variable in this script, first ensure that the variable has been added to
-     * either the list contained in the ReadOnlyVariables property or the list contained in
-     * the ReadWriteVariables property of this script component, according to whether or not your
-     * code needs to write into the variable.  To do so, save this script, close this instance of
-     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
-     * Script Transformation Editor window.
-     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
-     *
-     * Example of reading from a variable or parameter:
-     *  DateTime startTime = Variables.MyStartTime;
-     *
-     * Example of writing to a variable:
-     *  Variables.myStringVariable = "new value";
-     */
-    #endregion
-
-    #region Help:  Using Integration Services Connnection Managers
-    /* Some types of connection managers can be used in this script component.  See the help topic
-     * "Working with Connection Managers Programatically" for details.
-     *
-     * To use a connection manager in this script, first ensure that the connection manager has
-     * been added to either the list of connection managers on the Connection Managers page of the
-     * script component editor.  To add the connection manager, save this script, close this instance of
-     * Visual Studio, and add the Connection Manager to the list.
-     *
-     * If the component needs to hold a connection open while processing rows, override the
-     * AcquireConnections and ReleaseConnections methods.
-     * 
-     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
-     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
-     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
-     *
-     * Example of using a File connection manager to acquire a file path:
-     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
-     *  string filePath = (string)rawConnection;
-     *
-     * Example of releasing a connection manager:
-     *  Connections.SalesDB.ReleaseConnection(rawConnection);
-     */
-    #endregion
-
-    #region Help:  Firing Integration Services Events
-    /* This script component can fire events.
-     *
-     * Example of firing an error event:
-     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
-     *
-     * Example of firing an information event:
-     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
-     *
-     * Example of firing a warning event:
-     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
-     */
-    #endregion
-
-    /// <summary>
-    /// This method is called once, before rows begin to be processed in the data flow.
-    ///
-    /// You can remove this method if you don't need to do anything here.
-    /// </summary>
-    public override void PreExecute()
-    {
-        base.PreExecute();
-        /*
-         * Add your code here
-         */
-    }
-
-    /// <summary>
-    /// This method is called after all the rows have passed through this component.
-    ///
-    /// You can delete this method if you don't need to do anything here.
-    /// </summary>
-    public override void PostExecute()
-    {
-        base.PostExecute();
-        /*
-         * Add your code here
-         */
-    }
-
-    /// <summary>
-    /// This method is called once for every row that passes through the component from Input0.
-    ///
-    /// Example of reading a value from a column in the the row:
-    ///  string zipCode = Row.ZipCode
-    ///
-    /// Example of writing a value to a column in the row:
-    ///  Row.ZipCode = zipCode
-    /// </summary>
-    /// <param name="Row">The row that is currently passing through the component</param>
-    public override void Input0_ProcessInputRow(Input0Buffer Row)
-    {
-        string[] a = Row.TimeAccString.Split(new char[] { ':' });
-        Row.TimeID = a[0] + a[1] + a[2].Substring(0, 2);
-        Row.Hour = int.Parse(a[0]);
-        Row.Minute = int.Parse(a[1]);
-    }
-
-}
-]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services buffer wrappers
-*  This module defines classes for accessing data flow buffers
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
-
-
-
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-
-public class Input0Buffer: ScriptBuffer
-
-{
-    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
-        : base(Buffer, BufferColumnIndexes, OutputMap)
-    {
-    }
-
-    public TimeSpan TimeValue
-    {
-        get
-        {
-            return Buffer.GetTime(BufferColumnIndexes[0]);
-        }
-    }
-    public bool TimeValue_IsNull
-    {
-        get
-        {
-            return IsNull(0);
-        }
-    }
-
-    public String TimeAccString
-    {
-        get
-        {
-            return Buffer.GetString(BufferColumnIndexes[1]);
-        }
-    }
-    public bool TimeAccString_IsNull
-    {
-        get
-        {
-            return IsNull(1);
-        }
-    }
-
-    public Int32 Hour
-    {
-        set
-        {
-            this[2] = value;
-        }
-    }
-    public bool Hour_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(2);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    public String TimeID
-    {
-        set
-        {
-            this[3] = value;
-        }
-    }
-    public bool TimeID_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(3);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    public Int32 Minute
-    {
-        set
-        {
-            this[4] = value;
-        }
-    }
-    public bool Minute_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(4);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    new public bool NextRow()
-    {
-        return base.NextRow();
-    }
-
-    new public bool EndOfRowset()
-    {
-        return base.EndOfRowset();
-    }
-
-}
-]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_802b62141f754181a7dfcf505b5c9288.Properties.Settings.get_Default():SC_802b62141f754181a7dfcf505b5c9288.Properties.Sett" +
-    "ings")]
-
-namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}
-]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[SC_802b62141f754181a7dfcf505b5c9288.csproj]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_00d434d452ac403399f7e64a3092ee7a.csproj]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
@@ -3278,11 +3080,11 @@ namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{a51921ff-ce36-4868-a01a-3f539c006619}</ProjectGuid>
+    <ProjectGuid>{2ba6a3fe-cf37-40e3-8deb-879d46ea0ed5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_802b62141f754181a7dfcf505b5c9288</RootNamespace>
-    <AssemblyName>SC_802b62141f754181a7dfcf505b5c9288</AssemblyName>
+    <RootNamespace>SC_00d434d452ac403399f7e64a3092ee7a</RootNamespace>
+    <AssemblyName>SC_6023D73A70864A1693127EF2F05B502F</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
@@ -3349,7 +3151,7 @@ namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
     <VisualStudio>
       <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
         <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptComponent" GeneratedNamespace="SC_802b62141f754181a7dfcf505b5c9288" IconIndex="0"></Host>
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_00d434d452ac403399f7e64a3092ee7a" IconIndex="0"></Host>
         <ProjectClient>
           <HostIdentifier>SSIS_SC150</HostIdentifier>
         </ProjectClient>
@@ -3358,6 +3160,229 @@ namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
   </ProjectExtensions>
 </Project>]]></arrayElement>
                     <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String TimeAccString
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool TimeAccString_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public Int32 Minute
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool Minute_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public Int32 Hour
+    {
+        set
+        {
+            this[2] = value;
+        }
+    }
+    public bool Hour_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(2);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String TimeID
+    {
+        set
+        {
+            this[3] = value;
+        }
+    }
+    public bool TimeID_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(3);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_00d434d452ac403399f7e64a3092ee7a.Properties.Settings.get_Default():SC_00d434d452ac403399f7e64a3092ee7a.Properties.Sett" +
+    "ings")]
+
+namespace SC_00d434d452ac403399f7e64a3092ee7a.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
                       dataType="System.String"><![CDATA[Project]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
@@ -3365,20 +3390,20 @@ namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
   <msb:PropertyGroup>
-    <msb:CodeName>SC_802b62141f754181a7dfcf505b5c9288</msb:CodeName>
+    <msb:CodeName>SC_00d434d452ac403399f7e64a3092ee7a</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>SC_802b62141f754181a7dfcf505b5c9288</msb:DisplayName>
-    <msb:ProjectId>{22ED1D43-8372-46D4-A7A0-F7AE9476984A}</msb:ProjectId>
+    <msb:DisplayName>SC_00d434d452ac403399f7e64a3092ee7a</msb:DisplayName>
+    <msb:ProjectId>{5D42AF06-C738-4BEB-9FB6-652BDE29DCF0}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
-    <msb:Project Include="SC_802b62141f754181a7dfcf505b5c9288.csproj" />
+    <msb:Project Include="SC_00d434d452ac403399f7e64a3092ee7a.csproj" />
+    <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Settings.Designer.cs" />
     <msb:File Include="main.cs" />
     <msb:File Include="BufferWrapper.cs" />
     <msb:File Include="ComponentWrapper.cs" />
     <msb:File Include="Properties\Settings.settings" />
     <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Resources.Designer.cs" />
   </msb:ItemGroup>
 </c:Project>]]></arrayElement>
@@ -3395,11 +3420,11 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("SC_802b62141f754181a7dfcf505b5c9288")]
+[assembly: AssemblyTitle("SC_00d434d452ac403399f7e64a3092ee7a")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SC_802b62141f754181a7dfcf505b5c9288")]
+[assembly: AssemblyProduct("SC_00d434d452ac403399f7e64a3092ee7a")]
 [assembly: AssemblyCopyright("Copyright @  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -3442,14 +3467,14 @@ using System.Runtime.CompilerServices;
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_802b62141f754181a7dfcf505b5c9288.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_00d434d452ac403399f7e64a3092ee7a.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
     "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_802b62141f754181a7dfcf505b5c9288.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_00d434d452ac403399f7e64a3092ee7a.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
     "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_802b62141f754181a7dfcf505b5c9288.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_00d434d452ac403399f7e64a3092ee7a.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
     "):Void")]
 
-namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
+namespace SC_00d434d452ac403399f7e64a3092ee7a.Properties {
     
     
     /// <summary>
@@ -3477,7 +3502,7 @@ namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_802b62141f754181a7dfcf505b5c9288.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_00d434d452ac403399f7e64a3092ee7a.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -3511,107 +3536,134 @@ namespace SC_802b62141f754181a7dfcf505b5c9288.Properties {
                   <arrayElements
                     arrayElementCount="2">
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_802b62141f754181a7dfcf505b5c9288.dll]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_6023D73A70864A1693127EF2F05B502F.dll]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHuGyWEAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAA/jMA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAI3oymEAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAYjMA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKwzAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABAzAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAABBQAAAAgAAAAFgAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAYAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAHgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADg
-MwAAAAAAAEgAAAACAAUAYCIAAJQQAAABAAAAAAAAAPQyAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAYATwAAAAEAABEDbwgAAAYX
-jRsAAAElFh86nW8SAAAKCgMGFpoGF5oGGJoWGG8TAAAKKBQAAApvDAAABgMGFpooFQAACm8KAAAG
-AwYXmigVAAAKbw4AAAYqHgIoEgAABioqAgMEBSgWAAAKKlICexcAAAoCexgAAAoWlG8ZAAAKKiIC
-FigaAAAKKlICexcAAAoCexgAAAoXlG8bAAAKKiICFygaAAAKKjoCGAOMHQAAASgcAAAKKloDLAgC
-GCgdAAAKKnIBAABwcx4AAAp6JgIZAygcAAAKKloDLAgCGSgdAAAKKnIBAABwcx4AAAp6OgIaA4wd
-AAABKBwAAAoqWgMsCAIaKB0AAAoqcgEAAHBzHgAACnoeAigfAAAKKh4CKCAAAAoqfgIoIQAACgIC
-cxYAAAZ9AQAABAICcxcAAAZ9AgAABCqSBHKeAABwGm8iAAAKLBUCBQIDKCMAAAoOBHMFAAAGbxQA
-AAYqSisHAgNvFQAABgNvEAAABi3xKgYqOgIoJAAACgIDfQMAAAQqOgIoJAAACgIDfQQAAAQqHgIo
-JAAACiqufgUAAAQtHnKuAABw0AcAAAIoJQAACm8mAAAKcycAAAqABQAABH4FAAAEKhp+BgAABCoe
-AoAGAAAEKhp+BwAABCoeAigoAAAKKi5zHQAABoAHAAAEKgAAAEJTSkIBAAEAAAAAAAwAAAB2NC4w
-LjMwMzE5AAAAAAUAbAAAAFAGAAAjfgAAvAYAANAGAAAjU3RyaW5ncwAAAACMDQAAIAEAACNVUwCs
-DgAAEAAAACNHVUlEAAAAvA4AANgBAAAjQmxvYgAAAAAAAAACAAABVxWiAQkBAAAA+gEzABYAAAEA
-AAAiAAAACAAAAAcAAAAeAAAAEwAAACgAAAAQAAAAAQAAAAMAAAANAAAADgAAAAEAAAAEAAAAAQAA
-AAAAQQMBAAAAAAAGAAMC+QQGAJcC+QQGAE8B5gQPAG0FAAAGAHwBLQQGAOYBLQQGAMcBLQQGAH4C
-LQQGACMCLQQGADwCLQQGAJMBLQQGAK4B6wIKAFcClgAKAK8ElgAOAKAElgAKAHYElgAGAO8D3AMK
-AEAGlgAGAP0F3AMGADIB5gQGAMAEGQUGAGoEGAQSAAIBKwMSAGMBKwMSAOQAAwQGABcB+QQGAI4E
-3AMGABoD3AMGAAEA3AMGAD8E3AMGAFkE3AMGALcA3AMGAGAA3AMGAMUGLQQAAAAAKwAAAAAAAQAB
-AAEAEAD4AwAAEAABAAEAAQAQAJMEAAA5AAEABQABABAAIgYAAEkAAQASAAEAEADqBQAATQADABYA
-AQAQAKsFAABNAAQAFwAAABAAIAV8BU0ABQAYAAABEADaBXwFZQAHABwABgDqBZsABgCrBZ8AAQAw
-BqMAAQAwBqMAEQDjA6cAEQDUAKsAEQBQAK8AUCAAAAAAxgC1AgYAAQBYIAAAAADGAMACBgABAGAg
-AAAAAMYAogazAAEAuyAAAAAAhhjQBAYAAgDDIAAAAACGGNAEOQACAM4gAAAAAIYI1wK5AAUA4yAA
-AAAAhgiNA2EABQDsIAAAAACGCAUDvgAFAAEhAAAAAIYIogNhAAUACiEAAAAAhgjdBAEABQAZIQAA
-AACGCLsDwgAGADAhAAAAAIYINAAQAAcAOiEAAAAAhghpA8IACABRIQAAAACGCMwCAQAJAGAhAAAA
-AIYIewPCAAoAdyEAAAAAhgC5BmEACwB/IQAAAACGAAQGYQALAIchAAAAAIYY0AQGAAsApyEAAAAA
-xgCVBscACwDMIQAAAADGAY4GswAPAN8hAAAAAMYBogazABAA4SEAAAAAhhjQBNEAEQDwIQAAAACG
-GNAE0QASAP8hAAAAAIMY0AQGABMAByIAAAAAkwi8BNcAEwAzIgAAAACTCLwA3AATADoiAAAAAJMI
-yADhABMAQiIAAAAAlggWBucAFABJIgAAAACGGNAEBgAUAFEiAAAAAJEY1gTsABQAAAABAL0GAAAB
-ALUEAAACALUFAAADAIQEAAABAOUCAAABAOUCAAABAOUCAAABAOUCAAABAOUCAAABAOUCAAABAD8A
-AAACAIQAAAADALUEAAAEAIQEAAABALUEAAABAL0GAAABAEYGAAABAEYGAAABAOUCCQDQBAEAEQDQ
-BAYAGQDQBAoAKQDQBBAAMQDQBBAAOQDQBBAAQQDQBBAASQDQBBAAUQDQBBAAWQDQBBAAYQDQBBAA
-aQDQBAYAoQDQBAYAwQDQBBUA0QDQBAYAkQC1AgYAkQDAAgYA4QAQBiAA4QAhAycA4QD2BS0A6QD8
-ADQAcQDQBDkAcQC1BEMAcQC1BUcAeQCOAEsAcQDEA1EAeQAXA1YAcQDTA1sAcQDLAwEA8QDQBBAA
-cQC5BmEAcQAEBmEAkQDQBAYA4QDjBWUAkQDJBWwAmQDQBAYAAQFyAHIAAQHBBnsAqQDQBIEAyQDQ
-BAYALgALABABLgATABkBLgAbADgBLgAjAEEBLgArAGoBLgAzAGoBLgA7AGoBLgBDAEEBLgBLAHAB
-LgBTAGoBLgBbAIcBQwBjANEB4QB7ANEB4wBrANEBaQFzADgBiQFzADgBGwADAAEABwALAAgADQAA
-ANsC8AAAAJED9QAAAAkD+QAAAKYD9QAAAOEE/QAAAL8D9QAAADgA+QAAAG0D9QAAANAC/QAAAH8D
-9QAAAMAEAQEAANwABgEAABoGCwECAAYAAwACAAcABQACAAgABwACAAkACQABAAoACwABAAsADQAB
-AAwADwABAA0AEQABAA4AEwABAA8AFQACABkAFwACABoAGQABABsAGQACABwAGwAEgAAAAQAAAAAA
-AAAAAAAAAAAHAAAABAAAAAAAAAAAAAAAiQBHAAAAAAAPAAAAAAAAAAAAAACSAFAGAAAAAA8AAAAA
-AAAAAAAAAJIAbQYAAAAABAAAAAAAAAAAAAAAiQDcAwAAAAAAAAAAAQAAACoFAAAAAAAAAEludDMy
-AFNDXzgwMmI2MjE0MWY3NTQxODFhN2RmY2Y1MDViNWM5Mjg4ADxNb2R1bGU+AHNldF9UaW1lSUQA
-SW5wdXRJRABtc2NvcmxpYgBkZWZhdWx0SW5zdGFuY2UAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlw
-ZUZyb21IYW5kbGUASW5wdXROYW1lAEdldFRpbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlw
-ZWxpbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGlj
-YXRpb25TZXR0aW5nc0Jhc2UAUGFyc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5l
-cmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0
-cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFz
-c2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJs
-eUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21w
-aWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3Nl
-bWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJp
-YnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1
-dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBzZXRfTWludXRlAGdldF9UaW1lVmFsdWUAdmFsdWUA
-U3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBnZXRfVGltZUFjY1N0cmluZwBHZXRTdHJpbmcAU3Vi
-c3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ184MDJiNjIxNDFmNzU0MTgxYTdkZmNmNTA1
-YjVjOTI4OC5kbGwAc2V0X1RpbWVJRF9Jc051bGwAc2V0X01pbnV0ZV9Jc051bGwAZ2V0X1RpbWVW
-YWx1ZV9Jc051bGwAZ2V0X1RpbWVBY2NTdHJpbmdfSXNOdWxsAHNldF9Ib3VyX0lzTnVsbABTZXRO
-dWxsAHNldF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBUaW1lU3BhbgBTY3JpcHRNYWluAFN5c3Rl
-bS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAElu
-dmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRw
-dXROYW1lTWFwAE91dHB1dE1hcABDaGFyAElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3Jp
-cHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IAc2V0X0hvdXIAU3lzdGVt
-LkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291
-cmNlcwBTQ184MDJiNjIxNDFmNzU0MTgxYTdkZmNmNTA1YjVjOTI4OC5Qcm9wZXJ0aWVzLlJlc291
-cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfODAyYjYyMTQxZjc1NDE4MWE3ZGZjZjUw
-NWI1YzkyODguUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1
-bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBDb25jYXQAT2JqZWN0AEVuZE9m
-Um93c2V0AFNwbGl0AGdldF9EZWZhdWx0AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9uZW50AFNj
-cmlwdENvbXBvbmVudABNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2NyaXB0AE1pY3Jvc29mdC5TcWxT
-ZXJ2ZXIuUGlwZWxpbmVIb3N0AElucHV0MF9Qcm9jZXNzSW5wdXQASW5wdXQwX1Byb2Nlc3NJbnB1
-dFJvdwBOZXh0Um93AGdldF9Bc3NlbWJseQAAAACAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIA
-dAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBz
-AHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkA
-bgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwA4ADAAMgBiADYAMgAxADQAMQBm
-ADcANQA0ADEAOAAxAGEANwBkAGYAYwBmADUAMAA1AGIANQBjADkAMgA4ADgALgBQAHIAbwBwAGUA
-cgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAPtdkl+9AetDhE/04smW/swABCABAQgDIAAB
-BSABARERBCABAQ4FIAEBEV0EBwEdDgYgAR0OHQMFIAIOCAgGAAMODg4OBAABCA4JIAMBEj0dCBJB
-AwYSPQMGHQgFIAERRQgEIAECCAQgAQ4IBSACAQgcAyAAAgYgAgIOEX0FIAEdCAgIAAESgIERgIUF
-IAASgIkHIAIBDhKAiQi3elxWGTTgiQiJhF3NgIDMkQMGEhQDBhIYAwYSSQMGElUDBhJZAwYSIAUg
-AQESDAQgABFFAyAADgQgAQECCSAEAQgOEj0SQQUgAQESSQQAABJVBAAAElkFAAEBElkEAAASIAMA
-AAEEKAARRQMoAAIDKAAOAygACAQIABJVBAgAElkECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5v
-bkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfODAyYjYyMTQxZjc1NDE4MWE3ZGZjZjUw
-NWI1YzkyODgAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMQAASQEAGi5ORVRGcmFtZXdvcmss
-VmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcE
-AQAAAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBt
-c2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
-PWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAA
-AAAAAAAAAABQQURQQURQtAAAANQzAAAAAAAAAAAAAO4zAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AADgMwAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAaBMAAAAgAAAAFAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABE
+MwAAAAAAAEgAAAACAAUAQCIAABgQAAABAAAAAAAAAFgyAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAYATwAAAAEAABEDbwYAAAYX
+jRoAAAElFh86nW8SAAAKCgMGFpoGF5oGGJoWGG8TAAAKKBQAAApvDAAABgMGFpooFQAACm8KAAAG
+AwYXmigVAAAKbwgAAAYqHgIoEAAABioqAgMEBSgWAAAKKlICexcAAAoCexgAAAoWlG8ZAAAKKiIC
+FigaAAAKKjoCFwOMHQAAASgbAAAKKloDLAgCFygcAAAKKnIBAABwcx0AAAp6OgIYA4wdAAABKBsA
+AAoqWgMsCAIYKBwAAAoqcgEAAHBzHQAACnomAhkDKBsAAAoqWgMsCAIZKBwAAAoqcgEAAHBzHQAA
+CnoeAigeAAAKKh4CKB8AAAoqfgIoIAAACgICcxQAAAZ9AQAABAICcxUAAAZ9AgAABCqSBHKeAABw
+Gm8hAAAKLBUCBQIDKCIAAAoOBHMFAAAGbxIAAAYqSisHAgNvEwAABgNvDgAABi3xKgYqOgIoIwAA
+CgIDfQMAAAQqOgIoIwAACgIDfQQAAAQqHgIoIwAACiqufgUAAAQtHnKuAABw0AcAAAIoJAAACm8l
+AAAKcyYAAAqABQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAABCoeAignAAAKKi5zGwAABoAH
+AAAEKgBCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAAAUBgAAI34AAIAGAACgBgAA
+I1N0cmluZ3MAAAAAIA0AACABAAAjVVMAQA4AABAAAAAjR1VJRAAAAFAOAADIAQAAI0Jsb2IAAAAA
+AAAAAgAAAVcVogEJAQAAAPoBMwAWAAABAAAAIgAAAAgAAAAHAAAAHAAAABMAAAAnAAAAEAAAAAEA
+AAADAAAACwAAAAwAAAABAAAABAAAAAEAAAAAACcDAQAAAAAABgD3AcEEBgCLAsEEBgBDAa4EDwA1
+BQAABgBwAfUDBgDaAfUDBgC7AfUDBgByAvUDBgAXAvUDBgAwAvUDBgCHAfUDBgCiAdECCgBLApAA
+CgB3BJAADgBoBJAACgA+BJAACgAIBpAABgDFBa0DBgAmAa4EBgCIBOEEBgAyBOADEgD2ABEDEgBX
+AREDEgDeAMsDBgALAcEEBgBWBK0DBgAAA60DBgA1Bq0DBgADAK0DBgAHBK0DBgAhBK0DBgCxAK0D
+BgBiAK0DBgCVBvUDAAAAAAkAAAAAAAEAAQABABAAwAMAABAAAQABAAEAEABbBAAAOQABAAUAAQAQ
+AOoFAABFAAEAEAABABAAsgUAAEkAAwAUAAEAEABzBQAASQAEABUAAAAQAOgERAVJAAUAFgAAARAA
+ogVEBWEABwAaAAYAsgWVAAYAcwWZAAEA+AWdAAEA+AWdABEAtAOhABEAzgClABEAUgCpAFAgAAAA
+AMYAqQIGAAEAWCAAAAAAxgC0AgYAAQBgIAAAAADGAHIGrQABALsgAAAAAIYYmAQGAAIAwyAAAAAA
+hhiYBDkAAgDOIAAAAACGCOsCswAFAOMgAAAAAIYIcwNbAAUA7CAAAAAAhgjAAgEABQD7IAAAAACG
+CGEDtwAGABIhAAAAAIYIpQQBAAcAISEAAAAAhgiMA7cACAA4IQAAAACGCBIAEAAJAEIhAAAAAIYI
+TwO3AAoAWSEAAAAAhgCJBlsACwBhIQAAAACGAMwFWwALAGkhAAAAAIYYmAQGAAsAiSEAAAAAxgBl
+BrwACwCuIQAAAADGAV4GrQAPAMEhAAAAAMYBcgatABAAwyEAAAAAhhiYBMYAEQDSIQAAAACGGJgE
+xgASAOEhAAAAAIMYmAQGABMA6SEAAAAAkwiEBMwAEwAVIgAAAACTCLYA0QATABwiAAAAAJMIwgDW
+ABMAJCIAAAAAlgjeBdwAFAArIgAAAACGGJgEBgAUADMiAAAAAJEYngThABQAAAABAI0GAAABAH0E
+AAACAH0FAAADAEwEAAABAMsCAAABAMsCAAABAMsCAAABAMsCAAABAMsCAAABAMsCAAABAB0AAAAC
+AIYAAAADAH0EAAAEAEwEAAABAH0EAAABAI0GAAABAA4GAAABAA4GAAABAMsCCQCYBAEAEQCYBAYA
+GQCYBAoAKQCYBBAAMQCYBBAAOQCYBBAAQQCYBBAASQCYBBAAUQCYBBAAWQCYBBAAYQCYBBAAaQCY
+BAYAmQCYBAYAuQCYBBUAyQCYBAYAiQCpAgYAiQC0AgYA2QDYBSAA2QAHAycA2QC+BS0A4QABADQA
+cQCYBDkAcQB9BEMAcQB9BUcAeQD9AksAcQCVA1AAcQCkA1UAcQCcAwEA8QCYBBAAcQCJBlsAcQDM
+BVsAiQCYBAYA2QCrBV8AiQCRBWYAkQCYBAYAAQF0AGwAAQGRBnUAoQCYBHsAwQCYBAYALgALAAAB
+LgATAAkBLgAbACgBLgAjADEBLgArAFoBLgAzAFoBLgA7AFoBLgBDADEBLgBLAGABLgBTAFoBLgBb
+AHcBQwBjAMEB4QB7AMEB4wBrAMEBKQFzACgBSQFzACgBGwADAAEABwAJAAgACwAAAO8C5QAAAHcD
+6QAAAMQC7QAAAGUD6QAAAKkE7QAAAJAD6QAAABYA5QAAAFMD6QAAAIgE8QAAANYA9gAAAOIF+wAC
+AAYAAwACAAcABQABAAgABwABAAkACQABAAoACwABAAsADQABAAwADwABAA0AEQACABcAEwACABgA
+FQABABkAFQACABoAFwAEgAAAAQAAAAAAAAAAAAAAAAAlAAAABAAAAAAAAAAAAAAAgwBJAAAAAAAP
+AAAAAAAAAAAAAACMABgGAAAAAA8AAAAAAAAAAAAAAIwAPQYAAAAABAAAAAAAAAAAAAAAgwCtAwAA
+AAAAAAAAAQAAAPIEAAAAAABUb0ludDMyADxNb2R1bGU+AHNldF9UaW1lSUQASW5wdXRJRABTQ182
+MDIzRDczQTcwODY0QTE2OTMxMjdFRjJGMDVCNTAyRgBtc2NvcmxpYgBkZWZhdWx0SW5zdGFuY2UA
+UnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAE1pY3Jvc29mdC5T
+cWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3Vy
+Y2VDdWx0dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENv
+bXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVi
+dWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0
+dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1
+dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRy
+aWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRy
+aWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVudEVudHJ5
+UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmls
+aXR5QXR0cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAc2V0X01pbnV0ZQB2YWx1ZQBTeXN0
+ZW0uUnVudGltZS5WZXJzaW9uaW5nAGdldF9UaW1lQWNjU3RyaW5nAEdldFN0cmluZwBTdWJzdHJp
+bmcAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzYwMjNENzNBNzA4NjRBMTY5MzEyN0VGMkYwNUI1
+MDJGLmRsbABzZXRfVGltZUlEX0lzTnVsbABzZXRfTWludXRlX0lzTnVsbABnZXRfVGltZUFjY1N0
+cmluZ19Jc051bGwAc2V0X0hvdXJfSXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lzdGVtAHJlc291
+cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRp
+b24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21w
+YXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAENoYXIASW5wdXQwQnVm
+ZmVyAFBpcGVsaW5lQnVmZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAC5jdG9y
+AC5jY3RvcgBzZXRfSG91cgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGls
+ZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNDXzAwZDQzNGQ0NTJhYzQwMzM5OWY3ZTY0YTMw
+OTJlZTdhLlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ18w
+MGQ0MzRkNDUyYWM0MDMzOTlmN2U2NGEzMDkyZWU3YS5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZm
+ZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rp
+b25zAENvbmNhdABPYmplY3QARW5kT2ZSb3dzZXQAU3BsaXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBv
+bmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
+VHhTY3JpcHQAQ29udmVydABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBf
+UHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBnZXRfQXNzZW1ibHkA
+AAAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0ACAAYgBlACAA
+cwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYAYQBsAHUAZQAg
+AHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4AcAB1AHQA
+IAAwAABxUwBDAF8AMAAwAGQANAAzADQAZAA0ADUAMgBhAGMANAAwADMAMwA5ADkAZgA3AGUANgA0
+AGEAMwAwADkAMgBlAGUANwBhAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMA
+ZQBzAAD/xAANCFQTSL01bVHUFn70AAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFZBAcBHQ4GIAEd
+Dh0DBSACDggIBgADDg4ODgQAAQgOCSADARI9HQgSQQMGEj0DBh0IBCABDggEIAECCAUgAgEIHAMg
+AAIGIAICDhF9BSABHQgICAABEoCBEYCFBSAAEoCJByACAQ4SgIkIt3pcVhk04IkIiYRdzYCAzJED
+BhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwDIAAOBCABAQIJIAQBCA4SPRJBBSABARJFBAAA
+ElEEAAASVQUAAQESVQQAABIgAwAAAQMoAA4DKAACAygACAQIABJRBAgAElUECAASIAgBAAgAAAAA
+AB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfMDBkNDM0ZDQ1
+MmFjNDAzMzk5ZjdlNjRhMzA5MmVlN2EAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMQAASQEA
+Gi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVU
+IEZyYW1ld29yayA0LjcEAQAAAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJl
+c291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWws
+IFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1l
+UmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAADgzAAAAAAAAAAAAAFIzAAAAIAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAABEMwAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAA
+AAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
+SAAAAFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
+AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
+MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
+AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
+AABTAEMAXwAwADAAZAA0ADMANABkADQANQAyAGEAYwA0ADAAMwAzADkAOQBmADcAZQA2ADQAYQAz
+ADAAOQAyAGUAZQA3AGEAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADYAMAAyADMARAA3
+ADMAQQA3ADAAOAA2ADQAQQAxADYAOQAzADEAMgA3AEUARgAyAEYAMAA1AEIANQAwADIARgAuAGQA
+bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
+AHQAIABAACAAIAAyADAAMgAxAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8ANgAw
+ADIAMwBEADcAMwBBADcAMAA4ADYANABBADEANgA5ADMAMQAyADcARQBGADIARgAwADUAQgA1ADAA
+MgBGAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADAAMABk
+ADQAMwA0AGQANAA1ADIAYQBjADQAMAAzADMAOQA5AGYANwBlADYANABhADMAMAA5ADIAZQBlADcA
+YQAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAZDMAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3620,50 +3672,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABI
-AAAAWEAAAOwDAAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAA
-AAC9BO/+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
-AAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4A
-AAAAAAAAsARMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAw
-ADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4A
-eQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAA
-AFMAQwBfADgAMAAyAGIANgAyADEANAAxAGYANwA1ADQAMQA4ADEAYQA3AGQAZgBjAGYANQAwADUA
-YgA1AGMAOQAyADgAOAAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAw
-AC4AMAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AOAAwADIAYgA2ADIA
-MQA0ADEAZgA3ADUANAAxADgAMQBhADcAZABmAGMAZgA1ADAANQBiADUAYwA5ADIAOAA4AC4AZABs
-AGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgA
-dAAgAEAAIAAgADIAMAAyADEAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAA
-AAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwA4ADAA
-MgBiADYAMgAxADQAMQBmADcANQA0ADEAOAAxAGEANwBkAGYAYwBmADUAMAA1AGIANQBjADkAMgA4
-ADgALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8AOAAwADIA
-YgA2ADIAMQA0ADEAZgA3ADUANAAxADgAMQBhADcAZABmAGMAZgA1ADAANQBiADUAYwA5ADIAOAA4
-AAAANAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgA
-CAABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAAANAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   </arrayElements>
                 </property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_802b62141f754181a7dfcf505b5c9288</property>
+                  typeConverter="NOTBROWSABLE">SC_6023d73a70864a1693127ef2f05b502f</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -3692,101 +3708,92 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataChecksum140"
-                  typeConverter="NOTBROWSABLE">E5</property>
+                  typeConverter="NOTBROWSABLE">BF</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\DimTime\Add column Time_ID, Hour, Minute.Inputs[Input 0]"
+                  refId="Package\DimTime\Add Column Time_ID, Hour, Minute.Inputs[Input 0]"
                   hasSideEffects="true"
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DimTime\Add column Time_ID, Hour, Minute.Inputs[Input 0].Columns[Time_Value]"
-                      cachedDataType="dbTime2"
-                      cachedName="Time_Acc"
-                      cachedScale="7"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\DimTime\Sort Time_Acc.Outputs[Sort Output].Columns[Time_Acc]"
-                      name="Time_Value" />
-                    <inputColumn
-                      refId="Package\DimTime\Add column Time_ID, Hour, Minute.Inputs[Input 0].Columns[Time_Acc_String]"
+                      refId="Package\DimTime\Add Column Time_ID, Hour, Minute.Inputs[Input 0].Columns[Time_Acc_String]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Time_Acc"
-                      lineageId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc]"
-                      name="Time_Acc_String" />
+                      cachedLength="255"
+                      cachedName="Time_Acc_String"
+                      lineageId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc_String]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0]"
+                  refId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0]"
                   name="Output 0"
-                  synchronousInputId="Package\DimTime\Add column Time_ID, Hour, Minute.Inputs[Input 0]">
+                  synchronousInputId="Package\DimTime\Add Column Time_ID, Hour, Minute.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]"
+                      refId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Minute]"
                       dataType="i4"
-                      lineageId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]"
+                      lineageId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Minute]"
+                      name="Minute" />
+                    <outputColumn
+                      refId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]"
+                      dataType="i4"
+                      lineageId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]"
                       name="Hour" />
                     <outputColumn
-                      refId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Time_ID]"
+                      refId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Time_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Time_ID]"
+                      lineageId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Time_ID]"
                       name="Time_ID" />
-                    <outputColumn
-                      refId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Minute]"
-                      dataType="i4"
-                      lineageId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Minute]"
-                      name="Minute" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate"
+              refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Add Column Time_Period, CreatedDate, UpdatedDate"
+              name="Add Column Time_Period, CreatedDate, Updateddate"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
+                  refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Inputs[Derived Column Input].Columns[Hour]"
+                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Inputs[Derived Column Input].Columns[Hour]"
                       cachedDataType="i4"
                       cachedName="Hour"
-                      lineageId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]" />
+                      lineageId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output]"
+                  refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[CreatedDate]"
                       name="CreatedDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3804,11 +3811,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3826,12 +3833,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[Time_Period]"
+                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[Time_Period]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="9"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[Time_Period]"
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[Time_Period]"
                       name="Time_Period"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3839,7 +3846,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(#{Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &gt;= 5 &amp;&amp; #{Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &lt;= 11 ? "Morning" : #{Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &gt;= 12 &amp;&amp; #{Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &lt;= 16 ? "Afternoon" : #{Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &gt;= 17 &amp;&amp; #{Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &lt;= 20 ? "Evening" : "Night")</property>
+                          name="Expression">(#{Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &gt;= 5 &amp;&amp; #{Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &lt;= 11 ? "Morning" : #{Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &gt;= 12 &amp;&amp; #{Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &lt;= 16 ? "Afternoon" : #{Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &gt;= 17 &amp;&amp; #{Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]} &lt;= 20 ? "Evening" : "Night")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -3852,23 +3859,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Error Output]"
+                  refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3907,14 +3914,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   synchronousInputId="Package\DimTime\Convert Time_Acc to string.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc]"
+                      refId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc_String]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc]"
-                      name="Time_Acc"
+                      length="255"
+                      lineageId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc_String]"
+                      name="Time_Acc_String"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3972,7 +3979,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       cachedDataType="wstr"
                       cachedLength="9"
                       cachedName="Time_Period"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[Time_Period]" />
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[Time_Period]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3999,7 +4006,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[Time_Period]}</property>
+                          name="SourceInputColumnLineageID">#{Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[Time_Period]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -4092,8 +4099,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               <connections>
                 <connection
                   refId="Package\DimTime\DimTime.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4106,45 +4113,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[Time_Acc_String]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Time_Acc_String"
+                      externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[Time_Value]"
+                      lineageId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc_String]" />
+                    <inputColumn
                       refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[CreatedDate]" />
                     <inputColumn
                       refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
-                    <inputColumn
-                      refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[Time_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Time_ID"
-                      externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[Time_ID]"
-                      lineageId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Time_ID]" />
-                    <inputColumn
-                      refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[Time_Acc]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Time_Acc"
-                      externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[Time_Value]"
-                      lineageId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output].Columns[Time_Acc]" />
+                      lineageId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                     <inputColumn
                       refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[Hour]"
                       cachedDataType="i4"
                       cachedName="Hour"
                       externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[Hour]"
-                      lineageId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]" />
+                      lineageId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Hour]" />
                     <inputColumn
                       refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[Minute]"
                       cachedDataType="i4"
                       cachedName="Minute"
                       externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[Minute]"
-                      lineageId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Minute]" />
+                      lineageId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Minute]" />
                     <inputColumn
                       refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[Time_Period]"
                       cachedCodepage="1252"
@@ -4153,6 +4152,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       cachedName="Time_Period"
                       externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[Time_Period]"
                       lineageId="Package\DimTime\Convert Time_Period to string.Outputs[Data Conversion Output].Columns[Time_Period]" />
+                    <inputColumn
+                      refId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].Columns[Time_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Time_ID"
+                      externalMetadataColumnId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input].ExternalColumns[Time_ID]"
+                      lineageId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0].Columns[Time_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4329,13 +4336,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Time_Value from DimTime</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTime]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select Time_Value from DimTime) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTime]) [refTable]
 where [refTable].[Time_Value] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4367,12 +4374,12 @@ where [refTable].[Time_Value] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Time_Value" dataType="DT_DBTIME2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Time_Key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Time_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Time_Value" dataType="DT_DBTIME2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="Hour" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Minute" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Time_Period" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DimTime\Sort Time_Acc.Outputs[Sort Output].Columns[Time_Acc]};</property>
+                  name="ParameterMap">#{Package\DimTime\215:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4385,8 +4392,8 @@ where [refTable].[Time_Value] = ?</property>
               <connections>
                 <connection
                   refId="Package\DimTime\Lookup Time_Value in DimTime.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -4459,6 +4466,97 @@ where [refTable].[Time_Value] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\DimTime\Remove null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Remove null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DimTime\Remove null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimTime\Remove null.Inputs[Conditional Split Input].Columns[Time_Acc]"
+                      cachedDataType="dbTime2"
+                      cachedName="Time_Acc"
+                      cachedScale="7"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DimTime\Sort Time_Acc.Outputs[Sort Output].Columns[Time_Acc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimTime\Remove null.Outputs[Remove null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Remove null"
+                  synchronousInputId="Package\DimTime\Remove null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DimTime\Sort Time_Acc.Outputs[Sort Output].Columns[Time_Acc]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(Time_Acc)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimTime\Remove null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DimTime\Remove null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimTime\Remove null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DimTime\Remove null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimTime\Remove null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimTime\Remove null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimTime\Remove null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimTime\Remove null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DimTime\Sort Time_Acc"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -4469,7 +4567,7 @@ where [refTable].[Time_Value] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">true</property>
+                  name="EliminateDuplicates">false</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the maximum number of threads to use for sorting."
@@ -4536,20 +4634,25 @@ where [refTable].[Time_Value] = ?</property>
               name="Aggregate Output 1"
               startId="Package\DimTime\Group by Time_Acc.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\DimTime.Paths[Data Conversion Output]"
-              endId="Package\DimTime\Add column Time_ID, Hour, Minute.Inputs[Input 0]"
-              name="Data Conversion Output"
-              startId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output]" />
+              refId="Package\DimTime.Paths[Conditional Split Default Output]"
+              endId="Package\DimTime\Lookup Time_Value in DimTime.Inputs[Lookup Input]"
+              name="Conditional Split Default Output"
+              startId="Package\DimTime\Remove null.Outputs[Conditional Split Default Output]" />
             <path
-              refId="Package\DimTime.Paths[Data Conversion Output1]"
+              refId="Package\DimTime.Paths[Data Conversion Output]"
               endId="Package\DimTime\DimTime.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\DimTime\Convert Time_Period to string.Outputs[Data Conversion Output]" />
             <path
+              refId="Package\DimTime.Paths[Data Conversion Output1]"
+              endId="Package\DimTime\Add Column Time_ID, Hour, Minute.Inputs[Input 0]"
+              name="Data Conversion Output"
+              startId="Package\DimTime\Convert Time_Acc to string.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\DimTime.Paths[Derived Column Output]"
               endId="Package\DimTime\Convert Time_Period to string.Inputs[Data Conversion Input]"
               name="Derived Column Output"
-              startId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Outputs[Derived Column Output]" />
+              startId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Outputs[Derived Column Output]" />
             <path
               refId="Package\DimTime.Paths[Lookup No Match Output]"
               endId="Package\DimTime\Convert Time_Acc to string.Inputs[Data Conversion Input]"
@@ -4562,12 +4665,12 @@ where [refTable].[Time_Value] = ?</property>
               startId="Package\DimTime\Accidents_NDS.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DimTime.Paths[Output 0]"
-              endId="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
+              endId="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate.Inputs[Derived Column Input]"
               name="Output 0"
-              startId="Package\DimTime\Add column Time_ID, Hour, Minute.Outputs[Output 0]" />
+              startId="Package\DimTime\Add Column Time_ID, Hour, Minute.Outputs[Output 0]" />
             <path
               refId="Package\DimTime.Paths[Sort Output]"
-              endId="Package\DimTime\Lookup Time_Value in DimTime.Inputs[Lookup Input]"
+              endId="Package\DimTime\Remove null.Inputs[Conditional Split Input]"
               name="Sort Output"
               startId="Package\DimTime\Sort Time_Acc.Outputs[Sort Output]" />
           </paths>
@@ -4952,29 +5055,33 @@ where [refTable].[Time_Value] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\DimDate\Derived Column"
-          TopLeft="312,530" />
-        <NodeLayout
           Size="152,42"
           Id="Package\DimDate\Create Date_ID"
           TopLeft="307,450" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\DimDate\Group by Date_Acc"
-          TopLeft="167.5,122.5" />
+          Size="146,42"
+          Id="Package\DimDate\Sort Date_Acc"
+          TopLeft="298,205" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DimDate\Derived Column"
+          TopLeft="312,530" />
         <NodeLayout
           Size="205,42"
           Id="Package\DimDate\Convert Date_Acc to string"
           TopLeft="280,370" />
         <NodeLayout
+          Size="170,42"
+          Id="Package\DimDate\Group by Date_Acc"
+          TopLeft="167.5,122.5" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\DimDate\Lookup Date_Value in DimDate"
+          TopLeft="265,284" />
+        <NodeLayout
           Size="120,42"
           Id="Package\DimDate\DimDate"
           TopLeft="332,733" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\DimDate\Sort Date_Acc"
-          TopLeft="298,205" />
         <NodeLayout
           Size="150,42"
           Id="Package\DimDate\Accidents_NDS"
@@ -4983,6 +5090,130 @@ where [refTable].[Time_Value] = ?</property>
           Size="224,42"
           Id="Package\DimDate\Convert Month_Name to string"
           TopLeft="281,633" />
+        <EdgeLayout
+          Id="Package\DimDate.Paths[Sort Output]"
+          TopLeft="374.5,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDate.Paths[Output 0]"
+          TopLeft="386,492">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDate.Paths[OLE DB Source Output]"
+          TopLeft="144,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.5,61.5"
+              Start="0,0"
+              End="108.5,54">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.75"
+                    Point2="0,30.75"
+                    Point3="4,30.75" />
+                  <mssgle:LineSegment
+                    End="104.5,30.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.5,30.75"
+                    Point2="108.5,30.75"
+                    Point3="108.5,34.75" />
+                  <mssgle:LineSegment
+                    End="108.5,54" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDate.Paths[Lookup No Match Output]"
+          TopLeft="380.25,326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,12.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDate.Paths[Derived Column Output]"
+          TopLeft="391,572">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DimDate.Paths[Data Conversion Output1]"
           TopLeft="382.75,412">
@@ -5061,137 +5292,32 @@ where [refTable].[Time_Value] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimDate.Paths[Output 0]"
-          TopLeft="386,492">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimDate.Paths[OLE DB Source Output]"
-          TopLeft="144,61">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108.5,61.5"
-              Start="0,0"
-              End="108.5,54">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.75"
-                    Point2="0,30.75"
-                    Point3="4,30.75" />
-                  <mssgle:LineSegment
-                    End="104.5,30.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="104.5,30.75"
-                    Point2="108.5,30.75"
-                    Point3="108.5,34.75" />
-                  <mssgle:LineSegment
-                    End="108.5,54" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimDate.Paths[Derived Column Output]"
-          TopLeft="391,572">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="226,42"
-          Id="Package\DimDate\Lookup Date_Value in DimDate"
-          TopLeft="265,284" />
-        <EdgeLayout
-          Id="Package\DimDate.Paths[Sort Output]"
-          TopLeft="374.5,247">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37"
-              Start="0,0"
-              End="0,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimDate.Paths[Lookup No Match Output]"
-          TopLeft="380.25,326">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,12.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimDate\Lookup Date_Value in DimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DimDate\DimDate">
     <Properties>
@@ -5219,57 +5345,91 @@ where [refTable].[Time_Value] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="331,42"
-          Id="Package\DimTime\Add Column Time_Period, CreatedDate, UpdatedDate"
-          TopLeft="218,588" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\DimTime\DimTime"
-          TopLeft="321,798" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\DimTime\Sort Time_Acc"
-          TopLeft="322,223" />
-        <NodeLayout
-          Size="207,42"
-          Id="Package\DimTime\Convert Time_Acc to string"
-          TopLeft="275,405" />
-        <NodeLayout
-          Size="246,42"
-          Id="Package\DimTime\Add column Time_ID, Hour, Minute"
-          TopLeft="262,490" />
+          Size="220,42"
+          Id="Package\DimTime\Convert Time_Period to string"
+          TopLeft="289,845" />
         <NodeLayout
           Size="171,42"
           Id="Package\DimTime\Group by Time_Acc"
           TopLeft="167.5,122.5" />
         <NodeLayout
+          Size="137,42"
+          Id="Package\DimTime\Remove null"
+          TopLeft="322,323" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\DimTime\DimTime"
+          TopLeft="331,931" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\DimTime\Add Column Time_ID, Hour, Minute"
+          TopLeft="274,625" />
+        <NodeLayout
+          Size="330,42"
+          Id="Package\DimTime\Add Column Time_Period, CreatedDate, Updateddate"
+          TopLeft="231,737" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\DimTime\Convert Time_Acc to string"
+          TopLeft="290,521" />
+        <NodeLayout
           Size="150,42"
           Id="Package\DimTime\Accidents_NDS"
           TopLeft="69,19" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\DimTime\Convert Time_Period to string"
-          TopLeft="272,695" />
+          Size="228,42"
+          Id="Package\DimTime\Lookup Time_Value in DimTime"
+          TopLeft="283,424" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\DimTime\Sort Time_Acc"
+          TopLeft="322,223" />
         <EdgeLayout
-          Id="Package\DimTime.Paths[Output 0]"
-          TopLeft="384.25,532">
+          Id="Package\DimTime.Paths[Sort Output]"
+          TopLeft="393,265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,58"
               Start="0,0"
-              End="0,48.5">
+              End="0,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimTime.Paths[Output 0]"
+          TopLeft="396.75,667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5303,73 +5463,129 @@ where [refTable].[Time_Value] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimTime.Paths[Lookup No Match Output]"
+          TopLeft="395.25,466">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,17.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DimTime.Paths[Derived Column Output]"
-          TopLeft="382.75,630">
+          TopLeft="397.5,779">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65"
+              EndConnector="0,66"
               Start="0,0"
-              End="0,57.5">
+              End="0,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.5" />
+                    End="0,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DimTime.Paths[Data Conversion Output1]"
-          TopLeft="381.75,737">
+          TopLeft="395.5,563">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,62"
               Start="0,0"
-              End="0,53.5">
+              End="0,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DimTime.Paths[Data Conversion Output]"
-          TopLeft="381.75,447">
+          TopLeft="395.25,887">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,35.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimTime.Paths[Conditional Split Default Output]"
+          TopLeft="393.75,365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-70.61390625,19.9208984375,141.2278125,11.658203125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5403,68 +5619,8 @@ where [refTable].[Time_Value] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="228,42"
-          Id="Package\DimTime\Lookup Time_Value in DimTime"
-          TopLeft="271,307" />
-        <EdgeLayout
-          Id="Package\DimTime.Paths[Sort Output]"
-          TopLeft="395.5,265">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.5,42"
-              Start="0,0"
-              End="-10.5,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17"
-                    Point2="0,21"
-                    Point3="-4,21" />
-                  <mssgle:LineSegment
-                    End="-6.5,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.5,21"
-                    Point2="-10.5,21"
-                    Point3="-10.5,25" />
-                  <mssgle:LineSegment
-                    End="-10.5,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimTime.Paths[Lookup No Match Output]"
-          TopLeft="381.75,349">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,18.4453125,111.6127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5487,52 +5643,6 @@ where [refTable].[Time_Value] = ?</property>
   <PipelineComponentMetadata
     design-time-name="Package\DimTime\Accidents_NDS">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimDate\Lookup Date_Value in DimDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimTime\Lookup Time_Value in DimTime">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

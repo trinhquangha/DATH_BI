@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage_Casualities"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{50E6EA34-75A3-45E5-B587-ECF634FA8492}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{4E9E8033-14F5-44FB-9CF4-57147D480452}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -554,6 +554,14 @@
                       cachedName="Casualty_Type"
                       externalMetadataColumnId="Package\Casualities1114 to Stage\Casualities1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type]"
                       lineageId="Package\Casualities1114 to Stage\Casualities1114csv.Outputs[Flat File Source Output].Columns[Casualty_Type]" />
+                    <inputColumn
+                      refId="Package\Casualities1114 to Stage\Casualities1114_Stage.Inputs[OLE DB Destination Input].Columns[Casualty_Severity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Casualty_Severity"
+                      externalMetadataColumnId="Package\Casualities1114 to Stage\Casualities1114_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Severity]"
+                      lineageId="Package\Casualities1114 to Stage\Casualities1114csv.Outputs[Flat File Source Output].Columns[Casualty_Severity]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
