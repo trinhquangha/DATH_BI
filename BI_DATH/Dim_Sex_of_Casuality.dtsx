@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Sex_of_Casuality"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{8E99F577-C242-4274-9BF1-CF40D829B430}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{E0913ED9-9FC3-479E-A0C9-8A724CBBCDF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -291,11 +291,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Sex Of Casuality\OLE DB Command 1"
+              refId="Package\Sex Of Casuality\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command 1"
+              name="OLE DB Command"
               usesDispositions="true"
               version="2">
               <properties>
@@ -316,7 +316,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Connections[OleDbConnection]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -324,45 +324,45 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CreatedDate]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Sex_of_CasualtyID]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[Sex_of_CasualtyID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Sex_of_CasualtyID"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyID]" />
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Sex_of_CasualtyName]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[Sex_of_CasualtyName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Sex_of_CasualtyName"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]" />
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="dbTimeStamp"
                       name="Param_0">
                       <properties>
@@ -373,7 +373,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -386,7 +386,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
@@ -397,7 +397,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -414,29 +414,29 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -469,7 +469,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Sex_of_Casualty_NDS where(UpdatedDate &gt; ? and UpdatedDate &lt; ?) or (CreatedDate &gt; ? and CreatedDate &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -486,11 +486,11 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{10D74FF2-1CE0-4BE7-B33D-830BCA64FE35};"Parameter1:Input",{32BB1FF4-983E-471A-9D15-88262ECE9636};"Parameter2:Input",{10D74FF2-1CE0-4BE7-B33D-830BCA64FE35};"Parameter3:Input",{32BB1FF4-983E-471A-9D15-88262ECE9636};</property>
               </properties>
               <connections>
                 <connection
@@ -690,19 +690,6 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[UpdatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">2</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Sex_of_CasualtyID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -725,6 +712,19 @@
                       cachedName="Sex_of_CasualtyName"
                       externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Sex_Casuality_Name]"
                       lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -813,7 +813,7 @@
           <paths>
             <path
               refId="Package\Sex Of Casuality.Paths[Changing Attribute Updates Output]"
-              endId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              endId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Changing Attribute Updates Output"
               startId="Package\Sex Of Casuality\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
@@ -870,10 +870,6 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Sex Of Casuality"
-          TopLeft="86,230" />
-        <NodeLayout
           Size="223,42"
           Id="Package\GET LSET, CET from Metadata"
           TopLeft="60,147.529412880075" />
@@ -885,6 +881,10 @@
           Size="162,42"
           Id="Package\SET LSET to Metadata"
           TopLeft="94,330" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sex Of Casuality"
+          TopLeft="86,230" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="169.678571665774,101">
@@ -974,14 +974,14 @@
         <NodeLayout
           Size="182,42"
           Id="Package\Sex Of Casuality\Sex_of_Casuality NDS"
-          TopLeft="226,5.49999999999989" />
+          TopLeft="221,5.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Sex Of Casuality\Slowly Changing Dimension"
-          TopLeft="212.5,107.5" />
+          TopLeft="207.5,107.5" />
         <EdgeLayout
           Id="Package\Sex Of Casuality.Paths[OLE DB Source Output]"
-          TopLeft="317,47.4999999999999">
+          TopLeft="312,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1007,13 +1007,13 @@
           TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
           Id="Package\Sex Of Casuality.Paths[New Output]"
-          TopLeft="283.5,149.5">
+          TopLeft="278.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-196.5,60"
+              EndConnector="-191.5,60"
               Start="0,0"
-              End="-196.5,52.5">
+              End="-191.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1024,36 +1024,36 @@
                     Point2="0,24.2735042735043"
                     Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="-192.5,24.2735042735043" />
+                    End="-187.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="-192.5,24.2735042735043"
-                    Point2="-196.5,24.2735042735043"
-                    Point3="-196.5,28.2735042735043" />
+                    Point1="-187.5,24.2735042735043"
+                    Point2="-191.5,24.2735042735043"
+                    Point3="-191.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="-196.5,52.5" />
+                    End="-191.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-125.34138671875,29.2735042735043,54.1827734375,11.43359375"
+              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="175,42"
-          Id="Package\Sex Of Casuality\OLE DB Command 1"
-          TopLeft="377.5,209.5" />
+          Size="166,42"
+          Id="Package\Sex Of Casuality\OLE DB Command"
+          TopLeft="229,209.5" />
         <EdgeLayout
           Id="Package\Sex Of Casuality.Paths[Changing Attribute Updates Output]"
-          TopLeft="350.5,149.5">
+          TopLeft="345.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="114.5,60"
+              EndConnector="-33.5,60"
               Start="0,0"
-              End="114.5,52.5">
+              End="-33.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1062,22 +1062,22 @@
                   <mssgle:CubicBezierSegment
                     Point1="0,20.2735042735043"
                     Point2="0,24.2735042735043"
-                    Point3="4,24.2735042735043" />
+                    Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="110.5,24.2735042735043" />
+                    End="-29.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="110.5,24.2735042735043"
-                    Point2="114.5,24.2735042735043"
-                    Point3="114.5,28.2735042735043" />
+                    Point1="-29.5,24.2735042735043"
+                    Point2="-33.5,24.2735042735043"
+                    Point3="-33.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="114.5,52.5" />
+                    End="-33.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-21.28390625,29.2735042735043,157.0678125,11.6630859375"
+              BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1135,7 +1135,7 @@
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Postcode"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{D5502A19-189A-4C5C-90A1-AB87F71B4CC3}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{B45399B5-A433-4D91-8B49-49728DD48887}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -599,11 +599,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Postcode\OLE DB Source"
+              refId="Package\Postcode\PCD NDS"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="PCD NDS"
               usesDispositions="true"
               version="7">
               <properties>
@@ -648,7 +648,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Postcode\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Postcode\PCD NDS.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -656,110 +656,110 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      externalMetadataColumnId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       name="CreatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      externalMetadataColumnId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Pcd8]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Pcd8]"
+                      externalMetadataColumnId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[Pcd8]"
                       length="50"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Pcd8]"
                       name="Pcd8"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Lsoa11cd]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lsoa11cd]"
+                      externalMetadataColumnId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[Lsoa11cd]"
                       length="50"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Lsoa11cd]"
                       name="Lsoa11cd"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Pcd8]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[Pcd8]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Pcd8" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lsoa11cd]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].ExternalColumns[Lsoa11cd]"
                       dataType="wstr"
                       length="50"
                       name="Lsoa11cd" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Pcd8]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[Pcd8]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Pcd8]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[Pcd8]"
                       name="Pcd8" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lsoa11cd]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[Lsoa11cd]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lsoa11cd]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[Lsoa11cd]"
                       name="Lsoa11cd" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       name="CreatedDate" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1738,7 +1738,7 @@
                       refId="Package\Postcode\Sort 1.Inputs[Sort Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1754,7 +1754,7 @@
                       refId="Package\Postcode\Sort 1.Inputs[Sort Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1772,7 +1772,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Pcd8"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]">
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Pcd8]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1789,7 +1789,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Lsoa11cd"
-                      lineageId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]">
+                      lineageId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Lsoa11cd]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1821,7 +1821,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
+                          name="SortColumnId">#{Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1834,7 +1834,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
+                          name="SortColumnId">#{Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1850,7 +1850,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Pcd8]}</property>
+                          name="SortColumnId">#{Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Pcd8]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1864,7 +1864,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lsoa11cd]}</property>
+                          name="SortColumnId">#{Package\Postcode\PCD NDS.Outputs[OLE DB Source Output].Columns[Lsoa11cd]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2366,7 +2366,7 @@
               refId="Package\Postcode.Paths[OLE DB Source Output1]"
               endId="Package\Postcode\Sort 1.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\Postcode\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Postcode\PCD NDS.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Postcode.Paths[Sort Output]"
               endId="Package\Postcode\Merge Join.Inputs[Merge Join Right Input]"
@@ -2594,8 +2594,8 @@
           Id="Package\Postcode\Derived Column"
           TopLeft="263.5,366" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Postcode\OLE DB Source"
+          Size="122,42"
+          Id="Package\Postcode\PCD NDS"
           TopLeft="265.5,60" />
         <EdgeLayout
           Id="Package\Postcode.Paths[OLE DB Source Output]"
@@ -2917,18 +2917,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Postcode.Paths[OLE DB Source Output1]"
-          TopLeft="340.5,102">
+          TopLeft="326.5,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="14,60"
               Start="0,0"
-              End="0,52.5">
+              End="14,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="10,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,30"
+                    Point2="14,30"
+                    Point3="14,34" />
+                  <mssgle:LineSegment
+                    End="14,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2940,5 +2952,13 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Postcode\Postcode NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

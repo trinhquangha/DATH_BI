@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_Accidents"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{CE1CB43D-FC73-4590-9E3B-FC38249F68B6}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{0F176FD8-187B-48C3-980F-2F01544F1233}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1135,13 +1135,13 @@ where Accident_Index = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">((DT_STR,50,1252)(#{Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Speed_limit]} &gt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
+                          name="Expression">((DT_STR,50,1252)(#{Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage.Outputs[OLE DB Source Output].Columns[Speed_limit]} &lt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">((DT_STR,50,1252)(Speed_limit &gt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
+                          name="FriendlyExpression">((DT_STR,50,1252)(Speed_limit &lt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3036,6 +3036,13 @@ where Accident_Index = ?</property>
                   refId="Package\City Lookup and Insert\Add Updateddate and CreatedDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\City Lookup and Insert\Add Updateddate and CreatedDate.Inputs[Derived Column Input].Columns[Speed_limit]"
+                      cachedDataType="i4"
+                      cachedName="Speed_limit"
+                      lineageId="Package\City Lookup and Insert\Compare City.Outputs[Fuzzy Lookup Output].Columns[Speed_limit]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -3089,6 +3096,30 @@ where Accident_Index = ?</property>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\City Lookup and Insert\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[Build_Up_Road]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\City Lookup and Insert\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[Build_Up_Road]"
+                      name="Build_Up_Road"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((DT_STR,50,1252)(#{Package\City Lookup and Insert\Compare City.Outputs[Fuzzy Lookup Output].Columns[Speed_limit]} &lt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DT_STR,50,1252)(Speed_limit &lt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3176,7 +3207,7 @@ where [refTable].[Accident_Severity_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\City Lookup and Insert\692:invalid};</property>
+                  name="ParameterMap">#{Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Build_Up_Road]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4232,7 +4263,7 @@ where [refTable].[Light_Conditions_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\City Lookup and Insert\693:invalid};</property>
+                  name="ParameterMap">#{Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Build_Up_Road]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4375,7 +4406,7 @@ where [refTable].[LAD_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\City Lookup and Insert\694:invalid};</property>
+                  name="ParameterMap">#{Package\City Lookup and Insert\1611:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4518,7 +4549,7 @@ where [refTable].[Lsoa11cd] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\City Lookup and Insert\693:invalid};</property>
+                  name="ParameterMap">#{Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Build_Up_Road]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4660,7 +4691,7 @@ where [refTable].[Road_Type_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\City Lookup and Insert\695:invalid};</property>
+                  name="ParameterMap">#{Package\City Lookup and Insert\1612:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4803,7 +4834,7 @@ where [refTable].[Accident_Index] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\City Lookup and Insert\696:invalid};</property>
+                  name="ParameterMap">#{Package\City Lookup and Insert\1613:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4946,7 +4977,7 @@ where [refTable].[Urban_Rural_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\City Lookup and Insert\697:invalid};</property>
+                  name="ParameterMap">#{Package\City Lookup and Insert\1614:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5705,7 +5736,7 @@ where [refTable].[Pcd8] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -5837,6 +5868,14 @@ where [refTable].[Pcd8] = ?</property>
                       cachedName="Date"
                       externalMetadataColumnId="Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Acc]"
                       lineageId="Package\City Lookup and Insert\Compare City.Outputs[Fuzzy Lookup Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Build_Up_Road]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Build_Up_Road"
+                      externalMetadataColumnId="Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Build_Up_Road]"
+                      lineageId="Package\City Lookup and Insert\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[Build_Up_Road]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5910,6 +5949,12 @@ where [refTable].[Pcd8] = ?</property>
                       refId="Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\City Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Build_Up_Road]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Build_Up_Road" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -6550,9 +6595,9 @@ where [refTable].[Pcd8] = ?</property>
               startId="Package\City Lookup and Insert\Compare City.Outputs[Fuzzy Lookup Output]" />
             <path
               refId="Package\City Lookup and Insert.Paths[Lookup Match Output6]"
-              endId="Package\City Lookup and Insert\Compare Urban_Rural.Inputs[Lookup Input]"
+              endId="Package\City Lookup and Insert\Update UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\City Lookup and Insert\Compare Light_Conditions.Outputs[Lookup Match Output]" />
+              startId="Package\City Lookup and Insert\Compare self.Outputs[Lookup Match Output]" />
             <path
               refId="Package\City Lookup and Insert.Paths[Lookup Match Output4]"
               endId="Package\City Lookup and Insert\Compare Local_Authority_District.Inputs[Lookup Input]"
@@ -6560,14 +6605,14 @@ where [refTable].[Pcd8] = ?</property>
               startId="Package\City Lookup and Insert\Compare Urban_Rural.Outputs[Lookup Match Output]" />
             <path
               refId="Package\City Lookup and Insert.Paths[Lookup Match Output3]"
-              endId="Package\City Lookup and Insert\Update UpdatedDate.Inputs[Derived Column Input]"
+              endId="Package\City Lookup and Insert\Compare Road_Type.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\City Lookup and Insert\Compare self.Outputs[Lookup Match Output]" />
+              startId="Package\City Lookup and Insert\Compare Accident_Severity.Outputs[Lookup Match Output]" />
             <path
               refId="Package\City Lookup and Insert.Paths[Lookup Match Output5]"
-              endId="Package\City Lookup and Insert\Compare Light_Conditions.Inputs[Lookup Input]"
+              endId="Package\City Lookup and Insert\Compare Urban_Rural.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\City Lookup and Insert\Compare Road_Type.Outputs[Lookup Match Output]" />
+              startId="Package\City Lookup and Insert\Compare Light_Conditions.Outputs[Lookup Match Output]" />
             <path
               refId="Package\City Lookup and Insert.Paths[Lookup Match Output1]"
               endId="Package\City Lookup and Insert\Compare self.Inputs[Lookup Input]"
@@ -6575,14 +6620,14 @@ where [refTable].[Pcd8] = ?</property>
               startId="Package\City Lookup and Insert\Compare Local_Authority_District.Outputs[Lookup Match Output]" />
             <path
               refId="Package\City Lookup and Insert.Paths[Lookup Match Output]"
-              endId="Package\City Lookup and Insert\Compare Road_Type.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\City Lookup and Insert\Compare Accident_Severity.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\City Lookup and Insert.Paths[Lookup Match Output2]"
               endId="Package\City Lookup and Insert\Compare Accident_Severity.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\City Lookup and Insert\Look for LSOA.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\City Lookup and Insert.Paths[Lookup Match Output2]"
+              endId="Package\City Lookup and Insert\Compare Light_Conditions.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\City Lookup and Insert\Compare Road_Type.Outputs[Lookup Match Output]" />
             <path
               refId="Package\City Lookup and Insert.Paths[Lookup No Match Output]"
               endId="Package\City Lookup and Insert\Add Updateddate and CreatedDate.Inputs[Derived Column Input]"
@@ -7352,6 +7397,13 @@ where Accident_Index = ?</property>
                   refId="Package\County Lookup and Insert\Add Updateddate and CreatedDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\Add Updateddate and CreatedDate.Inputs[Derived Column Input].Columns[Speed_limit]"
+                      cachedDataType="i4"
+                      cachedName="Speed_limit"
+                      lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[Speed_limit]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -7405,6 +7457,30 @@ where Accident_Index = ?</property>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\County Lookup and Insert\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[Build_Up_Road]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\County Lookup and Insert\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[Build_Up_Road]"
+                      name="Build_Up_Road"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((DT_STR,50,1252)(#{Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[Speed_limit]} &lt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((DT_STR,50,1252)(Speed_limit &lt; 50 ? "Build Up Road" : "Non Build Up Road"))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -7492,7 +7568,7 @@ where [refTable].[Accident_Severity_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\County Lookup and Insert\698:invalid};</property>
+                  name="ParameterMap">#{Package\County Lookup and Insert\1615:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8548,7 +8624,7 @@ where [refTable].[Light_Conditions_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\County Lookup and Insert\699:invalid};</property>
+                  name="ParameterMap">#{Package\County Lookup and Insert\1616:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8691,7 +8767,7 @@ where [refTable].[LAD_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\County Lookup and Insert\700:invalid};</property>
+                  name="ParameterMap">#{Package\County Lookup and Insert\1617:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8834,7 +8910,7 @@ where [refTable].[Lsoa11cd] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\County Lookup and Insert\699:invalid};</property>
+                  name="ParameterMap">#{Package\County Lookup and Insert\1616:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8976,7 +9052,7 @@ where [refTable].[Road_Type_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\County Lookup and Insert\701:invalid};</property>
+                  name="ParameterMap">#{Package\County Lookup and Insert\1618:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9119,7 +9195,7 @@ where [refTable].[Accident_Index] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\County Lookup and Insert\702:invalid};</property>
+                  name="ParameterMap">#{Package\County Lookup and Insert\1619:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9262,7 +9338,7 @@ where [refTable].[Urban_Rural_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\County Lookup and Insert\703:invalid};</property>
+                  name="ParameterMap">#{Package\County Lookup and Insert\1620:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10021,7 +10097,7 @@ where [refTable].[Pcd8] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -10153,6 +10229,14 @@ where [refTable].[Pcd8] = ?</property>
                       cachedName="Date"
                       externalMetadataColumnId="Package\County Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Acc]"
                       lineageId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\County Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Build_Up_Road]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Build_Up_Road"
+                      externalMetadataColumnId="Package\County Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Build_Up_Road]"
+                      lineageId="Package\County Lookup and Insert\Add Updateddate and CreatedDate.Outputs[Derived Column Output].Columns[Build_Up_Road]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -10226,6 +10310,12 @@ where [refTable].[Pcd8] = ?</property>
                       refId="Package\County Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\County Lookup and Insert\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Build_Up_Road]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Build_Up_Road" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -10866,9 +10956,9 @@ where [refTable].[Pcd8] = ?</property>
               startId="Package\County Lookup and Insert\Compare County.Outputs[Fuzzy Lookup Output]" />
             <path
               refId="Package\County Lookup and Insert.Paths[Lookup Match Output6]"
-              endId="Package\County Lookup and Insert\Compare Urban_Rural.Inputs[Lookup Input]"
+              endId="Package\County Lookup and Insert\Update UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\County Lookup and Insert\Compare Light_Conditions.Outputs[Lookup Match Output]" />
+              startId="Package\County Lookup and Insert\Compare self.Outputs[Lookup Match Output]" />
             <path
               refId="Package\County Lookup and Insert.Paths[Lookup Match Output4]"
               endId="Package\County Lookup and Insert\Compare Local_Authority_District.Inputs[Lookup Input]"
@@ -10876,14 +10966,14 @@ where [refTable].[Pcd8] = ?</property>
               startId="Package\County Lookup and Insert\Compare Urban_Rural.Outputs[Lookup Match Output]" />
             <path
               refId="Package\County Lookup and Insert.Paths[Lookup Match Output3]"
-              endId="Package\County Lookup and Insert\Update UpdatedDate.Inputs[Derived Column Input]"
+              endId="Package\County Lookup and Insert\Compare Road_Type.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\County Lookup and Insert\Compare self.Outputs[Lookup Match Output]" />
+              startId="Package\County Lookup and Insert\Compare Accident_Severity.Outputs[Lookup Match Output]" />
             <path
               refId="Package\County Lookup and Insert.Paths[Lookup Match Output5]"
-              endId="Package\County Lookup and Insert\Compare Light_Conditions.Inputs[Lookup Input]"
+              endId="Package\County Lookup and Insert\Compare Urban_Rural.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\County Lookup and Insert\Compare Road_Type.Outputs[Lookup Match Output]" />
+              startId="Package\County Lookup and Insert\Compare Light_Conditions.Outputs[Lookup Match Output]" />
             <path
               refId="Package\County Lookup and Insert.Paths[Lookup Match Output1]"
               endId="Package\County Lookup and Insert\Compare self.Inputs[Lookup Input]"
@@ -10891,14 +10981,14 @@ where [refTable].[Pcd8] = ?</property>
               startId="Package\County Lookup and Insert\Compare Local_Authority_District.Outputs[Lookup Match Output]" />
             <path
               refId="Package\County Lookup and Insert.Paths[Lookup Match Output]"
-              endId="Package\County Lookup and Insert\Compare Road_Type.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\County Lookup and Insert\Compare Accident_Severity.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\County Lookup and Insert.Paths[Lookup Match Output2]"
               endId="Package\County Lookup and Insert\Compare Accident_Severity.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\County Lookup and Insert\Look for LSOA.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\County Lookup and Insert.Paths[Lookup Match Output2]"
+              endId="Package\County Lookup and Insert\Compare Light_Conditions.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\County Lookup and Insert\Compare Road_Type.Outputs[Lookup Match Output]" />
             <path
               refId="Package\County Lookup and Insert.Paths[Lookup No Match Output]"
               endId="Package\County Lookup and Insert\Add Updateddate and CreatedDate.Inputs[Derived Column Input]"
@@ -11062,155 +11152,49 @@ where [refTable].[Pcd8] = ?</property>
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Add Updateddate and CreatedDate"
           TopLeft="587.45715295344,814.62745216726" />
         <NodeLayout
-          Size="202,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Light_Conditions"
-          TopLeft="467.142865098253,355.470592042567" />
-        <NodeLayout
           Size="177,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Road_Type"
           TopLeft="469.285722277603,257.458825030871" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update"
-          TopLeft="333.571434252116,898.486279750612" />
-        <NodeLayout
-          Size="235,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Local_Authority_District"
-          TopLeft="448.571436210555,548.600004193362" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert"
-          TopLeft="593.714295348343,900.921572945935" />
-        <NodeLayout
-          Size="141,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare self"
-          TopLeft="491.190484555401,731.090200082323" />
-        <NodeLayout
-          Size="208,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity"
-          TopLeft="458.571436380854,156.658825030871" />
         <NodeLayout
           Size="177,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Update UpdatedDate"
           TopLeft="333.571434252116,818.850983091209" />
         <NodeLayout
+          Size="235,42"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Local_Authority_District"
+          TopLeft="448.571436210555,548.600004193362" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accident_NDS update"
+          TopLeft="333.571434252116,898.486279750612" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare self"
+          TopLeft="491.190484555401,731.090200082323" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert"
+          TopLeft="593.714295348343,900.921572945935" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity"
+          TopLeft="458.571436380854,156.658825030871" />
+        <NodeLayout
           Size="175,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare PCD_LSOA"
           TopLeft="478.857146822677,630" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Urban_Rural"
+          TopLeft="471.428579456953,437.976474363334" />
         <NodeLayout
           Size="178,42"
           Id="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage"
           TopLeft="472.857150909853,57.3529419808239" />
         <NodeLayout
-          Size="182,42"
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Urban_Rural"
-          TopLeft="471.428579456953,437.976474363334" />
-        <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[OLE DB Source Output]"
-          TopLeft="562.114293645353,98.9529419808239">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.7058830500471"
-              Start="0,0"
-              End="0,50.2058830500471">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.2058830500471" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup No Match Output]"
-          TopLeft="583.723817888734,772.690200082323">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.933335064706,41.9372520849363"
-              Start="0,0"
-              End="124.933335064706,34.4372520849363">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.0576238817381" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.0576238817381"
-                    Point2="0,17.0576238817381"
-                    Point3="4,17.0576238817381" />
-                  <mssgle:LineSegment
-                    End="120.933335064706,17.0576238817381" />
-                  <mssgle:CubicBezierSegment
-                    Point1="120.933335064706,17.0576238817381"
-                    Point2="124.933335064706,17.0576238817381"
-                    Point3="124.933335064706,21.0576238817381" />
-                  <mssgle:LineSegment
-                    End="124.933335064706,34.4372520849363" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="6.660280813603,22.0576238817381,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output6]"
-          TopLeft="564.023815689039,671.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.4902000823233"
-              Start="0,0"
-              End="0,51.9902000823233">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.9902000823233" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.1904125411616,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output5]"
-          TopLeft="566.214291516616,590.600004193362">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.399995806638"
-              Start="0,0"
-              End="0,31.899995806638">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.899995806638" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.145310403319,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="202,42"
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Light_Conditions"
+          TopLeft="467.142865098253,355.470592042567" />
         <EdgeLayout
           Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output4]"
           TopLeft="539.457151222067,772.690200082323">
@@ -11411,22 +11395,115 @@ where [refTable].[Pcd8] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[OLE DB Source Output]"
+          TopLeft="562.114293645353,98.9529419808239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.7058830500471"
+              Start="0,0"
+              End="0,50.2058830500471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.2058830500471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup No Match Output]"
+          TopLeft="583.723817888734,772.690200082323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.933335064706,41.9372520849363"
+              Start="0,0"
+              End="124.933335064706,34.4372520849363">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0576238817381" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0576238817381"
+                    Point2="0,17.0576238817381"
+                    Point3="4,17.0576238817381" />
+                  <mssgle:LineSegment
+                    End="120.933335064706,17.0576238817381" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.933335064706,17.0576238817381"
+                    Point2="124.933335064706,17.0576238817381"
+                    Point3="124.933335064706,21.0576238817381" />
+                  <mssgle:LineSegment
+                    End="124.933335064706,34.4372520849363" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.660280813603,22.0576238817381,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output6]"
+          TopLeft="564.023815689039,671.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.4902000823233"
+              Start="0,0"
+              End="0,51.9902000823233">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.9902000823233" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.1904125411616,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Accidents1114_Stage to Accidents1114_NDS.Paths[Lookup Match Output5]"
+          TopLeft="566.214291516616,590.600004193362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.399995806638"
+              Start="0,0"
+              End="0,31.899995806638">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.899995806638" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.145310403319,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Light_Conditions">
     <Properties>
@@ -11474,53 +11551,7 @@ where [refTable].[Pcd8] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Accident_Severity_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Road_Type">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Road_Type_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage">
+    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents_NDS insert">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11533,7 +11564,7 @@ where [refTable].[Pcd8] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Local_Authority_District">
+    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Accident_Severity">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -11543,7 +11574,7 @@ where [refTable].[Pcd8] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Local_Authority_District_NDS]</Value>
+          type="q3:string">[dbo].[Accident_Severity_NDS]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -11578,105 +11609,142 @@ where [refTable].[Pcd8] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Local_Authority_District">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Local_Authority_District_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Accidents1114_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accidents1114_Stage to Accidents1114_NDS\Compare Road_Type">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Road_Type_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\City Lookup and Insert">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="235.2,41.6"
-          Id="Package\City Lookup and Insert\Compare Local_Authority_District"
-          TopLeft="427.242863735861,946.341179162491" />
-        <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\City Lookup and Insert\Look for LSOA"
-          TopLeft="467.142865098253,465.541180621052" />
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\City Lookup and Insert\Sort"
-          TopLeft="410.142863395262,235.670589490085" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\City Lookup and Insert\Accident_NDS update"
-          TopLeft="289,1244.2902026348" />
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\City Lookup and Insert\Compare Light_Conditions"
-          TopLeft="445.814292623559,753.211767011696" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\City Lookup and Insert\Compare PCD_LSOA"
-          TopLeft="289,154.6" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\City Lookup and Insert\Merge Join"
-          TopLeft="478.000007408006,316.800003099442" />
-        <NodeLayout
-          Size="140.8,41.6"
-          Id="Package\City Lookup and Insert\Compare self"
-          TopLeft="465.861912080707,1058.83137505145" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\City Lookup and Insert\OLE DB Destination"
-          TopLeft="582,1254.8" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\City Lookup and Insert\Compare Urban_Rural"
-          TopLeft="450.100006982259,835.717649332463" />
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\City Lookup and Insert\Compare City"
-          TopLeft="466.65714784447,387.788237546307" />
-        <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\City Lookup and Insert\Compare Road_Type"
           TopLeft="447.957149802909,655.2" />
         <NodeLayout
-          Size="201.6,41.6"
+          Size="202,42"
           Id="Package\City Lookup and Insert\Local_Authority_(District))"
           TopLeft="526.642863735861,158.335295200843" />
         <NodeLayout
-          Size="242.4,41.6"
-          Id="Package\City Lookup and Insert\Add Updateddate and CreatedDate"
-          TopLeft="542.885718701324,1160.43137505145" />
+          Size="142,42"
+          Id="Package\City Lookup and Insert\Compare City"
+          TopLeft="466.65714784447,387.788237546307" />
         <NodeLayout
-          Size="207.2,41.6"
-          Id="Package\City Lookup and Insert\Compare Accident_Severity"
-          TopLeft="437.24286390616,554.4" />
-        <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\City Lookup and Insert\Update UpdatedDate"
           TopLeft="289,1164.6549059754" />
         <NodeLayout
-          Size="106.4,41.6"
+          Size="242,42"
+          Id="Package\City Lookup and Insert\Add Updateddate and CreatedDate"
+          TopLeft="542.885718701324,1160.43137505145" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\City Lookup and Insert\Compare Local_Authority_District"
+          TopLeft="427.242863735861,946.341179162491" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\City Lookup and Insert\Sort"
+          TopLeft="410.142863395262,235.670589490085" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\City Lookup and Insert\Compare self"
+          TopLeft="465.861912080707,1058.83137505145" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\City Lookup and Insert\Accident_NDS update"
+          TopLeft="289,1244.2902026348" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\City Lookup and Insert\OLE DB Destination"
+          TopLeft="582,1254.8" />
+        <NodeLayout
+          Size="106,42"
           Id="Package\City Lookup and Insert\Sort 2"
           TopLeft="578.228578350008,229.54117788625" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="175,42"
+          Id="Package\City Lookup and Insert\Compare PCD_LSOA"
+          TopLeft="289,154.6" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\City Lookup and Insert\Compare Accident_Severity"
+          TopLeft="437.24286390616,554.4" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\City Lookup and Insert\Compare Urban_Rural"
+          TopLeft="450.100006982259,835.717649332463" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\City Lookup and Insert\Merge Join"
+          TopLeft="478.000007408006,316.800003099442" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\City Lookup and Insert\Compare Light_Conditions"
+          TopLeft="445.814292623559,753.211767011696" />
+        <NodeLayout
+          Size="178,42"
           Id="Package\City Lookup and Insert\Accidents1114_Stage"
           TopLeft="289,53" />
-        <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Derived Column Output]"
-          TopLeft="665.642859350662,1202.03137505145">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.768624948548"
-              Start="0,0"
-              End="0,45.268624948548">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.268624948548" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="146,42"
+          Id="Package\City Lookup and Insert\Look for LSOA"
+          TopLeft="467.142865098253,465.541180621052" />
         <EdgeLayout
           Id="Package\City Lookup and Insert.Paths[Sort Output1]"
           TopLeft="631.428578350008,271.14117788625">
@@ -11848,28 +11916,6 @@ where [refTable].[Pcd8] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Fuzzy Lookup Output]"
-          TopLeft="538.700006471362,429.388237546307">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.1529430747449"
-              Start="0,0"
-              End="0,28.6529430747449">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.6529430747449" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\City Lookup and Insert.Paths[Lookup No Match Output]"
           TopLeft="558.39524541404,1100.43137505145">
           <EdgeLayout.Curve>
@@ -11901,66 +11947,56 @@ where [refTable].[Pcd8] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-2.96115007510816,29.4044943820225,111.6127734375,11.609375"
+              BoundingBox="-2.961150075108,29.4044943820225,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Lookup Match Output3]"
-          TopLeft="536.261912080707,1100.43137505145">
+          Id="Package\City Lookup and Insert.Paths[Lookup Match Output]"
+          TopLeft="540.392864502207,507.141180621052">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-158.861912080707,64.2235309239488"
+              EndConnector="0,47.258819378948"
               Start="0,0"
-              End="-158.861912080707,56.7235309239488">
+              End="0,39.758819378948">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.1117654619744" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.1117654619744"
-                    Point2="0,32.1117654619744"
-                    Point3="-4,32.1117654619744" />
-                  <mssgle:LineSegment
-                    End="-154.861912080707,32.1117654619744" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-154.861912080707,32.1117654619744"
-                    Point2="-158.861912080707,32.1117654619744"
-                    Point3="-158.861912080707,36.1117654619744" />
-                  <mssgle:LineSegment
-                    End="-158.861912080707,56.7235309239488" />
+                    End="0,39.758819378948" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-127.622342759104,37.1117654619744,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.074722189474,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Derived Column Output1]"
-          TopLeft="374.4,1206.2549059754">
+          Id="Package\City Lookup and Insert.Paths[Lookup Match Output3]"
+          TopLeft="538.600006854535,596">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.0352966594035"
+              EndConnector="0,59.2000000000002"
               Start="0,0"
-              End="0,30.5352966594035">
+              End="0,51.7000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5352966594035" />
+                    End="0,51.7000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.0453125000001,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12001,102 +12037,6 @@ where [refTable].[Pcd8] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\City Lookup and Insert.Paths[Lookup Match Output2]"
-          TopLeft="540.392864502207,507.141180621052">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.258819378948"
-              Start="0,0"
-              End="0,39.758819378948">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.758819378948" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.074722189474,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Lookup Match Output6]"
-          TopLeft="543.957149802909,794.811767011696">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.905882320767"
-              Start="0,0"
-              End="0,33.405882320767">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.405882320767" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.8982536603835,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Lookup Match Output4]"
-          TopLeft="542.92143535906,877.717649332463">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,68.623529830028"
-              Start="0,0"
-              End="0,61.123529830028">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.123529830028" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,24.757077415014,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Lookup Match Output]"
-          TopLeft="538.600006854535,596">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.2000000000002"
-              Start="0,0"
-              End="0,51.7000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.7000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.0453125000001,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\City Lookup and Insert.Paths[Lookup Match Output5]"
           TopLeft="536.357149802909,696.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12131,11 +12071,174 @@ where [refTable].[Pcd8] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\City Lookup and Insert.Paths[Lookup Match Output6]"
+          TopLeft="536.261912080707,1100.43137505145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158.861912080707,64.2235309239488"
+              Start="0,0"
+              End="-158.861912080707,56.7235309239488">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1117654619744" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1117654619744"
+                    Point2="0,32.1117654619744"
+                    Point3="-4,32.1117654619744" />
+                  <mssgle:LineSegment
+                    End="-154.861912080707,32.1117654619744" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154.861912080707,32.1117654619744"
+                    Point2="-158.861912080707,32.1117654619744"
+                    Point3="-158.861912080707,36.1117654619744" />
+                  <mssgle:LineSegment
+                    End="-158.861912080707,56.7235309239488" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.622342759104,37.1117654619744,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\City Lookup and Insert.Paths[Lookup Match Output4]"
+          TopLeft="542.92143535906,877.717649332463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.623529830028"
+              Start="0,0"
+              End="0,61.123529830028">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.123529830028" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,24.757077415014,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\City Lookup and Insert.Paths[Lookup Match Output5]"
+          TopLeft="543.957149802909,794.811767011696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.905882320767"
+              Start="0,0"
+              End="0,33.405882320767">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.405882320767" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.8982536603835,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\City Lookup and Insert.Paths[Fuzzy Lookup Output]"
+          TopLeft="538.700006471362,429.388237546307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.1529430747449"
+              Start="0,0"
+              End="0,28.6529430747449">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6529430747449" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\City Lookup and Insert.Paths[Derived Column Output1]"
+          TopLeft="374.4,1206.2549059754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.0352966594035"
+              Start="0,0"
+              End="0,30.5352966594035">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5352966594035" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\City Lookup and Insert.Paths[Derived Column Output]"
+          TopLeft="665.642859350662,1202.03137505145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.768624948548"
+              Start="0,0"
+              End="0,45.268624948548">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.268624948548" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\City Lookup and Insert\Compare City">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\City Lookup and Insert\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12153,37 +12256,77 @@ where [refTable].[Pcd8] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="201.6,41.6"
+          Size="177,42"
+          Id="Package\County Lookup and Insert\Compare Road_Type"
+          TopLeft="447.957149802909,655.2" />
+        <NodeLayout
+          Size="202,42"
           Id="Package\County Lookup and Insert\Local_Authority_(District))"
           TopLeft="526.642863735861,158.335295200843" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\County Lookup and Insert\Compare County"
           TopLeft="466.65714784447,387.788237546307" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\County Lookup and Insert\Merge Join"
-          TopLeft="478.000007408006,316.800003099442" />
+          Size="177,42"
+          Id="Package\County Lookup and Insert\Update UpdatedDate"
+          TopLeft="289,1164.6549059754" />
         <NodeLayout
-          Size="97.6,41.6"
+          Size="242,42"
+          Id="Package\County Lookup and Insert\Add Updateddate and CreatedDate"
+          TopLeft="542.885718701324,1160.43137505145" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\County Lookup and Insert\Compare Local_Authority_District"
+          TopLeft="427.242863735861,946.341179162491" />
+        <NodeLayout
+          Size="98,42"
           Id="Package\County Lookup and Insert\Sort"
           TopLeft="410.142863395262,235.670589490085" />
         <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\County Lookup and Insert\Look for LSOA"
-          TopLeft="467.142865098253,465.541180621052" />
+          Size="141,42"
+          Id="Package\County Lookup and Insert\Compare self"
+          TopLeft="465.861912080707,1058.83137505145" />
         <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\County Lookup and Insert\Compare PCD_LSOA"
-          TopLeft="289,154.6" />
+          Size="165,42"
+          Id="Package\County Lookup and Insert\Accident_NDS update"
+          TopLeft="289,1244.2902026348" />
         <NodeLayout
-          Size="106.4,41.6"
+          Size="170,42"
+          Id="Package\County Lookup and Insert\OLE DB Destination"
+          TopLeft="582,1254.8" />
+        <NodeLayout
+          Size="106,42"
           Id="Package\County Lookup and Insert\Sort 2"
           TopLeft="578.228578350008,229.54117788625" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="175,42"
+          Id="Package\County Lookup and Insert\Compare PCD_LSOA"
+          TopLeft="289,154.6" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\County Lookup and Insert\Compare Accident_Severity"
+          TopLeft="437.24286390616,554.4" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\County Lookup and Insert\Compare Urban_Rural"
+          TopLeft="450.100006982259,835.717649332463" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\County Lookup and Insert\Merge Join"
+          TopLeft="478.000007408006,316.800003099442" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\County Lookup and Insert\Compare Light_Conditions"
+          TopLeft="445.814292623559,753.211767011696" />
+        <NodeLayout
+          Size="178,42"
           Id="Package\County Lookup and Insert\Accidents1114_Stage"
           TopLeft="289,53" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\County Lookup and Insert\Look for LSOA"
+          TopLeft="467.142865098253,465.541180621052" />
         <EdgeLayout
           Id="Package\County Lookup and Insert.Paths[Sort Output1]"
           TopLeft="631.428578350008,271.14117788625">
@@ -12355,161 +12498,43 @@ where [refTable].[Pcd8] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Fuzzy Lookup Output]"
-          TopLeft="542.500006471361,429.388237546307">
+          Id="Package\County Lookup and Insert.Paths[Lookup No Match Output]"
+          TopLeft="558.39524541404,1100.43137505145">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.1529430747446"
+              EndConnector="105.690473287284,60"
               Start="0,0"
-              End="0,28.6529430747446">
+              End="105.690473287284,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.6529430747446" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\County Lookup and Insert\Compare Light_Conditions"
-          TopLeft="445.814292623559,753.211767011696" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\County Lookup and Insert\Compare Road_Type"
-          TopLeft="447.957149802909,655.2" />
-        <NodeLayout
-          Size="235.2,41.6"
-          Id="Package\County Lookup and Insert\Compare Local_Authority_District"
-          TopLeft="427.242863735861,946.341179162491" />
-        <NodeLayout
-          Size="140.8,41.6"
-          Id="Package\County Lookup and Insert\Compare self"
-          TopLeft="465.861912080707,1058.83137505145" />
-        <NodeLayout
-          Size="207.2,41.6"
-          Id="Package\County Lookup and Insert\Compare Accident_Severity"
-          TopLeft="437.24286390616,554.4" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\County Lookup and Insert\Compare Urban_Rural"
-          TopLeft="450.100006982259,835.717649332463" />
-        <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Lookup Match Output5]"
-          TopLeft="536.357149802909,696.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.2571428206498,56.4117670116955"
-              Start="0,0"
-              End="10.2571428206498,48.9117670116955">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.2058835058477" />
+                    End="0,20.4044943820225" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.2058835058477"
-                    Point2="0,28.2058835058477"
-                    Point3="4,28.2058835058477" />
+                    Point1="0,20.4044943820225"
+                    Point2="0,24.4044943820225"
+                    Point3="4,24.4044943820225" />
                   <mssgle:LineSegment
-                    End="6.25714282064985,28.2058835058477" />
+                    End="101.690473287284,24.4044943820225" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.25714282064985,28.2058835058477"
-                    Point2="10.2571428206498,28.2058835058477"
-                    Point3="10.2571428206498,32.2058835058477" />
+                    Point1="101.690473287284,24.4044943820225"
+                    Point2="105.690473287284,24.4044943820225"
+                    Point3="105.690473287284,28.4044943820225" />
                   <mssgle:LineSegment
-                    End="10.2571428206498,48.9117670116955" />
+                    End="105.690473287284,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-43.0628153084251,33.2058835058477,96.3827734375,11.609375"
+              BoundingBox="-2.96115007510816,29.4044943820225,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\County Lookup and Insert.Paths[Lookup Match Output]"
-          TopLeft="538.600006854535,596">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.2000000000002"
-              Start="0,0"
-              End="0,51.7000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.7000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.0453125000001,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Lookup Match Output4]"
-          TopLeft="542.92143535906,877.717649332463">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,68.623529830028"
-              Start="0,0"
-              End="0,61.123529830028">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.123529830028" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,24.757077415014,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Lookup Match Output6]"
-          TopLeft="543.957149802909,794.811767011696">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.905882320767"
-              Start="0,0"
-              End="0,33.405882320767">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.405882320767" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.8982536603835,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Lookup Match Output2]"
           TopLeft="540.392864502207,507.141180621052">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12529,6 +12554,30 @@ where [refTable].[Pcd8] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,14.074722189474,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Lookup Match Output3]"
+          TopLeft="538.600006854535,596">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.2000000000002"
+              Start="0,0"
+              End="0,51.7000000000002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.7000000000002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.0453125000001,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12568,42 +12617,44 @@ where [refTable].[Pcd8] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="242.4,41.6"
-          Id="Package\County Lookup and Insert\Add Updateddate and CreatedDate"
-          TopLeft="542.885718701324,1160.43137505145" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\County Lookup and Insert\Accident_NDS update"
-          TopLeft="289,1244.2902026348" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\County Lookup and Insert\Update UpdatedDate"
-          TopLeft="289,1164.6549059754" />
         <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Derived Column Output1]"
-          TopLeft="374.4,1206.2549059754">
+          Id="Package\County Lookup and Insert.Paths[Lookup Match Output2]"
+          TopLeft="536.357149802909,696.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.0352966594035"
+              EndConnector="10.2571428206498,56.4117670116955"
               Start="0,0"
-              End="0,30.5352966594035">
+              End="10.2571428206498,48.9117670116955">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5352966594035" />
+                    End="0,24.2058835058477" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2058835058477"
+                    Point2="0,28.2058835058477"
+                    Point3="4,28.2058835058477" />
+                  <mssgle:LineSegment
+                    End="6.25714282064985,28.2058835058477" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.25714282064985,28.2058835058477"
+                    Point2="10.2571428206498,28.2058835058477"
+                    Point3="10.2571428206498,32.2058835058477" />
+                  <mssgle:LineSegment
+                    End="10.2571428206498,48.9117670116955" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-43.0628153084251,33.2058835058477,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Lookup Match Output3]"
+          Id="Package\County Lookup and Insert.Paths[Lookup Match Output6]"
           TopLeft="536.261912080707,1100.43137505145">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12639,45 +12690,97 @@ where [refTable].[Pcd8] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\County Lookup and Insert.Paths[Lookup No Match Output]"
-          TopLeft="558.39524541404,1100.43137505145">
+          Id="Package\County Lookup and Insert.Paths[Lookup Match Output4]"
+          TopLeft="542.92143535906,877.717649332463">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.690473287284,60"
+              EndConnector="0,68.623529830028"
               Start="0,0"
-              End="105.690473287284,52.5">
+              End="0,61.123529830028">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4044943820225" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4044943820225"
-                    Point2="0,24.4044943820225"
-                    Point3="4,24.4044943820225" />
-                  <mssgle:LineSegment
-                    End="101.690473287284,24.4044943820225" />
-                  <mssgle:CubicBezierSegment
-                    Point1="101.690473287284,24.4044943820225"
-                    Point2="105.690473287284,24.4044943820225"
-                    Point3="105.690473287284,28.4044943820225" />
-                  <mssgle:LineSegment
-                    End="105.690473287284,52.5" />
+                    End="0,61.123529830028" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-2.96115007510816,29.4044943820225,111.6127734375,11.609375"
+              BoundingBox="-48.19138671875,24.757077415014,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\County Lookup and Insert\OLE DB Destination"
-          TopLeft="582,1254.8" />
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Lookup Match Output5]"
+          TopLeft="543.957149802909,794.811767011696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.905882320767"
+              Start="0,0"
+              End="0,33.405882320767">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.405882320767" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.8982536603835,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Fuzzy Lookup Output]"
+          TopLeft="542.500006471361,429.388237546307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.1529430747446"
+              Start="0,0"
+              End="0,28.6529430747446">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6529430747446" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\County Lookup and Insert.Paths[Derived Column Output1]"
+          TopLeft="374.4,1206.2549059754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.0352966594035"
+              Start="0,0"
+              End="0,30.5352966594035">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5352966594035" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\County Lookup and Insert.Paths[Derived Column Output]"
           TopLeft="665.642859350662,1202.03137505145">
@@ -12717,6 +12820,19 @@ where [refTable].[Pcd8] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\County Lookup and Insert\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\County Lookup and Insert\Look for LSOA">
     <Properties>
       <Property>
@@ -12736,19 +12852,6 @@ where [refTable].[Pcd8] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\County Lookup and Insert\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

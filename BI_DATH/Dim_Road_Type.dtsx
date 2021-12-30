@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Road_Type"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{3D6961C4-E0CE-4BA6-8FB5-83680F09965D}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{6EF3C2D4-1743-4592-B3AF-8BF450961736}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -267,11 +267,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Road_Type\OLE DB Command 1"
+              refId="Package\Road_Type\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command 1"
+              name="OLE DB Command"
               usesDispositions="true"
               version="2">
               <properties>
@@ -292,7 +292,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Road_Type\OLE DB Command 1.Connections[OleDbConnection]"
+                  refId="Package\Road_Type\OLE DB Command.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -300,45 +300,45 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CreatedDate]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Road_Type_ID]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].Columns[Road_Type_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Road_Type_ID"
-                      externalMetadataColumnId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]" />
                     <inputColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Road_Type_Name]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].Columns[Road_Type_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Road_Type_Name"
-                      externalMetadataColumnId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]" />
                     <inputColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="dbTimeStamp"
                       name="Param_0">
                       <properties>
@@ -349,7 +349,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -362,7 +362,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
@@ -373,7 +373,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -390,29 +390,29 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Road_Type\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  refId="Package\Road_Type\OLE DB Command.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Road_Type\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Road_Type\OLE DB Command.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Road_Type\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Road_Type\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Road_Type\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Road_Type\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Road_Type\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Road_Type\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Road_Type\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -445,7 +445,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Road_Type_NDS where(UpdatedDate &gt; ? and UpdatedDate &lt; ?) or (CreatedDate &gt; ? and CreatedDate &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -462,11 +462,11 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{F66BF67C-EADB-4DBA-B7F3-A856457455B8};"Parameter1:Input",{0A3D03C2-484F-4F6A-9076-98F2442D6314};"Parameter2:Input",{F66BF67C-EADB-4DBA-B7F3-A856457455B8};"Parameter3:Input",{0A3D03C2-484F-4F6A-9076-98F2442D6314};</property>
               </properties>
               <connections>
                 <connection
@@ -789,7 +789,7 @@
           <paths>
             <path
               refId="Package\Road_Type.Paths[Changing Attribute Updates Output]"
-              endId="Package\Road_Type\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              endId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Changing Attribute Updates Output"
               startId="Package\Road_Type\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
@@ -880,13 +880,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="132,42"
-          Id="Package\Road_Type"
-          TopLeft="86,231" />
-        <NodeLayout
           Size="223,42"
           Id="Package\GET LSET, CET from Metadata"
           TopLeft="60,148.529412880075" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Road_Type"
+          TopLeft="86,231" />
         <NodeLayout
           Size="162,42"
           Id="Package\SET CET to Metadata"
@@ -994,16 +994,16 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\Road_Type\Road_Type NDS"
-          TopLeft="472,5.49999999999989" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Road_Type\Slowly Changing Dimension"
-          TopLeft="445,107.5" />
+          TopLeft="207.5,107.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Road_Type\Road_Type NDS"
+          TopLeft="234.5,5.5" />
         <EdgeLayout
           Id="Package\Road_Type.Paths[OLE DB Source Output]"
-          TopLeft="549.5,47.4999999999999">
+          TopLeft="312,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1026,16 +1026,16 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Road_Type\Insert Destination"
-          TopLeft="238,209.5" />
+          TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
           Id="Package\Road_Type.Paths[New Output]"
-          TopLeft="516,149.5">
+          TopLeft="278.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-196.5,60"
+              EndConnector="-191.5,60"
               Start="0,0"
-              End="-196.5,52.5">
+              End="-191.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1046,30 +1046,30 @@
                     Point2="0,24.2735042735043"
                     Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="-192.5,24.2735042735043" />
+                    End="-187.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="-192.5,24.2735042735043"
-                    Point2="-196.5,24.2735042735043"
-                    Point3="-196.5,28.2735042735043" />
+                    Point1="-187.5,24.2735042735043"
+                    Point2="-191.5,24.2735042735043"
+                    Point3="-191.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="-196.5,52.5" />
+                    End="-191.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-125.34138671875,29.2735042735043,54.1827734375,11.43359375"
+              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="175,42"
-          Id="Package\Road_Type\OLE DB Command 1"
-          TopLeft="462,209.5" />
+          Size="166,42"
+          Id="Package\Road_Type\OLE DB Command"
+          TopLeft="229,209.5" />
         <EdgeLayout
           Id="Package\Road_Type.Paths[Changing Attribute Updates Output]"
-          TopLeft="583,149.5">
+          TopLeft="345.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1106,19 +1106,6 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Road_Type\Road_Type NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Road_Type\Slowly Changing Dimension">
     <Properties>
@@ -1157,7 +1144,7 @@
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
@@ -1171,6 +1158,19 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Road_Type\Road_Type NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

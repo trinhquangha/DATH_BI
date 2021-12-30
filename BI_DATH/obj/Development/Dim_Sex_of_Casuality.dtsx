@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Sex_of_Casuality"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{8E99F577-C242-4274-9BF1-CF40D829B430}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{5FA310F4-055F-4B9B-8CFC-D0A7CC1E056E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -136,6 +136,322 @@
           version="1">
           <components>
             <component
+              refId="Package\Sex Of Casuality\Casuality NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Casuality NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Casualities_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Sex Of Casuality\Casuality NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      length="20"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      name="Accident_Index"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Reference]"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Reference]"
+                      name="Casualty_Reference"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Severity]"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Severity]"
+                      name="Casualty_Severity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Casualty]"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]"
+                      name="Age_of_Casualty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Casualty]"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]"
+                      name="Age_Band_of_Casualty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Type]"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Type]"
+                      name="Casualty_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Casualty]"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]"
+                      name="Sex_of_Casualty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Casualty_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Casualty_Severity" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_Band_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Casualty_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Casualty_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex_of_Casualty" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      name="Accident_Index" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Casualty_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Casualty_Reference]"
+                      name="Casualty_Reference" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Casualty_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Casualty_Severity]"
+                      name="Casualty_Severity" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_of_Casualty]"
+                      name="Age_of_Casualty" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Casualty]"
+                      name="Age_Band_of_Casualty" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Casualty_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Casualty_Type]"
+                      name="Casualty_Type" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Sex_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[Sex_of_Casualty]"
+                      name="Sex_of_Casualty" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Sex Of Casuality\Insert Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -208,13 +524,14 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[Sex_of_CasualtyID]"
+                      refId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[Sex_of_Casualty]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Sex_of_CasualtyID"
+                      cachedName="Sex_of_Casualty"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sex_Casuality_ID]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyID]" />
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_Casualty]" />
                     <inputColumn
                       refId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[Sex_of_CasualtyName]"
                       cachedCodepage="1252"
@@ -222,19 +539,19 @@
                       cachedLength="50"
                       cachedName="Sex_of_CasualtyName"
                       externalMetadataColumnId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sex_Casuality_Name]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]" />
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_CasualtyName]" />
                     <inputColumn
                       refId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]" />
                     <inputColumn
                       refId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -291,11 +608,156 @@
               </outputs>
             </component>
             <component
-              refId="Package\Sex Of Casuality\OLE DB Command 1"
+              refId="Package\Sex Of Casuality\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input].Columns[Sex_of_CasualtyID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_CasualtyID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[Sex_of_CasualtyID]" />
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input].Columns[Sex_of_CasualtyName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_CasualtyName"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[Sex_of_CasualtyName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Right Input].Columns[Sex_of_Casualty]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_Casualty"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Sex_of_Casualty]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_CasualtyName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_CasualtyName]"
+                      name="Sex_of_CasualtyName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input].Columns[Sex_of_CasualtyName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_Casualty]"
+                      name="Sex_of_Casualty"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Right Input].Columns[Sex_of_Casualty]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Sex Of Casuality\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command 1"
+              name="OLE DB Command"
               usesDispositions="true"
               version="2">
               <properties>
@@ -316,7 +778,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Connections[OleDbConnection]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -324,45 +786,46 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CreatedDate]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Sex_of_CasualtyID]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[Sex_of_Casualty]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Sex_of_CasualtyID"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyID]" />
+                      cachedName="Sex_of_Casualty"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_Casualty]" />
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Sex_of_CasualtyName]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[Sex_of_CasualtyName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Sex_of_CasualtyName"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]" />
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_CasualtyName]" />
                     <inputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      externalMetadataColumnId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="dbTimeStamp"
                       name="Param_0">
                       <properties>
@@ -373,7 +836,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -386,7 +849,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
@@ -397,7 +860,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -414,29 +877,29 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sex Of Casuality\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Sex Of Casuality\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -469,7 +932,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Sex_of_Casualty_NDS where(UpdatedDate &gt; ? and UpdatedDate &lt; ?) or (CreatedDate &gt; ? and CreatedDate &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -486,11 +949,11 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{10D74FF2-1CE0-4BE7-B33D-830BCA64FE35};"Parameter1:Input",{32BB1FF4-983E-471A-9D15-88262ECE9636};"Parameter2:Input",{10D74FF2-1CE0-4BE7-B33D-830BCA64FE35};"Parameter3:Input",{32BB1FF4-983E-471A-9D15-88262ECE9636};</property>
               </properties>
               <connections>
                 <connection
@@ -681,7 +1144,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -690,26 +1153,14 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[UpdatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">2</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Sex_of_CasualtyID]"
+                      refId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Sex_of_Casualty]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Sex_of_CasualtyID"
+                      cachedName="Sex_of_Casualty"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Sex_Casuality_ID]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyID]">
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_Casualty]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -724,7 +1175,20 @@
                       cachedLength="50"
                       cachedName="Sex_of_CasualtyName"
                       externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Sex_Casuality_Name]"
-                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]">
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[Sex_of_CasualtyName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -809,13 +1273,542 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Sex Of Casuality\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Sex Of Casuality\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort.Inputs[Sort Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort.Inputs[Sort Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort.Inputs[Sort Input].Columns[Sex_of_CasualtyID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_CasualtyID"
+                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort.Inputs[Sort Input].Columns[Sex_of_CasualtyName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_CasualtyName"
+                      lineageId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex Of Casuality\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[Sex_of_CasualtyID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[Sex_of_CasualtyID]"
+                      name="Sex_of_CasualtyID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[Sex_of_CasualtyName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort.Outputs[Sort Output].Columns[Sex_of_CasualtyName]"
+                      name="Sex_of_CasualtyName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Sex Of Casuality\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Accident_Index"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Accident_Index]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Vehicle_Reference]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle_Reference"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Casualty_Reference]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Casualty_Reference"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Reference]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Casualty_Severity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Casualty_Severity"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Severity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Age_of_Casualty]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_of_Casualty"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Age_Band_of_Casualty]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_Band_of_Casualty"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Casualty_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Casualty_Type"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[Sex_of_Casualty]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_Casualty"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Accident_Index]"
+                      name="Accident_Index">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Accident_Index]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Casualty_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Casualty_Reference]"
+                      name="Casualty_Reference">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Reference]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Casualty_Severity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Casualty_Severity]"
+                      name="Casualty_Severity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Severity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Age_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Age_of_Casualty]"
+                      name="Age_of_Casualty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_of_Casualty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Age_Band_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Age_Band_of_Casualty]"
+                      name="Age_Band_of_Casualty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Age_Band_of_Casualty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Casualty_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Casualty_Type]"
+                      name="Casualty_Type">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Casualty_Type]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Sex_of_Casualty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[Sex_of_Casualty]"
+                      name="Sex_of_Casualty"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_Casualty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Sex Of Casuality.Paths[Changing Attribute Updates Output]"
-              endId="Package\Sex Of Casuality\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              endId="Package\Sex Of Casuality\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Changing Attribute Updates Output"
               startId="Package\Sex Of Casuality\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Sex Of Casuality.Paths[Merge Join Output]"
+              endId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Merge Join Output"
+              startId="Package\Sex Of Casuality\Merge Join.Outputs[Merge Join Output]" />
             <path
               refId="Package\Sex Of Casuality.Paths[New Output]"
               endId="Package\Sex Of Casuality\Insert Destination.Inputs[OLE DB Destination Input]"
@@ -823,9 +1816,24 @@
               startId="Package\Sex Of Casuality\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Sex Of Casuality.Paths[OLE DB Source Output]"
-              endId="Package\Sex Of Casuality\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              endId="Package\Sex Of Casuality\Sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Sex Of Casuality\Sex_of_Casuality NDS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Sex Of Casuality.Paths[OLE DB Source Output1]"
+              endId="Package\Sex Of Casuality\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Sex Of Casuality\Casuality NDS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Sex Of Casuality.Paths[Sort Output]"
+              endId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Sex Of Casuality\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Sex Of Casuality.Paths[Sort Output1]"
+              endId="Package\Sex Of Casuality\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Sex Of Casuality\Sort 1.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -870,10 +1878,6 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Sex Of Casuality"
-          TopLeft="86,230" />
-        <NodeLayout
           Size="223,42"
           Id="Package\GET LSET, CET from Metadata"
           TopLeft="60,147.529412880075" />
@@ -885,6 +1889,10 @@
           Size="162,42"
           Id="Package\SET LSET to Metadata"
           TopLeft="94,330" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sex Of Casuality"
+          TopLeft="86,230" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="169.678571665774,101">
@@ -970,18 +1978,158 @@
     design-time-name="Package\Sex Of Casuality">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Sex Of Casuality\Sex_of_Casuality NDS"
-          TopLeft="226,5.49999999999989" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="209,42"
           Id="Package\Sex Of Casuality\Slowly Changing Dimension"
-          TopLeft="212.5,107.5" />
+          TopLeft="216,311.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Sex Of Casuality\Sex_of_Casuality NDS"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sex Of Casuality\Sort"
+          TopLeft="108.5,107.5" />
         <EdgeLayout
           Id="Package\Sex Of Casuality.Paths[OLE DB Source Output]"
-          TopLeft="317,47.4999999999999">
+          TopLeft="96.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61,60"
+              Start="0,0"
+              End="61,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="57,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57,30"
+                    Point2="61,30"
+                    Point3="61,34" />
+                  <mssgle:LineSegment
+                    End="61,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Sex Of Casuality\Casuality NDS"
+          TopLeft="248,5.5" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sex Of Casuality\Sort 1"
+          TopLeft="267,107.5" />
+        <EdgeLayout
+          Id="Package\Sex Of Casuality.Paths[OLE DB Source Output1]"
+          TopLeft="320.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Sex Of Casuality\Merge Join"
+          TopLeft="255.5,209.5" />
+        <EdgeLayout
+          Id="Package\Sex Of Casuality.Paths[Sort Output]"
+          TopLeft="157.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.666666666667,60"
+              Start="0,0"
+              End="142.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5623100303951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5623100303951"
+                    Point2="0,35.5623100303951"
+                    Point3="4,35.5623100303951" />
+                  <mssgle:LineSegment
+                    End="138.666666666667,35.5623100303951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="138.666666666667,35.5623100303951"
+                    Point2="142.666666666667,35.5623100303951"
+                    Point3="142.666666666667,39.5623100303951" />
+                  <mssgle:LineSegment
+                    End="142.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sex Of Casuality.Paths[Sort Output1]"
+          TopLeft="320.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.3333333333333,60"
+              Start="0,0"
+              End="20.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5623100303951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5623100303951"
+                    Point2="0,35.5623100303951"
+                    Point3="4,35.5623100303951" />
+                  <mssgle:LineSegment
+                    End="16.3333333333333,35.5623100303951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.3333333333333,35.5623100303951"
+                    Point2="20.3333333333333,35.5623100303951"
+                    Point3="20.3333333333333,39.5623100303951" />
+                  <mssgle:LineSegment
+                    End="20.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sex Of Casuality.Paths[Merge Join Output]"
+          TopLeft="320.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1004,16 +2152,16 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Sex Of Casuality\Insert Destination"
-          TopLeft="5.50000000000006,209.5" />
+          TopLeft="14.0000000000001,413.5" />
         <EdgeLayout
           Id="Package\Sex Of Casuality.Paths[New Output]"
-          TopLeft="283.5,149.5">
+          TopLeft="287,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-196.5,60"
+              EndConnector="-191.5,60"
               Start="0,0"
-              End="-196.5,52.5">
+              End="-191.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1024,36 +2172,36 @@
                     Point2="0,24.2735042735043"
                     Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="-192.5,24.2735042735043" />
+                    End="-187.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="-192.5,24.2735042735043"
-                    Point2="-196.5,24.2735042735043"
-                    Point3="-196.5,28.2735042735043" />
+                    Point1="-187.5,24.2735042735043"
+                    Point2="-191.5,24.2735042735043"
+                    Point3="-191.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="-196.5,52.5" />
+                    End="-191.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-125.34138671875,29.2735042735043,54.1827734375,11.43359375"
+              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="175,42"
-          Id="Package\Sex Of Casuality\OLE DB Command 1"
-          TopLeft="377.5,209.5" />
+          Size="166,42"
+          Id="Package\Sex Of Casuality\OLE DB Command"
+          TopLeft="237.5,413.5" />
         <EdgeLayout
           Id="Package\Sex Of Casuality.Paths[Changing Attribute Updates Output]"
-          TopLeft="350.5,149.5">
+          TopLeft="354,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="114.5,60"
+              EndConnector="-33.5,60"
               Start="0,0"
-              End="114.5,52.5">
+              End="-33.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1062,28 +2210,83 @@
                   <mssgle:CubicBezierSegment
                     Point1="0,20.2735042735043"
                     Point2="0,24.2735042735043"
-                    Point3="4,24.2735042735043" />
+                    Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="110.5,24.2735042735043" />
+                    End="-29.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="110.5,24.2735042735043"
-                    Point2="114.5,24.2735042735043"
-                    Point3="114.5,28.2735042735043" />
+                    Point1="-29.5,24.2735042735043"
+                    Point2="-33.5,24.2735042735043"
+                    Point3="-33.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="114.5,52.5" />
+                    End="-33.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-21.28390625,29.2735042735043,157.0678125,11.6630859375"
+              BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sex Of Casuality\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{6F05B84D-AE40-487F-A3CB-94DD90E17FFE}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Sex_of_Casuality]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CreatedDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Merge Join.Outputs[Merge Join Output].Columns[Sex_of_Casualty]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Sex_Casuality_ID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Merge Join.Outputs[Merge Join Output].Columns[Sex_of_CasualtyName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Sex_Casuality_Name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UpdatedDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sex Of Casuality\Sex_of_Casuality NDS">
     <Properties>
@@ -1098,57 +2301,15 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sex Of Casuality\Slowly Changing Dimension">
+    design-time-name="Package\Sex Of Casuality\Casuality NDS">
     <Properties>
       <Property>
-        <Name>SCDMetadata</Name>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{6F05B84D-AE40-487F-A3CB-94DD90E17FFE}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[Dim_Sex_of_Casuality]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CreatedDate&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyID]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Sex_Casuality_ID&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[Sex_of_CasualtyName]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Sex_Casuality_Name&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Sex_of_Casuality NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UpdatedDate&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn /&gt;
-  &lt;EndDateColumn /&gt;
-  &lt;DateVariable /&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

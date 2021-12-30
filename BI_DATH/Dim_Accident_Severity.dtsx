@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Accident_Severity"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{E1931227-7AA9-4F87-8797-66BC41EC3F8C}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{45CBE592-50FF-4447-AD23-E30060B74855}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -101,7 +101,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Accident_Severity_NDS where(UpdatedDate &gt; ? and UpdatedDate &lt; ?) or (CreatedDate &gt; ? and CreatedDate &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -118,11 +118,11 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{7F8A2C68-3CAB-46F1-88AD-1196E91B2BD9};"Parameter1:Input",{1FD79042-E4E6-4625-9BA1-CB7395A8E508};"Parameter2:Input",{7F8A2C68-3CAB-46F1-88AD-1196E91B2BD9};"Parameter3:Input",{1FD79042-E4E6-4625-9BA1-CB7395A8E508};</property>
               </properties>
               <connections>
                 <connection
@@ -249,11 +249,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Accident_Severity\Insert Destination 1"
+              refId="Package\Accident_Severity\Insert Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Insert Destination 1"
+              name="Insert Destination"
               usesDispositions="true"
               version="4">
               <properties>
@@ -306,7 +306,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Accident_Severity\Insert Destination 1.Connections[OleDbConnection]"
+                  refId="Package\Accident_Severity\Insert Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -314,65 +314,65 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Accident_Severity_ID]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].Columns[Accident_Severity_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Accident_Severity_ID"
-                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
                       lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_ID]" />
                     <inputColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Accident_Severity_Name]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].Columns[Accident_Severity_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Accident_Severity_Name"
-                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
                       lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[Accident_Severity_Name]" />
                     <inputColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      externalMetadataColumnId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       lineageId="Package\Accident_Severity\Accident_SeverityNDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Key]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Key]"
                       dataType="i4"
                       name="Accident_Severity_Key" />
                     <externalMetadataColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Accident_Severity_ID" />
                     <externalMetadataColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity_Name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Accident_Severity_Name" />
                     <externalMetadataColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      refId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
                   </externalMetadataColumns>
@@ -380,22 +380,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Accident_Severity\Insert Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Accident_Severity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Accident_Severity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Accident_Severity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Accident_Severity\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Accident_Severity\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -759,7 +759,7 @@
               startId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
               refId="Package\Accident_Severity.Paths[New Output]"
-              endId="Package\Accident_Severity\Insert Destination 1.Inputs[OLE DB Destination Input]"
+              endId="Package\Accident_Severity\Insert Destination.Inputs[OLE DB Destination Input]"
               name="New Output"
               startId="Package\Accident_Severity\Slowly Changing Dimension.Outputs[New Output]" />
             <path
@@ -972,16 +972,16 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="182,42"
-          Id="Package\Accident_Severity\Accident_SeverityNDS"
-          TopLeft="690,5.49999999999989" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Accident_Severity\Slowly Changing Dimension"
-          TopLeft="676.5,107.5" />
+          TopLeft="207.5,107.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Accident_Severity\Accident_SeverityNDS"
+          TopLeft="221,5.5" />
         <EdgeLayout
           Id="Package\Accident_Severity.Paths[OLE DB Source Output]"
-          TopLeft="781,47.4999999999999">
+          TopLeft="312,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1002,18 +1002,18 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="172,42"
-          Id="Package\Accident_Severity\Insert Destination 1"
-          TopLeft="465,209.5" />
+          Size="163,42"
+          Id="Package\Accident_Severity\Insert Destination"
+          TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
           Id="Package\Accident_Severity.Paths[New Output]"
-          TopLeft="747.5,149.5">
+          TopLeft="278.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-196.5,60"
+              EndConnector="-191.5,60"
               Start="0,0"
-              End="-196.5,52.5">
+              End="-191.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1024,30 +1024,30 @@
                     Point2="0,24.2735042735043"
                     Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="-192.5,24.2735042735043" />
+                    End="-187.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="-192.5,24.2735042735043"
-                    Point2="-196.5,24.2735042735043"
-                    Point3="-196.5,28.2735042735043" />
+                    Point1="-187.5,24.2735042735043"
+                    Point2="-191.5,24.2735042735043"
+                    Point3="-191.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="-196.5,52.5" />
+                    End="-191.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-125.34138671875,29.2735042735043,54.1827734375,11.43359375"
+              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
           Id="Package\Accident_Severity\OLE DB Command"
-          TopLeft="698,209.5" />
+          TopLeft="229,209.5" />
         <EdgeLayout
           Id="Package\Accident_Severity.Paths[Changing Attribute Updates Output]"
-          TopLeft="814.5,149.5">
+          TopLeft="345.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1085,19 +1085,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Accident_Severity\Accident_SeverityNDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Accident_Severity\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -1134,7 +1121,7 @@
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
@@ -1149,6 +1136,19 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Accident_Severity\Accident_SeverityNDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
