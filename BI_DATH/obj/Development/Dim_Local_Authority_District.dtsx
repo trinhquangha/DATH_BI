@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Local_Authority_District"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{42509182-CCFF-4AD8-A1C3-6F5BAF8CBEF4}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{180E67D8-FF7B-4DEC-AF55-B51D49861B23}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -102,11 +102,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Local Authority District\Insert Destination"
+              refId="Package\Local Authority District\Insert Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Insert Destination"
+              name="Insert Destination 1"
               usesDispositions="true"
               version="4">
               <properties>
@@ -159,7 +159,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Local Authority District\Insert Destination.Connections[OleDbConnection]"
+                  refId="Package\Local Authority District\Insert Destination 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -167,66 +167,65 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].Columns[Local_Authority_District]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[LAD_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Local_Authority_District"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAD_ID]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[Local_Authority_District]" />
+                      cachedName="LAD_ID"
+                      externalMetadataColumnId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LAD_ID]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_ID]" />
                     <inputColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].Columns[LAD_Name]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[LAD_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LAD_Name"
-                      externalMetadataColumnId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Name]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]" />
+                      externalMetadataColumnId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Name]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_Name]" />
                     <inputColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]" />
+                      externalMetadataColumnId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]" />
+                      externalMetadataColumnId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Key]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Key]"
                       dataType="i4"
                       name="LAD_Key" />
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAD_ID]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LAD_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="LAD_ID" />
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Name]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LAD_Name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="LAD_Name" />
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      refId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
                   </externalMetadataColumns>
@@ -234,22 +233,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Local Authority District\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Local Authority District\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Local Authority District\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Local Authority District\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Local Authority District\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Local Authority District\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Local Authority District\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Local Authority District\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Local Authority District\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Local Authority District\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -430,156 +429,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Local Authority District\Merge Join"
-              componentClassID="Microsoft.MergeJoin"
-              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-              name="Merge Join"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of join to perform."
-                  name="JoinType"
-                  typeConverter="JoinType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the number of columns in the ordering key."
-                  name="NumKeyColumns">1</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the null values are treated as equal values."
-                  name="TreatNullsAsEqual">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Indicates the requested maximum buffers per input before blocking."
-                  name="MaxBuffersPerInput">5</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Left Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input].Columns[LAD_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="LAD_ID"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[LAD_ID]" />
-                    <inputColumn
-                      refId="Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="CreatedDate"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UpdatedDate"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[UpdatedDate]" />
-                    <inputColumn
-                      refId="Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input].Columns[LAD_Name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="LAD_Name"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[LAD_Name]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Local Authority District\Merge Join.Inputs[Merge Join Right Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Right Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Local Authority District\Merge Join.Inputs[Merge Join Right Input].Columns[Local_Authority_District]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Local_Authority_District"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Local_Authority_District]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output]"
-                  isSorted="true"
-                  name="Merge Join Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
-                      name="CreatedDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
-                      name="UpdatedDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]"
-                      name="LAD_Name">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input].Columns[LAD_Name]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[Local_Authority_District]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[Local_Authority_District]"
-                      name="Local_Authority_District"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Local Authority District\Merge Join.Inputs[Merge Join Right Input].Columns[Local_Authority_District]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Local Authority District\OLE DB Command"
+              refId="Package\Local Authority District\OLE DB Command 1"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
+              name="OLE DB Command 1"
               usesDispositions="true"
               version="2">
               <properties>
@@ -600,7 +454,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Local Authority District\OLE DB Command.Connections[OleDbConnection]"
+                  refId="Package\Local Authority District\OLE DB Command 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -608,46 +462,45 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].Columns[CreatedDate]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]" />
+                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].Columns[Local_Authority_District]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LAD_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Local_Authority_District"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[Local_Authority_District]" />
+                      cachedName="LAD_ID"
+                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_ID]" />
                     <inputColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].Columns[LAD_Name]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LAD_Name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="LAD_Name"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]" />
+                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_Name]" />
                     <inputColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]" />
+                      externalMetadataColumnId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="dbTimeStamp"
                       name="Param_0">
                       <properties>
@@ -658,7 +511,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -671,7 +524,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
@@ -682,7 +535,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -699,411 +552,29 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Local Authority District\OLE DB Command.Outputs[OLE DB Command Output]"
+                  refId="Package\Local Authority District\OLE DB Command 1.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Local Authority District\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Local Authority District\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Local Authority District\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Local Authority District\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Local Authority District\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Local Authority District\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Local Authority District\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Local Authority District\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Local Authority District\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Accidents_NDS]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Local Authority District\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
-                      length="20"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Index]"
-                      name="Accident_Index"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LSOA_of_Accident_Location]"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]"
-                      name="LSOA_of_Accident_Location"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Local_Authority_District]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Local_Authority_District]"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Local_Authority_District]"
-                      name="Local_Authority_District"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity]"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Severity]"
-                      name="Accident_Severity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Speed_limit]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Speed_limit]"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Speed_limit]"
-                      name="Speed_limit"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Road_Type]"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Road_Type]"
-                      name="Road_Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Urban_or_Rural_Area]"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]"
-                      name="Urban_or_Rural_Area"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Time_Acc]"
-                      dataType="dbTime2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Time_Acc]"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Time_Acc]"
-                      name="Time_Acc"
-                      scale="7"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date_Acc]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date_Acc]"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date_Acc]"
-                      name="Date_Acc"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Vehicles]"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]"
-                      name="Number_of_Vehicles"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Casualities]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Casualities]"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Casualities]"
-                      name="Number_of_Casualities"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Light_Conditions]"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Light_Conditions]"
-                      name="Light_Conditions"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
-                      name="CreatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
-                      name="UpdatedDate"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Accident_Index" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LSOA_of_Accident_Location]"
-                      dataType="wstr"
-                      length="50"
-                      name="LSOA_of_Accident_Location" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Local_Authority_District]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Local_Authority_District" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Accident_Severity" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Speed_limit]"
-                      dataType="i4"
-                      name="Speed_limit" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Road_Type" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Urban_or_Rural_Area" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Time_Acc]"
-                      dataType="dbTime2"
-                      name="Time_Acc"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date_Acc]"
-                      dataType="dbDate"
-                      name="Date_Acc" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Vehicles]"
-                      dataType="i4"
-                      name="Number_of_Vehicles" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Casualities]"
-                      dataType="i4"
-                      name="Number_of_Casualities" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Light_Conditions" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
-                      name="Accident_Index" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LSOA_of_Accident_Location]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LSOA_of_Accident_Location]"
-                      name="LSOA_of_Accident_Location" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Local_Authority_District]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Local_Authority_District]"
-                      name="Local_Authority_District" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Accident_Severity]"
-                      name="Accident_Severity" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Speed_limit]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Speed_limit]"
-                      name="Speed_limit" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Road_Type]"
-                      name="Road_Type" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Urban_or_Rural_Area]"
-                      name="Urban_or_Rural_Area" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Time_Acc]"
-                      dataType="dbTime2"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Time_Acc]"
-                      name="Time_Acc"
-                      scale="7" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date_Acc]"
-                      dataType="dbDate"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date_Acc]"
-                      name="Date_Acc" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Vehicles]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Vehicles]"
-                      name="Number_of_Vehicles" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Casualities]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Casualities]"
-                      name="Number_of_Casualities" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Light_Conditions]"
-                      name="Light_Conditions" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
-                      name="CreatedDate" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
-                      name="UpdatedDate" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Local Authority District\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1176,7 +647,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1185,14 +656,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Local_Authority_District]"
+                      refId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[LAD_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Local_Authority_District"
-                      cachedSortKeyPosition="1"
+                      cachedName="LAD_ID"
                       externalMetadataColumnId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[LAD_ID]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[Local_Authority_District]">
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_ID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1207,7 +677,7 @@
                       cachedLength="50"
                       cachedName="LAD_Name"
                       externalMetadataColumnId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[LAD_Name]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[LAD_Name]">
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_Name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1220,7 +690,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
+                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1305,679 +775,23 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Local Authority District\Sort"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Local Authority District\Sort.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort.Inputs[Sort Input].Columns[CreatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="CreatedDate"
-                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort.Inputs[Sort Input].Columns[UpdatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UpdatedDate"
-                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort.Inputs[Sort Input].Columns[LAD_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="LAD_ID"
-                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_ID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort.Inputs[Sort Input].Columns[LAD_Name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="LAD_Name"
-                      lineageId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_Name]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Local Authority District\Sort.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[CreatedDate]"
-                      name="CreatedDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
-                      name="UpdatedDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[LAD_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[LAD_ID]"
-                      name="LAD_ID"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_ID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[LAD_Name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort.Outputs[Sort Output].Columns[LAD_Name]"
-                      name="LAD_Name">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_Name]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Local Authority District\Sort 1"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort 1"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Local Authority District\Sort 1.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Accident_Index]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Accident_Index"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Index]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[LSOA_of_Accident_Location]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="LSOA_of_Accident_Location"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Local_Authority_District]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Local_Authority_District"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Local_Authority_District]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Accident_Severity]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Accident_Severity"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Severity]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Speed_limit]"
-                      cachedDataType="i4"
-                      cachedName="Speed_limit"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Speed_limit]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Road_Type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Road_Type"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Road_Type]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Urban_or_Rural_Area]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Urban_or_Rural_Area"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Time_Acc]"
-                      cachedDataType="dbTime2"
-                      cachedName="Time_Acc"
-                      cachedScale="7"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Time_Acc]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Date_Acc]"
-                      cachedDataType="dbDate"
-                      cachedName="Date_Acc"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date_Acc]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Number_of_Vehicles]"
-                      cachedDataType="i4"
-                      cachedName="Number_of_Vehicles"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Number_of_Casualities]"
-                      cachedDataType="i4"
-                      cachedName="Number_of_Casualities"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Casualities]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[Light_Conditions]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Light_Conditions"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Light_Conditions]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[CreatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="CreatedDate"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Local Authority District\Sort 1.Inputs[Sort Input].Columns[UpdatedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UpdatedDate"
-                      lineageId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Local Authority District\Sort 1.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Accident_Index]"
-                      name="Accident_Index">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Index]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[LSOA_of_Accident_Location]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[LSOA_of_Accident_Location]"
-                      name="LSOA_of_Accident_Location">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[LSOA_of_Accident_Location]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Local_Authority_District]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Local_Authority_District]"
-                      name="Local_Authority_District"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Local_Authority_District]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Accident_Severity]"
-                      name="Accident_Severity">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Accident_Severity]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Speed_limit]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Speed_limit]"
-                      name="Speed_limit">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Speed_limit]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Road_Type]"
-                      name="Road_Type">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Road_Type]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Urban_or_Rural_Area]"
-                      name="Urban_or_Rural_Area">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Time_Acc]"
-                      dataType="dbTime2"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Time_Acc]"
-                      name="Time_Acc"
-                      scale="7">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Time_Acc]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Date_Acc]"
-                      dataType="dbDate"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Date_Acc]"
-                      name="Date_Acc">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date_Acc]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Number_of_Vehicles]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Number_of_Vehicles]"
-                      name="Number_of_Vehicles">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Number_of_Casualities]"
-                      dataType="i4"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Number_of_Casualities]"
-                      name="Number_of_Casualities">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Number_of_Casualities]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[Light_Conditions]"
-                      name="Light_Conditions">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[Light_Conditions]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[CreatedDate]"
-                      name="CreatedDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Local Authority District\Sort 1.Outputs[Sort Output].Columns[UpdatedDate]"
-                      name="UpdatedDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Local Authority District.Paths[Changing Attribute Updates Output]"
-              endId="Package\Local Authority District\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\Local Authority District\OLE DB Command 1.Inputs[OLE DB Command Input]"
               name="Changing Attribute Updates Output"
               startId="Package\Local Authority District\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
-              refId="Package\Local Authority District.Paths[Merge Join Output]"
-              endId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
-              name="Merge Join Output"
-              startId="Package\Local Authority District\Merge Join.Outputs[Merge Join Output]" />
-            <path
               refId="Package\Local Authority District.Paths[New Output]"
-              endId="Package\Local Authority District\Insert Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Local Authority District\Insert Destination 1.Inputs[OLE DB Destination Input]"
               name="New Output"
               startId="Package\Local Authority District\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Local Authority District.Paths[OLE DB Source Output]"
-              endId="Package\Local Authority District\Sort.Inputs[Sort Input]"
+              endId="Package\Local Authority District\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="OLE DB Source Output"
               startId="Package\Local Authority District\Local Authority District NDS.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Local Authority District.Paths[OLE DB Source Output1]"
-              endId="Package\Local Authority District\Sort 1.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Local Authority District\OLE DB Source.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Local Authority District.Paths[Sort Output]"
-              endId="Package\Local Authority District\Merge Join.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Local Authority District\Sort 1.Outputs[Sort Output]" />
-            <path
-              refId="Package\Local Authority District.Paths[Sort Output1]"
-              endId="Package\Local Authority District\Merge Join.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Local Authority District\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2144,112 +958,18 @@
     design-time-name="Package\Local Authority District">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Local Authority District\Sort"
-          TopLeft="192.5,162" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Local Authority District\OLE DB Source"
-          TopLeft="329.5,60" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="209,42"
           Id="Package\Local Authority District\Local Authority District NDS"
-          TopLeft="60,60" />
+          TopLeft="221,5.49999999999989" />
         <NodeLayout
           Size="209,42"
           Id="Package\Local Authority District\Slowly Changing Dimension"
-          TopLeft="300,366" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Local Authority District\OLE DB Command"
-          TopLeft="321.5,468" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Local Authority District\Sort 1"
-          TopLeft="351,162" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Local Authority District\Merge Join"
-          TopLeft="339.5,264" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Local Authority District\Insert Destination"
-          TopLeft="98.0000000000001,468" />
+          TopLeft="221,107.5" />
         <EdgeLayout
           Id="Package\Local Authority District.Paths[OLE DB Source Output]"
-          TopLeft="164.5,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="77,60"
-              Start="0,0"
-              End="77,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
-                  <mssgle:LineSegment
-                    End="73,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73,30"
-                    Point2="77,30"
-                    Point3="77,34" />
-                  <mssgle:LineSegment
-                    End="77,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Local Authority District.Paths[New Output]"
-          TopLeft="371,408">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-191.5,60"
-              Start="0,0"
-              End="-191.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-187.5,24.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-187.5,24.2735042735043"
-                    Point2="-191.5,24.2735042735043"
-                    Point3="-191.5,28.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-191.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Local Authority District.Paths[Merge Join Output]"
-          TopLeft="404.5,306">
+          TopLeft="325.5,47.4999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2269,9 +989,53 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Local Authority District\Insert Destination 1"
+          TopLeft="5.5,209.5" />
+        <EdgeLayout
+          Id="Package\Local Authority District.Paths[New Output]"
+          TopLeft="292,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-200.5,60.0000000000001"
+              Start="0,0"
+              End="-200.5,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-196.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-196.5,24.2735042735043"
+                    Point2="-200.5,24.2735042735043"
+                    Point3="-200.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-200.5,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.34138671875,29.2735042735043,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Local Authority District\OLE DB Command 1"
+          TopLeft="238,209.5" />
         <EdgeLayout
           Id="Package\Local Authority District.Paths[Changing Attribute Updates Output]"
-          TopLeft="438,408">
+          TopLeft="359,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2305,98 +1069,63 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Local Authority District.Paths[Sort Output]"
-          TopLeft="404.5,204">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.3333333333333,60"
-              Start="0,0"
-              End="20.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5623100303951"
-                    Point2="0,35.5623100303951"
-                    Point3="4,35.5623100303951" />
-                  <mssgle:LineSegment
-                    End="16.3333333333333,35.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.3333333333333,35.5623100303951"
-                    Point2="20.3333333333333,35.5623100303951"
-                    Point3="20.3333333333333,39.5623100303951" />
-                  <mssgle:LineSegment
-                    End="20.3333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Local Authority District.Paths[Sort Output1]"
-          TopLeft="241.5,204">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="142.666666666667,60"
-              Start="0,0"
-              End="142.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5623100303951"
-                    Point2="0,35.5623100303951"
-                    Point3="4,35.5623100303951" />
-                  <mssgle:LineSegment
-                    End="138.666666666667,35.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="138.666666666667,35.5623100303951"
-                    Point2="142.666666666667,35.5623100303951"
-                    Point3="142.666666666667,39.5623100303951" />
-                  <mssgle:LineSegment
-                    End="142.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Local Authority District.Paths[OLE DB Source Output1]"
-          TopLeft="404.5,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Local Authority District\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{6A3A8C0E-B94D-452C-835E-C47C1670389D}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Local_Authority_District]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CreatedDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;LAD_ID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[LAD_Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;LAD_Name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Local Authority District NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UpdatedDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
