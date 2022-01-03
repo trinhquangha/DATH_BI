@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1684
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DATH_Cube", "DATH_Cube\DATH_Cube.dwproj", "{C4638EEA-FAA9-45AB-952F-0303DF5061F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4638EEA-FAA9-45AB-952F-0303DF5061F7}.Development|Default.ActiveCfg = Development
+		{C4638EEA-FAA9-45AB-952F-0303DF5061F7}.Development|Default.Build.0 = Development
+		{C4638EEA-FAA9-45AB-952F-0303DF5061F7}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AEBD720-AF6E-4B50-B1E8-619473B2669E}
+	EndGlobalSection
+EndGlobal

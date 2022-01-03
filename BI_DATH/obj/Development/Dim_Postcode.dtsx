@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Postcode"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{796AF021-2783-427A-91DF-DEFBBEB0D650}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{59CCB1B4-506B-473F-8336-1A15A9BDFFE2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -278,7 +278,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="County"
-                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      externalMetadataColumnId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[County]"
                       lineageId="Package\Postcode\Union All.Outputs[Union All Output 1].Columns[County]" />
                     <inputColumn
                       refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].Columns[City]"
@@ -334,11 +334,11 @@
                       length="50"
                       name="Region_name" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[County]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Country" />
+                      name="County" />
                     <externalMetadataColumn
                       refId="Package\Postcode\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                       codePage="1252"
@@ -795,7 +795,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [Country], [Country_name], [CreatedDate], [Postcode], [Region_name], [Status], [UpdatedDate] FROM [dbo].[Dim_Postcode]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [Country_name], [County], [CreatedDate], [Postcode], [Region_name], [Status], [UpdatedDate] FROM [dbo].[Dim_Postcode]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -859,13 +859,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[County]"
+                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Country_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="County"
-                      externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
-                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[County]">
+                      cachedName="Country_name"
+                      externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country_name]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -874,13 +874,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Country_name]"
+                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[County]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Country_name"
-                      externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country_name]"
-                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]">
+                      cachedName="County"
+                      externalMetadataColumnId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[County]"
+                      lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[County]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -954,17 +954,17 @@
                       length="50"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Country" />
-                    <externalMetadataColumn
                       refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Country_name" />
+                    <externalMetadataColumn
+                      refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[County]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="County" />
                     <externalMetadataColumn
                       refId="Package\Postcode\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
@@ -1177,12 +1177,12 @@
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Postcode\Union All.Inputs[Union All Input 2]"
+                  refId="Package\Postcode\Union All.Inputs[Union All Input 3]"
                   hasSideEffects="true"
-                  name="Union All Input 2">
+                  name="Union All Input 3">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[CreatedDate]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
@@ -1195,7 +1195,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[UpdatedDate]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       lineageId="Package\Postcode\Postcode NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
@@ -1208,7 +1208,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Postcode]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[Postcode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1223,7 +1223,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[City]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[City]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1238,7 +1238,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Country_name]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[Country_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1253,7 +1253,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Regione_name]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[Regione_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1268,7 +1268,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[County]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[County]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1283,7 +1283,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Postcode\Union All.Inputs[Union All Input 2].Columns[Status]"
+                      refId="Package\Postcode\Union All.Inputs[Union All Input 3].Columns[Status]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1301,10 +1301,10 @@
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Postcode\Union All.Inputs[Union All Input 3]"
+                  refId="Package\Postcode\Union All.Inputs[Union All Input 2]"
                   dangling="true"
                   hasSideEffects="true"
-                  name="Union All Input 3">
+                  name="Union All Input 2">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -1519,7 +1519,7 @@
               startId="Package\Postcode\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Postcode.Paths[OLE DB Command Output]"
-              endId="Package\Postcode\Union All.Inputs[Union All Input 2]"
+              endId="Package\Postcode\Union All.Inputs[Union All Input 3]"
               name="OLE DB Command Output"
               startId="Package\Postcode\Update Status.Outputs[OLE DB Command Output]" />
             <path
@@ -1700,20 +1700,50 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="145,42"
-          Id="Package\Postcode\Postcode NDS"
-          TopLeft="390.5,5.5" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Postcode\Slowly Changing Dimension"
-          TopLeft="358.5,209.5" />
+          TopLeft="191,209.5" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Postcode\Replace Status"
+          TopLeft="57.5000000000001,313.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Postcode\Postcode NDS"
+          TopLeft="223,5.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Postcode\Update Status"
+          TopLeft="59.0000000000001,415.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\Postcode\Derived Column"
-          TopLeft="386,107.5" />
+          TopLeft="218.5,107.5" />
+        <EdgeLayout
+          Id="Package\Postcode.Paths[Derived Column Output1]"
+          TopLeft="131.5,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Postcode.Paths[Derived Column Output]"
-          TopLeft="463,149.5">
+          TopLeft="295.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1735,73 +1765,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Postcode.Paths[OLE DB Source Output]"
-          TopLeft="463,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Postcode\Replace Status"
-          TopLeft="238.5,311.5" />
-        <EdgeLayout
-          Id="Package\Postcode.Paths[Historical Attribute Inserts Output]"
-          TopLeft="429.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-117,60"
-              Start="0,0"
-              End="-117,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-113,24.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-113,24.2735042735043"
-                    Point2="-117,24.2735042735043"
-                    Point3="-117,28.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-117,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-133.55638671875,29.2735042735043,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Postcode\Update Status"
-          TopLeft="236,413.5" />
-        <EdgeLayout
-          Id="Package\Postcode.Paths[Derived Column Output1]"
-          TopLeft="310.5,353.5">
+          TopLeft="295.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1824,10 +1788,10 @@
         <NodeLayout
           Size="121,42"
           Id="Package\Postcode\Union All"
-          TopLeft="402.5,515.5" />
+          TopLeft="235,515.5" />
         <EdgeLayout
           Id="Package\Postcode.Paths[New Output]"
-          TopLeft="496.5,251.5">
+          TopLeft="329,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1861,58 +1825,36 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Postcode.Paths[OLE DB Command Output]"
-          TopLeft="308.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="135.666666666667,60"
-              Start="0,0"
-              End="135.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="131.666666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="131.666666666667,35.5301794453507"
-                    Point2="135.666666666667,35.5301794453507"
-                    Point3="135.666666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="135.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="195,42"
           Id="Package\Postcode\Replace Status To &quot;Fine&quot;"
-          TopLeft="362.5,617.5" />
+          TopLeft="214,617.5" />
         <EdgeLayout
           Id="Package\Postcode.Paths[Union All Output 1]"
-          TopLeft="461.5,557.5">
+          TopLeft="295.5,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="16,60"
               Start="0,0"
-              End="0,52.5">
+              End="16,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="12,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,30"
+                    Point2="16,30"
+                    Point3="16,34" />
+                  <mssgle:LineSegment
+                    End="16,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1924,21 +1866,103 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Postcode\Insert Destination"
-          TopLeft="381.5,719.5" />
+          TopLeft="214,719.5" />
         <EdgeLayout
           Id="Package\Postcode.Paths[Derived Column Output2]"
-          TopLeft="461.5,659.5">
+          TopLeft="311.5,659.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-15.9999999999999,60"
               Start="0,0"
-              End="0,52.5">
+              End="-15.9999999999999,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-11.9999999999999,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.9999999999999,30"
+                    Point2="-15.9999999999999,30"
+                    Point3="-15.9999999999999,34" />
+                  <mssgle:LineSegment
+                    End="-15.9999999999999,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[Historical Attribute Inserts Output]"
+          TopLeft="262,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130.5,62"
+              Start="0,0"
+              End="-130.5,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0826210826211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0826210826211"
+                    Point2="0,25.0826210826211"
+                    Point3="-4,25.0826210826211" />
+                  <mssgle:LineSegment
+                    End="-126.5,25.0826210826211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126.5,25.0826210826211"
+                    Point2="-130.5,25.0826210826211"
+                    Point3="-130.5,29.0826210826211" />
+                  <mssgle:LineSegment
+                    End="-130.5,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-140.30638671875,30.0826210826211,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Postcode.Paths[OLE DB Command Output]"
+          TopLeft="131.5,457.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="145.166666666667,58"
+              Start="0,0"
+              End="145.166666666667,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.3458401305057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.3458401305057"
+                    Point2="0,34.3458401305057"
+                    Point3="4,34.3458401305057" />
+                  <mssgle:LineSegment
+                    End="141.166666666667,34.3458401305057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="141.166666666667,34.3458401305057"
+                    Point2="145.166666666667,34.3458401305057"
+                    Point3="145.166666666667,38.3458401305057" />
+                  <mssgle:LineSegment
+                    End="145.166666666667,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1968,14 +1992,14 @@
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Postcode NDS.Outputs[OLE DB Source Output].Columns[County]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Country&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Country_name&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Postcode NDS.Outputs[OLE DB Source Output].Columns[Country_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Country_name&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;Postcode NDS.Outputs[OLE DB Source Output].Columns[County]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;County&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
@@ -2037,6 +2061,19 @@
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Postcode\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

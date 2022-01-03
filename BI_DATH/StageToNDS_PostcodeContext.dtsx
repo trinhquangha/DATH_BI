@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS_PostcodeContext"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{2E2E3BEC-1A5A-4E53-B5B0-F6BF71809A70}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{B7A32E7E-3BF1-4666-BB44-1316A8F4820C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -674,30 +674,6 @@ where [refTable].[Postcode] = ?</property>
                       externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[city]" />
                     <inputColumn
-                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[county]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="county"
-                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[county]" />
-                    <inputColumn
-                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[country_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="country_name"
-                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[country_name]" />
-                    <inputColumn
-                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[region_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="region_name"
-                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[region_name]" />
-                    <inputColumn
                       refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
@@ -711,6 +687,30 @@ where [refTable].[Postcode] = ?</property>
                       cachedName="postcode"
                       externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[postcode]" />
+                    <inputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[region_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region_name"
+                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[region_name]" />
+                    <inputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[county]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="county"
+                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[county]" />
+                    <inputColumn
+                      refId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].Columns[country_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country_name"
+                      externalMetadataColumnId="Package\Postcode_Stage To Postcode_NDS\Update Postcode_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Postcode_Stage To Postcode_NDS\Postcode_Stage.Outputs[OLE DB Source Output].Columns[country_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1214,5 +1214,18 @@ where [refTable].[Postcode] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Postcode_Stage To Postcode_NDS\Postcode_NDS Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

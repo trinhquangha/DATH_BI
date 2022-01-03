@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dim_Road_Type"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{6EF3C2D4-1743-4592-B3AF-8BF450961736}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{1D6A0E0B-F91D-4FE1-8C3C-184898299831}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -190,7 +190,7 @@
                       cachedLength="50"
                       cachedName="Road_Type_ID"
                       externalMetadataColumnId="Package\Road_Type\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type_ID]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]" />
                     <inputColumn
                       refId="Package\Road_Type\Insert Destination.Inputs[OLE DB Destination Input].Columns[Road_Type_Name]"
                       cachedCodepage="1252"
@@ -198,19 +198,19 @@
                       cachedLength="50"
                       cachedName="Road_Type_Name"
                       externalMetadataColumnId="Package\Road_Type\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type_Name]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]" />
                     <inputColumn
                       refId="Package\Road_Type\Insert Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Road_Type\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
                       refId="Package\Road_Type\Insert Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Road_Type\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -311,7 +311,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
                       refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].Columns[Road_Type_ID]"
                       cachedCodepage="1252"
@@ -319,7 +319,7 @@
                       cachedLength="50"
                       cachedName="Road_Type_ID"
                       externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]" />
                     <inputColumn
                       refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].Columns[Road_Type_Name]"
                       cachedCodepage="1252"
@@ -327,13 +327,13 @@
                       cachedLength="50"
                       cachedName="Road_Type_Name"
                       externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]" />
                     <inputColumn
                       refId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Road_Type\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -421,11 +421,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Road_Type\Road_Type NDS"
+              refId="Package\Road_Type\Road_Type_NDS"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Road_Type NDS"
+              name="Road_Type_NDS"
               usesDispositions="true"
               version="7">
               <properties>
@@ -436,7 +436,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Road_Type_NDS]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -466,11 +466,11 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{F66BF67C-EADB-4DBA-B7F3-A856457455B8};"Parameter1:Input",{0A3D03C2-484F-4F6A-9076-98F2442D6314};"Parameter2:Input",{F66BF67C-EADB-4DBA-B7F3-A856457455B8};"Parameter3:Input",{0A3D03C2-484F-4F6A-9076-98F2442D6314};</property>
+                  name="ParameterMapping">"Parameter0:Input",{F66BF67C-EADB-4DBA-B7F3-A856457455B8};"Parameter1:Input",{07849D53-950E-4E0E-B1DE-CAE134A470EA};"Parameter2:Input",{F66BF67C-EADB-4DBA-B7F3-A856457455B8};"Parameter3:Input",{07849D53-950E-4E0E-B1DE-CAE134A470EA};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Road_Type\Road_Type NDS.Connections[OleDbConnection]"
+                  refId="Package\Road_Type\Road_Type_NDS.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDS_DATH]"
                   description="The OLE DB runtime connection used to access the database."
@@ -478,113 +478,113 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output]"
+                  refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
-                      name="CreatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
-                      name="UpdatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_ID]"
+                      externalMetadataColumnId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_ID]"
                       length="50"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]"
                       name="Road_Type_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_Name]"
+                      externalMetadataColumnId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_Name]"
                       length="50"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]"
                       name="Road_Type_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_ID]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Road_Type_ID" />
                     <externalMetadataColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_Name]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[Road_Type_Name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Road_Type_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_ID]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_ID]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_ID]"
                       name="Road_Type_ID" />
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_Name]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_Name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_Name]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[Road_Type_Name]"
                       name="Road_Type_Name" />
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       name="CreatedDate" />
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -657,7 +657,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDate"
                       externalMetadataColumnId="Package\Road_Type\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -672,7 +672,7 @@
                       cachedLength="50"
                       cachedName="Road_Type_ID"
                       externalMetadataColumnId="Package\Road_Type\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Road_Type_ID]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]">
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_ID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -687,7 +687,7 @@
                       cachedLength="50"
                       cachedName="Road_Type_Name"
                       externalMetadataColumnId="Package\Road_Type\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Road_Type_Name]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]">
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[Road_Type_Name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -700,7 +700,7 @@
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Road_Type\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      lineageId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -801,7 +801,7 @@
               refId="Package\Road_Type.Paths[OLE DB Source Output]"
               endId="Package\Road_Type\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="OLE DB Source Output"
-              startId="Package\Road_Type\Road_Type NDS.Outputs[OLE DB Source Output]" />
+              startId="Package\Road_Type\Road_Type_NDS.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -886,7 +886,7 @@
         <NodeLayout
           Size="132,42"
           Id="Package\Road_Type"
-          TopLeft="86,231" />
+          TopLeft="98,230" />
         <NodeLayout
           Size="162,42"
           Id="Package\SET CET to Metadata"
@@ -919,30 +919,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="171.5,190.529412880075">
+          TopLeft="167.75,190.529412880075">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-19.5,40.470587119925"
+              EndConnector="0,39.470587119925"
               Start="0,0"
-              End="-19.5,32.970587119925">
+              End="0,31.970587119925">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.2352935599625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.2352935599625"
-                    Point2="0,20.2352935599625"
-                    Point3="-4,20.2352935599625" />
-                  <mssgle:LineSegment
-                    End="-15.5,20.2352935599625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.5,20.2352935599625"
-                    Point2="-19.5,20.2352935599625"
-                    Point3="-19.5,24.2352935599625" />
-                  <mssgle:LineSegment
-                    End="-19.5,32.970587119925" />
+                    End="0,31.970587119925" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -953,30 +941,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="152,273">
+          TopLeft="164,272">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23,58"
+              EndConnector="11,59"
               Start="0,0"
-              End="23,50.5">
+              End="11,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25" />
+                    End="0,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="4,29.5" />
                   <mssgle:LineSegment
-                    End="19,29" />
+                    End="7,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="19,29"
-                    Point2="23,29"
-                    Point3="23,33" />
+                    Point1="7,29.5"
+                    Point2="11,29.5"
+                    Point3="11,33.5" />
                   <mssgle:LineSegment
-                    End="23,50.5" />
+                    End="11,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -998,35 +986,13 @@
           Id="Package\Road_Type\Slowly Changing Dimension"
           TopLeft="207.5,107.5" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Road_Type\Road_Type NDS"
-          TopLeft="234.5,5.5" />
-        <EdgeLayout
-          Id="Package\Road_Type.Paths[OLE DB Source Output]"
-          TopLeft="312,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="163,42"
           Id="Package\Road_Type\Insert Destination"
           TopLeft="5.50000000000006,209.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Road_Type\OLE DB Command"
+          TopLeft="229,209.5" />
         <EdgeLayout
           Id="Package\Road_Type.Paths[New Output]"
           TopLeft="278.5,149.5">
@@ -1063,10 +1029,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Road_Type\OLE DB Command"
-          TopLeft="229,209.5" />
         <EdgeLayout
           Id="Package\Road_Type.Paths[Changing Attribute Updates Output]"
           TopLeft="345.5,149.5">
@@ -1101,6 +1063,32 @@
             <mssgm:EdgeLabel
               BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Road_Type\Road_Type_NDS"
+          TopLeft="228,22" />
+        <EdgeLayout
+          Id="Package\Road_Type.Paths[OLE DB Source Output]"
+          TopLeft="309.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.5"
+              Start="0,0"
+              End="0,36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1162,15 +1150,10 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Road_Type\Road_Type NDS">
+    design-time-name="Package\Road_Type\Road_Type_NDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
