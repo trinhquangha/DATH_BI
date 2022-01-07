@@ -131,7 +131,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>DzbEq7iiwA/PemWwU6pxRXs/Lj8=3/1/2022 5:46:58 PM3/1/2022 12:23:05 PMKRrCtuO2pGHvL2qlrop7RKgkLW4=3/1/2022 12:23:06 PM3/1/2022 12:23:05 PM</TimeStamp>
+        <TimeStamp>/taXog57eWqUb0ptgFRKkeZfXZs=7/1/2022 3:14:32 PM3/1/2022 12:23:05 PMKRrCtuO2pGHvL2qlrop7RKgkLW4=3/1/2022 12:23:06 PM3/1/2022 12:23:05 PM</TimeStamp>
         <ID>
           <String>DATH_Cube</String>
         </ID>
@@ -148,5 +148,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-01-03T13:29:12.116667Z</LastDeployed>
+  <LastDeployed>2022-01-07T08:14:35.333333Z</LastDeployed>
 </DeploymentSnapshot>

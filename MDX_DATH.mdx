@@ -1,0 +1,54 @@
+﻿-- 1. Thống kê số lượng nạn nhân theo Mức Độ Nghiêm Trọng (Fatal, Serious, 
+-- Slight) ở các Địa phương (Local_Authority_(District)) trong tất cả các năm
+select 
+non empty ([Dim Date].[Hierarchy].[Year]) on columns,
+non empty ( [Dim Local Authority District].[LAD Name].[LAD Name],[Dim Casuality Severity].[Casuality Severity Name].[Casuality Severity Name]) on rows
+from [DATH_Cube]
+where [Measures].[Num of Casuality];
+-- 2. Thống kê số lượng nạn nhân theo Mức Độ Nghiêm Trọng ở các Địa Phương 
+-- (Local_Authority_(District)) theo các Quý trong từng năm.
+select 
+non empty ([Dim Date].[Hierarchy].[Quarter]) on columns,
+non empty ( [Dim Local Authority District].[LAD Name].[LAD Name],[Dim Casuality Severity].[Casuality Severity Name].[Casuality Severity Name]) on rows
+from [DATH_Cube]
+where [Measures].[Num of Casuality];
+-- 3. Thống kê số lượng người tử vong theo Giới Tính, Loại Nạn Nhân (Casualty 
+-- Type) và Nhóm Tuổi (Age_Band_of_Casualty) theo các năm.
+select
+non empty ([Dim Date].[Hierarchy].[Year], [Dim Age Band Of Casuality].[Age Band Name].[Age Band Name]) on columns,
+non empty ([Dim Sex Of Casuality].[Sex Casuality Name].[Sex Casuality Name], [Dim Casuality Type].[Casuality Type Name].[Casuality Type Name]) on rows
+from [DATH_Cube]
+where [Measures].[Num of Casuality];
+
+--4. Thống kê số lượng TNGT theo Mức Độ Nghiêm Trọng và Thời Điểm Trong
+--Ngày (Morning: 5am-12pm, Afternoon: 12pm-5pm, Evening: 5pm-9pm, Night:
+--9pm-5am) trong các năm.
+select
+([Dim Date].[Hierarchy].[Year].Members, [Dim Time].[Time Period].Members) on columns,
+{[Dim Accident Severity].[Accident Severity Name].[Accident Severity Name],[Dim Accident Severity].[Accident Severity Name]}  on rows
+from [DATH_Cube]
+where [Measures].[Num Of Accident];
+--5.Thống kê số lượng TNGT theo Mức Độ Nghiêm Trọng, Vùng
+--(Urban_or_Rural_Area), và Kiểu Đường (Road Type) trong các năm.
+select 
+non empty ({[Dim Date].[Hierarchy].[Year].Members, [Dim Date].[Hierarchy]}, [Dim Urban Rural].[Urban Rural Name].[Urban Rural Name]) on columns,
+non empty ({[Dim Road Type].[Road Type Name].[Road Type Name],[Dim Road Type].[Road Type Name]},[Dim Accident Severity].[Accident Severity Name].[Accident Severity Name]) on rows
+from [DATH_Cube]
+where [Measures].[Num Of Accident];
+--7.Tổng hợp số lượng tai nạn theo Mục Đích Hành Trình (Journey Purpose) và
+--Loại Phương Tiện (Vehicle_Type). Bảng tham khảo:
+with member Percentage AS  [Measures].[Num Of Accident] / ([Dim Journey Purpose].[Journey Purpose Name].currentmember.parent,[Measures].[Num Of Accident]),FORMAT_STRING = "percent"
+select
+non empty [Dim Journey Purpose].[Journey Purpose Name].[Journey Purpose Name] on 0,
+non empty ([Dim Vehicle Type].[Vehicle Type Name].[Vehicle Type Name],{[Measures].[Num Of Accident],Percentage}) on 1
+from [DATH_Cube];
+-- 9. Thống kê số lượng tai nạn theo Mức Độ Nghiêm Trọng, Loại Phương Tiện 
+-- (Vehicle Type), Built-up Road trong các năm.
+select 
+non empty ([Dim Date].[Hierarchy].[Year], [Dim Build Up Road].[BUR Name].[BUR Name]) on columns,
+non empty ([Dim Vehicle Type].[Vehicle Type Name].[Vehicle Type Name],
+[Dim Accident Severity].[Accident Severity Name].[Accident Severity Name]) on rows
+from [DATH_Cube]
+where [Measures].[Num Of Accident];
+
+
