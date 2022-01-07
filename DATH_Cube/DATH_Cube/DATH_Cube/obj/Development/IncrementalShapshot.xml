@@ -25,10 +25,24 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>f6lFH2Piia9XjoRdS3x7KBUOZhc=7/1/2022 6:37:38 PM7/1/2022 6:37:38 PM</TimeStamp>
+        <ID>
+          <String>NDS DATH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
         <TimeStamp>v6rrNJBoU3d5CkcScUjMeYf8BhY=3/1/2022 12:22:39 PM3/1/2022 12:22:39 PM</TimeStamp>
         <ID>
           <String>DDS DATH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>/07DsbpFVyzGgS5j84e4uB9WXSw=7/1/2022 6:37:53 PM7/1/2022 6:37:52 PM</TimeStamp>
+        <ID>
+          <String>NDS DATH</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
@@ -131,9 +145,16 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>/taXog57eWqUb0ptgFRKkeZfXZs=7/1/2022 3:14:32 PM3/1/2022 12:23:05 PMKRrCtuO2pGHvL2qlrop7RKgkLW4=3/1/2022 12:23:06 PM3/1/2022 12:23:05 PM</TimeStamp>
+        <TimeStamp>QEFfhCF9zy2T7ZNfQ81ekUKhLhQ=7/1/2022 5:47:21 PM3/1/2022 12:23:05 PMKRrCtuO2pGHvL2qlrop7RKgkLW4=3/1/2022 12:23:06 PM3/1/2022 12:23:05 PM</TimeStamp>
         <ID>
           <String>DATH_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>9Fp2WUqDt4UR+tB7D4MsrezS2rc=7/1/2022 6:45:33 PM7/1/2022 6:45:33 PM</TimeStamp>
+        <ID>
+          <String>PREDICT SEVERITY</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -148,5 +169,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-01-07T08:14:35.333333Z</LastDeployed>
+  <LastDeployed>2022-01-07T11:45:40.79Z</LastDeployed>
 </DeploymentSnapshot>

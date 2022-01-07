@@ -10,6 +10,15 @@
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
+      <DataSource>
+        <ID>NDS DATH</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=NDS_DATH</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">whisper</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
     </DataSources>
     <Dimensions>
       <Dimension>
@@ -55,6 +64,11 @@
         <ID>Dim Urban Rural</ID>
       </Dimension>
     </Dimensions>
+    <MiningStructures>
+      <MiningStructure>
+        <ID>PREDICT SEVERITY</ID>
+      </MiningStructure>
+    </MiningStructures>
     <Cubes>
       <Cube>
         <ID>DATH_Cube</ID>

@@ -1,0 +1,101 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b4d868bc-894e-489d-be17-3c60b3f8b940" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>NDS DATH</ID>
+  <Name>NDS DATH</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>NDS DATH</DataSourceID>
+  <Schema>
+    <xs:schema id="NDS_x0020_DATH" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="NDS_x0020_DATH" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="0cab5b69-5a31-4bc0-a9dc-5973ec263623">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_PREDICT_SEVERITY" msprop:design-time-name="058fff5c-5332-4ff6-8244-67b835be98bd" msprop:DbTableName="PREDICT_SEVERITY" msprop:FriendlyName="PREDICT_SEVERITY" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Accident_Index" msprop:design-time-name="afdb2858-8188-4bf6-b39a-28a75118d69d" msprop:DbColumnName="Accident_Index" msprop:FriendlyName="Accident_Index">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Accident_Severity" msprop:design-time-name="840acfe6-32c4-42be-8ab7-73ca471fd417" msprop:DbColumnName="Accident_Severity" msprop:FriendlyName="Accident_Severity" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Urban_or_Rural_Area" msprop:design-time-name="2fbeb451-48d4-40f6-9c9d-6d4338fbaa1f" msprop:DbColumnName="Urban_or_Rural_Area" msprop:FriendlyName="Urban_or_Rural_Area" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Number_of_Vehicles" msprop:design-time-name="d4014b5b-5225-4193-a3a2-cd9ac69507ef" msprop:DbColumnName="Number_of_Vehicles" msprop:FriendlyName="Number_of_Vehicles" type="xs:int" minOccurs="0" />
+                  <xs:element name="Number_of_Casualities" msprop:design-time-name="eca6b353-4da0-4f39-bdf1-5eddd3cdb953" msprop:DbColumnName="Number_of_Casualities" msprop:FriendlyName="Number_of_Casualities" type="xs:int" minOccurs="0" />
+                  <xs:element name="Light_Conditions" msprop:design-time-name="b6800d2a-d5f4-4837-a9f2-41586782bcf8" msprop:DbColumnName="Light_Conditions" msprop:FriendlyName="Light_Conditions" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Most_Serious_Casuality" msprop:design-time-name="68a303e4-ff75-442f-8919-ecac41453988" msprop:DbColumnName="Most_Serious_Casuality" msprop:FriendlyName="Most_Serious_Casuality" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_PREDICT_SEVERITY" />
+          <xs:field xpath="Accident_Index" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <NDS_x0020_DATH xmlns="" />
+  </Schema>
+</DataSourceView>

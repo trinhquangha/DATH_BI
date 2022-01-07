@@ -81,13 +81,27 @@
       <Name>DDS DATH.ds</Name>
       <FullPath>DDS DATH.ds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>NDS DATH.ds</Name>
+      <FullPath>NDS DATH.ds</FullPath>
+    </ProjectItem>
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
       <Name>DDS DATH.dsv</Name>
       <FullPath>DDS DATH.dsv</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>NDS DATH.dsv</Name>
+      <FullPath>NDS DATH.dsv</FullPath>
+    </ProjectItem>
   </DataSourceViews>
+  <MiningModels>
+    <ProjectItem>
+      <Name>PREDICT SEVERITY.dmm</Name>
+      <FullPath>PREDICT SEVERITY.dmm</FullPath>
+    </ProjectItem>
+  </MiningModels>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
@@ -98,11 +112,21 @@
             <Name>DDS DATH</Name>
             <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=DDS_DATH</Value>
           </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>NDS DATH</Id>
+            <Name>NDS DATH</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=NDS_DATH</Value>
+          </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>DDS DATH</Id>
             <Name>DDS DATH</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>NDS DATH</Id>
+            <Name>NDS DATH</Name>
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
